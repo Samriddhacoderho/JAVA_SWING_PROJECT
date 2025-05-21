@@ -5,8 +5,9 @@
         <group>
             <file>file:/Users/suhritsatyal/NetBeansProjects/JavaApplication6/src/javaapplication6/view/RegistrationView.java</file>
             <file>file:/Users/suhritsatyal/NetBeansProjects/JavaApplication6/src/javaapplication6/controller/RegistrationController.java</file>
-            <file>file:/Users/suhritsatyal/NetBeansProjects/JavaApplication6/src/javaapplication6/dao/UserDAO.java</file>
             <file>file:/Users/suhritsatyal/NetBeansProjects/JavaApplication6/src/javaapplication6/model/RegisterModel.java</file>
+            <file>file:/Users/suhritsatyal/NetBeansProjects/JavaApplication6/src/javaapplication6/dao/UserDAO.java</file>
+            <file>file:/Users/suhritsatyal/NetBeansProjects/JavaApplication6/src/javaapplication6/database/DBConn.java</file>
         </group>
     </open-files>
 </project-private>
