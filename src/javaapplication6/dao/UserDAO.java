@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -44,6 +45,26 @@ public class UserDAO {
         return result;
     }
 //    public boolean loginUser(LoginModel loginmodel)  //backend developer le controller ra model banayechi yo error jancha, for the time being there is error.
+=======
+/////*
+//// * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+//// * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+//// */
+//package javaapplication6.dao;
+//
+//import javaapplication6.database.DBConn;
+//import javaapplication6.model.RegisterModel;
+//
+////
+/////**
+//// *
+//// * @author suhritsatyal
+//// */
+//public class UserDAO {
+//    
+//    
+//    public boolean registerUser(RegisterModel registermodel)
+>>>>>>> manoj
 //    {
 //        DBConn conn=new DBConn();
 //        String sql_query="SELECT * FROM users_table where email=? and password=?";
@@ -63,4 +84,10 @@ public class UserDAO {
 //            return false;
 //        }
 //    }
+<<<<<<< HEAD
 }
+=======
+//    
+//    
+//}
+>>>>>>> manoj
