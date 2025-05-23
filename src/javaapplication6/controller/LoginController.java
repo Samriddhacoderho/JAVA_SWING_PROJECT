@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 public class LoginController {
     private LoginView loginview = new LoginView();
 //    code here for controlling opening and closing of view
+//    create loginView in view package
 
     
     
