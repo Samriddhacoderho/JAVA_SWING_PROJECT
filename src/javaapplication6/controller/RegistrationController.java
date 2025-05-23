@@ -11,14 +11,15 @@ import javaapplication6.model.RegisterModel;
 import javaapplication6.view.RegistrationView;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author suhritsatyal
- */
+
 public class RegistrationController {
     
     private final RegistrationView registrationView;
+<<<<<<< HEAD
     private final UserDAO userDAO=new UserDAO();
+=======
+    private final UserDAO userDAO = new UserDAO();
+>>>>>>> ishan
     public RegistrationController(RegistrationView registrationView) {
         this.registrationView=registrationView;
         registrationView.RegisterUserListener(new RegisterUser());
@@ -122,6 +123,7 @@ public class RegistrationController {
                 return "Registering User...";
             }
         }
+        
         
     }
 }
