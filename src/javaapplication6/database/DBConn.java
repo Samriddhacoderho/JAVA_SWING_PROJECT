@@ -21,9 +21,9 @@ public class DBConn {
  *
  * @author suhritsatyal
  */
-    private static final String url = "jdbc:mysql://localhost:3306/swing_db_test";
+    private static final String url = "jdbc:mysql://localhost:3306/swingdb";
     private static final String username="root";
-    private static final String password="SQLSamriddha2006@";
+    private static final String password="@@Forget@@321";
     
     public Connection connection_base()
     {
