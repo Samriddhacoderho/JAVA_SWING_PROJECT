@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javaapplication6.database.DBConn;
 import javaapplication6.model.RegisterModel;
+import javaapplication6.HashUtil.HashUtil;
+
 
 public class UserDAO {
     private final DBConn dbConn;
@@ -21,7 +23,8 @@ public class UserDAO {
             
             stmt.setString(1, user.getName());
             stmt.setString(2, user.getEmail());
-            stmt.setString(3, user.getPassword());
+            String hashedPassword = HashUtil.hashPassword(user.getPassword());
+            stmt.setString(3, hashedPassword);
 
             int rowsInserted = stmt.executeUpdate();
             result = rowsInserted > 0;
