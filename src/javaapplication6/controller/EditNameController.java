@@ -13,13 +13,15 @@ import java.awt.event.ActionListener;
  *
  * @author manoj
  */
-public class EditName {
-    private Dashboard dashboardView;
-    private UserDAO userDAO;
-    public EditName(Dashboard view){
+public class EditNameController {
+   final private Dashboard dashboardView;
+   final private UserDAO userDAO;
+   private int userId;
+   private String newName;
+    public EditNameController(Dashboard view){
         this.dashboardView = view;
-        this.userDAO = new UserDAO();
-        this.dashboardView.addEditNameListener(new EditNameListener());
+        this.userDAO = new UserDAO( userId,newName);
+        this.dashboardView.EditNameListener(new EditNameListener());
         
     }
     class EditNameListener implements ActionListener{
