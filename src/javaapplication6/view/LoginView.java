@@ -1,5 +1,8 @@
 package javaapplication6.view;
 
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -31,17 +34,17 @@ public class LoginView extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        emailTxt = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        forgetLbl = new javax.swing.JLabel();
+        loginBtn = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        signupLbl = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton2 = new javax.swing.JButton();
+        passPsf = new javax.swing.JPasswordField();
+        showBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -51,14 +54,8 @@ public class LoginView extends javax.swing.JFrame {
         jLabel5.setText("bookmyvenue");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(370, 80, 240, 53);
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(360, 200, 246, 23);
+        getContentPane().add(emailTxt);
+        emailTxt.setBounds(360, 200, 246, 23);
 
         jLabel6.setText("Email");
         getContentPane().add(jLabel6);
@@ -68,45 +65,40 @@ public class LoginView extends javax.swing.JFrame {
         getContentPane().add(jLabel7);
         jLabel7.setBounds(300, 240, 58, 17);
 
-        jLabel8.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel8.setText("Forget Password");
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+        forgetLbl.setForeground(new java.awt.Color(255, 0, 0));
+        forgetLbl.setText("Forget Password");
+        forgetLbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
+                forgetLblMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(510, 310, 98, 17);
+        getContentPane().add(forgetLbl);
+        forgetLbl.setBounds(510, 310, 98, 17);
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Login");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        loginBtn.setBackground(new java.awt.Color(0, 0, 0));
+        loginBtn.setForeground(new java.awt.Color(255, 255, 255));
+        loginBtn.setText("Login");
+        loginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                loginBtnMouseClicked(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(360, 280, 246, 23);
+        getContentPane().add(loginBtn);
+        loginBtn.setBounds(360, 280, 246, 23);
 
         jLabel9.setText("Nepal's no.1 booking platform");
         getContentPane().add(jLabel9);
         jLabel9.setBounds(400, 130, 180, 17);
 
-        jLabel10.setForeground(new java.awt.Color(102, 204, 0));
-        jLabel10.setText("Sign Up");
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+        signupLbl.setForeground(new java.awt.Color(102, 204, 0));
+        signupLbl.setText("Sign Up");
+        signupLbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
+                signupLblMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel10);
-        jLabel10.setBounds(540, 350, 46, 17);
+        getContentPane().add(signupLbl);
+        signupLbl.setBounds(540, 350, 46, 17);
 
         jLabel11.setText("Don't have an account?");
         getContentPane().add(jLabel11);
@@ -114,23 +106,17 @@ public class LoginView extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(null);
+        jPanel1.add(passPsf);
+        passPsf.setBounds(160, 190, 246, 23);
 
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jPasswordField1);
-        jPasswordField1.setBounds(160, 190, 246, 23);
-
-        jButton2.setText("Show");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        showBtn.setText("Show");
+        showBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                showBtnMouseClicked(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(420, 190, 70, 23);
+        jPanel1.add(showBtn);
+        showBtn.setBounds(420, 190, 70, 23);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(200, 50, 540, 370);
@@ -138,36 +124,24 @@ public class LoginView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+    private void signupLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signupLblMouseClicked
         // TODO add your handling code here:
 //        new RegistrationView().setVisible(true);
 //        dispose();
         
-    }//GEN-LAST:event_jLabel10MouseClicked
+    }//GEN-LAST:event_signupLblMouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void loginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_loginBtnMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void showBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showBtnMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_showBtnMouseClicked
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+    private void forgetLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forgetLblMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_forgetLblMouseClicked
 
     /**
      * @param args the command line arguments
@@ -212,17 +186,68 @@ public class LoginView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JTextField emailTxt;
+    private javax.swing.JLabel forgetLbl;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton loginBtn;
+    private javax.swing.JPasswordField passPsf;
+    private javax.swing.JButton showBtn;
+    private javax.swing.JLabel signupLbl;
     // End of variables declaration//GEN-END:variables
+
+    public void ShowActionListener(ActionListener listener)
+    {
+        this.showBtn.addActionListener(listener);
+    }
+    
+    public void LoginActionListener(ActionListener listener)
+    {
+        this.loginBtn.addActionListener(listener);
+    }
+    
+    public void ForgetActionListener(MouseListener listener)
+    {
+        this.forgetLbl.addMouseListener(listener);
+    }
+    
+    public void SignupActionListener(MouseListener listener)
+    {
+        this.addMouseListener(listener);
+    }
+
+    /**
+     * @return the emailTxt
+     */
+    public javax.swing.JTextField getEmailTxt() {
+        return emailTxt;
+    }
+
+    /**
+     * @param emailTxt the emailTxt to set
+     */
+    public void setEmailTxt(javax.swing.JTextField emailTxt) {
+        this.emailTxt = emailTxt;
+    }
+
+    /**
+     * @return the passPsf
+     */
+    public javax.swing.JPasswordField getPassPsf() {
+        return passPsf;
+    }
+
+    /**
+     * @param passPsf the passPsf to set
+     */
+    public void setPassPsf(javax.swing.JPasswordField passPsf) {
+        this.passPsf = passPsf;
+    }
+
+    
+    
 }
