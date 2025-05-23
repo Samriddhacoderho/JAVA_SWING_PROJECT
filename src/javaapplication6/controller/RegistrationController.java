@@ -6,7 +6,7 @@ package javaapplication6.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//import javaapplication6.dao.UserDAO;
+import javaapplication6.dao.UserDAO;
 import javaapplication6.model.RegisterModel;
 import javaapplication6.view.RegistrationView;
 import javax.swing.JOptionPane;
@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 public class RegistrationController {
     
     private final RegistrationView registrationView;
-//    private final UserDAO userDAO = null;
+    private final UserDAO userDAO=new UserDAO();
     public RegistrationController(RegistrationView registrationView) {
         this.registrationView=registrationView;
         registrationView.RegisterUserListener(new RegisterUser());
@@ -95,7 +95,7 @@ public class RegistrationController {
                 JOptionPane.showMessageDialog(registrationView, validate_result);
                 try {
                     RegisterModel registerModel=new RegisterModel(name, email, password, confirmPassword);
-//                    boolean result=userDAO.registerUser(registerModel);
+                    boolean result=userDAO.registerUser(registerModel);
                 } catch (Exception error) {
                     System.out.println(error.getMessage());
                 }
