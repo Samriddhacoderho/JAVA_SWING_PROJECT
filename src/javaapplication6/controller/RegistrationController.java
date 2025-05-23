@@ -15,11 +15,7 @@ import javax.swing.JOptionPane;
 public class RegistrationController {
     
     private final RegistrationView registrationView;
-<<<<<<< HEAD
     private final UserDAO userDAO=new UserDAO();
-=======
-    private final UserDAO userDAO = new UserDAO();
->>>>>>> ishan
     public RegistrationController(RegistrationView registrationView) {
         this.registrationView=registrationView;
         registrationView.RegisterUserListener(new RegisterUser());
