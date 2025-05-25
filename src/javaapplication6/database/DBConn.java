@@ -10,23 +10,11 @@ public class DBConn {
     private static final String username = "root";
     private static final String password = "Coventry2019@";
 
-<<<<<<< HEAD
-    public Connection connection_base() {
-        Connection conn = null;
-=======
-
-/**
- *
- * @author suhritsatyal
- */
-    private static final String url = "jdbc:mysql://localhost:3306/swingdb";
-    private static final String username="root";
-    private static final String password="@@Forget@@321";
     
     public Connection connection_base()
     {
         Connection conn=null;
->>>>>>> manoj
+
         try {
             Connection initialConn = DriverManager.getConnection(baseUrl, username, password);
             Statement stmt = initialConn.createStatement();
