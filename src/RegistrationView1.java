@@ -1,21 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package javaapplication6.view;
 
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 
-/**
- *
- * @author suhritsatyal
- */
+
 public class RegistrationView1 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form RegistrationView
-     */
+
     public RegistrationView1() {
         initComponents();
     }
@@ -30,78 +22,73 @@ public class RegistrationView1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        passPsf = new javax.swing.JPasswordField();
-        emailTxt = new javax.swing.JTextField();
-        nameTxt = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        passShowbtn = new javax.swing.JButton();
-        confirmPassshowbtn = new javax.swing.JButton();
-        confirmPsf = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        NameTxt = new javax.swing.JTextField();
+        passPsf = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
+        confirmPsf = new javax.swing.JPasswordField();
+        confirmPassshowbtn = new javax.swing.JButton();
+        passShowbtn = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         alreadyLbl = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        emailTxt1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel1.setFont(new java.awt.Font("Kefa", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Confirm Password:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, 20));
+
+        jLabel3.setFont(new java.awt.Font("Kefa", 1, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Name:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, 20));
+        jPanel1.add(NameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 334, 30));
+        jPanel1.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 334, 30));
 
         jLabel4.setFont(new java.awt.Font("Kefa", 1, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Password:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, 20));
-        jPanel2.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 334, -1));
-        jPanel2.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 334, -1));
-        jPanel2.add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 334, -1));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setText("Nepal’s no.1 booking platform");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 200, -1));
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setText("bookmyvenue");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 130, -1));
-
-        jLabel2.setFont(new java.awt.Font("Kefa", 1, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Name:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 60, 20));
-
-        jLabel3.setFont(new java.awt.Font("Kefa", 1, 18)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Email:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 70, 30));
-
-        passShowbtn.setText("Show");
-        jPanel2.add(passShowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 100, 20));
+        jPanel1.add(confirmPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 334, 30));
 
         confirmPassshowbtn.setText("Show");
-        jPanel2.add(confirmPassshowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 250, -1, -1));
-        jPanel2.add(confirmPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 334, -1));
+        jPanel1.add(confirmPassshowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Kefa", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Confirm Password:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, 20));
+        passShowbtn.setText("Show");
+        jPanel1.add(passShowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, -1, -1));
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Register");
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 340, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 340, -1));
 
         alreadyLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        alreadyLbl.setForeground(new java.awt.Color(51, 255, 0));
+        alreadyLbl.setForeground(new java.awt.Color(51, 51, 51));
         alreadyLbl.setText("Already Have An Account?");
-        jPanel2.add(alreadyLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, -1, -1));
+        jPanel1.add(alreadyLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 640, 400));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setText("bookmyvenue");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 130, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel5.setText("Nepal’s no.1 booking platform");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 60, 200, -1));
+        jPanel1.add(emailTxt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 334, 30));
+
+        jLabel7.setFont(new java.awt.Font("Kefa", 1, 18)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Email:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,13 +96,14 @@ public class RegistrationView1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -160,23 +148,24 @@ public class RegistrationView1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField NameTxt;
     private javax.swing.JLabel alreadyLbl;
     private javax.swing.JButton confirmPassshowbtn;
     private javax.swing.JPasswordField confirmPsf;
-    private javax.swing.JTextField emailTxt;
+    private javax.swing.JTextField emailTxt1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField nameTxt;
     private javax.swing.JPasswordField passPsf;
     private javax.swing.JButton passShowbtn;
     // End of variables declaration//GEN-END:variables
+
+                 
 
     
     public void RegisterUserListener(ActionListener listener)
@@ -217,28 +206,14 @@ public class RegistrationView1 extends javax.swing.JFrame {
      * @return the emailTxt
      */
     public javax.swing.JTextField getEmailTxt() {
-        return emailTxt;
+        return NameTxt;
     }
 
     /**
      * @param emailTxt the emailTxt to set
      */
     public void setEmailTxt(javax.swing.JTextField emailTxt) {
-        this.emailTxt = emailTxt;
-    }
-
-    /**
-     * @return the nameTxt
-     */
-    public javax.swing.JTextField getNameTxt() {
-        return nameTxt;
-    }
-
-    /**
-     * @param nameTxt the nameTxt to set
-     */
-    public void setNameTxt(javax.swing.JTextField nameTxt) {
-        this.nameTxt = nameTxt;
+        this.NameTxt = emailTxt;
     }
 
     /**
@@ -282,12 +257,5 @@ public class RegistrationView1 extends javax.swing.JFrame {
     public void setPassShowbtn(javax.swing.JButton passShowbtn) {
         this.passShowbtn = passShowbtn;
     }
-    
-    
-    
-    
- 
-    
-    
-
 }
+

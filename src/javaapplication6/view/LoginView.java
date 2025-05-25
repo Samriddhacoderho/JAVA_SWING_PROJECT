@@ -7,6 +7,10 @@ package javaapplication6.view;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
+import javaapplication6.controller.LoginController;
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 /**
@@ -36,7 +40,7 @@ public class LoginView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        emailTextField = new javax.swing.JTextField();
+        emailTxt = new javax.swing.JTextField();
         loginSubtitleLabel1 = new javax.swing.JLabel();
         loginSubtitleLabel2 = new javax.swing.JLabel();
         passwordField = new javax.swing.JPasswordField();
@@ -50,10 +54,10 @@ public class LoginView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        emailTextField.setFont(new java.awt.Font("sansserif", 0, 11)); // NOI18N
-        emailTextField.setForeground(new java.awt.Color(25, 25, 112));
-        emailTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        emailTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(25, 25, 112), 1, true));
+        emailTxt.setFont(new java.awt.Font("sansserif", 0, 11)); // NOI18N
+        emailTxt.setForeground(new java.awt.Color(25, 25, 112));
+        emailTxt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        emailTxt.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(25, 25, 112), 1, true));
 
         loginSubtitleLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         loginSubtitleLabel1.setText("Email");
@@ -118,7 +122,7 @@ public class LoginView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(passwordField, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                            .addComponent(emailTextField, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(emailTxt, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addComponent(loginButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(showPasswordButton)
@@ -135,7 +139,7 @@ public class LoginView extends javax.swing.JFrame {
                 .addComponent(demoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(92, 92, 92)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(loginSubtitleLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -204,7 +208,7 @@ public class LoginView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel demoLabel;
-    private javax.swing.JTextField emailTextField;
+    private javax.swing.JTextField emailTxt;
     private javax.swing.JLabel forgotPasswordLabel;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel loginSubtitleLabel1;
@@ -215,27 +219,24 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JButton showPasswordButton;
     // End of variables declaration//GEN-END:variables
 
-    public javax.swing.JTextField getEmailTextField(){
-        return emailTextField;
+
+    public JTextField getEmailTxt() {
+        return emailTxt;
     }
-     public javax.swing.JPasswordField getPasswordField(){
+
+    public JPasswordField getPasswordField() {
         return passwordField;
     }
-    public void addRegisterListener(MouseListener listener){
-        registerLabel.addMouseListener(listener);
 
-    }
-    public void addLoginUserListener(ActionListener listener){
-        loginButton.addActionListener(listener);
+    public JButton getShowPasswordBtn() {
+        return showPasswordButton;
     }
 
-    public void togglePasswordField(boolean visible) {
-        passwordField.setEchoChar(visible ? (char) 0 : '*');
-        showPasswordButton.setText(visible ? "Hide" : "Show");
+    public void LoginUserListener(ActionListener al) {
+        loginButton.addActionListener(al);
     }
-    public void showPasswordButtonListener(ActionListener listener){
-        showPasswordButton.addActionListener(listener);
-    }
-    
 
+    public void showPasswordListener(ActionListener al) {
+        showPasswordButton.addActionListener(al);
+    }
 }
