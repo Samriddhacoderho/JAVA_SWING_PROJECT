@@ -2,6 +2,7 @@ package javaapplication6.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.Statement;
 
 public class DBConn {
@@ -38,5 +39,9 @@ public class DBConn {
         }
 
         return conn;
+    }
+
+    public PreparedStatement prepareStatement(String sql_query) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
