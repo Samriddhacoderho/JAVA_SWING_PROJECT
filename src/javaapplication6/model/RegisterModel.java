@@ -20,6 +20,9 @@ public class RegisterModel {
         this.password = password;
         this.confirmPassword = confirmPassword;
     }
+    public RegisterModel(String newName){
+        
+    }
 
     
     

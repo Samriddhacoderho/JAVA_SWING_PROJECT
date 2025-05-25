@@ -10,8 +10,11 @@ public class DBConn {
     private static final String username = "root";
     private static final String password = "Coventry2019@";
 
-    public Connection connection_base() {
-        Connection conn = null;
+    
+    public Connection connection_base()
+    {
+        Connection conn=null;
+
         try {
             Connection initialConn = DriverManager.getConnection(baseUrl, username, password);
             Statement stmt = initialConn.createStatement();
