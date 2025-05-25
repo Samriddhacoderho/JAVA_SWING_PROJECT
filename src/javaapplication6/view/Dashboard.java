@@ -150,8 +150,18 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
+//  Action listener for editname button
     public void EditNameListener (ActionListener listener){
         this.jButton1.addActionListener(listener);
+    }
+    
+//    Action listener for change password button
+    public void ChangePasswordListener ( ActionListener listener){
+        this.jButton2.addActionListener(listener);
+    }
+//    Action listener for logout button
+    public void LogoutListener (ActionListener listener){
+        this.jButton3.addActionListener(listener);
     }
 }
 
