@@ -32,8 +32,9 @@ public class ReportProblemDAO {
             
         } catch (Exception e) {
             System.out.println("Error in report problem: " + e.getMessage());
-            return false;
+            
         }
+        return false;
         
         
     }
