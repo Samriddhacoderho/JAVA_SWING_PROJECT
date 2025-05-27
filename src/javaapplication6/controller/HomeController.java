@@ -22,7 +22,7 @@ public class HomeController {
     }
     public void open()
     {
-        this.homeView.setVisible(false);
+        this.homeView.setVisible(true);
     }
     
     public void close()
