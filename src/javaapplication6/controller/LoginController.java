@@ -21,6 +21,7 @@ public class LoginController {
         this.loginView = loginView;
         loginView.LoginActionListener(new LoginUser());
         loginView.ShowActionListener(new ShowPassword());
+        loginView.SignupActionListener(new SignupListener());
     }
 
     public void open() {
