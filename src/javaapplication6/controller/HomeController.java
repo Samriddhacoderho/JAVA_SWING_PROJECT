@@ -39,6 +39,7 @@ public class HomeController {
             RegistrationController registrationController=new RegistrationController(registrationView);
             registrationController.open();
             close();
+            //ok
             
         }
 
