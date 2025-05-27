@@ -22,7 +22,7 @@ public class HomeController {
     }
     public void open()
     {
-        this.homeView.setVisible(true);
+        this.homeView.setVisible(false);
     }
     
     public void close()
@@ -37,7 +37,7 @@ public class HomeController {
         public void actionPerformed(ActionEvent e) {
             RegistrationView registrationView=new RegistrationView();
             RegistrationController registrationController=new RegistrationController(registrationView);
-            registrationController.close();
+            registrationController.open();
             close();
             
         }
