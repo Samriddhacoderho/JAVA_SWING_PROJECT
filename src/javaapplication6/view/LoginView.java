@@ -120,7 +120,7 @@ public class LoginView extends javax.swing.JFrame {
         jLabel11.setBounds(470, 350, 148, 17);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(50, 60, 750, 400);
+        jPanel1.setBounds(50, 50, 750, 400);
 
         pack();
         setLocationRelativeTo(null);

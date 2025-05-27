@@ -40,6 +40,8 @@ public class HomeController {
             registrationController.open();
             close();
         }
+
+        
         
     }
     
