@@ -54,6 +54,12 @@ public class LoginView extends javax.swing.JFrame {
         jLabel5.setText("bookmyvenue");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(370, 80, 240, 53);
+
+        emailTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTxtActionPerformed(evt);
+            }
+        });
         getContentPane().add(emailTxt);
         emailTxt.setBounds(360, 200, 246, 23);
 
@@ -142,6 +148,10 @@ public class LoginView extends javax.swing.JFrame {
     private void forgetLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forgetLblMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_forgetLblMouseClicked
+
+    private void emailTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTxtActionPerformed
 
     /**
      * @param args the command line arguments
