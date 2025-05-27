@@ -33,82 +33,22 @@ public class LoginView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        passPsf = new javax.swing.JPasswordField();
+        showBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         emailTxt = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         forgetLbl = new javax.swing.JLabel();
+        signupLbl = new javax.swing.JLabel();
         loginBtn = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        signupLbl = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        passPsf = new javax.swing.JPasswordField();
-        showBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(null);
-
-        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
-        jLabel5.setText("bookmyvenue");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(370, 80, 240, 53);
-
-        emailTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailTxtActionPerformed(evt);
-            }
-        });
-        getContentPane().add(emailTxt);
-        emailTxt.setBounds(360, 200, 246, 23);
-
-        jLabel6.setText("Email");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(320, 200, 32, 17);
-
-        jLabel7.setText("Password");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(300, 240, 58, 17);
-
-        forgetLbl.setForeground(new java.awt.Color(255, 0, 0));
-        forgetLbl.setText("Forget Password");
-        forgetLbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                forgetLblMouseClicked(evt);
-            }
-        });
-        getContentPane().add(forgetLbl);
-        forgetLbl.setBounds(510, 310, 98, 17);
-
-        loginBtn.setBackground(new java.awt.Color(0, 0, 0));
-        loginBtn.setForeground(new java.awt.Color(255, 255, 255));
-        loginBtn.setText("Login");
-        loginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                loginBtnMouseClicked(evt);
-            }
-        });
-        getContentPane().add(loginBtn);
-        loginBtn.setBounds(360, 280, 246, 23);
-
-        jLabel9.setText("Nepal's no.1 booking platform");
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(400, 130, 180, 17);
-
-        signupLbl.setForeground(new java.awt.Color(102, 204, 0));
-        signupLbl.setText("Sign Up");
-        signupLbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                signupLblMouseClicked(evt);
-            }
-        });
-        getContentPane().add(signupLbl);
-        signupLbl.setBounds(540, 350, 46, 17);
-
-        jLabel11.setText("Don't have an account?");
-        getContentPane().add(jLabel11);
-        jLabel11.setBounds(400, 350, 148, 17);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(null);
@@ -124,8 +64,68 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1.add(showBtn);
         showBtn.setBounds(420, 190, 70, 23);
 
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
+        jLabel5.setText("bookmyvenue");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(180, 30, 240, 53);
+
+        emailTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTxtActionPerformed(evt);
+            }
+        });
+        jPanel1.add(emailTxt);
+        emailTxt.setBounds(160, 150, 246, 23);
+
+        jLabel6.setText("Email");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(110, 160, 32, 17);
+
+        jLabel7.setText("Password");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(90, 190, 58, 17);
+
+        forgetLbl.setForeground(new java.awt.Color(255, 0, 0));
+        forgetLbl.setText("Forget Password");
+        forgetLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                forgetLblMouseClicked(evt);
+            }
+        });
+        jPanel1.add(forgetLbl);
+        forgetLbl.setBounds(300, 270, 98, 17);
+
+        signupLbl.setForeground(new java.awt.Color(102, 204, 0));
+        signupLbl.setText("Sign Up");
+        signupLbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                signupLblMouseClicked(evt);
+            }
+        });
+        jPanel1.add(signupLbl);
+        signupLbl.setBounds(350, 300, 50, 17);
+
+        loginBtn.setBackground(new java.awt.Color(0, 0, 0));
+        loginBtn.setForeground(new java.awt.Color(255, 255, 255));
+        loginBtn.setText("Login");
+        loginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginBtnMouseClicked(evt);
+            }
+        });
+        jPanel1.add(loginBtn);
+        loginBtn.setBounds(160, 230, 246, 23);
+
+        jLabel9.setText("Nepal's no.1 booking platform");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(200, 90, 180, 17);
+
+        jLabel11.setText("Don't have an account?");
+        jPanel1.add(jLabel11);
+        jLabel11.setBounds(210, 300, 148, 17);
+
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(200, 50, 540, 370);
+        jPanel1.setBounds(170, 70, 540, 370);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
