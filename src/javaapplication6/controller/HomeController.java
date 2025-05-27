@@ -37,8 +37,9 @@ public class HomeController {
         public void actionPerformed(ActionEvent e) {
             RegistrationView registrationView=new RegistrationView();
             RegistrationController registrationController=new RegistrationController(registrationView);
-            registrationController.open();
+            registrationController.close();
             close();
+            
         }
 
         
