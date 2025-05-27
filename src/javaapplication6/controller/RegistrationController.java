@@ -6,8 +6,11 @@ package javaapplication6.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javaapplication6.dao.UserDAO;
 import javaapplication6.model.RegisterModel;
+import javaapplication6.view.LoginView;
 import javaapplication6.view.RegistrationView;
 import javax.swing.JOptionPane;
 
@@ -21,6 +24,7 @@ public class RegistrationController {
         registrationView.RegisterUserListener(new RegisterUser());
         registrationView.showPasswordListener(new showPassword());
         registrationView.showConfirmPasswordListener(new showConfirmPassword());
+        registrationView.LoginNavigate(new LoginNavigationListener());
     }
     
     
@@ -122,4 +126,33 @@ public class RegistrationController {
         
         
     }
+     
+     class LoginNavigationListener implements MouseListener
+     {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            LoginView loginView=new LoginView();
+            LoginController loginController=new LoginController(loginView);
+            loginController.open();
+            close();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+         
+     }
 }
