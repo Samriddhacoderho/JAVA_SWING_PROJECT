@@ -2,6 +2,7 @@ package javaapplication6.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.Statement;
 
 public class DBConn {
@@ -10,8 +11,11 @@ public class DBConn {
     private static final String username = "root";
     private static final String password = "Coventry2019@";
 
-    public Connection connection_base() {
-        Connection conn = null;
+    
+    public Connection connection_base()
+    {
+        Connection conn=null;
+
         try {
             Connection initialConn = DriverManager.getConnection(baseUrl, username, password);
             Statement stmt = initialConn.createStatement();
@@ -35,5 +39,9 @@ public class DBConn {
         }
 
         return conn;
+    }
+
+    public PreparedStatement prepareStatement(String sql_query) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

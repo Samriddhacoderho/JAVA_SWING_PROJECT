@@ -4,6 +4,8 @@
  */
 package javaapplication6.view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author ishan-college
@@ -26,13 +28,13 @@ public class ReportView extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox1 = new javax.swing.JComboBox<>();
+        reportList = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        issuesTxt = new javax.swing.JTextArea();
+        reportBtn = new javax.swing.JButton();
+        cancelBtn = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -41,45 +43,93 @@ public class ReportView extends javax.swing.JInternalFrame {
         setTitle("Report A Problem");
         getContentPane().setLayout(null);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Account Inquiry", "Report a bug", "Change account information", "Report a potential violation" }));
-        jComboBox1.setToolTipText("");
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(40, 50, 420, 23);
+        reportList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Account Inquiry", "Report a bug", "Change account information", "Report a potential violation" }));
+        reportList.setSelectedIndex(2);
+        reportList.setToolTipText("");
+        reportList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reportListActionPerformed(evt);
+            }
+        });
+        getContentPane().add(reportList);
+        reportList.setBounds(20, 50, 250, 23);
 
         jLabel1.setText("Report a problem:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(40, 20, 120, 17);
+        jLabel1.setBounds(20, 20, 120, 17);
 
         jLabel2.setText("Other Issues:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(40, 100, 130, 17);
+        jLabel2.setBounds(20, 100, 130, 17);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        issuesTxt.setColumns(20);
+        issuesTxt.setRows(5);
+        jScrollPane1.setViewportView(issuesTxt);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(40, 130, 420, 90);
+        jScrollPane1.setBounds(20, 130, 260, 90);
 
-        jButton1.setText("Report");
-        getContentPane().add(jButton1);
-        jButton1.setBounds(290, 250, 72, 23);
+        reportBtn.setText("Report");
+        getContentPane().add(reportBtn);
+        reportBtn.setBounds(110, 240, 72, 23);
 
-        jButton2.setText("Cancel");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(380, 250, 78, 23);
+        cancelBtn.setText("Cancel");
+        getContentPane().add(cancelBtn);
+        cancelBtn.setBounds(200, 240, 78, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void reportListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportListActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reportListActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton cancelBtn;
+    private javax.swing.JTextArea issuesTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JButton reportBtn;
+    private javax.swing.JComboBox<String> reportList;
     // End of variables declaration//GEN-END:variables
+    
+    
+    public void ReportListener (ActionListener listener){
+        this.reportBtn.addActionListener(listener);
+    }
+    
+    public void CancelListener (ActionListener listener){
+        this.cancelBtn.addActionListener(listener);
+    }
+
+    /**
+     * @return the issuesTxt
+     */
+    public javax.swing.JTextArea getIssuesTxt() {
+        return issuesTxt;
+    }
+
+    /**
+     * @param issuesTxt the issuesTxt to set
+     */
+    public void setIssuesTxt(javax.swing.JTextArea issuesTxt) {
+        this.issuesTxt = issuesTxt;
+    }
+
+    /**
+     * @return the reportList
+     */
+    public javax.swing.JComboBox<String> getReportList() {
+        return reportList;
+    }
+
+    /**
+     * @param reportList the reportList to set
+     */
+    public void setReportList(javax.swing.JComboBox<String> reportList) {
+        this.reportList = reportList;
+    }
+    
 }
