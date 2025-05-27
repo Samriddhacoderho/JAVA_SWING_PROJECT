@@ -202,7 +202,7 @@ public class LoginView extends javax.swing.JFrame {
 
     public void ShowActionListener(ActionListener listener)
     {
-        this.showBtn.addActionListener(listener);
+        this.getShowBtn().addActionListener(listener);
     }
     
     public void LoginActionListener(ActionListener listener)
@@ -247,6 +247,22 @@ public class LoginView extends javax.swing.JFrame {
     public void setPassPsf(javax.swing.JPasswordField passPsf) {
         this.passPsf = passPsf;
     }
+
+    /**
+     * @return the showBtn
+     */
+    public javax.swing.JButton getShowBtn() {
+        return showBtn;
+    }
+
+    /**
+     * @param showBtn the showBtn to set
+     */
+    public void setShowBtn(javax.swing.JButton showBtn) {
+        this.showBtn = showBtn;
+    }
+    
+    
 
     
     
