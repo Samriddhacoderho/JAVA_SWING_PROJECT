@@ -93,10 +93,22 @@ public class RegistrationController {
             }
             else
             {
-                JOptionPane.showMessageDialog(registrationView, validate_result);
+                JOptionPane.showConfirmDialog(registrationView, "Are you sure you want to register the user?");
                 try {
                     RegisterModel registerModel=new RegisterModel(name, email, password, confirmPassword);
                     boolean result=userDAO.registerUser(registerModel);
+                    if(result)
+                    {
+                        JOptionPane.showMessageDialog(registrationView, "Registration Successful");
+                        LoginView loginView=new LoginView();
+                        LoginController loginController=new LoginController(loginView);
+                        loginController.open();
+                        close();
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(registrationView, "Registration Failed");
+                    }
                 } catch (Exception error) {
                     System.out.println(error.getMessage());
                 }

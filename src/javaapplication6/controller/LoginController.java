@@ -7,6 +7,7 @@ import java.awt.event.MouseListener;
 import javaapplication6.dao.UserDAO;
 import javax.swing.JOptionPane;
 import javaapplication6.model.LoginModel;
+import javaapplication6.view.DashboardView;
 import javaapplication6.view.HomeView;
 import javaapplication6.view.LoginView;
 import javaapplication6.view.RegistrationView;
@@ -40,7 +41,7 @@ public class LoginController {
         @Override
         public void actionPerformed(ActionEvent e) {
             String email = loginView.getEmailTxt().getText();
-            String password = new String(loginView.getPassPsf().getText());
+            String password = loginView.getPassPsf().getText();
             
             //validation part
             String validation = validate(email, password);
@@ -49,9 +50,21 @@ public class LoginController {
             if (!validation.equals("Logging in...")) {
                 JOptionPane.showMessageDialog(loginView, validation);
             } else {
+                JOptionPane.showConfirmDialog(loginView, "Are you sure you want to log in?");
                 try {
                     LoginModel loginModel=new LoginModel(email,password);
                     boolean result=userDAO.loginUser(loginModel);
+                    if(result)
+                    {
+                        JOptionPane.showMessageDialog(loginView, "Successfully logged in!");
+                        DashboardView dashboardView=new DashboardView();
+                        dashboardView.setVisible(true);  // yo pachi prithivi le controller banayechi controller ko open method called hunchaa.
+                        close();
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(loginView, "Please enter correct credentials!");
+                    }
 
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(loginView, "Error: " + ex.getMessage());
@@ -61,7 +74,7 @@ public class LoginController {
         
          public String validate(String email, String password) {
             if (email.isEmpty() || password.isEmpty()) {
-                return "Please enter both email and password";
+                return "Please enter both email and passwords";
             }
             return "Logging in...";
         }

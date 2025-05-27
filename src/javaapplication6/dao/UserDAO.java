@@ -36,24 +36,26 @@ public class UserDAO {
         return result;
     }
     
-    public boolean loginUser(LoginModel loginmodel)  //backend developer le controller ra model banayechi yo error jancha, for the time being there is error.
-    {
-        DBConn conn=new DBConn();
-        String sql_query="SELECT * FROM users_table where email=? and password=?";
-        try {
-            PreparedStatement pstmt=conn.prepareStatement(sql_query);
-            pstmt.setString(1, loginmodel.getEmail());
-            pstmt.setString(2, loginmodel.getPassword());
-            if(pstmt.executeQuery().next())
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        } catch (Exception e) {
-            return false;
+   public boolean loginUser(LoginModel loginmodel) {
+    String sql_query = "SELECT password FROM users WHERE email = ?";
+    
+    try (Connection conn = dbConn.connection_base();
+         PreparedStatement pstmt = conn.prepareStatement(sql_query)) {
+
+        pstmt.setString(1, loginmodel.getEmail());
+        var rs = pstmt.executeQuery();
+
+        if (rs.next()) {
+            String storedHashedPassword = rs.getString("password");
+            String inputHashedPassword = HashUtil.hashPassword(loginmodel.getPassword());
+
+            return storedHashedPassword.equals(inputHashedPassword);
         }
+    } catch (Exception e) {
+        System.out.println("Error in loginUser: " + e.getMessage());
     }
+    
+    return false;
+}
+
 }
