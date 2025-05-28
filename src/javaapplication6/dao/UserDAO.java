@@ -92,5 +92,26 @@ public class UserDAO {
     }
     return false;
 }
+    
+    public boolean EditName(RegisterModel user) {
+        DBConn dbConn = new DBConn();
+        Connection conn = dbConn.connection_base(); 
+
+        String sql_query = "UPDATE users SET name=? WHERE email=?";
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(sql_query);
+            pstmt.setString(1, user.getName());
+            pstmt.setString(2, user.getEmail());
+
+            if (pstmt.executeUpdate() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            System.out.println("SQL Error: " + e.getMessage());
+            return false;
+        }
+    }
 
 }

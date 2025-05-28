@@ -17,7 +17,7 @@ public class DashboardController {
     public DashboardController(DashboardView dashboardView)
     {
         this.dashboardView=dashboardView;
-//        dashboardView.EditNameListener(listener);
+        dashboardView.EditNameListener(new EditNameListener());
         dashboardView.ChangePasswordListener(new ChangePassListener());
         dashboardView.LogoutListener(new LogoutListener());
     }
@@ -28,6 +28,16 @@ public class DashboardController {
 
     public void close() {
         dashboardView.dispose();
+    }
+    
+    class EditNameListener implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+        }
+        
     }
     
     class ChangePassListener implements ActionListener
