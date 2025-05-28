@@ -57,5 +57,40 @@ public class UserDAO {
     
     return false;
 }
+    public boolean checkCurrentPassword(int userId, String currentPass) {
+    try (Connection conn = dbConn.connection_base()) {
+        String sql = "SELECT password FROM users WHERE id = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, userId);
+        var rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            String storedHashedPassword = rs.getString("password");
+            String inputHashedPassword = HashUtil.hashPassword(currentPass);
+
+            return storedHashedPassword.equals(inputHashedPassword);
+        }
+    } catch (Exception e) {
+        System.out.println("Error in checkCurrentPassword: " + e.getMessage());
+    }
+    return false;
+}
+
+    public boolean updatePassword(int userId, String newPass) {
+    try (Connection conn = dbConn.connection_base()) {
+        String sql = "UPDATE users SET password = ? WHERE id = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        
+        String hashedPassword = HashUtil.hashPassword(newPass);
+        stmt.setString(1, hashedPassword);
+        stmt.setInt(2, userId);
+
+        int updated = stmt.executeUpdate();
+        return updated > 0;
+    } catch (Exception e) {
+        System.out.println("Error in updatePassword: " + e.getMessage());
+    }
+    return false;
+}
 
 }
