@@ -58,7 +58,8 @@ public class LoginController {
                     {
                         JOptionPane.showMessageDialog(loginView, "Successfully logged in!");
                         DashboardView dashboardView=new DashboardView();
-                        dashboardView.setVisible(true);  // yo pachi prithivi le controller banayechi controller ko open method called hunchaa.
+                        DashboardController dashboardController=new DashboardController(dashboardView);
+                        dashboardController.open();
                         close();
                     }
                     else
