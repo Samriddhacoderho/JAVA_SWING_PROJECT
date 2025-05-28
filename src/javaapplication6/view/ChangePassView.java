@@ -37,6 +37,9 @@ public class ChangePassView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        newPassBTN = new javax.swing.JButton();
+        confirmPassBTN = new javax.swing.JButton();
+        currentShowBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,6 +55,15 @@ public class ChangePassView extends javax.swing.JFrame {
         jLabel2.setText("Confirm new password:");
 
         jLabel3.setText("Enter new password:");
+
+        newPassBTN.setBackground(new java.awt.Color(0, 153, 153));
+        newPassBTN.setText("Show");
+
+        confirmPassBTN.setBackground(new java.awt.Color(0, 153, 153));
+        confirmPassBTN.setText("Show");
+
+        currentShowBTN.setBackground(new java.awt.Color(0, 153, 153));
+        currentShowBTN.setText("Show");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -75,25 +87,38 @@ public class ChangePassView extends javax.swing.JFrame {
                             .addComponent(jPasswordField2, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
                             .addComponent(jPasswordField1)
                             .addComponent(jPasswordField3, javax.swing.GroupLayout.Alignment.LEADING))))
-                .addGap(134, 134, 134))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(newPassBTN)
+                    .addComponent(confirmPassBTN)
+                    .addComponent(currentShowBTN))
+                .addGap(50, 50, 50))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jLabel5)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel5)
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(currentShowBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(newPassBTN)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(confirmPassBTN))
                 .addGap(27, 27, 27)
                 .addComponent(jButton1)
                 .addContainerGap(108, Short.MAX_VALUE))
@@ -154,6 +179,8 @@ public class ChangePassView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton confirmPassBTN;
+    private javax.swing.JButton currentShowBTN;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -163,6 +190,7 @@ public class ChangePassView extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPasswordField jPasswordField3;
+    private javax.swing.JButton newPassBTN;
     // End of variables declaration//GEN-END:variables
 
 
@@ -170,6 +198,21 @@ public void PasswordChangeConfirm(ActionListener listener)
     {
         this.jButton1.addActionListener(listener);
     }
+
+public void ShowCurrentNav(ActionListener listener)
+{
+    this.currentShowBTN.addActionListener(listener);
+}
+
+public void ShowNewNav(ActionListener listener)
+{
+    this.newPassBTN.addActionListener(listener);
+}
+
+public void ShowConfirmNav(ActionListener listener)
+{
+    this.confirmPassBTN.addActionListener(listener);
+}
 
     /**
      * @return the jPasswordField1

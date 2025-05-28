@@ -54,7 +54,7 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(null);
         jPanel1.add(passPsf);
-        passPsf.setBounds(330, 250, 246, 22);
+        passPsf.setBounds(330, 250, 246, 23);
 
         showBtn.setText("Show");
         showBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -67,7 +67,7 @@ public class LoginView extends javax.swing.JFrame {
 
         jLabel7.setText("Password");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(270, 250, 50, 16);
+        jLabel7.setBounds(270, 250, 58, 17);
 
         signupLbl.setForeground(new java.awt.Color(102, 204, 0));
         signupLbl.setText("Sign Up");
@@ -77,18 +77,18 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
         jPanel1.add(signupLbl);
-        signupLbl.setBounds(610, 350, 42, 16);
+        signupLbl.setBounds(610, 350, 46, 17);
 
         jLabel6.setText("Email");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(290, 200, 30, 16);
+        jLabel6.setBounds(290, 200, 32, 17);
 
         jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabel5.setText("bookmyvenue");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(300, 90, 240, 53);
         jPanel1.add(emailTxt);
-        emailTxt.setBounds(330, 200, 246, 22);
+        emailTxt.setBounds(330, 200, 246, 23);
 
         forgetLbl.setForeground(new java.awt.Color(255, 0, 0));
         forgetLbl.setText("Forget Password");
@@ -98,7 +98,7 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
         jPanel1.add(forgetLbl);
-        forgetLbl.setBounds(550, 320, 87, 16);
+        forgetLbl.setBounds(550, 320, 98, 17);
 
         loginBtn.setBackground(new java.awt.Color(0, 0, 0));
         loginBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,11 +113,11 @@ public class LoginView extends javax.swing.JFrame {
 
         jLabel9.setText("Nepal's no.1 booking platform");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(330, 140, 180, 16);
+        jLabel9.setBounds(330, 140, 180, 17);
 
         jLabel11.setText("Don't have an account?");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(470, 350, 148, 16);
+        jLabel11.setBounds(470, 350, 148, 17);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(50, 50, 750, 400);

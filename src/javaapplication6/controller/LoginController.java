@@ -16,7 +16,6 @@ public class LoginController {
 
     private final LoginView loginView;
     private final UserDAO userDAO=new UserDAO();
-    private Object view;
 
     public LoginController(LoginView loginView) {
         this.loginView = loginView;
