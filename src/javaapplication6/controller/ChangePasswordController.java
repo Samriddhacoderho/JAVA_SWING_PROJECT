@@ -30,10 +30,11 @@ public class ChangePasswordController {
     
     class ChangePassListener implements ActionListener{
         @Override
-        public void actionPerformed(ActionEvent e){
-            
+        public void actionPerformed(ActionEvent e){    
             
             
         }
     }
+    
+    //manoj le changePassView ko show buttons haru ko lai ni action banauna paryo hai...
 }

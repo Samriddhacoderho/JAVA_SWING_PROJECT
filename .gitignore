@@ -1,6 +1,6 @@
 # Build and distribution
- build/
- dist/
+ build
+ dist
 
  # NetBeans user-specific files
  nbproject/private/
