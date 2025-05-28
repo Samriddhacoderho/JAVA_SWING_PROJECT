@@ -60,6 +60,7 @@ public class LoginController {
                         DashboardView dashboardView=new DashboardView();
                         DashboardController dashboardController=new DashboardController(dashboardView);
                         dashboardController.open();
+
                         close();
                     }
                     else
