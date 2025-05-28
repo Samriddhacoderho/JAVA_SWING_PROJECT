@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import javaapplication6.model.LoginModel;
 import javaapplication6.view.ChangePassView;
 import javaapplication6.view.DashboardView;
+import javaapplication6.view.EditNameView;
 import javaapplication6.view.LoginView;
 import javax.swing.JOptionPane;
 
@@ -35,7 +36,10 @@ public class DashboardController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            EditNameView editNameView=new EditNameView();
+            EditNameController editNameController=new EditNameController(editNameView);
+            editNameController.open();
+            close();
         }
         
     }
