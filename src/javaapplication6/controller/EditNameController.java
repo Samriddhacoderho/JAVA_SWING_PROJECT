@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javaapplication6.dao.UserDAO;
+import javaapplication6.model.EditNameModel;
+import javaapplication6.model.LoginModel;
 import javaapplication6.model.RegisterModel;
 import javaapplication6.view.EditNameView;
 
@@ -20,10 +22,12 @@ import javaapplication6.view.EditNameView;
 public class EditNameController {
     final private EditNameView editNameView;
    final private UserDAO userDAO=new UserDAO();   
+    private final LoginModel loginModel;
    
-    public EditNameController(EditNameView view){
+    public EditNameController(EditNameView view,LoginModel loginModel){
         this.editNameView = view;
         this.editNameView.UpdateNameListener(new EditNameListener());
+        this.loginModel=loginModel;
         
     }
     
@@ -39,14 +43,36 @@ public class EditNameController {
         @Override
         public void actionPerformed(ActionEvent e){
             String newName=editNameView.getjTextField1().getText();
-            //manoj le ya bhitra kam garna baki cha
-//            boolean success = userDAO.EditName(user);
-//            if(success){
-//                JOptionPane.showMessageDialog(editNameView, "Name updated Successfully");
-//            }
-//            else{
-//                JOptionPane.showMessageDialog(editNameView,"Failed to update name");
-//            }
+            
+            //validation part
+            String validation=validate(newName);
+            if(!validation.equals("Are you sure you want to update your name?"))
+            {
+                JOptionPane.showMessageDialog(editNameView, validation);
+            }
+            else
+            {
+                JOptionPane.showConfirmDialog(editNameView, validation);
+                try {
+                    EditNameModel editNameModel=new EditNameModel(newName);
+                    String result=userDAO.editName(editNameModel,loginModel);
+                    JOptionPane.showMessageDialog(editNameView, result);
+                    
+                    
+                } catch (Exception error) {
+                    JOptionPane.showMessageDialog(editNameView, error.getMessage());
+                }
+            }
+            
+        }
+        
+        public static String validate(String newName)
+        {
+            if(newName.isEmpty())
+            {
+                return "Name cannot be empty";
+            }
+            return "Are you sure you want to update your name?";
         }
     }
     

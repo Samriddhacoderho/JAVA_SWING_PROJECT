@@ -15,12 +15,15 @@ import javax.swing.JOptionPane;
  */
 public class DashboardController {
     private final DashboardView dashboardView;
-    public DashboardController(DashboardView dashboardView)
+    private final LoginModel loginModel;
+    
+    public DashboardController(DashboardView dashboardView,LoginModel loginModel)
     {
         this.dashboardView=dashboardView;
         dashboardView.EditNameListener(new EditNameListener());
         dashboardView.ChangePasswordListener(new ChangePassListener());
         dashboardView.LogoutListener(new LogoutListener());
+        this.loginModel=loginModel;
     }
     
      public void open() {
@@ -37,7 +40,7 @@ public class DashboardController {
         @Override
         public void actionPerformed(ActionEvent e) {
             EditNameView editNameView=new EditNameView();
-            EditNameController editNameController=new EditNameController(editNameView);
+            EditNameController editNameController=new EditNameController(editNameView,loginModel);
             editNameController.open();
             close();
         }

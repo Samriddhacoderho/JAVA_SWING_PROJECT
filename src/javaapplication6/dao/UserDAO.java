@@ -2,9 +2,11 @@ package javaapplication6.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javaapplication6.database.DBConn;
 import javaapplication6.model.RegisterModel;
 import javaapplication6.HashUtil.HashUtil;
+import javaapplication6.model.EditNameModel;
 import javaapplication6.model.LoginModel;
 
 
@@ -93,25 +95,56 @@ public class UserDAO {
     return false;
 }
     
-    public boolean EditName(RegisterModel user) {
-        DBConn dbConn = new DBConn();
-        Connection conn = dbConn.connection_base(); 
+   public String editName(EditNameModel editNameModel, LoginModel loginModel) {
+    String validationQuery = "SELECT name FROM users WHERE email = ?";
+    String updateQuery = "UPDATE users SET name = ? WHERE email = ?";
 
-        String sql_query = "UPDATE users SET name=? WHERE email=?";
-        try {
-            PreparedStatement pstmt = conn.prepareStatement(sql_query);
-            pstmt.setString(1, user.getName());
-            pstmt.setString(2, user.getEmail());
-
-            if (pstmt.executeUpdate() > 0) {
-                return true;
-            } else {
-                return false;
+    try (Connection conn = dbConn.connection_base()) {
+        String currentName = null;
+        try (PreparedStatement pstmtValidation = conn.prepareStatement(validationQuery)) {
+            pstmtValidation.setString(1, loginModel.getEmail());
+            try (var rs=pstmtValidation.executeQuery()){
+                if(rs.next())
+                {
+                    currentName=rs.getString("name");
+                }
+                else
+                {
+                    System.out.println("User not found");
+                }
             }
-        } catch (Exception e) {
-            System.out.println("SQL Error: " + e.getMessage());
-            return false;
+            catch(SQLException e)
+            {
+                System.out.println(e.getMessage()); 
+            }
         }
+
+        String newName = editNameModel.getNewName();
+        if (currentName.equals(newName)) {
+            return "New name cannot be the same as the current name.";
+        }
+
+        try (PreparedStatement pstmtUpdate = conn.prepareStatement(updateQuery)) {
+            pstmtUpdate.setString(1, newName);
+            pstmtUpdate.setString(2, loginModel.getEmail());
+            int result = pstmtUpdate.executeUpdate();
+            if(result>0)
+            {
+                return "Your name was successfully changed";
+            }
+            else
+            {
+                return "There were some error updating your name.";
+            }
+        }
+
+    } catch (SQLException e) {
+        return e.getMessage();
+    } catch (Exception e) {
+        System.err.println("General error: " + e.getMessage());
+        return e.getMessage();
     }
+}
+
 
 }
