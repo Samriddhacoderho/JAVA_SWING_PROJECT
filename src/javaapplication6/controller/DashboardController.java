@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package javaapplication6.controller;
 
 import java.awt.event.ActionEvent;
@@ -34,36 +30,27 @@ public class DashboardController {
         dashboardView.dispose();
     }
     
-    
-    
     class ChangePassListener implements ActionListener
     {
-
         @Override
         public void actionPerformed(ActionEvent e) {
             ChangePassView changePassView=new ChangePassView();
-            changePassView.setVisible(true);  //pachi manoj le controller banaye pachi controller.open() called huncha...
+            ChangePasswordController changePasswordController=new ChangePasswordController(changePassView);
+            changePasswordController.open();
             close();
         }
-        
     }
     
     class LogoutListener implements ActionListener
     {
-
         @Override
         public void actionPerformed(ActionEvent e) {
-            
-                JOptionPane.showConfirmDialog(dashboardView, "Are you sure you want to log out?");
-                JOptionPane.showMessageDialog(dashboardView, "You have been logged out successfully");
-                LoginView loginView=new LoginView();
-                LoginController loginController=new LoginController(loginView);
-                loginController.open();
-                close();
+            JOptionPane.showConfirmDialog(dashboardView, "Are you sure you want to log out?");
+            JOptionPane.showMessageDialog(dashboardView, "You have been logged out successfully");
+            LoginView loginView=new LoginView();
+            LoginController loginController=new LoginController(loginView);
+            loginController.open();
+            close();
         }
-        
     }
-    
-    
-    
 }
