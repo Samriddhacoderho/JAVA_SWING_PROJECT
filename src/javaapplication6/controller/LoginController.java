@@ -57,9 +57,8 @@ public class LoginController {
                     {
                         JOptionPane.showMessageDialog(loginView, "Successfully logged in!");
                         DashboardView dashboardView=new DashboardView();
-                        DashboardController dashboardController=new DashboardController(dashboardView);
+                        DashboardController dashboardController=new DashboardController(dashboardView,loginModel);
                         dashboardController.open();
-
                         close();
                     }
                     else
