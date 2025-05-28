@@ -4,6 +4,8 @@
  */
 package javaapplication6.view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author suhritsatyal
@@ -144,4 +146,10 @@ public class ChangePassView extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+public void PasswordChangeConfirm(ActionListener listener)
+    {
+        this.jButton1.addActionListener(listener);
+    }
+
 }
