@@ -59,11 +59,11 @@ public class UserDAO {
     
     return false;
 }
-    public boolean checkCurrentPassword(int userId, String currentPass) {
+    public boolean checkCurrentPassword(LoginModel loginModel, String currentPass) {
     try (Connection conn = dbConn.connection_base()) {
-        String sql = "SELECT password FROM users WHERE id = ?";
+        String sql = "SELECT password FROM users WHERE email = ?";
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, userId);
+        stmt.setString(1, loginModel.getEmail());
         var rs = stmt.executeQuery();
 
         if (rs.next()) {
@@ -78,14 +78,14 @@ public class UserDAO {
     return false;
 }
 
-    public boolean updatePassword(int userId, String newPass) {
+    public boolean updatePassword(LoginModel loginModel, String newPass) {
     try (Connection conn = dbConn.connection_base()) {
-        String sql = "UPDATE users SET password = ? WHERE id = ?";
+        String sql = "UPDATE users SET password = ? WHERE email = ?";
         PreparedStatement stmt = conn.prepareStatement(sql);
         
         String hashedPassword = HashUtil.hashPassword(newPass);
         stmt.setString(1, hashedPassword);
-        stmt.setInt(2, userId);
+        stmt.setString(2,loginModel.getEmail() );
 
         int updated = stmt.executeUpdate();
         return updated > 0;
