@@ -7,34 +7,106 @@ package javaapplication6.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javaapplication6.view.ChangePassView;
-
+import javax.swing.JOptionPane;
+import javaapplication6.dao.UserDAO;
+import javaapplication6.model.LoginModel;
 
 /**
  *
- * @author Dell
+ * @author manoj
  */
 public class ChangePasswordController {
-    private final ChangePassView changePass;
+    private final ChangePassView changePassView;
+    private final UserDAO userDao = new UserDAO();
+    private final LoginModel loginModel;
     
-    public ChangePasswordController(ChangePassView changePass){
-        this.changePass = changePass;
-        changePass.PasswordChangeConfirm(new ChangePassListener());
+   
+        
+    
+    public ChangePasswordController(ChangePassView changePassView,LoginModel loginModel){
+        this.changePassView = changePassView;
+        this.changePassView.PasswordChangeConfirm(new ChangePassListener());
+        this.changePassView.ShowCurrentNav(new ShowCurrentPassword());
+        this.changePassView.ShowNewNav(new ShowNewPassword());
+        this.changePassView.ShowConfirmNav(new ShowConfirmPassword());
+        this.loginModel= loginModel;
         
     }
     public void open(){
-        this.changePass.setVisible(true);
+        this.changePassView.setVisible(true);
     }
     public void close(){
-        this.changePass.dispose();
+        this.changePassView.dispose();
     }
-    
     class ChangePassListener implements ActionListener{
         @Override
-        public void actionPerformed(ActionEvent e){    
-            
-            
+        public void actionPerformed(ActionEvent e){
+//            
+        String currentPass = changePassView.getjPasswordField3().getText();
+        String newPass = changePassView.getjPasswordField1().getText();
+        String confirmPass = changePassView.getjPasswordField2().getText();
+        
+        if(currentPass.isEmpty()||newPass.isEmpty()||confirmPass.isEmpty()){
+            JOptionPane.showMessageDialog(changePassView,"Please fill in all fields");
+            return;
+        }
+        if(!newPass.equals(confirmPass)){
+            JOptionPane.showMessageDialog(changePassView, "New Password and confirm Password do not match");
+        }
+        boolean isCorrect = userDao.checkCurrentPassword(loginModel,currentPass);
+        if(!isCorrect){
+            JOptionPane.showMessageDialog(changePassView,"Current Password is incorrect");
+            return;
+        }
+        boolean updated = userDao.updatePassword(loginModel, newPass);
+        if(updated){
+            JOptionPane.showMessageDialog(changePassView, "Password successfully changed");
+            changePassView.dispose();
+        }else{
+            JOptionPane.showMessageDialog(changePassView, "Failed to Update password , please try again!");
+        }
         }
     }
     
-    //manoj le changePassView ko show buttons haru ko lai ni action banauna paryo hai...
+    class ShowCurrentPassword implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (changePassView.getCurrentShowBTN().getText().equals("Show")) {
+                changePassView.getCurrentShowBTN().setText("Hide");
+                changePassView.getjPasswordField3().setEchoChar((char) 0);
+            } else {
+                changePassView.getCurrentShowBTN().setText("Show");
+                changePassView.getjPasswordField3().setEchoChar('*');
+            }
+        }
+    }
+
+    class ShowNewPassword implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (changePassView.getNewPassBTN().getText().equals("Show")) {
+                changePassView.getNewPassBTN().setText("Hide");
+                changePassView.getjPasswordField1().setEchoChar((char) 0);
+            } else {
+                changePassView.getNewPassBTN().setText("Show");
+                changePassView.getjPasswordField1().setEchoChar('*');
+            }
+        }
+    }
+
+    class ShowConfirmPassword implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (changePassView.getConfirmPassBTN().getText().equals("Show")) {
+                changePassView.getConfirmPassBTN().setText("Hide");
+                changePassView.getjPasswordField2().setEchoChar((char) 0);
+            } else {
+                changePassView.getConfirmPassBTN().setText("Show");
+                changePassView.getjPasswordField2().setEchoChar('*');
+            }
+        }
+    }
+    
+    
+   
 }
