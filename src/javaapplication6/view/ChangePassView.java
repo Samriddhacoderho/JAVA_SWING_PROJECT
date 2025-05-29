@@ -255,6 +255,15 @@ public void ShowConfirmNav(ActionListener listener)
     public void setjPasswordField3(javax.swing.JPasswordField jPasswordField3) {
         this.jPasswordField3 = jPasswordField3;
     }
+    public javax.swing.JButton getCurrentShowBTN(){
+        return currentShowBTN;
+    }
+    public javax.swing.JButton getNewPassBTN(){
+        return newPassBTN;
+    }
+    public javax.swing.JButton getConfirmPassBTN(){
+        return confirmPassBTN;
+    }
 
 
 

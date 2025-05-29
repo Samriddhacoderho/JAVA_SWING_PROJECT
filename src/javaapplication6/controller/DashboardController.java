@@ -52,7 +52,7 @@ public class DashboardController {
         @Override
         public void actionPerformed(ActionEvent e) {
             ChangePassView changePassView=new ChangePassView();
-            ChangePasswordController changePasswordController=new ChangePasswordController(changePassView);
+            ChangePasswordController changePasswordController=new ChangePasswordController(changePassView,loginModel);
             changePasswordController.open();
             close();
         }
