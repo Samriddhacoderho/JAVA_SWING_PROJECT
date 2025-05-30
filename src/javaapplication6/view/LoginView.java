@@ -68,11 +68,6 @@ public class LoginView extends javax.swing.JFrame {
 
         signupLbl.setForeground(new java.awt.Color(102, 204, 0));
         signupLbl.setText("Sign Up");
-        signupLbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                signupLblMouseClicked(evt);
-            }
-        });
         jPanel1.add(signupLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, -1, -1));
 
         jLabel6.setText("Email");
@@ -95,11 +90,8 @@ public class LoginView extends javax.swing.JFrame {
         loginBtn.setBackground(new java.awt.Color(0, 0, 0));
         loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("Login");
-        loginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                loginBtnMouseClicked(evt);
-            }
-        });
+        loginBtn.setBorderPainted(false);
+        loginBtn.setOpaque(true);
         jPanel1.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 250, -1));
 
         jLabel9.setText("Nepal's no.1 booking platform");
@@ -113,17 +105,6 @@ public class LoginView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void signupLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signupLblMouseClicked
-        // TODO add your handling code here:
-//        new RegistrationView().setVisible(true);
-//        dispose();
-        
-    }//GEN-LAST:event_signupLblMouseClicked
-
-    private void loginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loginBtnMouseClicked
 
     private void showBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showBtnMouseClicked
         // TODO add your handling code here:
@@ -207,7 +188,7 @@ public class LoginView extends javax.swing.JFrame {
     
     public void SignupActionListener(MouseListener listener)
     {
-        this.addMouseListener(listener);
+        this.signupLbl.addMouseListener(listener);
     }
 
     /**
