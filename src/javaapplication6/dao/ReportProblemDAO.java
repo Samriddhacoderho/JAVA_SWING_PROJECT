@@ -21,13 +21,12 @@ public class ReportProblemDAO {
     }
     public boolean addReport(ReportProblemModel report){
          
-        String query = "insert into problems(email,subject,description,status) values(?,?,?,?,?)";
+        String query = "insert into problems(email,subject,description) values(?,?,?,?)";
         try (Connection conn = dbConn.connection_base();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setString(1,report.getEmail() );
             stmt.setString(2, report.getSubject() );
             stmt.setString(3, report.getDescription());
-            stmt.setString(4, report.getStatus());
             return stmt.executeUpdate() > 0;
             
         } catch (Exception e) {
