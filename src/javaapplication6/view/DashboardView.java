@@ -68,6 +68,11 @@ public class DashboardView extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(255, 0, 0));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton4.setText("Log Out");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -166,6 +171,10 @@ public class DashboardView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reportBtnActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -223,6 +232,11 @@ public class DashboardView extends javax.swing.JFrame {
     }
 //    Action listener for logout button
     public void LogoutListener (ActionListener listener){
+        this.reportBtn.addActionListener(listener);
+    }
+    
+//    Action listener for Report button
+    public void ReportListener (ActionListener listener){
         this.reportBtn.addActionListener(listener);
     }
 }
