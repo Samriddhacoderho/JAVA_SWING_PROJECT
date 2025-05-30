@@ -104,9 +104,9 @@ public class DashboardView extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
                 .addComponent(reportBtn)
-                .addGap(36, 36, 36))
+                .addGap(47, 47, 47))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(310, Short.MAX_VALUE)
@@ -232,7 +232,7 @@ public class DashboardView extends javax.swing.JFrame {
     }
 //    Action listener for logout button
     public void LogoutListener (ActionListener listener){
-        this.reportBtn.addActionListener(listener);
+        this.jButton4.addActionListener(listener);
     }
     
 //    Action listener for Report button
