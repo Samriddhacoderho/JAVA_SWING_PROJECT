@@ -52,7 +52,8 @@ public class EditNameController {
             }
             else
             {
-                JOptionPane.showConfirmDialog(editNameView, validation);
+                if(JOptionPane.showConfirmDialog(editNameView, validation)==0)
+                {
                 try {
                     EditNameModel editNameModel=new EditNameModel(newName);
                     String result=userDAO.editName(editNameModel,loginModel);
@@ -61,6 +62,7 @@ public class EditNameController {
                     
                 } catch (Exception error) {
                     JOptionPane.showMessageDialog(editNameView, error.getMessage());
+                }
                 }
             }
             
