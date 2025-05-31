@@ -123,7 +123,6 @@ public class FAQView extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("1)Where are we?\nKathmandu dilli bazar.\n\n2)What is the capacity of the venue?\nMax upto 20,000.\n\n3)What is the price of The venue?\nAccording to the guest.\n\n4)What other services do you have?\nWe have camereman service and other. ");
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 390, 190));
@@ -222,6 +221,9 @@ public class FAQView extends javax.swing.JFrame {
        public void ContactusActionListener(ActionListener listener)
     {
         this.contactus.addActionListener(listener);
-    }         
+    }
+       public void setFAQText(String text) {
+        jTextArea1.setText(text);
+    }
                 
 }
