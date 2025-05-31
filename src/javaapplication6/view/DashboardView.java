@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javaapplication6.controller.FAQController;
 
 /**
  *
@@ -193,6 +194,9 @@ public class DashboardView extends javax.swing.JFrame {
 
     private void viewFAQBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewFAQBTNActionPerformed
         // TODO add your handling code here:
+        FAQView view = new FAQView();
+        FAQController controller = new FAQController(view);
+        controller.showFAQ();
     }//GEN-LAST:event_viewFAQBTNActionPerformed
 
     /**
