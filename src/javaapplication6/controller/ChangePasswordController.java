@@ -46,6 +46,11 @@ public class ChangePasswordController {
         String newPass = changePassView.getjPasswordField1().getText();
         String confirmPass = changePassView.getjPasswordField2().getText();
         
+        if (currentPass.equals(newPass)) {
+            JOptionPane.showMessageDialog(changePassView, "New password cannot be the same as the current password");
+            return;
+        }
+        
         if(currentPass.isEmpty()||newPass.isEmpty()||confirmPass.isEmpty()){
             JOptionPane.showMessageDialog(changePassView,"Please fill in all fields");
             return;

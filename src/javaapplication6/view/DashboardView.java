@@ -184,13 +184,7 @@ public class DashboardView extends javax.swing.JFrame {
     private void reportBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportBtnActionPerformed
         // TODO add your handling code here:
         ReportView reportView = new ReportView();
-        jDesktopPane1.add(reportView);
         reportView.setVisible(true);
-        try {
-            reportView.setMaximum(true);
-        } catch (PropertyVetoException ex) {
-            Logger.getLogger(DashboardView.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }//GEN-LAST:event_reportBtnActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
