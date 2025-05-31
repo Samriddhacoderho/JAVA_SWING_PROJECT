@@ -219,7 +219,6 @@
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="1)Where are we?&#xa;Kathmandu dilli bazar.&#xa;&#xa;2)What is the capacity of the venue?&#xa;Max upto 20,000.&#xa;&#xa;3)What is the price of The venue?&#xa;According to the guest.&#xa;&#xa;4)What other services do you have?&#xa;We have camereman service and other. "/>
           </Properties>
         </Component>
       </SubComponents>
