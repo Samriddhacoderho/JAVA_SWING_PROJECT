@@ -38,6 +38,7 @@ public class ReportView extends javax.swing.JFrame {
         cancelBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(363, 353));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -78,7 +79,7 @@ public class ReportView extends javax.swing.JFrame {
         cancelBtn.setBounds(200, 240, 78, 23);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(40, 30, 290, 290);
+        jPanel1.setBounds(20, 20, 290, 290);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
