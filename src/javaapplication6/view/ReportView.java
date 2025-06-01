@@ -38,7 +38,7 @@ public class ReportView extends javax.swing.JFrame {
         cancelBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(363, 353));
+        setPreferredSize(new java.awt.Dimension(600, 397));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -49,11 +49,11 @@ public class ReportView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(issuesTxt);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 130, 260, 90);
+        jScrollPane1.setBounds(190, 120, 260, 90);
 
         jLabel1.setText("Report a problem:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(20, 20, 120, 17);
+        jLabel1.setBounds(260, 30, 120, 17);
 
         reportList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Account Inquiry", "Report a bug", "Change account information", "Report a potential violation" }));
         reportList.setSelectedIndex(2);
@@ -64,24 +64,25 @@ public class ReportView extends javax.swing.JFrame {
             }
         });
         jPanel1.add(reportList);
-        reportList.setBounds(20, 50, 250, 23);
+        reportList.setBounds(200, 50, 250, 23);
 
         jLabel2.setText("Other Issues:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 100, 130, 17);
+        jLabel2.setBounds(250, 90, 130, 17);
 
         reportBtn.setText("Report");
         jPanel1.add(reportBtn);
-        reportBtn.setBounds(110, 240, 72, 23);
+        reportBtn.setBounds(210, 240, 72, 23);
 
         cancelBtn.setText("Cancel");
         jPanel1.add(cancelBtn);
-        cancelBtn.setBounds(200, 240, 78, 23);
+        cancelBtn.setBounds(350, 240, 78, 23);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(20, 20, 290, 290);
+        jPanel1.setBounds(20, 20, 570, 370);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void reportListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportListActionPerformed

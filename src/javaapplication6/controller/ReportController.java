@@ -6,6 +6,7 @@ package javaapplication6.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javaapplication6.dao.ReportProblemDAO;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.ReportProblemModel;
 import javaapplication6.view.ReportView;
@@ -48,11 +49,19 @@ this.reportView.requestFocus();
             String subject=(String) reportView.getReportList().getSelectedItem();
             String description=reportView.getIssuesTxt().getText();
             ReportProblemModel reportprobModel=new ReportProblemModel(email, subject, description);
-            
+            ReportProblemDAO reportProblemDAO=new ReportProblemDAO();
+            boolean result=reportProblemDAO.addReport(reportprobModel);
+            if(result)
+            {
+                
+            }
+            else
+            {
+                System.out.println("There were some error caused!");
+            }
         }
         
     }
-    
-    
-    
 }
+
+

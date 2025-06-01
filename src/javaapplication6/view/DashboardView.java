@@ -85,11 +85,6 @@ public class DashboardView extends javax.swing.JFrame {
         viewFAQBTN.setText("View FAQs");
         viewFAQBTN.setBorderPainted(false);
         viewFAQBTN.setOpaque(true);
-        viewFAQBTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewFAQBTNActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -191,13 +186,6 @@ public class DashboardView extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void viewFAQBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewFAQBTNActionPerformed
-        // TODO add your handling code here:
-        FAQView view = new FAQView();
-        FAQController controller = new FAQController(view);
-        controller.showFAQ();
-    }//GEN-LAST:event_viewFAQBTNActionPerformed
 
     /**
      * @param args the command line arguments
