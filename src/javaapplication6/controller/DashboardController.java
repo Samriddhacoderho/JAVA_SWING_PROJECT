@@ -68,7 +68,9 @@ public class DashboardController {
         @Override
         public void actionPerformed(ActionEvent e) {
             FAQView faqView=new FAQView();
-            faqView.setVisible(true);
+            FAQController faqController=new FAQController(faqView);
+            faqController.open();
+            close();
         }
         
     }

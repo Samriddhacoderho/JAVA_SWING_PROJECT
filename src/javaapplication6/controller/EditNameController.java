@@ -27,6 +27,7 @@ public class EditNameController {
     public EditNameController(EditNameView view,LoginModel loginModel){
         this.editNameView = view;
         this.editNameView.UpdateNameListener(new EditNameListener());
+        this.editNameView.backListener(new GoBackListener());
         this.loginModel=loginModel;
         
     }
@@ -37,6 +38,19 @@ public class EditNameController {
 
     public void close() {
         editNameView.dispose();
+    }
+    
+    class GoBackListener implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            DashboardView dashboardView=new DashboardView();
+            DashboardController dashboardController=new DashboardController(dashboardView, loginModel);
+            dashboardController.open();
+            close();
+        }
+        
     }
     
     class EditNameListener implements ActionListener{
@@ -58,7 +72,13 @@ public class EditNameController {
                     EditNameModel editNameModel=new EditNameModel(newName);
                     String result=userDAO.editName(editNameModel,loginModel);
                     JOptionPane.showMessageDialog(editNameView, result);
-                    
+                    if(result.equals("Your name was successfully changed"))
+                    {
+                        DashboardView dashboardView=new DashboardView();
+                        DashboardController dashboardController=new DashboardController(dashboardView, loginModel);
+                        dashboardController.open();
+                        close();
+                    }
                     
                 } catch (Exception error) {
                     JOptionPane.showMessageDialog(editNameView, error.getMessage());
