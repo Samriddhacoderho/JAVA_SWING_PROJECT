@@ -10,6 +10,7 @@ import javaapplication6.view.ChangePassView;
 import javax.swing.JOptionPane;
 import javaapplication6.dao.UserDAO;
 import javaapplication6.model.LoginModel;
+import javaapplication6.view.DashboardView;
 
 /**
  *
@@ -29,6 +30,7 @@ public class ChangePasswordController {
         this.changePassView.ShowCurrentNav(new ShowCurrentPassword());
         this.changePassView.ShowNewNav(new ShowNewPassword());
         this.changePassView.ShowConfirmNav(new ShowConfirmPassword());
+        this.changePassView.backListener(new GoBackListener());
         this.loginModel= loginModel;
         
     }
@@ -67,7 +69,10 @@ public class ChangePasswordController {
         boolean updated = userDao.updatePassword(loginModel, newPass);
         if(updated){
             JOptionPane.showMessageDialog(changePassView, "Password successfully changed");
-            changePassView.dispose();
+            DashboardView dashboardView=new DashboardView();
+            DashboardController dashboardController=new DashboardController(dashboardView, loginModel);
+            dashboardController.open();
+            close();
         }else{
             JOptionPane.showMessageDialog(changePassView, "Failed to Update password , please try again!");
         }
@@ -111,6 +116,20 @@ public class ChangePasswordController {
                 changePassView.getjPasswordField2().setEchoChar('*');
             }
         }
+    }
+    
+    class GoBackListener implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            DashboardView dashboardView=new DashboardView();
+            DashboardController dashboardController=new DashboardController(dashboardView, loginModel);
+            dashboardController.open();
+            close();
+            
+        }
+        
     }
     
     

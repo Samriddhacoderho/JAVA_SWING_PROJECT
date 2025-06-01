@@ -16,6 +16,15 @@ public class FAQController {
         this.faqView = faqView;
         loadFAQContent();
     }
+    
+    public void open()
+    {
+        this.faqView.setVisible(true);
+    }
+    public void close()
+    {
+        this.faqView.dispose();
+    }
 
     private void loadFAQContent() {
         String faqText = """
@@ -35,7 +44,5 @@ public class FAQController {
         faqView.setFAQText(faqText);
     }
 
-    public void showFAQ() {
-        faqView.setVisible(true);
-    }
+    
 }
