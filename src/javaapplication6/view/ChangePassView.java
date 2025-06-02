@@ -40,6 +40,7 @@ public class ChangePassView extends javax.swing.JFrame {
         newPassBTN = new javax.swing.JButton();
         confirmPassBTN = new javax.swing.JButton();
         currentShowBTN = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +65,10 @@ public class ChangePassView extends javax.swing.JFrame {
 
         currentShowBTN.setBackground(new java.awt.Color(0, 153, 153));
         currentShowBTN.setText("Show");
+
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Back");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -91,8 +96,9 @@ public class ChangePassView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(newPassBTN)
                     .addComponent(confirmPassBTN)
-                    .addComponent(currentShowBTN))
-                .addGap(50, 50, 50))
+                    .addComponent(currentShowBTN)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,7 +126,9 @@ public class ChangePassView extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(confirmPassBTN))
                 .addGap(27, 27, 27)
-                .addComponent(jButton1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
 
@@ -182,6 +190,7 @@ public class ChangePassView extends javax.swing.JFrame {
     private javax.swing.JButton confirmPassBTN;
     private javax.swing.JButton currentShowBTN;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -212,6 +221,11 @@ public void ShowNewNav(ActionListener listener)
 public void ShowConfirmNav(ActionListener listener)
 {
     this.confirmPassBTN.addActionListener(listener);
+}
+
+public void backListener(ActionListener listener)
+{
+    this.jButton2.addActionListener(listener);
 }
 
     /**

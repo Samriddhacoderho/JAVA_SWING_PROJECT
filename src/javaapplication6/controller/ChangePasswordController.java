@@ -10,6 +10,7 @@ import javaapplication6.view.ChangePassView;
 import javax.swing.JOptionPane;
 import javaapplication6.dao.UserDAO;
 import javaapplication6.model.LoginModel;
+import javaapplication6.view.DashboardView;
 
 /**
  *
@@ -29,6 +30,7 @@ public class ChangePasswordController {
         this.changePassView.ShowCurrentNav(new ShowCurrentPassword());
         this.changePassView.ShowNewNav(new ShowNewPassword());
         this.changePassView.ShowConfirmNav(new ShowConfirmPassword());
+        this.changePassView.backListener(new GoBackListener());
         this.loginModel= loginModel;
         
     }
@@ -46,13 +48,21 @@ public class ChangePasswordController {
         String newPass = changePassView.getjPasswordField1().getText();
         String confirmPass = changePassView.getjPasswordField2().getText();
         
+        if (currentPass.equals(newPass)) {
+            JOptionPane.showMessageDialog(changePassView, "New password cannot be the same as the current password");
+            return;
+        }
+        
         if(currentPass.isEmpty()||newPass.isEmpty()||confirmPass.isEmpty()){
             JOptionPane.showMessageDialog(changePassView,"Please fill in all fields");
             return;
         }
         if(!newPass.equals(confirmPass)){
             JOptionPane.showMessageDialog(changePassView, "New Password and confirm Password do not match");
-           
+
+
+            return;
+
         }
         boolean isCorrect = userDao.checkCurrentPassword(loginModel,currentPass);
         if(!isCorrect){
@@ -62,7 +72,10 @@ public class ChangePasswordController {
         boolean updated = userDao.updatePassword(loginModel, newPass);
         if(updated){
             JOptionPane.showMessageDialog(changePassView, "Password successfully changed");
-            changePassView.dispose();
+            DashboardView dashboardView=new DashboardView();
+            DashboardController dashboardController=new DashboardController(dashboardView, loginModel);
+            dashboardController.open();
+            close();
         }else{
             JOptionPane.showMessageDialog(changePassView, "Failed to Update password , please try again!");
         }
@@ -106,6 +119,20 @@ public class ChangePasswordController {
                 changePassView.getjPasswordField2().setEchoChar('*');
             }
         }
+    }
+    
+    class GoBackListener implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            DashboardView dashboardView=new DashboardView();
+            DashboardController dashboardController=new DashboardController(dashboardView, loginModel);
+            dashboardController.open();
+            close();
+            
+        }
+        
     }
     
     

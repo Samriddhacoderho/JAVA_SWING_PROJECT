@@ -17,7 +17,6 @@ public class ReportProblemModel {
     private String description;
     private String status;
 
-    public ReportProblemModel() {}
 
     public ReportProblemModel( String email, String subject, String description) {
         
@@ -25,7 +24,6 @@ public class ReportProblemModel {
         this.email = email;
         this.subject = subject;
         this.description = description;
-        this.status = "Pending";
     }
 
     // Getters and Setters
@@ -63,14 +61,5 @@ public class ReportProblemModel {
     public void setDescription(String description) 
     { 
         this.description = description;
-    }
-
-    public String getStatus() 
-    {
-        return status;
-    }
-    public void setStatus(String status)
-    { 
-        this.status = status; 
     }
 }
