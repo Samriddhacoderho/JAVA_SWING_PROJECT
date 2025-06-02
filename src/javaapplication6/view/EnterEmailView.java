@@ -11,12 +11,12 @@ import java.awt.event.MouseListener;
  *
  * @author ishan-college
  */
-public class ForgotPassView extends javax.swing.JFrame {
+public class EnterEmailView extends javax.swing.JFrame {
 
     /**
      * Creates new form ForgotPassView
      */
-    public ForgotPassView() {
+    public EnterEmailView() {
         initComponents();
     }
 
@@ -36,9 +36,6 @@ public class ForgotPassView extends javax.swing.JFrame {
         emailTxt = new javax.swing.JTextField();
         otpBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        otpTxt = new javax.swing.JTextField();
-        verifyBtn = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,33 +50,22 @@ public class ForgotPassView extends javax.swing.JFrame {
         jPanel6.add(loginLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 50, -1));
 
         jLabel2.setText("Email");
-        jPanel6.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 50, -1));
+        jPanel6.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 50, 20));
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel1.setText("Forgot Password?");
-        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 240, 53));
-        jPanel6.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 246, -1));
+        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 240, 53));
+        jPanel6.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 246, -1));
 
         otpBtn.setBackground(new java.awt.Color(0, 0, 0));
         otpBtn.setForeground(new java.awt.Color(255, 255, 255));
         otpBtn.setText("Send OTP");
         otpBtn.setBorderPainted(false);
         otpBtn.setOpaque(true);
-        jPanel6.add(otpBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 90, -1));
+        jPanel6.add(otpBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 250, -1));
 
-        jLabel3.setText("Enter your email to send OTP and Verify");
-        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 240, -1));
-        jPanel6.add(otpTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 246, -1));
-
-        verifyBtn.setBackground(new java.awt.Color(0, 0, 0));
-        verifyBtn.setForeground(new java.awt.Color(255, 255, 255));
-        verifyBtn.setText("Verify");
-        verifyBtn.setBorderPainted(false);
-        verifyBtn.setOpaque(true);
-        jPanel6.add(verifyBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 90, -1));
-
-        jLabel4.setText("Enter OTP");
-        jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 70, -1));
+        jLabel3.setText("Enter your email to send OTP");
+        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 240, -1));
 
         jLabel5.setText("Remember password?");
         jPanel6.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 148, -1));
@@ -108,20 +94,23 @@ public class ForgotPassView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ForgotPassView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EnterEmailView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ForgotPassView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EnterEmailView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ForgotPassView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EnterEmailView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ForgotPassView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EnterEmailView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ForgotPassView().setVisible(true);
+                new EnterEmailView().setVisible(true);
             }
         });
     }
@@ -131,23 +120,16 @@ public class ForgotPassView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel loginLbl;
     private javax.swing.JButton otpBtn;
-    private javax.swing.JTextField otpTxt;
-    private javax.swing.JButton verifyBtn;
     // End of variables declaration//GEN-END:variables
     
     
     public void OTPActionListener(ActionListener listener)
     {
         this.otpBtn.addActionListener(listener);
-    }
-    public void VerifyActionListener(ActionListener listener)
-    {
-        this.verifyBtn.addActionListener(listener);
     }
     public void ForgetActionListener(MouseListener listener)
     {
@@ -166,20 +148,6 @@ public class ForgotPassView extends javax.swing.JFrame {
      */
     public void setEmailTxt(javax.swing.JTextField emailTxt) {
         this.emailTxt = emailTxt;
-    }
-
-    /**
-     * @return the otpTxt
-     */
-    public javax.swing.JTextField getOtpTxt() {
-        return otpTxt;
-    }
-
-    /**
-     * @param otpTxt the otpTxt to set
-     */
-    public void setOtpTxt(javax.swing.JTextField otpTxt) {
-        this.otpTxt = otpTxt;
     }
     
 }
