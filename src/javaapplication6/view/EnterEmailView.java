@@ -131,7 +131,8 @@ public class EnterEmailView extends javax.swing.JFrame {
     {
         this.otpBtn.addActionListener(listener);
     }
-    public void ForgetActionListener(MouseListener listener)
+    
+    public void LoginActionListener(MouseListener listener)
     {
         this.loginLbl.addMouseListener(listener);
     }
