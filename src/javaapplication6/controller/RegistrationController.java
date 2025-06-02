@@ -93,7 +93,8 @@ public class RegistrationController {
             }
             else
             {
-                JOptionPane.showConfirmDialog(registrationView, "Are you sure you want to register the user?");
+                if(JOptionPane.showConfirmDialog(registrationView, "Are you sure you want to register the user?")==0)
+                {
                 try {
                     RegisterModel registerModel=new RegisterModel(name, email, password, confirmPassword);
                     boolean result=userDAO.registerUser(registerModel);
@@ -111,6 +112,7 @@ public class RegistrationController {
                     }
                 } catch (Exception error) {
                     System.out.println(error.getMessage());
+                }
                 }
             }
             
