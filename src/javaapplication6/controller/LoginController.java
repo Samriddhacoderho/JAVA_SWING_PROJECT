@@ -8,6 +8,7 @@ import javaapplication6.dao.UserDAO;
 import javax.swing.JOptionPane;
 import javaapplication6.model.LoginModel;
 import javaapplication6.view.DashboardView;
+import javaapplication6.view.EnterEmailView;
 import javaapplication6.view.HomeView;
 import javaapplication6.view.LoginView;
 import javaapplication6.view.RegistrationView;
@@ -22,6 +23,7 @@ public class LoginController {
         loginView.LoginActionListener(new LoginUser());
         loginView.ShowActionListener(new ShowPassword());
         loginView.SignupActionListener(new SignupListener());
+        loginView.ForgetActionListener(new ForgetActionListener());
     }
 
     public void open() {
@@ -108,6 +110,34 @@ public class LoginController {
              RegistrationView registrationView=new RegistrationView();
             RegistrationController registrationController=new RegistrationController(registrationView);
             registrationController.open();
+            close();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+        
+    }
+    class ForgetActionListener implements MouseListener
+    {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            EnterEmailView enterEmailView=new EnterEmailView();
+            EnterEmailController enterEmailController=new EnterEmailController(enterEmailView);
+            enterEmailController.open();
             close();
         }
 
