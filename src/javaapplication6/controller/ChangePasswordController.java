@@ -52,6 +52,7 @@ public class ChangePasswordController {
         }
         if(!newPass.equals(confirmPass)){
             JOptionPane.showMessageDialog(changePassView, "New Password and confirm Password do not match");
+           
         }
         boolean isCorrect = userDao.checkCurrentPassword(loginModel,currentPass);
         if(!isCorrect){
