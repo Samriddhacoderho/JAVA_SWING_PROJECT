@@ -6,7 +6,9 @@ import javaapplication6.model.LoginModel;
 import javaapplication6.view.ChangePassView;
 import javaapplication6.view.DashboardView;
 import javaapplication6.view.EditNameView;
+import javaapplication6.view.FAQView;
 import javaapplication6.view.LoginView;
+import javaapplication6.view.ReportView;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,6 +25,8 @@ public class DashboardController {
         dashboardView.EditNameListener(new EditNameListener());
         dashboardView.ChangePasswordListener(new ChangePassListener());
         dashboardView.LogoutListener(new LogoutListener());
+        dashboardView.ReportListener(new ReportProblemListener());
+        dashboardView.ViewFAQListener(new ViewFAQListener());
         this.loginModel=loginModel;
     }
     
@@ -58,16 +62,43 @@ public class DashboardController {
         }
     }
     
+    class ViewFAQListener implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            FAQView faqView=new FAQView();
+            FAQController faqController=new FAQController(faqView);
+            faqController.open();
+            close();
+        }
+        
+    }
+    
+    class ReportProblemListener implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            ReportView reportView=new ReportView();
+            ReportController reportController=new ReportController(reportView,loginModel);
+            reportController.open();
+        }
+        
+    }
+    
     class LogoutListener implements ActionListener
     {
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showConfirmDialog(dashboardView, "Are you sure you want to log out?");
+            if(JOptionPane.showConfirmDialog(dashboardView, "Are you sure you want to log out?")==0)
+            {
             JOptionPane.showMessageDialog(dashboardView, "You have been logged out successfully");
             LoginView loginView=new LoginView();
             LoginController loginController=new LoginController(loginView);
             loginController.open();
             close();
-        }
+            }
+            }
     }
 }

@@ -34,9 +34,9 @@ public class EditNameView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(732, 569));
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setLayout(null);
@@ -58,7 +58,11 @@ public class EditNameView extends javax.swing.JFrame {
 
         jButton1.setText("Update Name");
         jPanel1.add(jButton1);
-        jButton1.setBounds(350, 230, 120, 23);
+        jButton1.setBounds(350, 240, 120, 23);
+
+        jButton2.setText("Go Back");
+        jPanel1.add(jButton2);
+        jButton2.setBounds(350, 290, 120, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,6 +123,7 @@ public class EditNameView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
@@ -129,6 +134,11 @@ public class EditNameView extends javax.swing.JFrame {
 public void UpdateNameListener(ActionListener listener)
 {
     this.jButton1.addActionListener(listener);
+}
+
+public void backListener(ActionListener listener)
+{
+    this.jButton2.addActionListener(listener);
 }
 
     /**

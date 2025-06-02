@@ -49,12 +49,11 @@ public class LoginView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(732, 569));
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setLayout(null);
-        jPanel1.add(passPsf);
-        passPsf.setBounds(330, 250, 246, 23);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 246, -1));
 
         showBtn.setText("Show");
         showBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -62,33 +61,22 @@ public class LoginView extends javax.swing.JFrame {
                 showBtnMouseClicked(evt);
             }
         });
-        jPanel1.add(showBtn);
-        showBtn.setBounds(590, 250, 70, 23);
+        jPanel1.add(showBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 70, -1));
 
         jLabel7.setText("Password");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(270, 250, 58, 17);
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
 
         signupLbl.setForeground(new java.awt.Color(102, 204, 0));
         signupLbl.setText("Sign Up");
-        signupLbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                signupLblMouseClicked(evt);
-            }
-        });
-        jPanel1.add(signupLbl);
-        signupLbl.setBounds(610, 350, 46, 17);
+        jPanel1.add(signupLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, -1, -1));
 
         jLabel6.setText("Email");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(290, 200, 32, 17);
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabel5.setText("bookmyvenue");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(300, 90, 240, 53);
-        jPanel1.add(emailTxt);
-        emailTxt.setBounds(330, 200, 246, 23);
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 240, 53));
+        jPanel1.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 246, -1));
 
         forgetLbl.setForeground(new java.awt.Color(255, 0, 0));
         forgetLbl.setText("Forget Password");
@@ -97,45 +85,26 @@ public class LoginView extends javax.swing.JFrame {
                 forgetLblMouseClicked(evt);
             }
         });
-        jPanel1.add(forgetLbl);
-        forgetLbl.setBounds(550, 320, 98, 17);
+        jPanel1.add(forgetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, -1, -1));
 
         loginBtn.setBackground(new java.awt.Color(0, 0, 0));
         loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("Login");
-        loginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                loginBtnMouseClicked(evt);
-            }
-        });
-        jPanel1.add(loginBtn);
-        loginBtn.setBounds(330, 290, 246, 23);
+        loginBtn.setBorderPainted(false);
+        loginBtn.setOpaque(true);
+        jPanel1.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 250, -1));
 
         jLabel9.setText("Nepal's no.1 booking platform");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(330, 140, 180, 17);
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 220, -1));
 
         jLabel11.setText("Don't have an account?");
-        jPanel1.add(jLabel11);
-        jLabel11.setBounds(470, 350, 148, 17);
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 148, -1));
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(50, 50, 750, 400);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 530, 380));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void signupLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signupLblMouseClicked
-        // TODO add your handling code here:
-//        new RegistrationView().setVisible(true);
-//        dispose();
-        
-    }//GEN-LAST:event_signupLblMouseClicked
-
-    private void loginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loginBtnMouseClicked
 
     private void showBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showBtnMouseClicked
         // TODO add your handling code here:
@@ -219,7 +188,7 @@ public class LoginView extends javax.swing.JFrame {
     
     public void SignupActionListener(MouseListener listener)
     {
-        this.addMouseListener(listener);
+        this.signupLbl.addMouseListener(listener);
     }
 
     /**
