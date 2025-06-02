@@ -4,9 +4,13 @@
  */
 package javaapplication6.controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javaapplication6.model.EnterEmailModel;
 import javaapplication6.view.EnterEmailView;
+import javaapplication6.view.EnterOTPView;
 import javaapplication6.view.LoginView;
 
 /**
@@ -20,6 +24,7 @@ public class EnterEmailController {
     {
         this.enterEmailView=enterEmailView;
         this.enterEmailView.LoginActionListener(new LoginActionListener());
+        this.enterEmailView.OTPActionListener(new SendOTPListener());
     }
     
     public void open()
@@ -57,6 +62,21 @@ public class EnterEmailController {
 
         @Override
         public void mouseExited(MouseEvent e) {
+        }
+        
+    }
+    
+    class SendOTPListener implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String email=enterEmailView.getEmailTxt().getText();
+            EnterEmailModel enterEmailModel=new EnterEmailModel(email);
+            EnterOTPView enterOTPView=new EnterOTPView();
+            EnterOTPController enterOTPController=new EnterOTPController(enterOTPView);
+            enterOTPController.open();
+            close();
         }
         
     }
