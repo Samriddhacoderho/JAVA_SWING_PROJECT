@@ -74,8 +74,9 @@ public class EnterEmailController {
             String email=enterEmailView.getEmailTxt().getText();
             EnterEmailModel enterEmailModel=new EnterEmailModel(email);
             //dao lai call garna baki
+            
             EnterOTPView enterOTPView=new EnterOTPView();
-            EnterOTPController enterOTPController=new EnterOTPController(enterOTPView);
+            EnterOTPController enterOTPController=new EnterOTPController(enterOTPView,email);
             enterOTPController.open();
             close();
             
