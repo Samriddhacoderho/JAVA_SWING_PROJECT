@@ -28,6 +28,13 @@ public class AhomeView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel9 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        venue = new javax.swing.JTextField();
+        location = new javax.swing.JTextField();
+        search = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        profile = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -43,16 +50,44 @@ public class AhomeView extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         Button2 = new javax.swing.JButton();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        venue = new javax.swing.JTextField();
-        location = new javax.swing.JTextField();
-        search = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        profile = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setText("Find Venue Near You");
+        jPanel9.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 190, -1));
+
+        venue.setForeground(new java.awt.Color(204, 204, 204));
+        venue.setText("Search Venue");
+        jPanel9.add(venue, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 130, 20));
+
+        location.setForeground(new java.awt.Color(204, 204, 204));
+        location.setText("Search Location");
+        jPanel9.add(location, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 130, 20));
+
+        search.setText("Search");
+        jPanel9.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, 20));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setText("Browse Venues in Popular Location");
+        jPanel9.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 310, -1));
+
+        profile.setBackground(new java.awt.Color(0, 0, 0));
+        profile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        profile.setForeground(new java.awt.Color(255, 255, 255));
+        profile.setText("Profile");
+        profile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profileActionPerformed(evt);
+            }
+        });
+        jPanel9.add(profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -70,7 +105,7 @@ public class AhomeView extends javax.swing.JFrame {
         Button3.setText("Browse");
         jPanel2.add(Button3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 130, 120));
+        jPanel9.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 130, 120));
 
         jPanel5.setBackground(new java.awt.Color(204, 255, 204));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -88,7 +123,7 @@ public class AhomeView extends javax.swing.JFrame {
         Button1.setText("Browse");
         jPanel5.add(Button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 130, 120));
+        jPanel9.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 130, 120));
 
         jPanel7.setBackground(new java.awt.Color(204, 255, 204));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -106,42 +141,14 @@ public class AhomeView extends javax.swing.JFrame {
         Button2.setText("Browse");
         jPanel7.add(Button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
 
-        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 130, 120));
+        jPanel9.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 130, 120));
 
-        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel4.setText("Logo");
+        jPanel1.add(jLabel4);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("Find Venue Near You");
-        jPanel9.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 190, -1));
+        jPanel9.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 30));
 
-        venue.setForeground(new java.awt.Color(204, 204, 204));
-        venue.setText("Search Venue");
-        jPanel9.add(venue, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 130, 20));
-
-        location.setForeground(new java.awt.Color(204, 204, 204));
-        location.setText("Search Location");
-        jPanel9.add(location, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, 130, 20));
-
-        search.setText("Search");
-        jPanel9.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, -1, 20));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Browse Venues in Popular Location");
-        jPanel9.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 310, -1));
-
-        profile.setBackground(new java.awt.Color(0, 0, 0));
-        profile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        profile.setForeground(new java.awt.Color(255, 255, 255));
-        profile.setText("Profile");
-        profile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                profileActionPerformed(evt);
-            }
-        });
-        jPanel9.add(profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, -1));
-
-        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 510, 340));
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 510, 340));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -197,9 +204,11 @@ public class AhomeView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
