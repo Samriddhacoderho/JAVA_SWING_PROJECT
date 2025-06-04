@@ -155,7 +155,6 @@ public class UserDAO {
             PreparedStatement stmnt = conn.prepareStatement(query);
             stmnt.setString(1,email);
             ResultSet result= stmnt.executeQuery();
-//            return result.next();
             if(result.next()){
                 return true;
             } else{
