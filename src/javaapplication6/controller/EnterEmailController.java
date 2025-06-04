@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javaapplication6.controller.Mail.SMTPSMailSender;
 import javaapplication6.dao.UserDAO;
 import javaapplication6.model.EnterEmailModel;
 import javaapplication6.view.EnterEmailView;
@@ -22,6 +23,7 @@ import javax.swing.JOptionPane;
 public class EnterEmailController {
     
     private final EnterEmailView enterEmailView;
+        private SMTPSMailSender smtpsMailSender=new SMTPSMailSender();
     private UserDAO userDao=new UserDAO();
     public EnterEmailController(EnterEmailView enterEmailView)
     {
@@ -86,8 +88,12 @@ public class EnterEmailController {
             }
             else
             {
+             int random_otp=(int) (Math.random()*(9999-1000))+1000;
+             String body="The otp to reset your password is:"+random_otp;
+            boolean mailSent=smtpsMailSender.sendMail(email, "Reset Password Verification", body);
              EnterOTPView enterOTPView=new EnterOTPView();
-            EnterOTPController enterOTPController=new EnterOTPController(enterOTPView,email);
+            EnterOTPController enterOTPController=new EnterOTPController(enterOTPView,email,random_otp);
+            
             enterOTPController.open();
             close(); 
             }

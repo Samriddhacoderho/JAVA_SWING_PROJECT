@@ -7,6 +7,7 @@ package javaapplication6.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javaapplication6.controller.Mail.SMTPSMailSender;
+import javaapplication6.dao.UserDAO;
 import javaapplication6.model.ResetModel;
 import javaapplication6.view.EnterOTPView;
 import javax.swing.JOptionPane;
@@ -19,9 +20,12 @@ import javax.swing.JOptionPane;
 public class EnterOTPController {
     private final EnterOTPView enterOTPView;
     private String email;
-    private SMTPSMailSender smtpsMailSender;
-    public EnterOTPController(EnterOTPView enterOTPView,String email)
+    private UserDAO userDAO=new UserDAO();
+    private int random_otp;
+
+    public EnterOTPController(EnterOTPView enterOTPView,String email,int random_otp)
     {
+        this.random_otp=random_otp;
         this.enterOTPView=enterOTPView;
         this.email=email;
         this.enterOTPView.VerifyActionListener(new VerifyListener());
@@ -42,15 +46,8 @@ public class EnterOTPController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            int random_otp=(int) (Math.random()*(9999-1000))+1000;
-            String body="The otp to reset your password is:"+random_otp;
-            boolean mailSent=smtpsMailSender.sendMail(email, "Reset Password Verification", body);
-            if(!mailSent)
-            {
-                       JOptionPane.showMessageDialog(enterOTPView, "Faialed to send OTP. Please try again later!");
-            }
-            else
-            {
+            
+           
                 String user_otp=enterOTPView.getOtpTxt().getText();
                 if(!user_otp.equals(String.valueOf(random_otp)))
                 {
@@ -65,14 +62,23 @@ public class EnterOTPController {
                            }
                            else
                            {
+                               if(JOptionPane.showConfirmDialog(enterOTPView, "Are you sure you want to reset your password?")==0)
+                               {
                                ResetModel resetModel=new ResetModel(email, password);
-                               //dao wala le banayechi ill call
-                           }
+                               boolean result=userDAO.resetPassword(resetModel);
+                               if(!result)
+                               {
+                                   JOptionPane.showMessageDialog(enterOTPView, "There were some error occured");
+                               }
+                               else
+                               {
+                                   JOptionPane.showMessageDialog(enterOTPView, "Your password has been reset successfully");
+                               }
+                               }
+                           
                 }
             }
         }
         
     }
-    
-    
 }
