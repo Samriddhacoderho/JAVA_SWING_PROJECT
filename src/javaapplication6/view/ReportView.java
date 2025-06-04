@@ -53,22 +53,17 @@ public class ReportView extends javax.swing.JFrame {
 
         jLabel1.setText("Report a problem:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(260, 30, 120, 16);
+        jLabel1.setBounds(260, 30, 120, 17);
 
         reportList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Account Inquiry", "Report a bug", "Change account information", "Report a potential violation" }));
         reportList.setSelectedIndex(2);
         reportList.setToolTipText("");
-        reportList.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reportListActionPerformed(evt);
-            }
-        });
         jPanel1.add(reportList);
-        reportList.setBounds(200, 50, 250, 22);
+        reportList.setBounds(200, 50, 250, 23);
 
         jLabel2.setText("Other Issues:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(250, 90, 130, 16);
+        jLabel2.setBounds(250, 90, 130, 17);
 
         reportBtn.setText("Report");
         jPanel1.add(reportBtn);
@@ -84,10 +79,6 @@ public class ReportView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void reportListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportListActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_reportListActionPerformed
 
     /**
      * @param args the command line arguments
