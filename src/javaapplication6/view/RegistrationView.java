@@ -9,7 +9,7 @@ import java.awt.event.MouseListener;
 
 /**
  *
- * @author suhritsatyal
+ * @author Yuri Maharjan
  */
 public class RegistrationView extends javax.swing.JFrame {
 
