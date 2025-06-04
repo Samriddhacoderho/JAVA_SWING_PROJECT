@@ -8,10 +8,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javaapplication6.dao.UserDAO;
 import javaapplication6.model.EnterEmailModel;
 import javaapplication6.view.EnterEmailView;
 import javaapplication6.view.EnterOTPView;
 import javaapplication6.view.LoginView;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +22,7 @@ import javaapplication6.view.LoginView;
 public class EnterEmailController {
     
     private final EnterEmailView enterEmailView;
+    private UserDAO userDao=new UserDAO();
     public EnterEmailController(EnterEmailView enterEmailView)
     {
         this.enterEmailView=enterEmailView;
@@ -73,13 +76,21 @@ public class EnterEmailController {
         public void actionPerformed(ActionEvent e) {
             String email=enterEmailView.getEmailTxt().getText();
             EnterEmailModel enterEmailModel=new EnterEmailModel(email);
-            //dao lai call garna baki
-            
-            EnterOTPView enterOTPView=new EnterOTPView();
+            if(!userDao.checkEmail(email))
+            {
+                JOptionPane.showMessageDialog(enterEmailView, "This email is not registered under our application");
+                LoginView loginView=new LoginView();
+                LoginController loginController=new LoginController(loginView);
+                loginController.open();
+                close();
+            }
+            else
+            {
+             EnterOTPView enterOTPView=new EnterOTPView();
             EnterOTPController enterOTPController=new EnterOTPController(enterOTPView,email);
             enterOTPController.open();
-            close();
-            
+            close(); 
+            }
         }
         
     }
