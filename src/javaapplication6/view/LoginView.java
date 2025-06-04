@@ -43,64 +43,76 @@ public class LoginView extends javax.swing.JFrame {
         emailTxt = new javax.swing.JTextField();
         forgetLbl = new javax.swing.JLabel();
         loginBtn = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(732, 569));
         setPreferredSize(new java.awt.Dimension(732, 569));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(732, 569));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 246, -1));
+        jPanel1.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 246, 30));
 
+        showBtn.setBackground(new java.awt.Color(51, 255, 0));
+        showBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         showBtn.setText("Show");
         showBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 showBtnMouseClicked(evt);
             }
         });
-        jPanel1.add(showBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 70, -1));
+        jPanel1.add(showBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 90, 30));
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Password");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, 30));
 
+        signupLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         signupLbl.setForeground(new java.awt.Color(102, 204, 0));
         signupLbl.setText("Sign Up");
-        jPanel1.add(signupLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, -1, -1));
+        jPanel1.add(signupLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, -1, 20));
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setText("Email");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("bookmyvenue");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 240, 53));
-        jPanel1.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 246, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 130, 20));
+        jPanel1.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 246, 30));
 
+        forgetLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         forgetLbl.setForeground(new java.awt.Color(255, 0, 0));
-        forgetLbl.setText("Forget Password");
+        forgetLbl.setText("Forgot Password ?");
         forgetLbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 forgetLblMouseClicked(evt);
             }
         });
-        jPanel1.add(forgetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, -1, -1));
+        jPanel1.add(forgetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, -1, -1));
 
         loginBtn.setBackground(new java.awt.Color(0, 0, 0));
+        loginBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("Login");
         loginBtn.setBorderPainted(false);
         loginBtn.setOpaque(true);
-        jPanel1.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 250, -1));
+        jPanel1.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 250, 30));
 
-        jLabel9.setText("Nepal's no.1 booking platform");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 220, -1));
-
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel11.setText("Don't have an account?");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 148, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 148, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 530, 380));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setText("Nepal's leading Venue Booking Platform!!");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 250, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 880, 560));
 
         pack();
         setLocationRelativeTo(null);
@@ -159,11 +171,11 @@ public class LoginView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField emailTxt;
     private javax.swing.JLabel forgetLbl;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton loginBtn;
     private javax.swing.JPasswordField passPsf;
