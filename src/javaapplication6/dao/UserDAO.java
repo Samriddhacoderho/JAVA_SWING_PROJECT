@@ -10,6 +10,7 @@ import javaapplication6.HashUtil.HashUtil;
 import javaapplication6.model.EditNameModel;
 import javaapplication6.model.EnterEmailModel;
 import javaapplication6.model.LoginModel;
+import javaapplication6.model.ResetModel;
 
 
 public class UserDAO {
@@ -165,12 +166,12 @@ public class UserDAO {
         }
         
     }
-    public boolean resetPassword(EnterEmailModel emodel){
-        String query = "update users set fpassword = ? where email = ?";
+    public boolean resetPassword(ResetModel resetModel){
+        String query = "update users set password = ? where email = ?";
         
         try(Connection conn = dbConn.connection_base()){
             PreparedStatement stmnt = conn.prepareStatement(query );
-            stmnt.setString(1, emodel.getEmail());
+            stmnt.setString(1, resetModel.getEmail());
             int result = stmnt.executeUpdate();
             return result>0;
         }catch(Exception e){
