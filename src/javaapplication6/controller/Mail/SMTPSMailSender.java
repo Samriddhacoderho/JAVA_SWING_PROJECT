@@ -13,10 +13,10 @@ public class SMTPSMailSender {
     private static final String host = "smtp.gmail.com";
 
     private static final String port = "587"; 
+    
+    private static final String email = "imnitesh56@gmail.com";
 
-    private static final String email = "samriddha.satyal@alumni.sifal.deerwalk.edu.np";
-
-    private static String password = "uaug sope hren wjed";
+    private static String password = "uwey qfiq pjnz pynb";
 
 
 
