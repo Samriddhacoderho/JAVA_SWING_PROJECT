@@ -3,12 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package javaapplication6.controller;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javaapplication6.view.BookVenue;
 
 /**
  *
- * @author Dell
+ * @author manoj
  */
 public class BookVenueController {
     private final BookVenue bookVenue;
@@ -16,6 +17,7 @@ public class BookVenueController {
     
     public BookVenueController(BookVenue bookVenue){
         this.bookVenue=bookVenue;
+       
         
     }
 //    Book venue view open and close methods
@@ -25,11 +27,6 @@ public class BookVenueController {
     public void close(){
         this.bookVenue.dispose();
     }
-//    class BookVenue implements ActionListener{
-//        @Override
-//        public void actionPerformed(ActionEvent e){
-//            
-//            
-//        }
-//    }
+    
+    
 }
