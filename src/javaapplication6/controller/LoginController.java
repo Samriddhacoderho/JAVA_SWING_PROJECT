@@ -51,14 +51,14 @@ public class LoginController {
             if (!validation.equals("Logging in...")) {
                 JOptionPane.showMessageDialog(loginView, validation);
             } else {
-                if(JOptionPane.showConfirmDialog(loginView, "Are you sure you want to log in?")==0)
-                {
+                
                 try {
                     LoginModel loginModel=new LoginModel(email,password);
                     boolean result=userDAO.loginUser(loginModel);
                     if(result)
                     {
-                        JOptionPane.showMessageDialog(loginView, "Successfully logged in!");
+                        
+                        
                         DashboardView dashboardView=new DashboardView();
                         DashboardController dashboardController=new DashboardController(dashboardView,loginModel);
                         dashboardController.open();
@@ -72,7 +72,7 @@ public class LoginController {
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(loginView, "Error: " + ex.getMessage());
                 }
-                }
+                
             }
         }  
         
