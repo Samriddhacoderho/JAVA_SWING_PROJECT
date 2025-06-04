@@ -4,12 +4,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javaapplication6.database.DBConn;
 import javaapplication6.model.RegisterModel;
 import javaapplication6.HashUtil.HashUtil;
 import javaapplication6.model.EditNameModel;
 import javaapplication6.model.EnterEmailModel;
 import javaapplication6.model.LoginModel;
+import javaapplication6.model.ResetModel;
 
 
 public class UserDAO {
@@ -165,17 +167,51 @@ public class UserDAO {
         }
         
     }
-    public boolean resetPassword(EnterEmailModel emodel){
-        String query = "update users set fpassword = ? where email = ?";
+    public boolean resetPassword(ResetModel resetModel){
+        String query = "update users set password = ? where email = ?";
         
         try(Connection conn = dbConn.connection_base()){
             PreparedStatement stmnt = conn.prepareStatement(query );
-            stmnt.setString(1, emodel.getEmail());
+            stmnt.setString(1, resetModel.getEmail());
             int result = stmnt.executeUpdate();
             return result>0;
         }catch(Exception e){
            return false;
         }
     }
-
+//     public ArrayList<Venue> checkVenue(VenueModel model) { //ya error aako cha because backend le VenueModel banakai chaina
+//    ArrayList<Venue> venues = new ArrayList<>();
+//    String query = "SELECT * FROM venues_table WHERE location=?";
+//    
+//    try (Connection conn = dbConn.connection_base();
+//         PreparedStatement pstmt = conn.prepareStatement(query)) {
+//        
+//        pstmt.setString(1, model.getLocation()); 
+//        ResultSet result = pstmt.executeQuery();
+//
+//        while (result.next()) { 
+//            Venue venue = new Venue(
+//                result.getInt("id"),
+//                result.getString("name"),
+//                result.getString("location"),
+//                result.getInt("capacity")
+//                // Add other columns as needed
+//            );
+//            venues.add(venue);
+//        }
+//        
+//    } catch (Exception e) {
+//        e.printStackTrace(); // Log error for debugging
+//        return new ArrayList<>(); // Return empty list on error
+//    }
+//    
+//    return venues;
+//}
+//    public class Venue {
+//    private int id;
+//    private String name;
+//    private String location;
+//    // constructor/getters/setters
+//}
+//
 }
