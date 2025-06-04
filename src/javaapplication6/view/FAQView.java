@@ -13,7 +13,7 @@ import java.awt.event.MouseListener;
 
 /**
  *
- * @author Dell
+ * @author Yuri Maharjan
  */
 public class FAQView extends javax.swing.JFrame {
 
