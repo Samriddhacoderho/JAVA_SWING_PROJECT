@@ -53,7 +53,7 @@ public class ReportView extends javax.swing.JFrame {
 
         jLabel1.setText("Report a problem:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(260, 30, 120, 17);
+        jLabel1.setBounds(260, 30, 120, 16);
 
         reportList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Account Inquiry", "Report a bug", "Change account information", "Report a potential violation" }));
         reportList.setSelectedIndex(2);
@@ -64,11 +64,11 @@ public class ReportView extends javax.swing.JFrame {
             }
         });
         jPanel1.add(reportList);
-        reportList.setBounds(200, 50, 250, 23);
+        reportList.setBounds(200, 50, 250, 22);
 
         jLabel2.setText("Other Issues:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(250, 90, 130, 17);
+        jLabel2.setBounds(250, 90, 130, 16);
 
         reportBtn.setText("Report");
         jPanel1.add(reportBtn);
