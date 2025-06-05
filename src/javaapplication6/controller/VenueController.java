@@ -4,11 +4,8 @@
  */
 package javaapplication6.controller;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ArrayList;
-import javaapplication6.database.DBConn;
+import javaapplication6.dao.UserDAO;
 import javaapplication6.model.VenueModel;
 
 
@@ -16,38 +13,19 @@ import javaapplication6.model.VenueModel;
  *
  * @author ishan-college
  */
+
 public class VenueController {
-    private final DBConn dbConn;
+    private UserDAO userDAO;
 
     public VenueController() {
-        dbConn = new DBConn();
+        this.userDAO = new UserDAO();
     }
 
-    public ArrayList<VenueModel> getAvailableVenuesByDate(String desiredDate) {
-        ArrayList<VenueModel> venues = new ArrayList<>();
-        String query = "SELECT * FROM venues WHERE status = 'Available' AND id NOT IN (SELECT venue_id FROM bookings WHERE date = ?)";
+    public ArrayList<VenueModel> searchVenues(String name, String location) {
+        VenueModel model = new VenueModel();
+        model.setName(name);
+        model.setLocation(location);
 
-        try (Connection conn = dbConn.connection_base();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-
-            stmt.setString(1, desiredDate);
-            ResultSet rs = stmt.executeQuery();
-
-            while (rs.next()) {
-                VenueModel venue = new VenueModel(
-                    rs.getInt("id"),
-                    rs.getString("name"),
-                    rs.getString("location"),
-                    rs.getInt("capacity"),
-                    rs.getString("status")
-                );
-                venues.add(venue);
-            }
-
-        } catch (Exception e) {
-            System.out.println("Error fetching available venues: " + e.getMessage());
-        }
-
-        return venues;
+        return userDAO.checkVenue(model);
     }
 }

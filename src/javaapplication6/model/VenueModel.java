@@ -12,8 +12,6 @@ public class VenueModel {
     private int id;
     private String name;
     private String location;
-    private int capacity;
-    private String status;
 
 
     public VenueModel() {}
@@ -22,8 +20,7 @@ public class VenueModel {
         this.id = id;
         this.name = name;
         this.location = location;
-        this.capacity = capacity;
-        this.status = status;
+
 
     }
 
@@ -68,39 +65,4 @@ public class VenueModel {
     public void setLocation(String location) {
         this.location = location;
     }
-
-    /**
-     * @return the capacity
-     */
-    public int getCapacity() {
-        return capacity;
-    }
-
-    /**
-     * @param capacity the capacity to set
-     */
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-    /**
-     * @return the status
-     */
-    public String getStatus() {
-        return status;
-    }
-
-    /**
-     * @param status the status to set
-     */
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    
-
-    
-    
-
-
 }
