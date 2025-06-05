@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javaapplication6.database.DBConn;
 import javaapplication6.model.RegisterModel;
 import javaapplication6.HashUtil.HashUtil;
@@ -178,5 +179,39 @@ public class UserDAO {
            return false;
         }
     }
+//     public ArrayList<Venue> checkVenue(VenueModel model) { //ya error aako cha because backend le VenueModel banakai chaina
+//    ArrayList<Venue> venues = new ArrayList<>();
+//    String query = "SELECT * FROM venues_table WHERE location=?";
+//    
+//    try (Connection conn = dbConn.connection_base();
+//         PreparedStatement pstmt = conn.prepareStatement(query)) {
+//        
+//        pstmt.setString(1, model.getLocation()); 
+//        ResultSet result = pstmt.executeQuery();
+//
+//        while (result.next()) { 
+//            Venue venue = new Venue(
+//                result.getInt("id"),
+//                result.getString("name"),
+//                result.getString("location"),
+//                result.getInt("capacity")
+//                // Add other columns as needed
+//            );
+//            venues.add(venue);
+//        }
+//        
+//    } catch (Exception e) {
+//        e.printStackTrace(); // Log error for debugging
+//        return new ArrayList<>(); // Return empty list on error
+//    }
+//    
+//    return venues;
+//}
+//    public class Venue {
+//    private int id;
+//    private String name;
+//    private String location;
+//    // constructor/getters/setters
+//}
 
 }
