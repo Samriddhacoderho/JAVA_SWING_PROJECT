@@ -59,17 +59,12 @@ public class ReportView extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Report a problem:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(80, 20, 120, 16);
+        jLabel1.setBounds(80, 20, 120, 15);
 
         reportList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         reportList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Account Inquiry", "Report a bug", "Change account information", "Report a potential violation" }));
         reportList.setSelectedIndex(2);
         reportList.setToolTipText("");
-        reportList.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reportListActionPerformed(evt);
-            }
-        });
         jPanel1.add(reportList);
         reportList.setBounds(80, 40, 250, 40);
 
@@ -94,11 +89,6 @@ public class ReportView extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
         jPanel1.add(jButton1);
         jButton1.setBounds(500, 10, 80, 30);
 
@@ -108,14 +98,6 @@ public class ReportView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void reportListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportListActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_reportListActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
