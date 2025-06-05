@@ -67,11 +67,6 @@ public class AhomeView extends javax.swing.JFrame {
         venue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         venue.setForeground(new java.awt.Color(204, 204, 204));
         venue.setToolTipText("Enter venue name");
-        venue.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                venueActionPerformed(evt);
-            }
-        });
         jPanel9.add(venue, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 130, 30));
 
         location.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -93,11 +88,6 @@ public class AhomeView extends javax.swing.JFrame {
         profile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         profile.setForeground(new java.awt.Color(255, 255, 255));
         profile.setText("Profile");
-        profile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                profileActionPerformed(evt);
-            }
-        });
         jPanel9.add(profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, 30));
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
@@ -169,14 +159,6 @@ public class AhomeView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_profileActionPerformed
-
-    private void venueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_venueActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_venueActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,7 +278,19 @@ public class AhomeView extends javax.swing.JFrame {
     public void setVenue(javax.swing.JTextField venue) {
         this.venue = venue;
     }
+
+    /**
+     * @return the location
+     */
+    public javax.swing.JTextField getLocationField() {
+        return location;
+    }
+
+    /**
+     * @param location the location to set
+     */
+    public void setLocationField(javax.swing.JTextField location) {
+        this.location = location;
+    }
     
-
-
 }
