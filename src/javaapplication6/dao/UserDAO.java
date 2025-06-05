@@ -172,7 +172,9 @@ public class UserDAO {
         
         try(Connection conn = dbConn.connection_base()){
             PreparedStatement stmnt = conn.prepareStatement(query );
-            stmnt.setString(1, resetModel.getEmail());
+            String newHashedPassword = HashUtil.hashPassword(resetModel.getPassword());
+            stmnt.setString(1, newHashedPassword);
+            stmnt.setString(2, resetModel.getEmail());
             int result = stmnt.executeUpdate();
             return result>0;
         }catch(Exception e){
