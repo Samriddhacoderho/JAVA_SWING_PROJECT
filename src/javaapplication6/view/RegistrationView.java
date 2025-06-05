@@ -86,20 +86,8 @@ public class RegistrationView extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Name:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 60, 20));
-
-        nameTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameTxtActionPerformed(evt);
-            }
-        });
         jPanel2.add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 320, 40));
         jPanel2.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 320, 40));
-
-        passPsf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passPsfActionPerformed(evt);
-            }
-        });
         jPanel2.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 320, 40));
         jPanel2.add(confirmPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 320, 40));
 
@@ -130,14 +118,6 @@ public class RegistrationView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void passPsfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passPsfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passPsfActionPerformed
-
-    private void nameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameTxtActionPerformed
 
     /**
      * @param args the command line arguments
