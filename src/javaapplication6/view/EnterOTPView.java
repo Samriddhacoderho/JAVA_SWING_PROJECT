@@ -131,6 +131,7 @@ public class EnterOTPView extends javax.swing.JFrame {
     {
         this.loginLbl.addMouseListener(listener);
     }
+    
 
     /**
      * @return the otpTxt
