@@ -36,25 +36,32 @@ public class ReportView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         reportBtn = new javax.swing.JButton();
         cancelBtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(600, 397));
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
         issuesTxt.setColumns(20);
         issuesTxt.setRows(5);
+        issuesTxt.setToolTipText("write detailed issue here");
+        issuesTxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane1.setViewportView(issuesTxt);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(190, 120, 260, 90);
+        jScrollPane1.setBounds(80, 120, 370, 130);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Report a problem:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(260, 30, 120, 16);
+        jLabel1.setBounds(80, 20, 120, 16);
 
+        reportList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         reportList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Account Inquiry", "Report a bug", "Change account information", "Report a potential violation" }));
         reportList.setSelectedIndex(2);
         reportList.setToolTipText("");
@@ -64,22 +71,39 @@ public class ReportView extends javax.swing.JFrame {
             }
         });
         jPanel1.add(reportList);
-        reportList.setBounds(200, 50, 250, 22);
+        reportList.setBounds(80, 40, 250, 40);
 
-        jLabel2.setText("Other Issues:");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setText("Description");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(250, 90, 130, 16);
+        jLabel2.setBounds(80, 90, 80, 30);
 
-        reportBtn.setText("Report");
+        reportBtn.setBackground(new java.awt.Color(0, 0, 0));
+        reportBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        reportBtn.setForeground(new java.awt.Color(255, 255, 255));
+        reportBtn.setText("Submit Report");
         jPanel1.add(reportBtn);
-        reportBtn.setBounds(210, 240, 72, 23);
+        reportBtn.setBounds(280, 260, 160, 30);
 
         cancelBtn.setText("Cancel");
+        cancelBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(cancelBtn);
-        cancelBtn.setBounds(350, 240, 78, 23);
+        cancelBtn.setBounds(90, 260, 160, 30);
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(500, 10, 80, 30);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(20, 20, 570, 370);
+        jPanel1.setBounds(10, 0, 590, 390);
 
         pack();
         setLocationRelativeTo(null);
@@ -88,6 +112,10 @@ public class ReportView extends javax.swing.JFrame {
     private void reportListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportListActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_reportListActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,6 +156,7 @@ public class ReportView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelBtn;
     private javax.swing.JTextArea issuesTxt;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
