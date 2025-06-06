@@ -158,45 +158,9 @@ public class AhomeView extends javax.swing.JFrame {
         getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 440));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AhomeView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AhomeView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AhomeView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AhomeView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AhomeView().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button1;
@@ -228,7 +192,7 @@ public class AhomeView extends javax.swing.JFrame {
 
     public void ProfileListener(ActionListener listener)
     {
-        this.getProfile().addActionListener(listener);
+        this.profile.addActionListener(listener);
     }
 
         public void SearchListener(ActionListener listener)
@@ -249,20 +213,6 @@ public class AhomeView extends javax.swing.JFrame {
     public void Browse3Listener(ActionListener listener)
     {
         this.Button3.addActionListener(listener);
-    }
-
-    /**
-     * @return the profile
-     */
-    public javax.swing.JButton getProfile() {
-        return profile;
-    }
-
-    /**
-     * @param profile the profile to set
-     */
-    public void setProfile(javax.swing.JButton profile) {
-        this.profile = profile;
     }
 
     /**
