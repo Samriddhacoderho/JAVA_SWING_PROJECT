@@ -78,11 +78,6 @@ public class BookVenue extends javax.swing.JFrame {
         jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, -1));
 
         email.setEditable(false);
-        email.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
-            }
-        });
         jPanel3.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 190, 20));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -90,35 +85,20 @@ public class BookVenue extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, -1, 20));
 
         name.setEditable(false);
-        name.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameActionPerformed(evt);
-            }
-        });
         jPanel3.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 190, 20));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Booking Name:");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, 20));
+        jLabel2.setText("Venue Name:");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, 20));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Contact:");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, -1, 20));
 
         contact.setEditable(false);
-        contact.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contactActionPerformed(evt);
-            }
-        });
         jPanel3.add(contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 190, 20));
 
         date.setEditable(false);
-        date.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dateActionPerformed(evt);
-            }
-        });
         jPanel3.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 190, 20));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -130,11 +110,6 @@ public class BookVenue extends javax.swing.JFrame {
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, -1, 20));
 
         time.setEditable(false);
-        time.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                timeActionPerformed(evt);
-            }
-        });
         jPanel3.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 190, 20));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -142,24 +117,14 @@ public class BookVenue extends javax.swing.JFrame {
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, -1, 20));
 
         type.setEditable(false);
-        type.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                typeActionPerformed(evt);
-            }
-        });
         jPanel3.add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 190, 20));
 
         guest.setEditable(false);
-        guest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                guestActionPerformed(evt);
-            }
-        });
         jPanel3.add(guest, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 190, 20));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setText("Estimated Number of Guests:");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, 20));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, 20));
 
         jLabel8.setText("Menue");
 
@@ -204,68 +169,7 @@ public class BookVenue extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
-
-    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameActionPerformed
-
-    private void contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_contactActionPerformed
-
-    private void dateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dateActionPerformed
-
-    private void timeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_timeActionPerformed
-
-    private void typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_typeActionPerformed
-
-    private void guestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guestActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_guestActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BookVenue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BookVenue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BookVenue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BookVenue.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new BookVenue().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bkovenue;

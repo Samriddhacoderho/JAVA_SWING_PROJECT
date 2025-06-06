@@ -182,36 +182,4 @@ public class UserDAO {
            return false;
         }
     }
-    public ArrayList<VenueModel> checkVenue(VenueModel model) {
-    ArrayList<VenueModel> venues = new ArrayList<>();
-
-    String query = "SELECT * FROM venues_table WHERE location=?";
-    
-    try (Connection conn = dbConn.connection_base();
-         PreparedStatement pstmt = conn.prepareStatement(query)) {
-        
-        pstmt.setString(1, model.getLocation()); 
-        ResultSet result = pstmt.executeQuery();
-
-        while (result.next()) { 
-            VenueModel venue = new VenueModel(
-                    result.getInt("id"),
-                    result.getString("name"),
-                    result.getString("location"),
-                    result.getInt("capacity"),
-                    result.getString("status")
-            );
-
-            venues.add(venue);
-        }
-        
-    } catch (Exception e) {
-        e.printStackTrace(); // Log error for debugging
-        return new ArrayList<>(); // Return empty list on error
-    }
-    
-    return venues;
-}
-
-
 }
