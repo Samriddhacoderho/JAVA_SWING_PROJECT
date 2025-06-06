@@ -4,6 +4,8 @@
  */
 package javaapplication6.dao;
 import java.sql.*;
+import javaapplication6.database.DBConn;
+import javaapplication6.model.VenueModel;
 
 /**
  *
@@ -11,23 +13,32 @@ import java.sql.*;
  */
 
 public class BookVenueDAO {
-    private static final String DB_URL = "jdbc:sqlite:venues.db";
+    private final DBConn dbConn;
 
     public BookVenueDAO() {
+        dbConn = new DBConn();
     }
-
-    public boolean markVenueAsBooked(int venueId) {
-        String sql = "UPDATE venues SET status = 'Booked' WHERE id = ?";
-
-        try (Connection conn = DriverManager.getConnection(DB_URL);
-            PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, venueId);
-            int affected = pstmt.executeUpdate();
-            return affected > 0; 
-        } catch (SQLException e) {
-            System.out.println("Error booking venue (ID: " + venueId + "): " + e.getMessage());
-            return false;
+    
+    public VenueModel searchParticularVenue(VenueModel venueModel)
+    {
+        String sqlQuery="SELECT * FROM venue_table where name=? and location=?";
+        try (Connection conn=dbConn.connection_base()){
+            PreparedStatement pstmt=conn.prepareStatement(sqlQuery);
+            pstmt.setString(1, venueModel.getName());
+            pstmt.setString(2, venueModel.getLocation());
+            var rs=pstmt.executeQuery();
+            if(!rs.next())
+            {
+                return null;                
+ 
+            }
+            else
+            {
+                VenueModel result=new VenueModel(rs.getString("name"), rs.getString("location"));
+                return result;
+            }
+        } catch (Exception e) {
+            return null;
         }
     }
 }
-
