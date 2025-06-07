@@ -11,9 +11,15 @@ package javaapplication6.model;
 public class VenueModel {
     private String name;
     private String location;
+    private double price_per_plate;
+    
+    public VenueModel(String name,String location,double price_per_plate)
+    {
+        this.name=name;
+        this.location=location;
+        this.price_per_plate=price_per_plate;
+    }
 
-
-    public VenueModel() {}
 
     public VenueModel (String name, String location) {
         this.name = name;
@@ -53,4 +59,20 @@ public class VenueModel {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    /**
+     * @return the price_per_plate
+     */
+    public double getPrice_per_plate() {
+        return price_per_plate;
+    }
+
+    /**
+     * @param price_per_plate the price_per_plate to set
+     */
+    public void setPrice_per_plate(double price_per_plate) {
+        this.price_per_plate = price_per_plate;
+    }
+    
+    
 }
