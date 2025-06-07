@@ -57,7 +57,7 @@ this.reportView.requestFocus();
             }
             else
             {
-                System.out.println("There were some error caused!");
+                System.out.println("There were some error cause!");
             }
         }
         
