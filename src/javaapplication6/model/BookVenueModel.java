@@ -9,82 +9,59 @@ package javaapplication6.model;
  * @author manoj
  */
 public class BookVenueModel {
-    private String bookingName;
     private String email;
-    private String contact;
-    private String date;
-    private String time;
-    private String eventType;
-    private int estimatedGuests;
+    private String estimated_guests;
+    private double estimated_price;
 
     // Constructors
-    public BookVenueModel() {}
-
-    public BookVenueModel(String bookingName, String email, String contact, String date, String time, String eventType, int estimatedGuests) {
-        this.bookingName = bookingName;
+    public BookVenueModel(String email,String estimated_guests,double estimated_price) {
         this.email = email;
-        this.contact = contact;
-        this.date = date;
-        this.time = time;
-        this.eventType = eventType;
-        this.estimatedGuests = estimatedGuests;
+        this.estimated_guests = estimated_guests;
+        this.estimated_price=estimated_price;
     }
 
-    // Getters and Setters
-    public String getBookingName() {
-        return bookingName;
-    }
-
-    public void setBookingName(String bookingName) {
-        this.bookingName = bookingName;
-    }
-
+    /**
+     * @return the email
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * @param email the email to set
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getContact() {
-        return contact;
+    /**
+     * @return the estimated_guests
+     */
+    public String getEstimated_guests() {
+        return estimated_guests;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    /**
+     * @param estimated_guests the estimated_guests to set
+     */
+    public void setEstimated_guests(String estimated_guests) {
+        this.estimated_guests = estimated_guests;
     }
 
-    public String getDate() {
-        return date;
+    /**
+     * @return the estimated_price
+     */
+    public double getEstimated_price() {
+        return estimated_price;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    /**
+     * @param estimated_price the estimated_price to set
+     */
+    public void setEstimated_price(double estimated_price) {
+        this.estimated_price = estimated_price;
     }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public String getEventType() {
-        return eventType;
-    }
-
-    public void setEventType(String eventType) {
-        this.eventType = eventType;
-    }
-
-    public int getEstimatedGuests() {
-        return estimatedGuests;
-    }
-
-    public void setEstimatedGuests(int estimatedGuests) {
-        this.estimatedGuests = estimatedGuests;
-    }
+    
+    
 }
 
