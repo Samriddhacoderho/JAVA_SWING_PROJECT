@@ -11,6 +11,7 @@ import javaapplication6.dao.BookVenueDAO;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueModel;
 import javaapplication6.view.AhomeView;
+import javaapplication6.view.BookingPageView;
 import javaapplication6.view.DashboardView;
 import javaapplication6.view.VenueListView;
 import javax.swing.JOptionPane;
@@ -87,13 +88,10 @@ public class AHomeController {
                  }
                  else
                  {
-                     ArrayList<VenueModel> venuelist=new ArrayList<VenueModel>();
-                     venuelist.add(result);
-                     VenueListView venuelistView=new VenueListView();
-//                     VenueListController venueListController=new VenueListController(venuelistView);
-//                     venueListController.setTableContent(venuelist);
-//                     venueListController.open();
-//                     close();
+                     BookingPageView page=new BookingPageView();
+                     BookingPageController pageController=new BookingPageController(page, loginModel,result);
+                     pageController.open();
+                     close();
                  }
                 
              }

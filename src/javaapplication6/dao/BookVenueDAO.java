@@ -6,6 +6,7 @@ package javaapplication6.dao;
 import java.sql.*;
 import java.util.ArrayList;
 import javaapplication6.database.DBConn;
+import javaapplication6.model.BookVenueModel;
 import javaapplication6.model.VenueModel;
 
 /**
@@ -35,7 +36,7 @@ public class BookVenueDAO {
             }
             else
             {
-                VenueModel result=new VenueModel(rs.getString("name"), rs.getString("location"),rs.getDouble("price_per_plate"));
+                VenueModel result=new VenueModel(rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"));
                 return result;
             }
         } catch (Exception e) {
@@ -53,7 +54,7 @@ public class BookVenueDAO {
             var rs=pstmt.executeQuery();
             while(rs.next())
             {
-                VenueModel result=new VenueModel(rs.getString("name"), rs.getString("location"),rs.getDouble("price_per_plate"));
+                VenueModel result=new VenueModel(rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"));
                 venuelist.add(result);
             }
             return venuelist;
@@ -81,7 +82,7 @@ public class BookVenueDAO {
             var rs=pstmt.executeQuery();
             while(rs.next())
             {
-                VenueModel result=new VenueModel(rs.getString("name"), rs.getString("location"),rs.getDouble("price_per_plate"));
+                VenueModel result=new VenueModel(rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"));
                 venuelist.add(result);
             }
             return venuelist;
@@ -89,4 +90,9 @@ public class BookVenueDAO {
             return null;
         }
     }
+    
+//    public boolean bookVenue(BookVenueModel model)
+//    {
+//        String sqlQuery="INSERT INTO book_details()"
+//    }
 }
