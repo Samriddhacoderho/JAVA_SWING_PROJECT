@@ -83,6 +83,7 @@ public class DashboardController {
             ReportView reportView=new ReportView();
             ReportController reportController=new ReportController(reportView,loginModel);
             reportController.open();
+            close();
         }
         
     }
