@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javaapplication6.dao.ReportProblemDAO;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.ReportProblemModel;
+import javaapplication6.view.DashboardView;
 import javaapplication6.view.ReportView;
 import javax.swing.JOptionPane;
 
@@ -51,13 +52,17 @@ this.reportView.requestFocus();
             ReportProblemModel reportprobModel=new ReportProblemModel(email, subject, description);
             ReportProblemDAO reportProblemDAO=new ReportProblemDAO();
             boolean result=reportProblemDAO.addReport(reportprobModel);
-            if(result)
+            if(!result)
             {
-                
+                JOptionPane.showMessageDialog(reportView, "There might be an error submitting your review. Please try again later!");
             }
             else
             {
-                System.out.println("There were some error cause!");
+                JOptionPane.showMessageDialog(reportView, "Thank you for reporting the issue. We surely will get back to you with this soon!");
+                DashboardView dashboardView=new DashboardView();
+                DashboardController dashboardController=new DashboardController(dashboardView, loginModel);
+                dashboardController.open();
+                close();
             }
         }
         
