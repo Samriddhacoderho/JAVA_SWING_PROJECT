@@ -7,6 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import javaapplication6.database.DBConn;
 import javaapplication6.model.BookVenueModel;
+import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueModel;
 
 /**
@@ -36,7 +37,7 @@ public class BookVenueDAO {
             }
             else
             {
-                VenueModel result=new VenueModel(rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"));
+                VenueModel result=new VenueModel(rs.getInt("id"),rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"));
                 return result;
             }
         } catch (Exception e) {
@@ -54,7 +55,7 @@ public class BookVenueDAO {
             var rs=pstmt.executeQuery();
             while(rs.next())
             {
-                VenueModel result=new VenueModel(rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"));
+                VenueModel result=new VenueModel(rs.getInt("id"),rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"));
                 venuelist.add(result);
             }
             return venuelist;
@@ -82,7 +83,7 @@ public class BookVenueDAO {
             var rs=pstmt.executeQuery();
             while(rs.next())
             {
-                VenueModel result=new VenueModel(rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"));
+                VenueModel result=new VenueModel(rs.getInt("id"),rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"));
                 venuelist.add(result);
             }
             return venuelist;
@@ -91,8 +92,22 @@ public class BookVenueDAO {
         }
     }
     
-//    public boolean bookVenue(BookVenueModel model)
-//    {
-//        String sqlQuery="INSERT INTO book_details()"
-//    }
+    public boolean bookVenue(BookVenueModel modelBook,VenueModel modelVenue)
+    {
+        String sqlQuery="INSERT INTO book_details(venue_id,user_email,estimated_guests,total_price) values(?,?,?,?)";
+        try (Connection conn=dbConn.connection_base()){
+            PreparedStatement pstmt=conn.prepareStatement(sqlQuery);
+            pstmt.setInt(1, modelVenue.getId());
+            pstmt.setString(2, modelBook.getEmail());
+            pstmt.setString(3, modelBook.getEstimated_guests());
+            pstmt.setDouble(4, modelBook.getEstimated_price());
+            if(pstmt.executeUpdate()>0)
+            {
+                return true;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+        return false;
+    }
 }

@@ -9,14 +9,16 @@ package javaapplication6.model;
  * @author ishan-college
  */
 public class VenueModel {
+    private int id;
     private String name;
     private String location;
     private String email;
     private String contact_number;
     private double price_per_plate;
     
-    public VenueModel(String name,String location,String email,String contact_number,double price_per_plate)
+    public VenueModel(int id,String name,String location,String email,String contact_number,double price_per_plate)
     {
+        this.id=id;
         this.name=name;
         this.location=location;
         this.price_per_plate=price_per_plate;
@@ -35,7 +37,9 @@ public class VenueModel {
     {
         this.location=location;
     }
-
+    
+    
+    
     /**
      * @return the name
      */
@@ -104,6 +108,20 @@ public class VenueModel {
      */
     public void setContact_number(String contact_number) {
         this.contact_number = contact_number;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
     
     

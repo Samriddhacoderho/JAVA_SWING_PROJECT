@@ -69,17 +69,16 @@ public class BookingPageController {
                 if(JOptionPane.showConfirmDialog(page, confirmString)==0)
                 {
                  double estimated_price=Long.parseLong(estimated_guests)*venueModel.getPrice_per_plate();
-                    BookVenueModel model=new BookVenueModel(loginModel.getEmail(), estimated_guests, estimated_price);
-//                    boolean result=bookVenueDAO.bookVenue(model);
-//                    if(!result)
-//                    {
-//                        JOptionPane.showMessageDialog(page, "There was an error booking the venue");
-//                    }
-//                    else
-//                    {
-//                        JOptionPane.showMessageDialog(page, "Your booking was successfully made");
-//                    }
-                        //todo
+                    BookVenueModel modelBook=new BookVenueModel(loginModel.getEmail(), estimated_guests, estimated_price);
+                    boolean result=bookVenueDAO.bookVenue(modelBook,venueModel);
+                    if(!result)
+                    {
+                        JOptionPane.showMessageDialog(page, "There was an error booking the venue");
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(page, "Your booking was successfully made");
+                    }
                 }
             }
         }
