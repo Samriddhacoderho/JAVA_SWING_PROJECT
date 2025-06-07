@@ -30,6 +30,13 @@ public class AHomeController {
         this.loginModel=loginModel;
         this.ahomeView.ProfileListener(new ProfileActionListener());
         this.ahomeView.SearchListener(new SearchActionListener());
+        this.ahomeView.BrowsektmListener(new BrowseListener(this.ahomeView.getKtmLBL().getText()));
+        this.ahomeView.BrowsepkrListener(new BrowseListener(this.ahomeView.getPkrLBL().getText()));
+        this.ahomeView.BrowsebktListener(new BrowseListener(this.ahomeView.getBkpLBL().getText()));
+        this.ahomeView.BrowseptnListener(new BrowseListener(this.ahomeView.getPtnLBL().getText()));
+        this.ahomeView.BrowselmbListener(new BrowseListener(this.ahomeView.getLmbLBL().getText()));
+        this.ahomeView.BrowsechiListener(new BrowseListener(this.ahomeView.getChiLBL().getText()));
+        
     }
     public void open()
     {
@@ -83,10 +90,10 @@ public class AHomeController {
                      ArrayList<VenueModel> venuelist=new ArrayList<VenueModel>();
                      venuelist.add(result);
                      VenueListView venuelistView=new VenueListView();
-                     VenueListController venueListController=new VenueListController(venuelistView);
-                     venueListController.setTableContent(venuelist);
-                     venueListController.open();
-                     close();
+//                     VenueListController venueListController=new VenueListController(venuelistView);
+//                     venueListController.setTableContent(venuelist);
+//                     venueListController.open();
+//                     close();
                  }
                 
              }
@@ -103,5 +110,34 @@ public class AHomeController {
                 return true;
             }
         }
+    }
+    
+    class BrowseListener implements ActionListener
+    {
+        private String location;
+        
+        BrowseListener(String location)
+        {
+            this.location=location;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            VenueModel model=new VenueModel(location);
+            ArrayList<VenueModel> result=bookVenueDAO.searchLocationVenue(model);
+            if(result.size()==0)
+            {
+                JOptionPane.showMessageDialog(ahomeView, "We currently have no venue parties registered in our application from "+this.location);
+            }
+            else
+            {
+                VenueListView venueListView=new VenueListView();
+                VenueListController venueListController=new VenueListController(venueListView,this.location);
+                venueListController.setTableContent(result);
+                venueListController.open();
+                close();
+            }
+        }
+        
     }
 }
