@@ -11,13 +11,17 @@ package javaapplication6.model;
 public class VenueModel {
     private String name;
     private String location;
+    private String email;
+    private String contact_number;
     private double price_per_plate;
     
-    public VenueModel(String name,String location,double price_per_plate)
+    public VenueModel(String name,String location,String email,String contact_number,double price_per_plate)
     {
         this.name=name;
         this.location=location;
         this.price_per_plate=price_per_plate;
+        this.email=email;
+        this.contact_number=contact_number;
     }
 
 
@@ -73,6 +77,35 @@ public class VenueModel {
     public void setPrice_per_plate(double price_per_plate) {
         this.price_per_plate = price_per_plate;
     }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * @return the contact_number
+     */
+    public String getContact_number() {
+        return contact_number;
+    }
+
+    /**
+     * @param contact_number the contact_number to set
+     */
+    public void setContact_number(String contact_number) {
+        this.contact_number = contact_number;
+    }
+    
     
     
 }
