@@ -4,6 +4,7 @@
  */
 package javaapplication6.dao;
 import java.sql.*;
+import java.util.ArrayList;
 import javaapplication6.database.DBConn;
 import javaapplication6.model.VenueModel;
 
@@ -34,9 +35,56 @@ public class BookVenueDAO {
             }
             else
             {
-                VenueModel result=new VenueModel(rs.getString("name"), rs.getString("location"));
+                VenueModel result=new VenueModel(rs.getString("name"), rs.getString("location"),rs.getDouble("price_per_plate"));
                 return result;
             }
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    
+    public ArrayList<VenueModel> searchLocationVenue(VenueModel venueModel)
+    {
+        String sqlQuery="SELECT * FROM venue_table where location=?";
+        try (Connection conn=dbConn.connection_base()){
+            ArrayList<VenueModel> venuelist=new ArrayList<>();
+            PreparedStatement pstmt=conn.prepareStatement(sqlQuery);
+            pstmt.setString(1, venueModel.getLocation());
+            var rs=pstmt.executeQuery();
+            while(rs.next())
+            {
+                VenueModel result=new VenueModel(rs.getString("name"), rs.getString("location"),rs.getDouble("price_per_plate"));
+                venuelist.add(result);
+            }
+            return venuelist;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    
+    public ArrayList<VenueModel> sortVenues(String location,String type)
+    {
+        if(type.equalsIgnoreCase("Lowest to Highest"))
+            {
+                type="ASC";
+            }
+            else
+            {
+                type="DESC";
+            }
+        String sqlQuery="SELECT * FROM venue_table where location=? order by price_per_plate "+type;
+        try (Connection conn=dbConn.connection_base()){
+            
+            ArrayList<VenueModel> venuelist=new ArrayList<>();
+            PreparedStatement pstmt=conn.prepareStatement(sqlQuery);
+            pstmt.setString(1, location);
+            var rs=pstmt.executeQuery();
+            while(rs.next())
+            {
+                VenueModel result=new VenueModel(rs.getString("name"), rs.getString("location"),rs.getDouble("price_per_plate"));
+                venuelist.add(result);
+            }
+            return venuelist;
         } catch (Exception e) {
             return null;
         }
