@@ -11,6 +11,7 @@ import javaapplication6.model.BookVenueModel;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueModel;
 import javaapplication6.view.BookingPageView;
+import javaapplication6.view.DashboardView;
 import javax.swing.JOptionPane;
 
 /**
@@ -78,6 +79,10 @@ public class BookingPageController {
                     else
                     {
                         JOptionPane.showMessageDialog(page, "Your booking was successfully made");
+                        DashboardView dashboardView=new DashboardView();
+                        DashboardController dashboardController=new DashboardController(dashboardView, loginModel);
+                        dashboardController.open();
+                        close();
                     }
                 }
             }

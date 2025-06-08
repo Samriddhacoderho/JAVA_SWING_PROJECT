@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import javaapplication6.controller.Mail.SMTPSMailSender;
 import javaapplication6.database.DBConn;
 import javaapplication6.model.BookVenueModel;
-import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueModel;
 
 /**
