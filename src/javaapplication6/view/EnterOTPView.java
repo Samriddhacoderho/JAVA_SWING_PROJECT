@@ -49,7 +49,7 @@ public class EnterOTPView extends javax.swing.JFrame {
         loginLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         loginLbl.setForeground(new java.awt.Color(102, 204, 0));
         loginLbl.setText("Back to Login ?");
-        jPanel6.add(loginLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 100, -1));
+        jPanel6.add(loginLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 100, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Enter the OTP sent to your email address.");
