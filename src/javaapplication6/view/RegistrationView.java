@@ -69,12 +69,16 @@ public class RegistrationView extends javax.swing.JFrame {
         passShowbtn.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         passShowbtn.setForeground(new java.awt.Color(255, 255, 255));
         passShowbtn.setText("Show");
+        passShowbtn.setBorderPainted(false);
+        passShowbtn.setOpaque(true);
         jPanel2.add(passShowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 40));
 
         confirmPassshowbtn.setBackground(new java.awt.Color(0, 204, 0));
         confirmPassshowbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         confirmPassshowbtn.setForeground(new java.awt.Color(255, 255, 255));
         confirmPassshowbtn.setText("Show");
+        confirmPassshowbtn.setBorderPainted(false);
+        confirmPassshowbtn.setOpaque(true);
         jPanel2.add(confirmPassshowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, -1, 40));
 
         jLabel3.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
@@ -95,6 +99,8 @@ public class RegistrationView extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Register");
+        jButton3.setBorderPainted(false);
+        jButton3.setOpaque(true);
         jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 320, 40));
 
         alreadyLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
@@ -111,7 +117,7 @@ public class RegistrationView extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Register a new account!");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 140, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 160, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 630, 440));
 

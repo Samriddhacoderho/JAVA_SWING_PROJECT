@@ -77,6 +77,8 @@ public class ReportView extends javax.swing.JFrame {
         reportBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         reportBtn.setForeground(new java.awt.Color(255, 255, 255));
         reportBtn.setText("Submit Report");
+        reportBtn.setBorderPainted(false);
+        reportBtn.setOpaque(true);
         jPanel1.add(reportBtn);
         reportBtn.setBounds(280, 260, 160, 30);
 
@@ -89,6 +91,8 @@ public class ReportView extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back");
+        jButton1.setBorderPainted(false);
+        jButton1.setOpaque(true);
         jPanel1.add(jButton1);
         jButton1.setBounds(500, 10, 80, 30);
 

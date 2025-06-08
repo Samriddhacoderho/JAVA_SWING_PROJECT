@@ -40,11 +40,6 @@ public class AhomeView extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         ptnbtn = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        ktmLBL = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        ktmbtn = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         chiLBL = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
@@ -68,6 +63,11 @@ public class AhomeView extends javax.swing.JFrame {
         jPanel14 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         lmbbtn = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        ktmLBL = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        ktmbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -82,18 +82,20 @@ public class AhomeView extends javax.swing.JFrame {
         venue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         venue.setForeground(new java.awt.Color(204, 204, 204));
         venue.setToolTipText("Enter venue name");
-        jPanel9.add(venue, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 130, 30));
+        jPanel9.add(venue, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 260, 30));
 
         location.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         location.setForeground(new java.awt.Color(204, 204, 204));
         location.setToolTipText("Enter venue location");
-        jPanel9.add(location, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 130, 30));
+        jPanel9.add(location, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 180, 30));
 
         search.setBackground(new java.awt.Color(0, 0, 0));
         search.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         search.setForeground(new java.awt.Color(255, 255, 255));
         search.setText("Search");
-        jPanel9.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 80, 30));
+        search.setBorderPainted(false);
+        search.setOpaque(true);
+        jPanel9.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 100, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Popular locations");
@@ -103,13 +105,15 @@ public class AhomeView extends javax.swing.JFrame {
         profile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         profile.setForeground(new java.awt.Color(255, 255, 255));
         profile.setText("Profile");
+        profile.setBorderPainted(false);
+        profile.setOpaque(true);
         jPanel9.add(profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, 30));
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ptnLBL.setText("Patan");
-        jPanel2.add(ptnLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 50, -1));
+        jPanel2.add(ptnLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 60, -1));
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -121,31 +125,13 @@ public class AhomeView extends javax.swing.JFrame {
         ptnbtn.setText("Browse");
         jPanel2.add(ptnbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
 
-        jPanel9.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 130, 120));
-
-        jPanel5.setBackground(new java.awt.Color(204, 255, 204));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        ktmLBL.setText("Kathmandu");
-        jPanel5.add(ktmLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 70, -1));
-
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel8.setText("Photo");
-        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 37, -1));
-
-        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
-
-        ktmbtn.setText("Browse");
-        jPanel5.add(ktmbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
-
-        jPanel9.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 130, 120));
+        jPanel9.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 160, 120));
 
         jPanel7.setBackground(new java.awt.Color(204, 255, 204));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         chiLBL.setText("Chitwan");
-        jPanel7.add(chiLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 50, -1));
+        jPanel7.add(chiLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 80, -1));
 
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -157,7 +143,7 @@ public class AhomeView extends javax.swing.JFrame {
         chibtn.setText("Browse");
         jPanel7.add(chibtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
 
-        jPanel9.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 130, 120));
+        jPanel9.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 160, 120));
 
         jLabel4.setText("Logo");
         jLabel4.setToolTipText("");
@@ -167,14 +153,14 @@ public class AhomeView extends javax.swing.JFrame {
         jPanel9.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 50));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setText("Search venues ...");
-        jPanel9.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, -1));
+        jLabel5.setText("Search venues");
+        jPanel9.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 120, -1));
 
         jPanel4.setBackground(new java.awt.Color(204, 255, 204));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bkpLBL.setText("Bhaktapur");
-        jPanel4.add(bkpLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 50, -1));
+        jPanel4.add(bkpLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 80, -1));
 
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -186,13 +172,13 @@ public class AhomeView extends javax.swing.JFrame {
         bktbtn.setText("Browse");
         jPanel4.add(bktbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
 
-        jPanel9.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 130, 120));
+        jPanel9.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 160, 120));
 
         jPanel11.setBackground(new java.awt.Color(204, 255, 204));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pkrLBL.setText("Pokhara");
-        jPanel11.add(pkrLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 50, -1));
+        jPanel11.add(pkrLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 70, -1));
 
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -204,13 +190,13 @@ public class AhomeView extends javax.swing.JFrame {
         pkrbtn.setText("Browse");
         jPanel11.add(pkrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
 
-        jPanel9.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 130, 120));
+        jPanel9.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 160, 120));
 
         jPanel13.setBackground(new java.awt.Color(204, 255, 204));
         jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lmbLBL.setText("Lumbini");
-        jPanel13.add(lmbLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 50, -1));
+        jPanel13.add(lmbLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 70, -1));
 
         jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -222,7 +208,25 @@ public class AhomeView extends javax.swing.JFrame {
         lmbbtn.setText("Browse");
         jPanel13.add(lmbbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
 
-        jPanel9.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 130, 120));
+        jPanel9.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 160, 120));
+
+        jPanel5.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ktmLBL.setText("Kathmandu");
+        jPanel5.add(ktmLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 90, -1));
+
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setText("Photo");
+        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 37, -1));
+
+        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
+
+        ktmbtn.setText("Browse");
+        jPanel5.add(ktmbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
+
+        jPanel9.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 160, 120));
 
         getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 530));
 
