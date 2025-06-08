@@ -130,7 +130,7 @@ public class AHomeController {
             else
             {
                 VenueListView venueListView=new VenueListView();
-                VenueListController venueListController=new VenueListController(venueListView,this.location);
+                VenueListController venueListController=new VenueListController(venueListView,this.location,loginModel);
                 venueListController.setTableContent(result);
                 venueListController.open();
                 close();
