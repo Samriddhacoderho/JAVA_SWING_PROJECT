@@ -5,6 +5,7 @@
 package javaapplication6.dao;
 import java.sql.*;
 import java.util.ArrayList;
+import javaapplication6.controller.Mail.SMTPSMailSender;
 import javaapplication6.database.DBConn;
 import javaapplication6.model.BookVenueModel;
 import javaapplication6.model.LoginModel;
@@ -17,6 +18,8 @@ import javaapplication6.model.VenueModel;
 
 public class BookVenueDAO {
     private final DBConn dbConn;
+            private SMTPSMailSender smtpsMailSender=new SMTPSMailSender();
+
 
     public BookVenueDAO() {
         dbConn = new DBConn();
@@ -103,8 +106,17 @@ public class BookVenueDAO {
             pstmt.setDouble(4, modelBook.getEstimated_price());
             if(pstmt.executeUpdate()>0)
             {
+                String body="Hello, your booking was successfullly made.\nVenue Name:"+modelVenue.getName()+"\nVenue Location:"+modelVenue.getLocation();
+                boolean mailSent=smtpsMailSender.sendMail(modelBook.getEmail(), "Booking Confirmation", body);
+                if(mailSent)
+                {
                 return true;
-            }
+                }
+                else
+                {
+                    return false;
+                }
+                }
         } catch (Exception e) {
             return false;
         }
