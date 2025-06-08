@@ -50,6 +50,8 @@ public class ChangePassView extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Change password");
+        jButton1.setBorderPainted(false);
+        jButton1.setOpaque(true);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Enter current password:");
@@ -64,21 +66,29 @@ public class ChangePassView extends javax.swing.JFrame {
         newPassBTN.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         newPassBTN.setForeground(new java.awt.Color(255, 255, 255));
         newPassBTN.setText("Show");
+        newPassBTN.setBorderPainted(false);
+        newPassBTN.setOpaque(true);
 
         confirmPassBTN.setBackground(new java.awt.Color(0, 204, 51));
         confirmPassBTN.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         confirmPassBTN.setForeground(new java.awt.Color(255, 255, 255));
         confirmPassBTN.setText("Show");
+        confirmPassBTN.setBorderPainted(false);
+        confirmPassBTN.setOpaque(true);
 
         currentShowBTN.setBackground(new java.awt.Color(0, 204, 51));
         currentShowBTN.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         currentShowBTN.setForeground(new java.awt.Color(255, 255, 255));
         currentShowBTN.setText("Show");
+        currentShowBTN.setBorderPainted(false);
+        currentShowBTN.setOpaque(true);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Back");
+        jButton2.setBorderPainted(false);
+        jButton2.setOpaque(true);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
