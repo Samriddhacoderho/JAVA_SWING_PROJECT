@@ -39,7 +39,7 @@ public class BookVenueDAO {
             }
             else
             {
-                VenueModel result=new VenueModel(rs.getInt("id"),rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"));
+                VenueModel result=new VenueModel(rs.getInt("id"),rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"),rs.getString("status"));
                 return result;
             }
         } catch (Exception e) {
@@ -57,7 +57,7 @@ public class BookVenueDAO {
             var rs=pstmt.executeQuery();
             while(rs.next())
             {
-                VenueModel result=new VenueModel(rs.getInt("id"),rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"));
+                VenueModel result=new VenueModel(rs.getInt("id"),rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"),rs.getString("status"));
                 venuelist.add(result);
             }
             return venuelist;
@@ -85,7 +85,7 @@ public class BookVenueDAO {
             var rs=pstmt.executeQuery();
             while(rs.next())
             {
-                VenueModel result=new VenueModel(rs.getInt("id"),rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"));
+                VenueModel result=new VenueModel(rs.getInt("id"),rs.getString("name"), rs.getString("location"),rs.getString("email"),rs.getString("contact_number"),rs.getDouble("price_per_plate"),rs.getString("status"));
                 venuelist.add(result);
             }
             return venuelist;
@@ -109,7 +109,14 @@ public class BookVenueDAO {
                 boolean mailSent=smtpsMailSender.sendMail(modelBook.getEmail(), "Booking Confirmation", body);
                 if(mailSent)
                 {
-                return true;
+                    System.out.println(modelVenue.getId());
+                    String sqlQueryUpdate="UPDATE venue_table SET status='Booked' where id=?";
+                    PreparedStatement pstmtUpdate=conn.prepareStatement(sqlQueryUpdate);
+                    pstmtUpdate.setInt(1, modelVenue.getId());
+                    if(pstmtUpdate.executeUpdate()>0)
+                    {
+                                        return true;
+                    }
                 }
                 else
                 {
