@@ -255,20 +255,10 @@ public class LocationView extends javax.swing.JFrame {
         profile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         profile.setForeground(new java.awt.Color(255, 255, 255));
         profile.setText("Profile");
-        profile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                profileActionPerformed(evt);
-            }
-        });
         jPanel1.add(profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, -1));
 
         dropdown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Higest", "Lowest" }));
         dropdown.setToolTipText("");
-        dropdown.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dropdownActionPerformed(evt);
-            }
-        });
         jPanel1.add(dropdown, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 90, -1));
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
@@ -301,14 +291,6 @@ public class LocationView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_profileActionPerformed
-
-    private void dropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dropdownActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dropdownActionPerformed
 
     /**
      * @param args the command line arguments

@@ -40,7 +40,7 @@ public class ReportProblemModel {
     { 
         return email; 
     }
-    public void setUserEmail(String email)
+    public void setEmail(String email)
     { 
         this.email = email;
     }

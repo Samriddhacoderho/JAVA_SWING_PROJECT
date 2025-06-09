@@ -69,12 +69,16 @@ public class RegistrationView extends javax.swing.JFrame {
         passShowbtn.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         passShowbtn.setForeground(new java.awt.Color(255, 255, 255));
         passShowbtn.setText("Show");
+        passShowbtn.setBorderPainted(false);
+        passShowbtn.setOpaque(true);
         jPanel2.add(passShowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 40));
 
         confirmPassshowbtn.setBackground(new java.awt.Color(0, 204, 0));
         confirmPassshowbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         confirmPassshowbtn.setForeground(new java.awt.Color(255, 255, 255));
         confirmPassshowbtn.setText("Show");
+        confirmPassshowbtn.setBorderPainted(false);
+        confirmPassshowbtn.setOpaque(true);
         jPanel2.add(confirmPassshowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, -1, 40));
 
         jLabel3.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
@@ -86,20 +90,8 @@ public class RegistrationView extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Name:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 60, 20));
-
-        nameTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameTxtActionPerformed(evt);
-            }
-        });
         jPanel2.add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 320, 40));
         jPanel2.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 320, 40));
-
-        passPsf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passPsfActionPerformed(evt);
-            }
-        });
         jPanel2.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 320, 40));
         jPanel2.add(confirmPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 320, 40));
 
@@ -107,6 +99,8 @@ public class RegistrationView extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Register");
+        jButton3.setBorderPainted(false);
+        jButton3.setOpaque(true);
         jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 320, 40));
 
         alreadyLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
@@ -123,21 +117,13 @@ public class RegistrationView extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Register a new account!");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 140, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 160, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 630, 440));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void passPsfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passPsfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passPsfActionPerformed
-
-    private void nameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameTxtActionPerformed
 
     /**
      * @param args the command line arguments
