@@ -7,6 +7,7 @@ import java.awt.event.MouseListener;
 import javaapplication6.dao.UserDAO;
 import javax.swing.JOptionPane;
 import javaapplication6.model.LoginModel;
+import javaapplication6.view.AhomeView;
 import javaapplication6.view.DashboardView;
 import javaapplication6.view.EnterEmailView;
 import javaapplication6.view.HomeView;
@@ -59,9 +60,9 @@ public class LoginController {
                     {
                         
                         
-                        DashboardView dashboardView=new DashboardView();
-                        DashboardController dashboardController=new DashboardController(dashboardView,loginModel);
-                        dashboardController.open();
+                        AhomeView ahomeView=new AhomeView();
+                        AHomeController ahomeController=new AHomeController(ahomeView,loginModel);
+                        ahomeController.open();
                         close();
                     }
                     else

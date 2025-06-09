@@ -51,6 +51,8 @@ public class EditNameView extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Update");
+        jButton1.setBorderPainted(false);
+        jButton1.setOpaque(true);
         jPanel1.add(jButton1);
         jButton1.setBounds(260, 320, 210, 40);
 
@@ -58,11 +60,8 @@ public class EditNameView extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Back");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        jButton2.setBorderPainted(false);
+        jButton2.setOpaque(true);
         jPanel1.add(jButton2);
         jButton2.setBounds(600, 40, 90, 30);
 
@@ -92,10 +91,6 @@ public class EditNameView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
