@@ -14,6 +14,7 @@ import javaapplication6.view.LoginView;
 import javaapplication6.view.ReportView;
 import javax.swing.JOptionPane;
 import javaapplication6.controller.AHomeController;
+import javax.swing.plaf.basic.BasicButtonListener;
 
 /**
  *
@@ -31,8 +32,8 @@ public class DashboardController {
         dashboardView.LogoutListener(new LogoutListener());
         dashboardView.ReportListener(new ReportProblemListener());
         dashboardView.ViewFAQListener(new ViewFAQListener());
-        dashboardView.BackButton(listener);
-        dashboardView.ViewBookingListener(listener);
+//        dashboardView.BackButton(new );
+        dashboardView.BackButton(new BackButtonListener());
         this.loginModel=loginModel;
     }
     
@@ -108,7 +109,7 @@ public class DashboardController {
             }
             }
     }
-    class ViewBookingListener implements MouseListener{
+    class BackButtonListener implements MouseListener{
 
         @Override
         public void mouseClicked(MouseEvent e) {
@@ -121,22 +122,18 @@ public class DashboardController {
 
         @Override
         public void mousePressed(MouseEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
 
         @Override
         public void mouseEntered(MouseEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
 
         @Override
         public void mouseExited(MouseEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
         
     }
