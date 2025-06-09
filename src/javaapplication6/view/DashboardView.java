@@ -99,6 +99,8 @@ public class DashboardView extends javax.swing.JFrame {
         viewBookingButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         viewBookingButton.setForeground(new java.awt.Color(255, 255, 255));
         viewBookingButton.setText("View Bookings");
+        viewBookingButton.setBorderPainted(false);
+        viewBookingButton.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
