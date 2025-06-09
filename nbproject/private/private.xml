@@ -11,18 +11,21 @@
             <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/view/DashboardView.java</file>
             <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/view/ChangePassView.java</file>
             <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/view/AhomeView.java</file>
-            <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/view/BookVenue.java</file>
             <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/view/FAQView.java</file>
             <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/view/LocationView.java</file>
             <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/dao/UserDAO.java</file>
-            <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/view/CancleView.java</file>
             <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/model/ResetModel.java</file>
             <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/model/BookVenueModel.java</file>
             <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/controller/Mail/SMTPSMailSender.java</file>
             <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/controller/EnterEmailController.java</file>
             <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/controller/EnterOTPController.java</file>
             <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/database/DBConn.java</file>
-            <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/controller/BookVenueController.java</file>
+            <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/dao/BookVenueDAO.java</file>
+            <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/view/BookingPageView.java</file>
+            <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/controller/DashboardController.java</file>
+            <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/view/MyBookings.java</file>
+            <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/controller/MyBookingController.java</file>
+            <file>file:/D:/JAVA_SWING_PROJECT/src/javaapplication6/controller/BookingPageController.java</file>
         </group>
     </open-files>
 </project-private>
