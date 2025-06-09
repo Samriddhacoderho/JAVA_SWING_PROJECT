@@ -15,8 +15,9 @@ public class VenueModel {
     private String email;
     private String contact_number;
     private double price_per_plate;
+    private String status;
     
-    public VenueModel(int id,String name,String location,String email,String contact_number,double price_per_plate)
+    public VenueModel(int id,String name,String location,String email,String contact_number,double price_per_plate,String status)
     {
         this.id=id;
         this.name=name;
@@ -24,6 +25,7 @@ public class VenueModel {
         this.price_per_plate=price_per_plate;
         this.email=email;
         this.contact_number=contact_number;
+        this.status=status;
     }
 
 
@@ -123,6 +125,21 @@ public class VenueModel {
     public void setId(int id) {
         this.id = id;
     }
+
+    /**
+     * @return the status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    /**
+     * @param status the status to set
+     */
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
     
     
     
