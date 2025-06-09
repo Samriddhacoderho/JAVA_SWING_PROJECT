@@ -31,47 +31,45 @@ public class EnterOTPView extends javax.swing.JFrame {
 
         jPanel6 = new javax.swing.JPanel();
         loginLbl = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         otpTxt = new javax.swing.JTextField();
         verifyBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(735, 569));
         getContentPane().setLayout(null);
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setMaximumSize(new java.awt.Dimension(732, 569));
+        jPanel6.setMinimumSize(new java.awt.Dimension(732, 569));
+        jPanel6.setPreferredSize(new java.awt.Dimension(732, 569));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        loginLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         loginLbl.setForeground(new java.awt.Color(102, 204, 0));
-        loginLbl.setText("Login");
-        jPanel6.add(loginLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 50, -1));
+        loginLbl.setText("Back to Login ?");
+        jPanel6.add(loginLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 100, -1));
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel1.setText("Forgot Password?");
-        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 240, 53));
-
-        jLabel3.setText("Enter the OTP to Verify");
-        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 240, -1));
-        jPanel6.add(otpTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 246, -1));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setText("Enter the OTP sent to your email address.");
+        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 400, 40));
+        jPanel6.add(otpTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 246, 40));
 
         verifyBtn.setBackground(new java.awt.Color(0, 0, 0));
+        verifyBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         verifyBtn.setForeground(new java.awt.Color(255, 255, 255));
         verifyBtn.setText("Verify");
         verifyBtn.setBorderPainted(false);
         verifyBtn.setOpaque(true);
-        jPanel6.add(verifyBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 250, -1));
+        jPanel6.add(verifyBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 250, 40));
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Enter OTP");
-        jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 70, 20));
-
-        jLabel5.setText("Remember password?");
-        jPanel6.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 148, -1));
+        jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 70, 20));
 
         getContentPane().add(jPanel6);
-        jPanel6.setBounds(120, 90, 500, 340);
+        jPanel6.setBounds(0, 0, 740, 569);
 
         pack();
         setLocationRelativeTo(null);
@@ -116,10 +114,8 @@ public class EnterOTPView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel loginLbl;
     private javax.swing.JTextField otpTxt;
@@ -135,6 +131,7 @@ public class EnterOTPView extends javax.swing.JFrame {
     {
         this.loginLbl.addMouseListener(listener);
     }
+    
 
     /**
      * @return the otpTxt

@@ -36,64 +36,84 @@ public class AhomeView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         profile = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        ptnLBL = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        Button3 = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        Button1 = new javax.swing.JButton();
+        ptnbtn = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
+        chiLBL = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        Button2 = new javax.swing.JButton();
+        chibtn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        bkpLBL = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        bktbtn = new javax.swing.JButton();
+        jPanel11 = new javax.swing.JPanel();
+        pkrLBL = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        pkrbtn = new javax.swing.JButton();
+        jPanel13 = new javax.swing.JPanel();
+        lmbLBL = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        lmbbtn = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        ktmLBL = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        ktmbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel9.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setText("Find Venue Near You");
-        jPanel9.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 190, -1));
+        jPanel9.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 190, -1));
 
+        venue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         venue.setForeground(new java.awt.Color(204, 204, 204));
-        venue.setText("Search Venue");
-        jPanel9.add(venue, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 130, 20));
+        venue.setToolTipText("Enter venue name");
+        jPanel9.add(venue, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 260, 30));
 
+        location.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         location.setForeground(new java.awt.Color(204, 204, 204));
-        location.setText("Search Location");
-        jPanel9.add(location, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 130, 20));
+        location.setToolTipText("Enter venue location");
+        jPanel9.add(location, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 180, 30));
 
+        search.setBackground(new java.awt.Color(0, 0, 0));
+        search.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        search.setForeground(new java.awt.Color(255, 255, 255));
         search.setText("Search");
-        jPanel9.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, 20));
+        search.setBorderPainted(false);
+        search.setOpaque(true);
+        jPanel9.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 100, 30));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Browse Venues in Popular Location");
-        jPanel9.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 310, -1));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setText("Popular locations");
+        jPanel9.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 130, -1));
 
         profile.setBackground(new java.awt.Color(0, 0, 0));
         profile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         profile.setForeground(new java.awt.Color(255, 255, 255));
         profile.setText("Profile");
-        profile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                profileActionPerformed(evt);
-            }
-        });
-        jPanel9.add(profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
+        profile.setBorderPainted(false);
+        profile.setOpaque(true);
+        jPanel9.add(profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, 30));
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Bhaktipur");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 50, -1));
+        ptnLBL.setText("Patan");
+        jPanel2.add(ptnLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 60, -1));
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -102,34 +122,16 @@ public class AhomeView extends javax.swing.JFrame {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
 
-        Button3.setText("Browse");
-        jPanel2.add(Button3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
+        ptnbtn.setText("Browse");
+        jPanel2.add(ptnbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
 
-        jPanel9.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 130, 120));
-
-        jPanel5.setBackground(new java.awt.Color(204, 255, 204));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel7.setText("Kathmandu");
-        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 70, -1));
-
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel8.setText("Photo");
-        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 37, -1));
-
-        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
-
-        Button1.setText("Browse");
-        jPanel5.add(Button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
-
-        jPanel9.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 130, 120));
+        jPanel9.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 160, 120));
 
         jPanel7.setBackground(new java.awt.Color(204, 255, 204));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel10.setText("Pokhara");
-        jPanel7.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 50, -1));
+        chiLBL.setText("Chitwan");
+        jPanel7.add(chiLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 80, -1));
 
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -138,93 +140,147 @@ public class AhomeView extends javax.swing.JFrame {
 
         jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
 
-        Button2.setText("Browse");
-        jPanel7.add(Button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
+        chibtn.setText("Browse");
+        jPanel7.add(chibtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
 
-        jPanel9.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 130, 120));
+        jPanel9.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 160, 120));
 
         jLabel4.setText("Logo");
+        jLabel4.setToolTipText("");
+        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel1.add(jLabel4);
 
-        jPanel9.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 30));
+        jPanel9.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 50));
 
-        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 510, 340));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel5.setText("Search venues");
+        jPanel9.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 120, -1));
+
+        jPanel4.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        bkpLBL.setText("Bhaktapur");
+        jPanel4.add(bkpLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 80, -1));
+
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel12.setText("Photo");
+        jPanel10.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 37, -1));
+
+        jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
+
+        bktbtn.setText("Browse");
+        jPanel4.add(bktbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
+
+        jPanel9.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 160, 120));
+
+        jPanel11.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pkrLBL.setText("Pokhara");
+        jPanel11.add(pkrLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 70, -1));
+
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setText("Photo");
+        jPanel12.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 37, -1));
+
+        jPanel11.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
+
+        pkrbtn.setText("Browse");
+        jPanel11.add(pkrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
+
+        jPanel9.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 160, 120));
+
+        jPanel13.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lmbLBL.setText("Lumbini");
+        jPanel13.add(lmbLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 70, -1));
+
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel16.setText("Photo");
+        jPanel14.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 37, -1));
+
+        jPanel13.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
+
+        lmbbtn.setText("Browse");
+        jPanel13.add(lmbbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
+
+        jPanel9.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 160, 120));
+
+        jPanel5.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ktmLBL.setText("Kathmandu");
+        jPanel5.add(ktmLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 90, -1));
+
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setText("Photo");
+        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 37, -1));
+
+        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
+
+        ktmbtn.setText("Browse");
+        jPanel5.add(ktmbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
+
+        jPanel9.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 160, 120));
+
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 530));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_profileActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AhomeView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AhomeView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AhomeView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AhomeView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AhomeView().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Button1;
-    private javax.swing.JButton Button2;
-    private javax.swing.JButton Button3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel bkpLBL;
+    private javax.swing.JButton bktbtn;
+    private javax.swing.JLabel chiLBL;
+    private javax.swing.JButton chibtn;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel ktmLBL;
+    private javax.swing.JButton ktmbtn;
+    private javax.swing.JLabel lmbLBL;
+    private javax.swing.JButton lmbbtn;
     private javax.swing.JTextField location;
+    private javax.swing.JLabel pkrLBL;
+    private javax.swing.JButton pkrbtn;
     private javax.swing.JButton profile;
+    private javax.swing.JLabel ptnLBL;
+    private javax.swing.JButton ptnbtn;
     private javax.swing.JButton search;
     private javax.swing.JTextField venue;
     // End of variables declaration//GEN-END:variables
 
     public void ProfileListener(ActionListener listener)
     {
-        this.getProfile().addActionListener(listener);
+        this.profile.addActionListener(listener);
     }
 
         public void SearchListener(ActionListener listener)
@@ -232,34 +288,33 @@ public class AhomeView extends javax.swing.JFrame {
         this.search.addActionListener(listener);
     }
 
-        public void Browse1Listener(ActionListener listener)
+        public void BrowsektmListener(ActionListener listener)
     {
-        this.Button1.addActionListener(listener);
+        this.ktmbtn.addActionListener(listener);
     }
         
-    public void Browse2Listener(ActionListener listener)
+    public void BrowsepkrListener(ActionListener listener)
     {
-        this.Button2.addActionListener(listener);
+        this.pkrbtn.addActionListener(listener);
     }
 
-    public void Browse3Listener(ActionListener listener)
+    public void BrowsebktListener(ActionListener listener)
     {
-        this.Button3.addActionListener(listener);
+        this.bktbtn.addActionListener(listener);
     }
-
-    /**
-     * @return the profile
-     */
-    public javax.swing.JButton getProfile() {
-        return profile;
+    public void BrowselmbListener(ActionListener listener)
+    {
+        this.lmbbtn.addActionListener(listener);
     }
-
-    /**
-     * @param profile the profile to set
-     */
-    public void setProfile(javax.swing.JButton profile) {
-        this.profile = profile;
+    public void BrowsechiListener(ActionListener listener)
+    {
+        this.chibtn.addActionListener(listener);
     }
+    public void BrowseptnListener(ActionListener listener)
+    {
+        this.ptnbtn.addActionListener(listener);
+    }
+    
 
     /**
      * @return the venue
@@ -274,7 +329,105 @@ public class AhomeView extends javax.swing.JFrame {
     public void setVenue(javax.swing.JTextField venue) {
         this.venue = venue;
     }
+
+    /**
+     * @return the location
+     */
+    public javax.swing.JTextField getLocationField() {
+        return location;
+    }
+
+    /**
+     * @param location the location to set
+     */
+    public void setLocationField(javax.swing.JTextField location) {
+        this.location = location;
+    }
+
+    /**
+     * @return the bkpLBL
+     */
+    public javax.swing.JLabel getBkpLBL() {
+        return bkpLBL;
+    }
+
+    /**
+     * @param bkpLBL the bkpLBL to set
+     */
+    public void setBkpLBL(javax.swing.JLabel bkpLBL) {
+        this.bkpLBL = bkpLBL;
+    }
+
+    /**
+     * @return the chiLBL
+     */
+    public javax.swing.JLabel getChiLBL() {
+        return chiLBL;
+    }
+
+    /**
+     * @param chiLBL the chiLBL to set
+     */
+    public void setChiLBL(javax.swing.JLabel chiLBL) {
+        this.chiLBL = chiLBL;
+    }
+
+    /**
+     * @return the ktmLBL
+     */
+    public javax.swing.JLabel getKtmLBL() {
+        return ktmLBL;
+    }
+
+    /**
+     * @param ktmLBL the ktmLBL to set
+     */
+    public void setKtmLBL(javax.swing.JLabel ktmLBL) {
+        this.ktmLBL = ktmLBL;
+    }
+
+    /**
+     * @return the lmbLBL
+     */
+    public javax.swing.JLabel getLmbLBL() {
+        return lmbLBL;
+    }
+
+    /**
+     * @param lmbLBL the lmbLBL to set
+     */
+    public void setLmbLBL(javax.swing.JLabel lmbLBL) {
+        this.lmbLBL = lmbLBL;
+    }
+
+    /**
+     * @return the pkrLBL
+     */
+    public javax.swing.JLabel getPkrLBL() {
+        return pkrLBL;
+    }
+
+    /**
+     * @param pkrLBL the pkrLBL to set
+     */
+    public void setPkrLBL(javax.swing.JLabel pkrLBL) {
+        this.pkrLBL = pkrLBL;
+    }
+
+    /**
+     * @return the ptnLBL
+     */
+    public javax.swing.JLabel getPtnLBL() {
+        return ptnLBL;
+    }
+
+    /**
+     * @param ptnLBL the ptnLBL to set
+     */
+    public void setPtnLBL(javax.swing.JLabel ptnLBL) {
+        this.ptnLBL = ptnLBL;
+    }
     
-
-
+    
+    
 }

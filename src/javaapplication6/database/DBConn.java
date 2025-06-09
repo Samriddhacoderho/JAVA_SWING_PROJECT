@@ -21,7 +21,6 @@ public class DBConn {
             Statement stmt = initialConn.createStatement();
 
             stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS " + dbName);
-            System.out.println("Database ensured!");
 
             conn = DriverManager.getConnection(baseUrl + dbName, username, password);
 
@@ -32,7 +31,6 @@ public class DBConn {
                     + "email VARCHAR(100) UNIQUE, "
                     + "password VARCHAR(100))";
             stmt.executeUpdate(sql);
-            System.out.println("Users table ensured!");
 
         } catch (Exception e) {
             System.out.println("DB Error: " + e.getMessage());

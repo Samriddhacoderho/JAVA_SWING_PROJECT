@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javaapplication6.database.DBConn;
 import javaapplication6.model.RegisterModel;
 import javaapplication6.HashUtil.HashUtil;
@@ -11,6 +12,7 @@ import javaapplication6.model.EditNameModel;
 import javaapplication6.model.EnterEmailModel;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.ResetModel;
+import javaapplication6.model.VenueModel;
 
 
 public class UserDAO {
@@ -171,12 +173,13 @@ public class UserDAO {
         
         try(Connection conn = dbConn.connection_base()){
             PreparedStatement stmnt = conn.prepareStatement(query );
-            stmnt.setString(1, resetModel.getEmail());
+            String newHashedPassword = HashUtil.hashPassword(resetModel.getPassword());
+            stmnt.setString(1, newHashedPassword);
+            stmnt.setString(2, resetModel.getEmail());
             int result = stmnt.executeUpdate();
             return result>0;
         }catch(Exception e){
            return false;
         }
     }
-
 }
