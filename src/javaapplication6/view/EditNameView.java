@@ -29,56 +29,63 @@ public class EditNameView extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
-        jLabel5.setText("bookmyvenue");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(220, 80, 240, 53);
-
-        jLabel9.setText("Nepal's no.1 booking platform");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(250, 130, 180, 17);
-
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("New Name:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(160, 190, 90, 20);
+        jLabel1.setBounds(180, 270, 90, 20);
         jPanel1.add(jTextField1);
-        jTextField1.setBounds(250, 190, 210, 23);
+        jTextField1.setBounds(260, 260, 210, 40);
 
-        jButton1.setText("Update Name");
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Update");
+        jButton1.setBorderPainted(false);
+        jButton1.setOpaque(true);
         jPanel1.add(jButton1);
-        jButton1.setBounds(350, 240, 120, 23);
+        jButton1.setBounds(260, 320, 210, 40);
 
-        jButton2.setText("Go Back");
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Back");
+        jButton2.setBorderPainted(false);
+        jButton2.setOpaque(true);
         jPanel1.add(jButton2);
-        jButton2.setBounds(350, 290, 120, 23);
+        jButton2.setBounds(600, 40, 90, 30);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setText("Please enter your new name and hit submit!");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(230, 160, 290, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         pack();
@@ -125,8 +132,7 @@ public class EditNameView extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables

@@ -36,42 +36,44 @@ public class EnterEmailView extends javax.swing.JFrame {
         emailTxt = new javax.swing.JTextField();
         otpBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(735, 569));
         getContentPane().setLayout(null);
 
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setMaximumSize(new java.awt.Dimension(610, 346));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        loginLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         loginLbl.setForeground(new java.awt.Color(102, 204, 0));
-        loginLbl.setText("Login");
-        jPanel6.add(loginLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 50, -1));
+        loginLbl.setText("Back to Login ?");
+        jPanel6.add(loginLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, 100, -1));
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Email");
-        jPanel6.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 50, 20));
+        jPanel6.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 40, 20));
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Forgot Password?");
-        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 240, 53));
-        jPanel6.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 246, -1));
+        jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 180, 50));
+        jPanel6.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 246, 40));
 
         otpBtn.setBackground(new java.awt.Color(0, 0, 0));
+        otpBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         otpBtn.setForeground(new java.awt.Color(255, 255, 255));
-        otpBtn.setText("Send OTP");
+        otpBtn.setText("Get OTP");
         otpBtn.setBorderPainted(false);
         otpBtn.setOpaque(true);
-        jPanel6.add(otpBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 250, -1));
+        jPanel6.add(otpBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, 250, 40));
 
-        jLabel3.setText("Enter your email to send OTP");
-        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 240, -1));
-
-        jLabel5.setText("Remember password?");
-        jPanel6.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 148, -1));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setText("Recover your account by entering your email to recieve OTP");
+        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 390, -1));
 
         getContentPane().add(jPanel6);
-        jPanel6.setBounds(120, 90, 500, 340);
+        jPanel6.setBounds(-40, -40, 770, 640);
 
         pack();
         setLocationRelativeTo(null);
@@ -120,7 +122,6 @@ public class EnterEmailView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel loginLbl;
     private javax.swing.JButton otpBtn;

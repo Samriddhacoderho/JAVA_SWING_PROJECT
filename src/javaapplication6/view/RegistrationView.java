@@ -9,7 +9,7 @@ import java.awt.event.MouseListener;
 
 /**
  *
- * @author suhritsatyal
+ * @author Yuri Maharjan
  */
 public class RegistrationView extends javax.swing.JFrame {
 
@@ -31,8 +31,6 @@ public class RegistrationView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         passShowbtn = new javax.swing.JButton();
@@ -45,6 +43,8 @@ public class RegistrationView extends javax.swing.JFrame {
         confirmPsf = new javax.swing.JPasswordField();
         jButton3 = new javax.swing.JButton();
         alreadyLbl = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -52,83 +52,78 @@ public class RegistrationView extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
-        jLabel5.setText("bookmyvenue");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 240, 53));
-
-        jLabel9.setText("Nepal's no.1 booking platform");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 220, -1));
 
         jLabel1.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Confirm Password:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, 20));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, 20));
 
         jLabel4.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Password:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 100, 20));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 100, 20));
 
+        passShowbtn.setBackground(new java.awt.Color(0, 204, 51));
+        passShowbtn.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        passShowbtn.setForeground(new java.awt.Color(255, 255, 255));
         passShowbtn.setText("Show");
-        jPanel2.add(passShowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, -1, -1));
+        passShowbtn.setBorderPainted(false);
+        passShowbtn.setOpaque(true);
+        jPanel2.add(passShowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 40));
 
+        confirmPassshowbtn.setBackground(new java.awt.Color(0, 204, 0));
+        confirmPassshowbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        confirmPassshowbtn.setForeground(new java.awt.Color(255, 255, 255));
         confirmPassshowbtn.setText("Show");
-        jPanel2.add(confirmPassshowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, -1, -1));
+        confirmPassshowbtn.setBorderPainted(false);
+        confirmPassshowbtn.setOpaque(true);
+        jPanel2.add(confirmPassshowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, -1, 40));
 
         jLabel3.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Email:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 60, 20));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 60, 20));
 
         jLabel2.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Name:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 60, 20));
-
-        nameTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameTxtActionPerformed(evt);
-            }
-        });
-        jPanel2.add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 320, -1));
-        jPanel2.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 320, -1));
-
-        passPsf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passPsfActionPerformed(evt);
-            }
-        });
-        jPanel2.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 320, -1));
-        jPanel2.add(confirmPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 320, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 60, 20));
+        jPanel2.add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 320, 40));
+        jPanel2.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 320, 40));
+        jPanel2.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 320, 40));
+        jPanel2.add(confirmPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 320, 40));
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Register");
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 320, -1));
+        jButton3.setBorderPainted(false);
+        jButton3.setOpaque(true);
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 320, 40));
 
         alreadyLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         alreadyLbl.setForeground(new java.awt.Color(0, 204, 51));
         alreadyLbl.setText("Already Have An Account?");
-        jPanel2.add(alreadyLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, -1, -1));
+        jPanel2.add(alreadyLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 560, 330));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 560, 340));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setText("bookmyvenue");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 130, 40));
+
+        jLabel6.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel6.setText("Register a new account!");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 160, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 630, 440));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void passPsfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passPsfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passPsfActionPerformed
-
-    private void nameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameTxtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,7 +172,7 @@ public class RegistrationView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField nameTxt;

@@ -7,7 +7,7 @@ package javaapplication6.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javaapplication6.view.HomeView;
-import javaapplication6.view.RegistrationView;
+import javaapplication6.view.LoginView;
 
 /**
  *
@@ -35,9 +35,9 @@ public class HomeController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            RegistrationView registrationView=new RegistrationView();
-            RegistrationController registrationController=new RegistrationController(registrationView);
-            registrationController.open();
+            LoginView loginView = new LoginView();
+            LoginController loginController =new LoginController(loginView);
+            loginController.open();
             close();
             //ok
             

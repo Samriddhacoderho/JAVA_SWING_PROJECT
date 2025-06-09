@@ -2,7 +2,10 @@ package javaapplication6.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javaapplication6.model.LoginModel;
+import javaapplication6.view.AhomeView;
 import javaapplication6.view.ChangePassView;
 import javaapplication6.view.DashboardView;
 import javaapplication6.view.EditNameView;
@@ -10,6 +13,7 @@ import javaapplication6.view.FAQView;
 import javaapplication6.view.LoginView;
 import javaapplication6.view.ReportView;
 import javax.swing.JOptionPane;
+import javaapplication6.controller.AHomeController;
 
 /**
  *
@@ -27,6 +31,8 @@ public class DashboardController {
         dashboardView.LogoutListener(new LogoutListener());
         dashboardView.ReportListener(new ReportProblemListener());
         dashboardView.ViewFAQListener(new ViewFAQListener());
+        dashboardView.BackButton(listener);
+        dashboardView.ViewBookingListener(listener);
         this.loginModel=loginModel;
     }
     
@@ -83,6 +89,7 @@ public class DashboardController {
             ReportView reportView=new ReportView();
             ReportController reportController=new ReportController(reportView,loginModel);
             reportController.open();
+            close();
         }
         
     }
@@ -100,5 +107,37 @@ public class DashboardController {
             close();
             }
             }
+    }
+    class ViewBookingListener implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            AhomeView home = new AhomeView();
+            AHomeController controller = new AHomeController(home,loginModel);
+            controller.open();
+            close();
+                
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+        
     }
 }
