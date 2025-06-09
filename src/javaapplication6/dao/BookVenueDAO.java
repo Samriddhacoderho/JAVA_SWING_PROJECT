@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import javaapplication6.controller.Mail.SMTPSMailSender;
 import javaapplication6.database.DBConn;
 import javaapplication6.model.BookVenueModel;
+import javaapplication6.model.VenueDetailsFetchModel;
 import javaapplication6.model.VenueModel;
 
 /**
@@ -127,5 +128,23 @@ public class BookVenueDAO {
             return false;
         }
         return false;
+    }
+    
+    public VenueDetailsFetchModel getVenue_in_mybookingPage(String email)
+    {
+        String sqlQuery="select * from book_details join venue_table on venue_table.id=book_details.venue_id where book_details.user_email=?";
+        try (Connection conn=dbConn.connection_base()){
+            PreparedStatement pstmt=conn.prepareStatement(sqlQuery);
+            pstmt.setString(1, email);
+            var rs=pstmt.executeQuery();
+            if(rs.next())
+            {
+                VenueDetailsFetchModel result=new VenueDetailsFetchModel(rs.getInt("venue_id"), email, rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"));
+                return result;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        return null;
     }
 }
