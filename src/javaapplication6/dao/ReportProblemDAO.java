@@ -21,7 +21,7 @@ public class ReportProblemDAO {
     }
     public boolean addReport(ReportProblemModel report){
          
-        String query = "insert into problems(email,subject,description) values(?,?,?,?)";
+        String query = "insert into report_table(email,subject,description) values(?,?,?)";
         try (Connection conn = dbConn.connection_base();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setString(1,report.getEmail() );

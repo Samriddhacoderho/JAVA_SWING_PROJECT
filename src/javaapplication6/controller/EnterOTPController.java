@@ -6,11 +6,14 @@ package javaapplication6.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javaapplication6.controller.Mail.SMTPSMailSender;
 import javaapplication6.dao.UserDAO;
 import javaapplication6.model.ResetModel;
 import javaapplication6.view.EnterOTPView;
 import javax.swing.JOptionPane;
+import javaapplication6.view.LoginView;
 
 /**
  *
@@ -29,6 +32,7 @@ public class EnterOTPController {
         this.enterOTPView=enterOTPView;
         this.email=email;
         this.enterOTPView.VerifyActionListener(new VerifyListener());
+        this.enterOTPView.ForgetActionListener(new BackLoginListener());
     }
     
     public void open()
@@ -79,6 +83,37 @@ public class EnterOTPController {
                 }
             }
         }
+        
+    }
+    
+    class BackLoginListener implements MouseListener{
+        @Override
+        public void mouseClicked(MouseEvent e){
+            LoginView loginView=new LoginView();
+            LoginController loginController=new LoginController(loginView);
+            loginController.open();
+            close();
+        }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        // Optional: implement if needed
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        // Optional: implement if needed
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        // Optional: implement if needed
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        // Optional: implement if needed
+    }
         
     }
 }
