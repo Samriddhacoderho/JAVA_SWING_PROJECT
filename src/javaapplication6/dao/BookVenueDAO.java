@@ -25,6 +25,25 @@ public class BookVenueDAO {
         dbConn = new DBConn();
     }
     
+    public boolean insertVenue(VenueModel venue) {
+    String sqlQuery = "INSERT INTO venue_table (name, location, email, contact_number, price_per_plate, status) VALUES (?, ?, ?, ?, ?, ?)";
+    try (Connection conn = dbConn.connection_base()) {
+        PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
+        pstmt.setString(1, venue.getName());
+        pstmt.setString(2, venue.getLocation());
+        pstmt.setString(3, venue.getEmail());
+        pstmt.setString(4, venue.getContact_number());
+        pstmt.setDouble(5, venue.getPrice_per_plate());
+        pstmt.setString(6, venue.getStatus());
+
+        return pstmt.executeUpdate() > 0;
+
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    }
+}
+    
     public VenueModel searchParticularVenue(VenueModel venueModel)
     {
         String sqlQuery="SELECT * FROM venue_table where name=? and location=?";
@@ -146,6 +165,9 @@ public class BookVenueDAO {
         }
         return null;
     }
+    
+
+    
     
     public boolean cancelBooking(VenueDetailsFetchModel model)
     {
