@@ -129,7 +129,6 @@ public class BookVenueDAO {
                 boolean mailSent=smtpsMailSender.sendMail(modelBook.getEmail(), "Booking Confirmation", body);
                 if(mailSent)
                 {
-                    System.out.println(modelVenue.getId());
                     String sqlQueryUpdate="UPDATE venue_table SET status='Booked' where id=?";
                     PreparedStatement pstmtUpdate=conn.prepareStatement(sqlQueryUpdate);
                     pstmtUpdate.setInt(1, modelVenue.getId());
@@ -166,35 +165,41 @@ public class BookVenueDAO {
         }
         return null;
     }
-    public void insertSampleVenues() {
-        String sqlQuery = "INSERT INTO venue_table (name, location, email, contact_number, price_per_plate, status) VALUES (?, ?, ?, ?, ?, ?)";
-        String[][] data = {
-            {"Grand Horizon Hall", "Kathmandu", "contact@grandhorizon.com", "9801234567", "1200.50", "Unbooked"},
-            {"Everest View Banquet", "Pokhara", "info@everestview.com", "9812345678", "1350.00", "Unbooked"},
-            {"Lalitpur Palace Venue", "Kathmandu", "events@lalitpurpalace.com", "9823456789", "1500.75", "Booked"},
-            {"Royal Banquet", "Bhaktapur", "royal@banquetnp.com", "9809876543", "1100.00", "Unbooked"},
-            {"Moonlight Garden", "Kathmandu", "moonlight@events.com", "9843219876", "1250.25", "Booked"},
-            {"Himalayan Fiesta", "Pokhara", "contact@himalayanfiesta.com", "9811122233", "1400.00", "Unbooked"},
-            {"Sunset View Hall", "Kathmandu", "sunsetview@hall.com", "9803344556", "1300.00", "Unbooked"},
-            {"Peaceful Valley Venue", "Bhaktapur", "peace@valleyvenue.com", "9833344455", "1450.00", "Booked"},
-            {"Evergreen Event Center", "Pokhara", "evergreen@eventcenter.com", "9801122334", "1150.00", "Unbooked"},
-            {"Blue Sky Banquet", "Bhaktapur", "bluesky@banquets.com", "9845566778", "1380.00", "Booked"}
-        };
+    
 
-        try (Connection conn = dbConn.connection_base()) {
-            PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
-            for (String[] row : data) {
-                pstmt.setString(1, row[0]);
-                pstmt.setString(2, row[1]);
-                pstmt.setString(3, row[2]);
-                pstmt.setString(4, row[3]);
-                pstmt.setDouble(5, Double.parseDouble(row[4]));
-                pstmt.setString(6, row[5]);
-                pstmt.executeUpdate();
+    
+    
+    public boolean cancelBooking(VenueDetailsFetchModel model)
+    {
+        String sqlQuery="DELETE FROM book_details WHERE venue_id=? and user_email=?";
+        try (Connection conn=dbConn.connection_base()){
+            PreparedStatement pstmt=conn.prepareStatement(sqlQuery);
+            pstmt.setInt(1, model.getVenue_id());
+            pstmt.setString(2, model.getUser_email());
+            if(pstmt.executeUpdate()>0)
+            {
+                String body="Hello, your booking was successfully cancelled.\nVenue Name:"+model.getVenue_name()+"\nVenue Location:"+model.getVenue_location();
+                boolean mailSent=smtpsMailSender.sendMail(model.getUser_email(), "Booking Cancellation", body);
+                if(!mailSent)
+                {
+                    return false;
+                }
+                else
+                {
+                    String sqlQueryUpdate="UPDATE venue_table SET status='Unbooked' where id=?";
+                    PreparedStatement pstmtUpdate=conn.prepareStatement(sqlQueryUpdate);
+                    pstmtUpdate.setInt(1, model.getVenue_id());
+                    if(pstmtUpdate.executeUpdate()>0)
+                    {
+                                        return true;
+                    }
+                }
+                
+                
             }
         } catch (Exception e) {
-            System.out.println("Error in insertSampleVenues: " + e.getMessage());
+            return false;
         }
+        return false;   
     }
 }
-    
