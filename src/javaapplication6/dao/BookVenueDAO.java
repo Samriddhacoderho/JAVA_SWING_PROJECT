@@ -110,7 +110,6 @@ public class BookVenueDAO {
                 boolean mailSent=smtpsMailSender.sendMail(modelBook.getEmail(), "Booking Confirmation", body);
                 if(mailSent)
                 {
-                    System.out.println(modelVenue.getId());
                     String sqlQueryUpdate="UPDATE venue_table SET status='Booked' where id=?";
                     PreparedStatement pstmtUpdate=conn.prepareStatement(sqlQueryUpdate);
                     pstmtUpdate.setInt(1, modelVenue.getId());
@@ -146,5 +145,39 @@ public class BookVenueDAO {
             return null;
         }
         return null;
+    }
+    
+    public boolean cancelBooking(VenueDetailsFetchModel model)
+    {
+        String sqlQuery="DELETE FROM book_details WHERE venue_id=? and user_email=?";
+        try (Connection conn=dbConn.connection_base()){
+            PreparedStatement pstmt=conn.prepareStatement(sqlQuery);
+            pstmt.setInt(1, model.getVenue_id());
+            pstmt.setString(2, model.getUser_email());
+            if(pstmt.executeUpdate()>0)
+            {
+                String body="Hello, your booking was successfully cancelled.\nVenue Name:"+model.getVenue_name()+"\nVenue Location:"+model.getVenue_location();
+                boolean mailSent=smtpsMailSender.sendMail(model.getUser_email(), "Booking Cancellation", body);
+                if(!mailSent)
+                {
+                    return false;
+                }
+                else
+                {
+                    String sqlQueryUpdate="UPDATE venue_table SET status='Unbooked' where id=?";
+                    PreparedStatement pstmtUpdate=conn.prepareStatement(sqlQueryUpdate);
+                    pstmtUpdate.setInt(1, model.getVenue_id());
+                    if(pstmtUpdate.executeUpdate()>0)
+                    {
+                                        return true;
+                    }
+                }
+                
+                
+            }
+        } catch (Exception e) {
+            return false;
+        }
+        return false;   
     }
 }
