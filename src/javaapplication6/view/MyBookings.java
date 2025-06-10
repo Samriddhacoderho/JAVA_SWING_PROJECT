@@ -271,7 +271,7 @@ public class MyBookings extends javax.swing.JFrame {
     
     public void backListener(MouseListener listener)
     {
-        this.jLabel1.addMouseListener(listener);
+        this.backprofile.addMouseListener(listener);
     }
 
     /**
