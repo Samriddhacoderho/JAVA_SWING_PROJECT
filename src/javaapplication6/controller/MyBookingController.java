@@ -12,6 +12,7 @@ import javaapplication6.dao.BookVenueDAO;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueDetailsFetchModel;
 import javaapplication6.model.VenueModel;
+import javaapplication6.view.AhomeView;
 import javaapplication6.view.DashboardView;
 import javaapplication6.view.MyBookings;
 import javax.swing.JOptionPane;
@@ -64,7 +65,23 @@ public class MyBookingController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            if(JOptionPane.showConfirmDialog(bookingView, "Are you sure you want to cancel this booking?")==0)
+            {
+                boolean result=dao.cancelBooking(dao.getVenue_in_mybookingPage(loginModel.getEmail()));
+                if(!result)
+                {
+                    JOptionPane.showMessageDialog(bookingView, "There was some error cancelling your booking at the moment!");
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(bookingView, "Your booking was successfully cancelled");
+                    AhomeView view=new AhomeView();
+                    AHomeController ctrl=new AHomeController(view, loginModel);
+                    ctrl.open();
+                    close();
+                }
+                
+            }
         }
         
     }
