@@ -33,8 +33,9 @@ public class DashboardController {
         dashboardView.LogoutListener(new LogoutListener());
         dashboardView.ReportListener(new ReportProblemListener());
         dashboardView.ViewFAQListener(new ViewFAQListener());
-        dashboardView.ViewBookingListener(new ViewBookingListener());
+
         dashboardView.BackButton(new BackButtonListener());
+        dashboardView.ViewBookingListener(new ViewBookingListener());
         this.loginModel=loginModel;
     }
     
@@ -142,11 +143,12 @@ public class DashboardController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            MyBookings bookingView = new MyBookings();
-            MyBookingController mybookingController = new MyBookingController(bookingView,loginModel);
-            mybookingController.open();
+
+            MyBookings bookings=new MyBookings();
+            MyBookingController ctrl=new MyBookingController(bookings,loginModel);
+            ctrl.open();
             close();
-            
+
         }
         }
         
