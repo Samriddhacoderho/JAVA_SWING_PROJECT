@@ -14,6 +14,7 @@ import javaapplication6.view.LoginView;
 import javaapplication6.view.ReportView;
 import javax.swing.JOptionPane;
 import javaapplication6.controller.AHomeController;
+import javaapplication6.view.MyBookings;
 import javax.swing.plaf.basic.BasicButtonListener;
 
 /**
@@ -32,7 +33,7 @@ public class DashboardController {
         dashboardView.LogoutListener(new LogoutListener());
         dashboardView.ReportListener(new ReportProblemListener());
         dashboardView.ViewFAQListener(new ViewFAQListener());
-//        dashboardView.BackButton(new );
+        dashboardView.ViewBookingListener(new ViewBookingListener());
         dashboardView.BackButton(new BackButtonListener());
         this.loginModel=loginModel;
     }
@@ -141,6 +142,10 @@ public class DashboardController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            MyBookings bookingView = new MyBookings();
+            MyBookingController mybookingController = new MyBookingController(bookingView,loginModel);
+            mybookingController.open();
+            close();
             
         }
         }
