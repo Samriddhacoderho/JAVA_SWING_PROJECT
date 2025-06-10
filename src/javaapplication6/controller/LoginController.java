@@ -42,39 +42,50 @@ public class LoginController {
     class LoginUser implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            
+//            Login bypass for deveelopment, erase this code and uncomment the whole code below for production
+
             String email = loginView.getEmailTxt().getText();
             String password = loginView.getPassPsf().getText();
-            
-            //validation part
-            String validation = validate(email, password);
-            
-            
-            if (!validation.equals("Logging in...")) {
-                JOptionPane.showMessageDialog(loginView, validation);
-            } else {
-                
-                try {
-                    LoginModel loginModel=new LoginModel(email,password);
-                    boolean result=userDAO.loginUser(loginModel);
-                    if(result)
-                    {
-                        
-                        
-                        AhomeView ahomeView=new AhomeView();
+            LoginModel loginModel=new LoginModel(email,password);
+            AhomeView ahomeView=new AhomeView();
                         AHomeController ahomeController=new AHomeController(ahomeView,loginModel);
                         ahomeController.open();
                         close();
-                    }
-                    else
-                    {
-                        JOptionPane.showMessageDialog(loginView, "Please enter correct credentials!");
-                    }
-
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(loginView, "Error: " + ex.getMessage());
-                }
-                
-            }
+            
+//            String email = loginView.getEmailTxt().getText();
+//            String password = loginView.getPassPsf().getText();
+//            
+//            //validation part
+//            String validation = validate(email, password);
+//            
+//            
+//            if (!validation.equals("Logging in...")) {
+//                JOptionPane.showMessageDialog(loginView, validation);
+//            } else {
+//                
+//                try {
+//                    LoginModel loginModel=new LoginModel(email,password);
+//                    boolean result=userDAO.loginUser(loginModel);
+//                    if(result)
+//                    {
+//                        
+//                        
+//                        AhomeView ahomeView=new AhomeView();
+//                        AHomeController ahomeController=new AHomeController(ahomeView,loginModel);
+//                        ahomeController.open();
+//                        close();
+//                    }
+//                    else
+//                    {
+//                        JOptionPane.showMessageDialog(loginView, "Please enter correct credentials!");
+//                    }
+//
+//                } catch (Exception ex) {
+//                    JOptionPane.showMessageDialog(loginView, "Error: " + ex.getMessage());
+//                }
+//                
+//            }
         }  
         
          public String validate(String email, String password) {
