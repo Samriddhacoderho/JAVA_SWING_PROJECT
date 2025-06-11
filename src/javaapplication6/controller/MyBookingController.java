@@ -7,12 +7,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
 import java.util.ArrayList;
 import javaapplication6.dao.BookVenueDAO;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueDetailsFetchModel;
 import javaapplication6.model.VenueModel;
 import javaapplication6.view.AhomeView;
+
 import javaapplication6.view.DashboardView;
 import javaapplication6.view.MyBookings;
 import javax.swing.JOptionPane;
@@ -24,6 +26,7 @@ import javax.swing.JOptionPane;
 public class MyBookingController {
    private final MyBookings bookingView;
    private final LoginModel loginModel;
+
    private final BookVenueDAO dao=new BookVenueDAO();
 
    
@@ -32,6 +35,7 @@ public class MyBookingController {
        this.bookingView.cancelBookingListener(new CancelBooking());
        this.bookingView.backListener(new BackProfile());
        this.loginModel=loginModel;
+
        
    }
     
@@ -95,6 +99,35 @@ public class MyBookingController {
             DashboardController ctrl=new DashboardController(view, loginModel);
             ctrl.open();
             close();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+        
+    }
+    class BacktoProfile implements MouseListener{
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            DashboardView dash = new DashboardView();
+            DashboardController dashController = new DashboardController(dash,loginModel);
+            dashController.open();
+            close();
+            
+            
         }
 
         @Override

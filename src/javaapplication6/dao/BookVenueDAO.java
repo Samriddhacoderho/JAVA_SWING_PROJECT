@@ -24,7 +24,7 @@ public class BookVenueDAO {
     public BookVenueDAO() {
         dbConn = new DBConn();
     }
-    
+        
     public VenueModel searchParticularVenue(VenueModel venueModel)
     {
         String sqlQuery="SELECT * FROM venue_table where name=? and location=?";
@@ -146,6 +146,9 @@ public class BookVenueDAO {
         }
         return null;
     }
+    
+
+    
     
     public boolean cancelBooking(VenueDetailsFetchModel model)
     {
