@@ -13,7 +13,7 @@ import javaapplication6.view.EnterEmailView;
 import javaapplication6.view.HomeView;
 import javaapplication6.view.LoginView;
 import javaapplication6.view.RegistrationView;
-// import javaapplication6.dao.UserDAO; // optional for DB
+ import javaapplication6.dao.UserDAO; // optional for DB
 public class LoginController {
 
     private final LoginView loginView;
@@ -42,6 +42,10 @@ public class LoginController {
     class LoginUser implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            
+
+           
+            
             String email = loginView.getEmailTxt().getText();
             String password = loginView.getPassPsf().getText();
             
