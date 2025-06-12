@@ -10,9 +10,9 @@ import javaapplication6.model.LoginModel;
 import javaapplication6.view.AhomeView;
 import javaapplication6.view.DashboardView;
 import javaapplication6.view.EnterEmailView;
-import javaapplication6.view.HomeView;
+import javaapplication6.view.EntryView;
 import javaapplication6.view.LoginView;
-import javaapplication6.view.RegistrationView;
+import javaapplication6.view.UserRegisterView;
  import javaapplication6.dao.UserDAO; // optional for DB
 public class LoginController {
 
@@ -112,7 +112,7 @@ public class LoginController {
 
         @Override
         public void mouseClicked(MouseEvent e) {
-             RegistrationView registrationView=new RegistrationView();
+             UserRegisterView registrationView=new UserRegisterView();
             RegistrationController registrationController=new RegistrationController(registrationView);
             registrationController.open();
             close();
