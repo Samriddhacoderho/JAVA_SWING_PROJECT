@@ -9,7 +9,7 @@ import javaapplication6.dao.VenueManagerDAO;
 //import javaapplication6.dao.BookingDAO; // Placeholder DAO
 import javaapplication6.view.BookingDetailsView;
 import javaapplication6.model.VenueModel;
-import javaapplication6.model.BookingModel; // Assuming you have this
+import javaapplication6.model.BookingModel; 
 import javaapplication6.model.LoginModel;
 import javaapplication6.view.AdminDashboardView;
 
@@ -31,9 +31,9 @@ public class AdminViewBookingController {
     }
     
     public void open() {
-    BookingModel result = bookingDAO.getBookingById(bookingId); // Placeholder for  DAO method
+    BookingModel result = bookingDAO.getBookingDetailsById(bookingId); // This should join all three tables
     if (result == null) {
-        JOptionPane.showMessageDialog(detailView, "Maybe you have no bookings at the moment!");
+        JOptionPane.showMessageDialog(detailView, "Maybe this booking doesn't exist or has been removed!");
         AdminDashboardView dashView = new AdminDashboardView();
         AdminDashboardController dashController = new AdminDashboardController(dashView);
         dashController.open();
@@ -42,126 +42,105 @@ public class AdminViewBookingController {
         this.detailView.setVisible(true);
         this.detailView.getVenueName().setText(result.getVenueName());
         this.detailView.getVenueLocation().setText(result.getVenueLocation());
-        this.detailView.getAdminEmail().setText(result.getUserEmail());
-        this.detailView.getAdminPhone().setText(result.getUserPhone());
-        this.detailView.getPrice().setText("Rs." + Long.toString((long)result.getTotalPrice()));
+        this.detailView.getAdminEmail().setText(result.getVenueEmail()); // This is venue owner's email later replace with user email
+        this.detailView.getAdminPhone().setText(result.getVenueContactNumber());
+        this.detailView.getPrice().setText("Rs." + String.format("%.2f", result.getTotalPrice()));
     }
 }
+
 
     
     public void close(){
         this.detailView.dispose();
     }
     
-    class ApproveListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            int confirm = JOptionPane.showConfirmDialog(
-                detailView,
-                "Are you sure you want to approve this booking request?",
-                "Confirm Approval",
-                JOptionPane.YES_NO_OPTION
-            );
-            
-            if (confirm == JOptionPane.YES_OPTION) {
-                try {
-                    // Update booking status to approved (placeholder DAO call)
-                    boolean success = bookingDAO.updateBookingStatus(bookingId, "booked");
-                    
-                    if (success) {
-                        
-                        JOptionPane.showMessageDialog(
-                            detailView,
-                            "Booking request has been approved successfully!",
-                            "Booking Approved",
-                            JOptionPane.INFORMATION_MESSAGE
-                        );
-                        
-                        // Navigate back to admin dashboard
-                        navigateToAdminDashboard();
-                    } else {
-                        JOptionPane.showMessageDialog(
-                            detailView,
-                            "Failed to approve booking. Please try again.",
-                            "Error",
-                            JOptionPane.ERROR_MESSAGE
-                        );
-                    }
-                } catch (Exception ex) {
+   class ApproveListener implements ActionListener {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        int confirm = JOptionPane.showConfirmDialog(
+            detailView,
+            "Are you sure you want to approve this booking request?",
+            "Confirm Approval",
+            JOptionPane.YES_NO_OPTION
+        );
+        
+        if (confirm == JOptionPane.YES_OPTION) {
+            try {
+                // Update venue status to 'Booked' in venue_table
+                boolean success = bookingDAO.updateVenueStatus(currentBooking.getVenueId(), "Booked");
+                
+                if (success) {
                     JOptionPane.showMessageDialog(
                         detailView,
-                        "Error approving booking: " + ex.getMessage(),
+                        "Booking request has been approved successfully!",
+                        "Booking Approved",
+                        JOptionPane.INFORMATION_MESSAGE
+                    );
+                    navigateToAdminDashboard();
+                } else {
+                    JOptionPane.showMessageDialog(
+                        detailView,
+                        "Failed to approve booking. Please try again.",
                         "Error",
                         JOptionPane.ERROR_MESSAGE
                     );
                 }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(
+                    detailView,
+                    "Error approving booking: " + ex.getMessage(),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+                );
             }
         }
     }
+}
+
+class RejectListener implements ActionListener {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        int confirm = JOptionPane.showConfirmDialog(
+            detailView,
+            "Are you sure you want to reject this booking request?",
+            "Confirm Rejection",
+            JOptionPane.YES_NO_OPTION
+        );
+        
+        if (confirm == JOptionPane.YES_OPTION) {
+            try {
+                // Delete the booking record and reset venue status to 'Unbooked'
+                boolean success = bookingDAO.deleteBookingAndResetVenue(bookingId, currentBooking.getVenueId());
+                
+                if (success) {
+                    JOptionPane.showMessageDialog(
+                        detailView,
+                        "Booking request has been rejected.",
+                        "Booking Rejected",
+                        JOptionPane.INFORMATION_MESSAGE
+                    );
+                    navigateToAdminDashboard();
+                } else {
+                    JOptionPane.showMessageDialog(
+                        detailView,
+                        "Failed to reject booking. Please try again.",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE
+                    );
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(
+                    detailView,
+                    "Error rejecting booking: " + ex.getMessage(),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+                );
+            }
+        }
+    }
+}
+
     
-    class RejectListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // Show dialog to get rejection reason
-            String reason = JOptionPane.showInputDialog(
-                detailView,
-                "Please provide a reason for rejection (optional):",
-                "Rejection Reason",
-                JOptionPane.QUESTION_MESSAGE
-            );
-            if (reason == null) {
-                return;
-            }
-            
-            int confirm = JOptionPane.showConfirmDialog(
-                detailView,
-                "Are you sure you want to reject this booking request?",
-                "Confirm Rejection",
-                JOptionPane.YES_NO_OPTION
-            );
-            
-            if (confirm == JOptionPane.YES_OPTION) {
-                try {
-                    // Update booking status to rejected (placeholder DAO call)
-                    boolean success = bookingDAO.updateBookingStatus(bookingId, "REJECTED");
-                    
-                    if (success) {
-                        // Save rejection reason if provided (placeholder)
-                        if (reason != null && !reason.trim().isEmpty()) {
-                            bookingDAO.saveRejectionReason(bookingId, reason);
-                        }
-                        
-                        // Optional: Send rejection email to user (placeholder)
-                        // emailService.sendRejectionEmail(currentBooking.getUserEmail(), currentBooking, reason);
-                        
-                        JOptionPane.showMessageDialog(
-                            detailView,
-                            "Booking request has been rejected.",
-                            "Booking Rejected",
-                            JOptionPane.INFORMATION_MESSAGE
-                        );
-                        
-                        // Navigate back to admin dashboard
-                        navigateToAdminDashboard();
-                    } else {
-                        JOptionPane.showMessageDialog(
-                            detailView,
-                            "Failed to reject booking. Please try again.",
-                            "Error",
-                            JOptionPane.ERROR_MESSAGE
-                        );
-                    }
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(
-                        detailView,
-                        "Error rejecting booking: " + ex.getMessage(),
-                        "Error",
-                        JOptionPane.ERROR_MESSAGE
-                    );
-                }
-            }
-        }
-    }
     
     class BackProfileListener implements MouseListener {
         @Override
