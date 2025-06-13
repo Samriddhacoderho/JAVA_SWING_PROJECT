@@ -11,15 +11,15 @@ import java.awt.event.MouseListener;
 import javaapplication6.dao.UserDAO;
 import javaapplication6.model.RegisterModel;
 import javaapplication6.view.LoginView;
-import javaapplication6.view.RegistrationView;
+import javaapplication6.view.UserRegisterView;
 import javax.swing.JOptionPane;
 
 
 public class RegistrationController {
     
-    private final RegistrationView registrationView;
+    private final UserRegisterView registrationView;
     private final UserDAO userDAO=new UserDAO();
-    public RegistrationController(RegistrationView registrationView) {
+    public RegistrationController(UserRegisterView registrationView) {
         this.registrationView=registrationView;
         registrationView.RegisterUserListener(new RegisterUser());
         registrationView.showPasswordListener(new showPassword());

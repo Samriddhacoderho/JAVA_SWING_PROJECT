@@ -4,8 +4,8 @@
  */
 package javaapplication6;
 
-import javaapplication6.controller.HomeController;
-import javaapplication6.view.HomeView;
+import javaapplication6.controller.EntryController;
+import javaapplication6.view.EntryView;
 
 /**
  *
@@ -18,8 +18,8 @@ public class JavaApplication6 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        HomeView homeView=new HomeView();
-        HomeController homeController=new HomeController(homeView);
+        EntryView homeView=new EntryView();
+        EntryController homeController=new EntryController(homeView);
         homeController.open();
         
     }

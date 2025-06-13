@@ -6,19 +6,21 @@ package javaapplication6.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javaapplication6.view.HomeView;
+import javaapplication6.view.AdminRegisterView;
+import javaapplication6.view.EntryView;
 import javaapplication6.view.LoginView;
 
 /**
  *
  * @author suhritsatyal
  */
-public class HomeController {
-    private final HomeView homeView;
+public class EntryController {
+    private final EntryView homeView;
 
-    public HomeController(HomeView homeView) {
+    public EntryController(EntryView homeView) {
         this.homeView=homeView;
         homeView.GetStartedNavigationListener(new NavigationListener());
+        this.homeView.GetStartedVMNavigationListener(new NavVMListener());
     }
     public void open()
     {
@@ -44,6 +46,19 @@ public class HomeController {
         }
 
         
+        
+    }
+    
+    class NavVMListener implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            AdminRegisterView view=new AdminRegisterView();
+            AdminRegController ctrl=new AdminRegController(view);
+            ctrl.open();
+            // ya pachi admin ko login page aaucha!! currently, register page khulli racha since there's no login view for admin side.
+        }
         
     }
     
