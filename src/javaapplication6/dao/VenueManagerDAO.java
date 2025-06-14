@@ -4,12 +4,16 @@
  */
 package javaapplication6.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javaapplication6.HashUtil.HashUtil;
 import javaapplication6.database.DBConn;
 import javaapplication6.model.RegisterModel;
+import javaapplication6.model.VenueModel;
 
 /**
  *
- * @author ishan-college
+ * @author manoj
  */
 public class VenueManagerDAO {
     private final DBConn dbConn;
@@ -19,8 +23,46 @@ public class VenueManagerDAO {
     }
     
     public boolean registerVM(RegisterModel model)
+            
     {
+        boolean result = false;
+        String sql = "INSERT INTO admin (name, email, password) VALUES (?, ?, ?)";
+
+        try (Connection conn = dbConn.connection_base();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setString(1, model.getName());
+            stmt.setString(2, model.getEmail());
+            String hashedPassword = HashUtil.hashPassword(model.getPassword());
+            stmt.setString(3, hashedPassword);
+
+            int rowsInserted = stmt.executeUpdate();
+            result = rowsInserted > 0;
+        } catch (Exception e) {
+            System.out.println("Error in registerUser: " + e.getMessage());
+        }
         return true;
-        //write dao logic here
+        
+    }
+    public boolean registerVenue(VenueModel model){
+        boolean result= false;
+        String sql = "insert into venue_table (name, location, email, contact_number,price_per_plate,status)values(?,?,?,?,?,?)";
+        try(Connection conn = dbConn.connection_base();
+                PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1,model.getName());
+            stmt.setString(2, model.getLocation());
+            stmt.setString(3, model.getEmail());
+            stmt.setString(4,model.getContact_number());
+            stmt.setDouble(5,model.getPrice_per_plate());
+            stmt.setString(6, model.getStatus());
+            int rowsInserted = stmt.executeUpdate();
+            result = rowsInserted>0;
+            
+        } catch(Exception e){
+            System.out.println("Error in registering Venue:"+e.getMessage());
+        }
+        
+        
+        return true;
     }
 }
