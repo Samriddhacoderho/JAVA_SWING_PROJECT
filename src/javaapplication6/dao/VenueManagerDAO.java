@@ -4,12 +4,15 @@
  */
 package javaapplication6.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javaapplication6.HashUtil.HashUtil;
 import javaapplication6.database.DBConn;
-import javaapplication6.model.RegisterModel;
+import javaapplication6.model.AdminRegisterModel;
 
 /**
  *
- * @author ishan-college
+ * @author manoj
  */
 public class VenueManagerDAO {
     private final DBConn dbConn;
@@ -18,9 +21,26 @@ public class VenueManagerDAO {
         dbConn = new DBConn();
     }
     
-    public boolean registerVM(RegisterModel model)
+    public boolean registerVM(AdminRegisterModel model)
+            
     {
+        boolean result = false;
+        String sql = "INSERT INTO admin (name, email, password) VALUES (?, ?, ?)";
+
+        try (Connection conn = dbConn.connection_base();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setString(1, model.getName());
+            stmt.setString(2, model.getEmail());
+            String hashedPassword = HashUtil.hashPassword(model.getPassword());
+            stmt.setString(3, hashedPassword);
+
+            int rowsInserted = stmt.executeUpdate();
+            result = rowsInserted > 0;
+        } catch (Exception e) {
+            System.out.println("Error in registerUser: " + e.getMessage());
+        }
         return true;
-        //write dao logic here
+        
     }
 }
