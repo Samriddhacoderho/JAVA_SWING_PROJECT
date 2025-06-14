@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import javaapplication6.HashUtil.HashUtil;
 import javaapplication6.database.DBConn;
 import javaapplication6.model.RegisterModel;
+import javaapplication6.model.VenueModel;
 
 /**
  *
@@ -42,5 +43,26 @@ public class VenueManagerDAO {
         }
         return true;
         
+    }
+    public boolean registerVenue(VenueModel model){
+        boolean result= false;
+        String sql = "insert into venue_table (name, location, email, contact_number,price_per_plate,status)values(?,?,?,?,?,?)";
+        try(Connection conn = dbConn.connection_base();
+                PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1,model.getName());
+            stmt.setString(2, model.getLocation());
+            stmt.setString(3, model.getEmail());
+            stmt.setString(4,model.getContact_number());
+            stmt.setDouble(5,model.getPrice_per_plate());
+            stmt.setString(6, model.getStatus());
+            int rowsInserted = stmt.executeUpdate();
+            result = rowsInserted>0;
+            
+        } catch(Exception e){
+            System.out.println("Error in registering Venue:"+e.getMessage());
+        }
+        
+        
+        return true;
     }
 }
