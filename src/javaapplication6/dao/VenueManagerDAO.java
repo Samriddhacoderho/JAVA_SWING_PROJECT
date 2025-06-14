@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javaapplication6.HashUtil.HashUtil;
 import javaapplication6.database.DBConn;
-import javaapplication6.model.AdminRegisterModel;
+import javaapplication6.model.RegisterModel;
 
 /**
  *
@@ -21,7 +21,7 @@ public class VenueManagerDAO {
         dbConn = new DBConn();
     }
     
-    public boolean registerVM(AdminRegisterModel model)
+    public boolean registerVM(RegisterModel model)
             
     {
         boolean result = false;
