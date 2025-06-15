@@ -19,7 +19,6 @@ public class VenueDetailsFetchModel {
     private String status;
     private double price_per_plate;
     private Long total_price;
-    private byte[] venueImage;
     
     public VenueDetailsFetchModel(
         int venue_id,
@@ -31,8 +30,7 @@ public class VenueDetailsFetchModel {
         int estimated_guests,
         String status,
         double price_per_plate,
-        Long total_price,
-        byte[] venueImage
+        Long total_price
     ) {
         this.venue_id = venue_id;
         this.user_email = user_email;
@@ -44,7 +42,6 @@ public class VenueDetailsFetchModel {
         this.status = status;
         this.price_per_plate = price_per_plate;
         this.total_price = total_price;
-        this.venueImage = venueImage;
     }
 
     /**
@@ -190,15 +187,6 @@ public class VenueDetailsFetchModel {
     /**
      * @return the venueImage
      */
-    public byte[] getVenueImage() {
-        return venueImage;
-    }
-
-    /**
-     * @param venueImage the venueImage to set
-     */
-    public void setVenueImage(byte[] venueImage) {
-        this.venueImage = venueImage;
-    }
+   
     
 }
