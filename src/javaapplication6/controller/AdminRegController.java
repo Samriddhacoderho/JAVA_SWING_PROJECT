@@ -136,7 +136,7 @@ public class AdminRegController {
             }
             else
             {
-                return "Registering User...";
+                return "Registering Venue Manager...";
             }
         }
         
