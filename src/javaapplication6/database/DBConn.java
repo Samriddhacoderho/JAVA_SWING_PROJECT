@@ -60,6 +60,11 @@ public class DBConn {
                     + "FOREIGN KEY (venue_id) REFERENCES venue_table(id)"
                     + ")"
             );
+            stmt.executeUpdate("CREATE TABLE IF NOT EXISTS admin ("
+                    + "id INT AUTO_INCREMENT PRIMARY KEY, "
+                    + "name VARCHAR(100), "
+                    + "email VARCHAR(100) UNIQUE, "
+                    + "password VARCHAR(100))");
 
             
 
