@@ -4,19 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javaapplication6.dao.UserDAO;
 import javax.swing.JOptionPane;
 import javaapplication6.model.LoginModel;
-import javaapplication6.view.AhomeView;
-import javaapplication6.view.DashboardView;
 import javaapplication6.view.EnterEmailView;
-import javaapplication6.view.EntryView;
-import javaapplication6.view.LoginView;
-import javaapplication6.view.UserRegisterView;
- import javaapplication6.dao.UserDAO; // optional for DB
 import javaapplication6.dao.VenueManagerDAO;
 import javaapplication6.view.AdminDashboardView;
 import javaapplication6.view.AdminLoginView;
+import javaapplication6.view.AdminRegisterView;
 public class AdminLoginController {
 
     private final AdminLoginView loginView;
@@ -36,10 +30,6 @@ public class AdminLoginController {
 
     public void close() {
         loginView.dispose();
-    }
-
-    private void addMouseListener(MouseListener listener) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     class LoginUser implements ActionListener {
@@ -115,8 +105,8 @@ public class AdminLoginController {
 
         @Override
         public void mouseClicked(MouseEvent e) {
-             UserRegisterView registrationView=new UserRegisterView();
-            RegistrationController registrationController=new RegistrationController(registrationView);
+             AdminRegisterView registrationView=new AdminRegisterView();
+            AdminRegController registrationController=new AdminRegController(registrationView);
             registrationController.open();
             close();
         }
