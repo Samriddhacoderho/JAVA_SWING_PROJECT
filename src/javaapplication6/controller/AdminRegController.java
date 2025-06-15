@@ -11,6 +11,7 @@ import java.awt.event.MouseListener;
 import javaapplication6.dao.UserDAO;
 import javaapplication6.dao.VenueManagerDAO;
 import javaapplication6.model.RegisterModel;
+import javaapplication6.view.AdminLoginView;
 import javaapplication6.view.AdminRegisterView;
 import javaapplication6.view.LoginView;
 import javaapplication6.view.UserRegisterView;
@@ -103,8 +104,8 @@ public class AdminRegController {
                     if(result)
                     {
                         JOptionPane.showMessageDialog(view, "Registration Successful");
-                        LoginView loginView=new LoginView();
-                        LoginController loginController=new LoginController(loginView);
+                        AdminLoginView loginView=new AdminLoginView();
+                        AdminLoginController loginController=new AdminLoginController(loginView);
                         loginController.open();
                         close();
                     }
@@ -148,8 +149,8 @@ public class AdminRegController {
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            LoginView loginView=new LoginView();
-            LoginController loginController=new LoginController(loginView);
+            AdminLoginView loginView=new AdminLoginView();
+            AdminLoginController loginController=new AdminLoginController(loginView);
             loginController.open();
             close();
         }
