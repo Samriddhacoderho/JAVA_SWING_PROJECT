@@ -138,7 +138,7 @@ public class BookVenueDAO {
             var rs=pstmt.executeQuery();
             if(rs.next())
             {
-                VenueDetailsFetchModel result=new VenueDetailsFetchModel(rs.getInt("venue_id"), email, rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"),rs.getBytes("image"));
+                VenueDetailsFetchModel result=new VenueDetailsFetchModel(rs.getInt("venue_id"), email, rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"));
                 return result;
             }
         } catch (Exception e) {

@@ -74,7 +74,7 @@ public class RegisterVenueDAO {
             var rs=pstmt.executeQuery();
             if(rs.next())
             {
-                VenueDetailsFetchModel result=new VenueDetailsFetchModel(rs.getInt("venue_id"), email, rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"),rs.getBytes("image"));
+                VenueDetailsFetchModel result=new VenueDetailsFetchModel(rs.getInt("venue_id"), email, rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"));
                 return true;
             }
         } catch (Exception e) {
@@ -84,7 +84,7 @@ public class RegisterVenueDAO {
     }  
     public boolean registerVenue(VenueModel model){
         boolean result= false;
-        String sql = "insert into venue_table (name, location, email, contact_number,price_per_plate,status)values(?,?,?,?,?,?)";
+        String sql = "insert into venue_table (name, location, email, contact_number,price_per_plate)values(?,?,?,?,?)";
         try(Connection conn = dbConn.connection_base();
                 PreparedStatement stmt = conn.prepareStatement(sql)){
             stmt.setString(1,model.getName());
@@ -92,16 +92,19 @@ public class RegisterVenueDAO {
             stmt.setString(3, model.getEmail());
             stmt.setString(4,model.getContact_number());
             stmt.setDouble(5,model.getPrice_per_plate());
-            stmt.setString(6, model.getStatus());
             int rowsInserted = stmt.executeUpdate();
             result = rowsInserted>0;
+            if(result)
+            {
+                return true;
+            }
             
         } catch(Exception e){
             System.out.println("Error in registering Venue:"+e.getMessage());
         }
         
         
-        return true;
+        return false;
     }
 
         
