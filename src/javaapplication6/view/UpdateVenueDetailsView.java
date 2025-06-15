@@ -46,6 +46,7 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         numberTxt = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         priceTxt = new javax.swing.JTextField();
+        UploadImage = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
@@ -70,7 +71,7 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         update.setText("Update");
         update.setBorderPainted(false);
         update.setOpaque(true);
-        jPanel2.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 320, 40));
+        jPanel2.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 320, 40));
 
         jLabel7.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -95,6 +96,14 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         jLabel11.setText("Price Per Plate :");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 100, 20));
         jPanel2.add(priceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 320, 30));
+
+        UploadImage.setBackground(new java.awt.Color(255, 0, 51));
+        UploadImage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        UploadImage.setForeground(new java.awt.Color(255, 255, 255));
+        UploadImage.setText("Upload Image");
+        UploadImage.setBorderPainted(false);
+        UploadImage.setOpaque(true);
+        jPanel2.add(UploadImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 320, 40));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 560, 340));
 
@@ -164,6 +173,7 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton UploadImage;
     private javax.swing.JTextField emailTxt;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -251,9 +261,12 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         this.numberTxt = numberTxt;
     }
     
-        public void RegisterUserListener(ActionListener listener)
+    public void RegisterUserListener(ActionListener listener)
     {
         this.update.addActionListener(listener);
     }
-
+        
+    public void UploadImageListener(ActionListener listener) {
+        this.UploadImage.addActionListener(listener);
+    }
 }
