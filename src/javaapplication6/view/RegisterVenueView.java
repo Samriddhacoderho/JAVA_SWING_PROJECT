@@ -40,8 +40,6 @@ public class RegisterVenueView extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         locationTxt = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        emailTxt = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         numberTxt = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -77,12 +75,6 @@ public class RegisterVenueView extends javax.swing.JFrame {
         jLabel7.setText("Location :");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 60, 20));
         jPanel2.add(locationTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 320, 30));
-
-        jLabel8.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Email:");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 60, 20));
-        jPanel2.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 320, 30));
 
         jLabel10.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -156,7 +148,6 @@ public class RegisterVenueView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField emailTxt;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -164,7 +155,6 @@ public class RegisterVenueView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField locationTxt;
@@ -190,16 +180,6 @@ public class RegisterVenueView extends javax.swing.JFrame {
     /**
      * @return the emailTxt
      */
-    public javax.swing.JTextField getEmailTxt() {
-        return emailTxt;
-    }
-
-    /**
-     * @param emailTxt the emailTxt to set
-     */
-    public void setEmailTxt(javax.swing.JTextField emailTxt) {
-        this.emailTxt = emailTxt;
-    }
 
     /**
      * @return the locationTxt
@@ -243,7 +223,7 @@ public class RegisterVenueView extends javax.swing.JFrame {
         this.numberTxt = numberTxt;
     }
     
-        public void RegisterUserListener(ActionListener listener)
+        public void RegisterVenueListener(ActionListener listener)
     {
         this.jButton3.addActionListener(listener);
     }
