@@ -275,7 +275,7 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         this.update.addActionListener(listener);
     }
         
-    public void UploadImageListener(ActionListener listener) {
+    public void addUploadImageListener(ActionListener listener) {
         this.UploadImage.addActionListener(listener);
     }
 

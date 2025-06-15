@@ -13,7 +13,7 @@ public class UpdateVenueDetailsController {
 
     public UpdateVenueDetailsController(UpdateVenueDetailsView view) {
         this.view = view;
-        this.view.UploadImageListener(new UploadImageListener()); 
+        this.view.addUploadImageListener(new UploadImageListener()); 
     }
 
     class UploadImageListener implements ActionListener {
