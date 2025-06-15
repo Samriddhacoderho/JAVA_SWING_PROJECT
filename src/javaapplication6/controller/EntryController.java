@@ -6,7 +6,7 @@ package javaapplication6.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javaapplication6.view.AdminRegisterView;
+import javaapplication6.view.AdminLoginView;
 import javaapplication6.view.EntryView;
 import javaapplication6.view.LoginView;
 
@@ -54,10 +54,9 @@ public class EntryController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            AdminRegisterView view=new AdminRegisterView();
-            AdminRegController ctrl=new AdminRegController(view);
+            AdminLoginView view=new AdminLoginView();
+            AdminLoginController ctrl=new AdminLoginController(view);
             ctrl.open();
-            // ya pachi admin ko login page aaucha!! currently, register page khulli racha since there's no login view for admin side.
             close();
         }
         
