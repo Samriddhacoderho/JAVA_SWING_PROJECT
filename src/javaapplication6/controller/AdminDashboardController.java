@@ -42,7 +42,7 @@ public class AdminDashboardController {
         @Override
         public void actionPerformed(ActionEvent e) {
             RegisterVenueView registerVenueView=new RegisterVenueView();
-            RegisterVenueController registerVenueController=new RegisterVenueController(registerVenueView);
+            RegisterVenueController registerVenueController=new RegisterVenueController(registerVenueView,loginModel);
             registerVenueController.open();
             close();
         }
