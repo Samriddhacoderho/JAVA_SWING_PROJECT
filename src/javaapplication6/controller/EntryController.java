@@ -58,6 +58,7 @@ public class EntryController {
             AdminRegController ctrl=new AdminRegController(view);
             ctrl.open();
             // ya pachi admin ko login page aaucha!! currently, register page khulli racha since there's no login view for admin side.
+            close();
         }
         
     }
