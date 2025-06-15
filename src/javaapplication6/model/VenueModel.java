@@ -17,6 +17,16 @@ public class VenueModel {
     private double price_per_plate;
     private String status;
     
+    public VenueModel(String name,String location,String email,String contact_number,double price_per_plate,String status)
+    {
+        this.name=name;
+        this.location=location;
+        this.price_per_plate=price_per_plate;
+        this.email=email;
+        this.contact_number=contact_number;
+        this.status=status;
+    }
+    
     public VenueModel(int id,String name,String location,String email,String contact_number,double price_per_plate,String status)
     {
         this.id=id;
