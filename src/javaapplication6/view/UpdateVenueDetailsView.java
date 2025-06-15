@@ -10,6 +10,9 @@ package javaapplication6.view;
 
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
+import java.io.File;
+import javax.swing.JPanel;
+
 
 /**
  *
@@ -261,6 +264,11 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         this.numberTxt = numberTxt;
     }
     
+    public JPanel getPanel() {
+        return jPanel2;
+    }
+
+    
     public void RegisterUserListener(ActionListener listener)
     {
         this.update.addActionListener(listener);
@@ -268,5 +276,10 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         
     public void UploadImageListener(ActionListener listener) {
         this.UploadImage.addActionListener(listener);
+    }
+    
+    private File selectedFile;
+    public void setSelectedFile(File file) {
+    this.selectedFile = file;
     }
 }
