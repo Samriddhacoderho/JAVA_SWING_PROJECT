@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javaapplication6.model.LoginModel;
 import javaapplication6.view.AdminDashboardView;
+import javaapplication6.view.BookingDetailsView;
 import javaapplication6.view.RegisterVenueView;
 
 /**
@@ -22,6 +23,7 @@ public class AdminDashboardController {
     {
         this.view=view;
         this.view.RegisteVenueUserListener(new VenueRegister());
+        this.view.RegisterUserListener(new BookView());
         this.loginModel=loginModel;
     }
     
@@ -45,6 +47,20 @@ public class AdminDashboardController {
             RegisterVenueController registerVenueController=new RegisterVenueController(registerVenueView,loginModel);
             registerVenueController.open();
             close();
+        }
+        
+    }
+    
+    class BookView implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            BookingDetailsView view=new BookingDetailsView();
+            AdminViewBookingController ctrl=new AdminViewBookingController(view, loginModel);
+            ctrl.open();
+            close();
+            
         }
         
     }

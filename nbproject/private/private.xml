@@ -3,15 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/ishan-college/Desktop/bookmyvenue/JAVA_SWING_PROJECT/src/javaapplication6/controller/UpdateVenueDetailsController.java</file>
-            <file>file:/Users/ishan-college/Desktop/bookmyvenue/JAVA_SWING_PROJECT/src/javaapplication6/view/UpdateVenueDetailsView.java</file>
-            <file>file:/Users/ishan-college/Desktop/bookmyvenue/JAVA_SWING_PROJECT/src/javaapplication6/model/BookingModel.java</file>
-            <file>file:/Users/ishan-college/Desktop/bookmyvenue/JAVA_SWING_PROJECT/src/javaapplication6/view/RegisterVenueView.java</file>
-            <file>file:/Users/ishan-college/Desktop/bookmyvenue/JAVA_SWING_PROJECT/src/javaapplication6/controller/RegisterVenueController.java</file>
-            <file>file:/Users/ishan-college/Desktop/bookmyvenue/JAVA_SWING_PROJECT/src/javaapplication6/controller/RegistrationController.java</file>
-            <file>file:/Users/ishan-college/Desktop/bookmyvenue/JAVA_SWING_PROJECT/src/javaapplication6/database/DBConn.java</file>
-            <file>file:/Users/ishan-college/Desktop/bookmyvenue/JAVA_SWING_PROJECT/src/javaapplication6/dao/RegisterVenueDAO.java</file>
             <file>file:/Users/ishan-college/Desktop/bookmyvenue/JAVA_SWING_PROJECT/src/javaapplication6/controller/AdminDashboardController.java</file>
+            <file>file:/Users/ishan-college/Desktop/bookmyvenue/JAVA_SWING_PROJECT/src/javaapplication6/dao/BookVenueDAO.java</file>
+            <file>file:/Users/ishan-college/Desktop/bookmyvenue/JAVA_SWING_PROJECT/src/javaapplication6/view/AdminDashboardView.java</file>
+            <file>file:/Users/ishan-college/Desktop/bookmyvenue/JAVA_SWING_PROJECT/src/javaapplication6/dao/VenueManagerDAO.java</file>
+            <file>file:/Users/ishan-college/Desktop/bookmyvenue/JAVA_SWING_PROJECT/src/javaapplication6/controller/AdminRegController.java</file>
         </group>
     </open-files>
 </project-private>
