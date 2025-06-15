@@ -6,6 +6,7 @@ package javaapplication6.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javaapplication6.model.LoginModel;
 import javaapplication6.view.AdminDashboardView;
 import javaapplication6.view.RegisterVenueView;
 
@@ -15,11 +16,13 @@ import javaapplication6.view.RegisterVenueView;
  */
 public class AdminDashboardController {
     private final AdminDashboardView view;
+    private final LoginModel loginModel;
     
-    public AdminDashboardController(AdminDashboardView view)
+    public AdminDashboardController(AdminDashboardView view,LoginModel loginModel)
     {
         this.view=view;
         this.view.RegisteVenueUserListener(new VenueRegister());
+        this.loginModel=loginModel;
     }
     
     public void open()
