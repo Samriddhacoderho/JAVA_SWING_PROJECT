@@ -84,9 +84,8 @@
                               <Component id="venueName" min="-2" max="-2" attributes="0"/>
                               <Component id="venueLocation" min="-2" pref="128" max="-2" attributes="0"/>
                               <Component id="guestNumber" min="-2" pref="155" max="-2" attributes="0"/>
-                              <Component id="adminPhone" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="249" max="32767" attributes="0"/>
+                          <EmptySpace pref="273" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="price" alignment="1" min="-2" pref="79" max="-2" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
@@ -116,12 +115,9 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="adminEmail" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="21" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="rejectbooking" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                          <Component id="approvebooking" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="adminPhone" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="rejectbooking" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="approvebooking" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -199,17 +195,6 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="demo contact email"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="adminPhone">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="12" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="demo contact phone number"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="approvebooking">

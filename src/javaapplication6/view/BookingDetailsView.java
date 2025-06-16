@@ -42,7 +42,6 @@ public class BookingDetailsView extends javax.swing.JFrame {
         guestNumber = new javax.swing.JLabel();
         price = new javax.swing.JLabel();
         adminEmail = new javax.swing.JLabel();
-        adminPhone = new javax.swing.JLabel();
         approvebooking = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,10 +89,6 @@ public class BookingDetailsView extends javax.swing.JFrame {
         adminEmail.setForeground(new java.awt.Color(255, 255, 255));
         adminEmail.setText("demo contact email");
 
-        adminPhone.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        adminPhone.setForeground(new java.awt.Color(255, 255, 255));
-        adminPhone.setText("demo contact phone number");
-
         approvebooking.setBackground(new java.awt.Color(51, 204, 0));
         approvebooking.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         approvebooking.setText("Approve Booking");
@@ -117,9 +112,8 @@ public class BookingDetailsView extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(venueName)
                             .addComponent(venueLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(guestNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(adminPhone))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
+                            .addComponent(guestNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(price, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -142,11 +136,9 @@ public class BookingDetailsView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(adminEmail)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rejectbooking, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(approvebooking, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(adminPhone))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rejectbooking, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(approvebooking, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -167,7 +159,6 @@ public class BookingDetailsView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adminEmail;
-    private javax.swing.JLabel adminPhone;
     private javax.swing.JButton approvebooking;
     private javax.swing.JLabel backprofile;
     private javax.swing.JLabel guestNumber;
@@ -196,17 +187,7 @@ public class BookingDetailsView extends javax.swing.JFrame {
     /**
      * @return the adminPhone
      */
-    public javax.swing.JLabel getAdminPhone() {
-        return adminPhone;
-    }
-
-    /**
-     * @param adminPhone the adminPhone to set
-     */
-    public void setAdminPhone(javax.swing.JLabel adminPhone) {
-        this.adminPhone = adminPhone;
-    }
-
+   
     /**
      * @return the cancelBooking
      */
