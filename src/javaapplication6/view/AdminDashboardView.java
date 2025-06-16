@@ -43,7 +43,6 @@ public class AdminDashboardView extends javax.swing.JFrame {
         logout = new javax.swing.JButton();
         viewBookingButton1 = new javax.swing.JButton();
         registervenue = new javax.swing.JButton();
-        backButton = new javax.swing.JLabel();
         change = new javax.swing.JButton();
         updatedetails = new javax.swing.JButton();
         updatedetails1 = new javax.swing.JButton();
@@ -83,10 +82,6 @@ public class AdminDashboardView extends javax.swing.JFrame {
         registervenue.setBorderPainted(false);
         registervenue.setOpaque(true);
         jPanel2.add(registervenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 190, 36));
-
-        backButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        backButton.setText("Back to Home");
-        jPanel2.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
         change.setBackground(new java.awt.Color(0, 0, 0));
         change.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -139,7 +134,6 @@ public class AdminDashboardView extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel backButton;
     private javax.swing.JButton change;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
