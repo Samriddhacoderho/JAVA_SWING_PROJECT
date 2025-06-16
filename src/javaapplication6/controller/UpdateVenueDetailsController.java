@@ -13,10 +13,10 @@ public class UpdateVenueDetailsController {
 
     public UpdateVenueDetailsController(UpdateVenueDetailsView view) {
         this.view = view;
-        this.view.addUploadImageListener(new UploadImageListener()); 
+        this.view.addUploadImageListener(new addUploadImageListener()); 
     }
 
-    class UploadImageListener implements ActionListener {
+    class addUploadImageListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             JFileChooser fileChooser = new JFileChooser();

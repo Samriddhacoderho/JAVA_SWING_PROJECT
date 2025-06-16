@@ -161,7 +161,7 @@ public class AdminDashboardView extends javax.swing.JFrame {
     }
     public void UpdeteDetailsUserListener(ActionListener listener)
     {
-        this.updatedetails.addActionListener(listener);
+        this.updatedetails1.addActionListener(listener);
     }
     public void ChangepassUserListener(ActionListener listener)
     {
