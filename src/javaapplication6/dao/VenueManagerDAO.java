@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javaapplication6.HashUtil.HashUtil;
 import javaapplication6.database.DBConn;
+import javaapplication6.model.LoginModel;
 import javaapplication6.model.RegisterModel;
 import javaapplication6.model.VenueModel;
 
@@ -65,4 +66,26 @@ public class VenueManagerDAO {
         
         return true;
     }
+    
+    public boolean loginManager(LoginModel loginmodel) {
+    String sql_query = "SELECT password FROM admin WHERE email = ?";
+    
+    try (Connection conn = dbConn.connection_base();
+         PreparedStatement pstmt = conn.prepareStatement(sql_query)) {
+
+        pstmt.setString(1, loginmodel.getEmail());
+        var rs = pstmt.executeQuery();
+
+        if (rs.next()) {
+            String storedHashedPassword = rs.getString("password");
+            String inputHashedPassword = HashUtil.hashPassword(loginmodel.getPassword());
+
+            return storedHashedPassword.equals(inputHashedPassword);
+        }
+    } catch (Exception e) {
+        System.out.println("Error in loginManager: " + e.getMessage());
+    }
+    
+    return false;
+}
 }
