@@ -10,6 +10,7 @@ import javaapplication6.model.LoginModel;
 import javaapplication6.view.AdminDashboardView;
 import javaapplication6.view.BookingDetailsView;
 import javaapplication6.view.RegisterVenueView;
+import javaapplication6.view.UpdateVenueDetailsView;
 
 /**
  *
@@ -25,6 +26,7 @@ public class AdminDashboardController {
         this.view.RegisteVenueUserListener(new VenueRegister());
         this.view.RegisterUserListener(new BookView());
         this.loginModel=loginModel;
+        this.view.UpdeteDetailsUserListener(new UpdateVenueDetails());
     }
     
     public void open()
@@ -64,5 +66,14 @@ public class AdminDashboardController {
         }
         
     }
-    
+    class UpdateVenueDetails implements ActionListener {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        UpdateVenueDetailsView updateView = new UpdateVenueDetailsView();
+        UpdateVenueDetailsController updateController = new UpdateVenueDetailsController(updateView);
+        updateView.setVisible(true);
+        close();
+        }
+    }
+
 }

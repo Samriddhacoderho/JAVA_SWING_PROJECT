@@ -19,6 +19,7 @@ import javax.swing.JPanel;
  * @author Yuri Maharjan
  */
 public class UpdateVenueDetailsView extends javax.swing.JFrame {
+    private File selectedFile;
 
     /**
      * Creates new form RegistrationView
@@ -274,12 +275,23 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         this.update.addActionListener(listener);
     }
         
-    public void UploadImageListener(ActionListener listener) {
+    public void addUploadImageListener(ActionListener listener) {
         this.UploadImage.addActionListener(listener);
     }
-    
-    private File selectedFile;
-    public void setSelectedFile(File file) {
-    this.selectedFile = file;
+
+    /**
+     * @return the selectedFile
+     */
+    public File getSelectedFile() {
+        return selectedFile;
     }
+
+    /**
+     * @param selectedFile the selectedFile to set
+     */
+    public void setSelectedFile(File selectedFile) {
+        this.selectedFile = selectedFile;
+    }
+    
+
 }
