@@ -41,24 +41,34 @@ public class RegisterVenueDAO {
     }
    
     
-    public VenueDetailsFetchModel adminVenueView(String email)
-    {
-        String sqlQuery="select * from book_details join venue_table on venue_table.id=book_details.venue_id where venue_table.email=?";
-        try (Connection conn=dbConn.connection_base()){
-            PreparedStatement pstmt=conn.prepareStatement(sqlQuery);
+    public VenueDetailsFetchModel adminVenueView(String email) {
+        String sqlQuery = "SELECT * FROM venue_table WHERE email = ?";
+        try (Connection conn = dbConn.connection_base()) {
+            PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
             pstmt.setString(1, email);
-            var rs=pstmt.executeQuery();
-            if(rs.next())
-            {
-                VenueDetailsFetchModel result=new VenueDetailsFetchModel(rs.getInt("venue_id"), rs.getString("user_email"), rs.getString("name"), rs.getString("location"),email, rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"));
+            var rs = pstmt.executeQuery();
+            if (rs.next()) {
+                VenueDetailsFetchModel result = new VenueDetailsFetchModel(
+                        rs.getInt("id"), // Changed from "venue_id" to "id"
+                        null,
+                        rs.getString("name"),
+                        rs.getString("location"),
+                        rs.getString("email"),
+                        rs.getString("contact_number"),
+                        0,
+                        rs.getString("status"),
+                        rs.getDouble("price_per_plate"),
+                        null
+                );
                 return result;
             }
         } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
         return null;
     }
-    
+
     public boolean registerVenue(VenueModel model){
         boolean result= false;
         String sql = "insert into venue_table (name, location, email, contact_number,price_per_plate)values(?,?,?,?,?)";
@@ -83,6 +93,28 @@ public class RegisterVenueDAO {
         
         return false;
     }
+    
+    public boolean updateVenue(VenueModel model) {
+        String sql = "UPDATE venue_table SET name=?, location=?, email=?, contact_number=?, price_per_plate=?, image=? WHERE id=?";
+
+        try (Connection conn = dbConn.connection_base(); 
+                PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, model.getName());
+            stmt.setString(2, model.getLocation());
+            stmt.setString(3, model.getEmail());
+            stmt.setString(4, model.getContact_number());
+            stmt.setDouble(5, model.getPrice_per_plate());
+            stmt.setBytes(6, model.getImage());
+            stmt.setInt(7, model.getId());
+
+            int affected = stmt.executeUpdate();
+            return affected > 0;
+        } catch(Exception e){
+            System.out.println("Error in registering Venue:"+e.getMessage());
+        }
+        return false;
+    }
+
 
         
 }
