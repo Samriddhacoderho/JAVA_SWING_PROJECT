@@ -14,7 +14,8 @@ public class BookingModel {
     private String venueContactNumber;
     private float pricePerPlate;
     private String venueStatus;
-    
+    private byte[] image;
+
     // User details (from users table)
     private String userName;
     
@@ -67,4 +68,20 @@ public class BookingModel {
     
     public String getUserName() { return userName; }
     public void setUserName(String userName) { this.userName = userName; }
+
+    /**
+     * @return the image
+     */
+    public byte[] getImage() {
+        return image;
+    }
+
+    /**
+     * @param image the image to set
+     */
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+    
+    
 }
