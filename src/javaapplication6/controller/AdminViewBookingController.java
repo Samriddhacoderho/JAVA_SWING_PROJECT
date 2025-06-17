@@ -58,9 +58,12 @@
 
 package javaapplication6.controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javaapplication6.dao.RegisterVenueDAO;
+import javaapplication6.dao.VenueManagerDAO;
 import javax.swing.JOptionPane;
 import javaapplication6.view.BookingDetailsView;
 import javaapplication6.model.LoginModel;
@@ -117,8 +120,8 @@ public class AdminViewBookingController {
 //        
 //        if (confirm == JOptionPane.YES_OPTION) {
 //            try {
-//                // Update venue status to 'Booked' in venue_table
-//                boolean success = bookingDAO.updateVenueStatus(currentBooking.getVenueId(), "Booked");
+//                
+////                boolean success = VenueManagerDAO.approveRequest(loginModel,);
 //                
 //                if (success) {
 //                    JOptionPane.showMessageDialog(
@@ -160,8 +163,8 @@ public class AdminViewBookingController {
 //        
 //        if (confirm == JOptionPane.YES_OPTION) {
 //            try {
-//                // Delete the booking record and reset venue status to 'Unbooked'
-//                boolean success = bookingDAO.deleteBookingAndResetVenue(bookingId, currentBooking.getVenueId());
+//                
+////                boolean success = VeneueManagerDAO.rejectRequest();
 //                
 //                if (success) {
 //                    JOptionPane.showMessageDialog(
@@ -191,34 +194,13 @@ public class AdminViewBookingController {
 //    }
 //}
 
-//
-//    
-//    
-//    class BackProfileListener implements MouseListener {
-//        @Override
-//        public void mouseClicked(MouseEvent e) {
-//            navigateToAdminDashboard();
-//        }
-//
-//        @Override
-//        public void mousePressed(MouseEvent e) {}
-//
-//        @Override
-//        public void mouseReleased(MouseEvent e) {}
-//
-//        @Override
-//        public void mouseEntered(MouseEvent e) {}
-//
-//        @Override
-//        public void mouseExited(MouseEvent e) {}
-//    }
-//    
-//    private void navigateToAdminDashboard() {
-////        AdminDashboardView dashView = new AdminDashboardView();
-////        AdminDashboardController dashController = new AdminDashboardController(dashView);
-////        dashController.open();
-////        close();
-//    }
+  
+    private void navigateToAdminDashboard() {
+        AdminDashboardView dashView = new AdminDashboardView();
+        AdminDashboardController dashController = new AdminDashboardController(dashView,loginModel);
+        dashController.open();
+        close();
+    }
 //}
 
     class BackProfileListener implements MouseListener {
@@ -245,11 +227,11 @@ public class AdminViewBookingController {
         }
     }
 
-    private void navigateToAdminDashboard() {
-        AdminDashboardView dashView = new AdminDashboardView();
-        AdminDashboardController dashController = new AdminDashboardController(dashView, loginModel);
-        dashController.open();
-        close();
-    }
+//    private void navigateToAdminDashboard() {
+//        AdminDashboardView dashView = new AdminDashboardView();
+//        AdminDashboardController dashController = new AdminDashboardController(dashView, loginModel);
+//        dashController.open();
+//        close();
+//    }
 }
 

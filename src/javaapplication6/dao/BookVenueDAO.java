@@ -97,22 +97,19 @@ public class BookVenueDAO {
     
     public boolean bookVenue(BookVenueModel modelBook,VenueModel modelVenue)
     {
-        String sqlQuery="INSERT INTO book_details(venue_id,user_email,estimated_guests,total_price) values(?,?,?,?)";
+//       
         try (Connection conn=dbConn.connection_base()){
-            PreparedStatement pstmt=conn.prepareStatement(sqlQuery);
-            pstmt.setInt(1, modelVenue.getId());
-            pstmt.setString(2, modelBook.getEmail());
-            pstmt.setString(3, modelBook.getEstimated_guests());
-            pstmt.setDouble(4, modelBook.getEstimated_price());
-            if(pstmt.executeUpdate()>0)
+//           
+              String sqlQueryUpdate="UPDATE venue_table SET status='Pending' where id=?";
+                    PreparedStatement pstmtUpdate=conn.prepareStatement(sqlQueryUpdate);
+                    pstmtUpdate.setInt(1, modelVenue.getId());
+            if(pstmtUpdate.executeUpdate()>0)
             {
-                String body="Hello, your booking was successfullly made.\nVenue Name:"+modelVenue.getName()+"\nVenue Location:"+modelVenue.getLocation();
+                String body="Hello, your booking request was successfullly made Please wait for the VenueManger to confirm.\nVenue Name:"+modelVenue.getName()+"\nVenue Location:"+modelVenue.getLocation();
                 boolean mailSent=smtpsMailSender.sendMail(modelBook.getEmail(), "Booking Confirmation", body);
                 if(mailSent)
                 {
-                    String sqlQueryUpdate="UPDATE venue_table SET status='Booked' where id=?";
-                    PreparedStatement pstmtUpdate=conn.prepareStatement(sqlQueryUpdate);
-                    pstmtUpdate.setInt(1, modelVenue.getId());
+                    
                     if(pstmtUpdate.executeUpdate()>0)
                     {
                                         return true;
