@@ -16,6 +16,7 @@ public class VenueModel {
     private String contact_number;
     private double price_per_plate;
     private String status;
+    private byte[] image;
     
     public VenueModel(String name,String location,String email,String contact_number,double price_per_plate,String status)
     {
@@ -51,6 +52,20 @@ public class VenueModel {
     }
     
     
+    
+    public VenueModel(int id,String name,String location,String email,String contact_number,double price_per_plate,byte[] image)
+    {
+        this.id=id;
+        this.name=name;
+        this.location=location;
+        this.price_per_plate=price_per_plate;
+        this.email=email;
+        this.contact_number=contact_number;
+        this.image=image;
+    }
+
+    public VenueModel() {
+    }
     
     /**
      * @return the name
@@ -149,8 +164,20 @@ public class VenueModel {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    /**
+     * @return the image
+     */
+    public byte[] getImage() {
+        return image;
+    }
+
+    /**
+     * @param image the image to set
+     */
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
     
-    
-    
-    
+       
 }

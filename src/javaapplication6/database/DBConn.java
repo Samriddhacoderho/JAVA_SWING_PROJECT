@@ -47,10 +47,11 @@ public class DBConn {
                     + "email VARCHAR(200), "
                     + "contact_number VARCHAR(200), "
                     + "price_per_plate FLOAT, "
-                    + "status VARCHAR(200) DEFAULT 'Unbooked')"
-                    );
-                    
+                    + "status VARCHAR(200) DEFAULT 'Unbooked', "
+                    + "image BLOB DEFAULT NULL"
+                    + ")");
 
+                    
             // Create book_details table
             stmt.executeUpdate(
                     "CREATE TABLE IF NOT EXISTS book_details ("
