@@ -11,6 +11,8 @@ import javaapplication6.database.DBConn;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.RegisterModel;
 import javaapplication6.model.VenueModel;
+import javaapplication6.controller.Mail.SMTPSMailSender;
+import javaapplication6.model.BookVenueModel;
 
 /**
  *
@@ -18,6 +20,7 @@ import javaapplication6.model.VenueModel;
  */
 public class VenueManagerDAO {
     private final DBConn dbConn;
+    private SMTPSMailSender smtpsMailSender = new SMTPSMailSender();
     
     public VenueManagerDAO() {
         dbConn = new DBConn();
@@ -66,6 +69,69 @@ public class VenueManagerDAO {
         
         return true;
     }
+    public boolean approveRequest(LoginModel model,VenueModel modelVenue,BookVenueModel modelBook){
+        boolean result = false;
+        String sql = "INSERT INTO book_details(venue_id,user_email,estimated_guests,total_price) values(?,?,?,?)";
+        try (Connection conn = dbConn.connection_base();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, modelVenue.getId());
+            pstmt.setString(2, modelBook.getEmail());
+            pstmt.setString(3, modelBook.getEstimated_guests());
+            pstmt.setDouble(4, modelBook.getEstimated_price());
+            int rowsInserted = pstmt.executeUpdate();
+            if(pstmt.executeUpdate()>0)
+            {
+                String body="Hello, your booking was successfullly made.\nVenue Name:"+modelVenue.getName()+"\nVenue Location:"+modelVenue.getLocation();
+                boolean mailSent=smtpsMailSender.sendMail(modelBook.getEmail(), "Booking Confirmation", body);
+                if(mailSent)
+                {
+                    String sqlQueryUpdate="UPDATE venue_table SET status='Booked' where id=?";
+                    PreparedStatement pstmtUpdate=conn.prepareStatement(sqlQueryUpdate);
+                    pstmtUpdate.setInt(1, modelVenue.getId());
+                    if(pstmtUpdate.executeUpdate()>0)
+                    {
+                                        return true;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+                }
+        } catch (Exception e) {
+            return false;
+        }
+        return false;
+    }
+    public boolean rejectRequest(LoginModel model,VenueModel modelVenue,BookVenueModel modelBook){
+        boolean result = false;
+        try (Connection conn=dbConn.connection_base()){
+              String sqlQueryUpdate="UPDATE venue_table SET status='Unbooked' where id=?";
+                    PreparedStatement pstmtUpdate=conn.prepareStatement(sqlQueryUpdate);
+                    pstmtUpdate.setInt(1, modelVenue.getId());
+            if(pstmtUpdate.executeUpdate()>0)
+            {
+                String body="Hello, your booking request has been rejected. Please try another venue.\nVenue Name:"+modelVenue.getName()+"\nVenue Location:"+modelVenue.getLocation();
+                boolean mailSent=smtpsMailSender.sendMail(modelBook.getEmail(), "Booking Rejection", body);
+                if(mailSent)
+                {
+                    
+                    if(pstmtUpdate.executeUpdate()>0)
+                    {
+                                        return true;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+                }
+        } catch (Exception e) {
+            return false;
+        }
+        return false;
+    
+   }
     
     public boolean loginManager(LoginModel loginmodel) {
     String sql_query = "SELECT password FROM admin WHERE email = ?";
