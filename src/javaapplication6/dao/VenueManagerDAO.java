@@ -67,7 +67,7 @@ public class VenueManagerDAO {
         return true;
     }
 
-    public boolean approveRequest(LoginModel model, BookVenueModel modelBook, String venue_name, String venue_location) {
+    public boolean approveRequest(LoginModel model, BookVenueModel modelBook,VenueModel modelVenue) {
 
         try (Connection conn = dbConn.connection_base()) {
             String sqlQueryUpdate = "UPDATE venue_table SET status='Booked' where email=?";
@@ -75,7 +75,7 @@ public class VenueManagerDAO {
             pstmt.setString(1, model.getEmail());
             int rowsInserted = pstmt.executeUpdate();
             if (rowsInserted > 0) {
-                String body = "Hello, your booking was successfullly made.\nVenue Name:" + venue_name + "\nVenue Location:" + venue_location;
+                String body = "Hello, your booking was successfullly made.\nVenue Name:" + modelVenue.getName() + "\nVenue Location:" + modelVenue.getLocation();
                 boolean mailSent = smtpsMailSender.sendMail(modelBook.getEmail(), "Booking Confirmation", body);
                 if (mailSent) {
 
@@ -90,7 +90,7 @@ public class VenueManagerDAO {
         return false;
     }
 
-    public boolean rejectRequest(LoginModel model, BookVenueModel modelBook, String venue_name, String venue_location) {
+    public boolean rejectRequest(LoginModel model, BookVenueModel modelBook,VenueModel modelVenue) {
 
         try (Connection conn = dbConn.connection_base()) {
             String sqlQueryUpdate = "UPDATE venue_table SET status='Unbooked' where email=?";
@@ -104,7 +104,7 @@ public class VenueManagerDAO {
             int rowsInsertedDel=pstmtDel.executeUpdate();
             
             if (rowsInserted > 0 && rowsInsertedDel>0) {
-                String body = "Hello, your booking request was rejected by the venue manager.\nVenue Name:" + venue_name + "\nVenue Location:" + venue_location;
+                String body = "Hello, your booking request was rejected by the venue manager.\nVenue Name:" + modelVenue.getName() + "\nVenue Location:" + modelVenue.getLocation();
                 boolean mailSent = smtpsMailSender.sendMail(modelBook.getEmail(), "Booking Rejection", body);
                 if (mailSent) {
 
