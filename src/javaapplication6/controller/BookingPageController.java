@@ -24,7 +24,7 @@ public class BookingPageController {
     private VenueModel venueModel;
     private BookVenueDAO bookVenueDAO=new BookVenueDAO();
     
-    public BookingPageController(BookingPageView page,LoginModel loginModel,VenueModel venueModel)
+   public BookingPageController(BookingPageView page,LoginModel loginModel,VenueModel venueModel)
     {
         this.page=page;
         this.loginModel=loginModel;
