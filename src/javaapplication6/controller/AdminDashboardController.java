@@ -75,7 +75,7 @@ public class AdminDashboardController {
         public void actionPerformed(ActionEvent e) {
             String email = loginModel.getEmail();
             RegisterVenueDAO dao = new RegisterVenueDAO();
-            VenueDetailsFetchModel fetchedModel = dao.adminVenueView(email);
+            VenueDetailsFetchModel fetchedModel = dao.adminVenueViewFetch(email);
 
             if (fetchedModel != null) {
                 VenueModel venueModel = new VenueModel();
