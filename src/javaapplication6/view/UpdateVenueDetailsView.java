@@ -270,7 +270,7 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
     }
 
     
-    public void UpdateUserListener(ActionListener listener)
+    public void UpdateListener(ActionListener listener)
     {
         this.update.addActionListener(listener);
     }
