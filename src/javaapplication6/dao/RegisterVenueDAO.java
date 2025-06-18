@@ -83,8 +83,55 @@ public class RegisterVenueDAO {
         
         return false;
     }
+    
+    public boolean updateVenue(VenueModel model) {
+        String sql = "UPDATE venue_table SET name=?, location=?, email=?, contact_number=?, price_per_plate=?, image=? WHERE id=?";
 
-        
+        try (Connection conn = dbConn.connection_base(); 
+                PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, model.getName());
+            stmt.setString(2, model.getLocation());
+            stmt.setString(3, model.getEmail());
+            stmt.setString(4, model.getContact_number());
+            stmt.setDouble(5, model.getPrice_per_plate());
+            stmt.setBytes(6, model.getImage());
+            stmt.setInt(7, model.getId());
+
+            int affected = stmt.executeUpdate();
+            return affected > 0;
+        } catch(Exception e){
+            System.out.println("Error in registering Venue:"+e.getMessage());
+        }
+        return false;
+    }
+    
+        public VenueDetailsFetchModel adminVenueViewFetch(String email) {
+        String sqlQuery = "SELECT * FROM venue_table WHERE email = ?";
+        try (Connection conn = dbConn.connection_base()) {
+            PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
+            pstmt.setString(1, email);
+            var rs = pstmt.executeQuery();
+            if (rs.next()) {
+                VenueDetailsFetchModel result = new VenueDetailsFetchModel(
+                        rs.getInt("id"),
+                        null,
+                        rs.getString("name"),
+                        rs.getString("location"),
+                        rs.getString("email"),
+                        rs.getString("contact_number"),
+                        0,
+                        rs.getString("status"),
+                        rs.getDouble("price_per_plate"),
+                        null
+                );
+                return result;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        return null;
+    }
+    
+         
 }
-
-
