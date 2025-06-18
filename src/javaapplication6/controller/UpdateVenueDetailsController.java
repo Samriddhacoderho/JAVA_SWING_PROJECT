@@ -6,6 +6,7 @@ import java.io.File;
 import javaapplication6.dao.RegisterVenueDAO;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueModel;
+import javaapplication6.view.AdminDashboardView;
 import javaapplication6.view.UpdateVenueDetailsView;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -106,7 +107,10 @@ public class UpdateVenueDetailsController {
 
             if (success) {
                 JOptionPane.showMessageDialog(view, "Venue updated successfully.");
-                view.dispose(); // or redirect
+                AdminDashboardView admindashboardView=new AdminDashboardView();
+                AdminDashboardController admindashboardController=new AdminDashboardController(admindashboardView, model);
+                admindashboardController.open();
+                close();
             } else {
                 JOptionPane.showMessageDialog(view, "Failed to update venue.", "Database Error", JOptionPane.ERROR_MESSAGE);
             }
