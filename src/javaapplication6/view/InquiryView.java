@@ -5,6 +5,8 @@
 
 package javaapplication6.view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author ishan-college
@@ -28,12 +30,12 @@ public class InquiryView extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        EmailTxt = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        MessageTxt = new javax.swing.JTextArea();
+        SendBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        NameTxt = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,29 +58,29 @@ public class InquiryView extends javax.swing.JFrame {
         jPanel2.add(jLabel2);
         jLabel2.setBounds(190, 330, 170, 24);
 
-        jTextField2.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField2.setText("Enter your email");
-        jPanel2.add(jTextField2);
-        jTextField2.setBounds(250, 100, 230, 24);
+        EmailTxt.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        EmailTxt.setForeground(new java.awt.Color(204, 204, 204));
+        EmailTxt.setText("Enter your email");
+        jPanel2.add(EmailTxt);
+        EmailTxt.setBounds(250, 100, 230, 24);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(204, 204, 204));
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Enter your message");
-        jTextArea1.setToolTipText("");
-        jScrollPane1.setViewportView(jTextArea1);
+        MessageTxt.setColumns(20);
+        MessageTxt.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        MessageTxt.setForeground(new java.awt.Color(204, 204, 204));
+        MessageTxt.setRows(5);
+        MessageTxt.setText("Enter your message");
+        MessageTxt.setToolTipText("");
+        jScrollPane1.setViewportView(MessageTxt);
 
         jPanel2.add(jScrollPane1);
         jScrollPane1.setBounds(40, 140, 440, 130);
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 51));
-        jButton1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("SEND");
-        jPanel2.add(jButton1);
-        jButton1.setBounds(40, 283, 440, 30);
+        SendBtn.setBackground(new java.awt.Color(0, 204, 51));
+        SendBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        SendBtn.setForeground(new java.awt.Color(255, 255, 255));
+        SendBtn.setText("SEND");
+        jPanel2.add(SendBtn);
+        SendBtn.setBounds(40, 283, 440, 30);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -87,11 +89,11 @@ public class InquiryView extends javax.swing.JFrame {
         jPanel2.add(jLabel3);
         jLabel3.setBounds(20, 60, 480, 24);
 
-        jTextField3.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField3.setText("Enter your name");
-        jPanel2.add(jTextField3);
-        jTextField3.setBounds(40, 100, 180, 24);
+        NameTxt.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        NameTxt.setForeground(new java.awt.Color(204, 204, 204));
+        NameTxt.setText("Enter your name");
+        jPanel2.add(NameTxt);
+        NameTxt.setBounds(40, 100, 180, 24);
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -150,16 +152,62 @@ public class InquiryView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField EmailTxt;
+    private javax.swing.JTextArea MessageTxt;
+    private javax.swing.JTextField NameTxt;
+    private javax.swing.JButton SendBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * @return the EmailTxt
+     */
+    public javax.swing.JTextField getEmailTxt() {
+        return EmailTxt;
+    }
+
+    /**
+     * @param EmailTxt the EmailTxt to set
+     */
+    public void setEmailTxt(javax.swing.JTextField EmailTxt) {
+        this.EmailTxt = EmailTxt;
+    }
+
+    /**
+     * @return the MessageTxt
+     */
+    public javax.swing.JTextArea getMessageTxt() {
+        return MessageTxt;
+    }
+
+    /**
+     * @param MessageTxt the MessageTxt to set
+     */
+    public void setMessageTxt(javax.swing.JTextArea MessageTxt) {
+        this.MessageTxt = MessageTxt;
+    }
+
+    /**
+     * @return the NameTxt
+     */
+    public javax.swing.JTextField getNameTxt() {
+        return NameTxt;
+    }
+
+    /**
+     * @param NameTxt the NameTxt to set
+     */
+    public void setNameTxt(javax.swing.JTextField NameTxt) {
+        this.NameTxt = NameTxt;
+    }
+
+    public void SendListener(ActionListener listener)
+    {
+        this.SendBtn.addActionListener(listener);
+    }
 }
