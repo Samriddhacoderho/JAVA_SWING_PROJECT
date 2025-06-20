@@ -78,18 +78,18 @@ public class AdminDashboardController {
         public void actionPerformed(ActionEvent e) {
             String email = loginModel.getEmail();
             RegisterVenueDAO dao = new RegisterVenueDAO();
-            VenueDetailsFetchModel fetchedModel = dao.adminVenueViewFetch(email);
+            VenueModel fetchedModel = dao.adminVenueViewFetch(email);
 
             if (fetchedModel != null) {
                 VenueModel venueModel = new VenueModel();
-                venueModel.setId(fetchedModel.getVenue_id());
-                venueModel.setName(fetchedModel.getVenue_name());
-                venueModel.setLocation(fetchedModel.getVenue_location());
-                venueModel.setEmail(fetchedModel.getVenue_email());
-                venueModel.setContact_number(fetchedModel.getVenue_contactnum());
+                venueModel.setId(fetchedModel.getId());
+                venueModel.setName(fetchedModel.getName());
+                venueModel.setLocation(fetchedModel.getLocation());
+                venueModel.setEmail(fetchedModel.getEmail());
+                venueModel.setContact_number(fetchedModel.getContact_number());
                 venueModel.setPrice_per_plate((float) fetchedModel.getPrice_per_plate());
                 venueModel.setStatus(fetchedModel.getStatus());
-
+                
                 UpdateVenueDetailsView updateView = new UpdateVenueDetailsView();
                 UpdateVenueDetailsController updateController = new UpdateVenueDetailsController(updateView, loginModel, venueModel);
                 updateController.open();
