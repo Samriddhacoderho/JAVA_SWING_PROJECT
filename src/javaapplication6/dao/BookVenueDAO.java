@@ -112,14 +112,50 @@ public class BookVenueDAO {
         return false;
     }
 
-    public VenueDetailsFetchModel getVenue_in_mybookingPage(String email) {
-        String sqlQuery = "select * from book_details join venue_table on venue_table.id=book_details.venue_id where book_details.user_email=?";
+    public ArrayList<VenueDetailsFetchModel> getVenues_in_mybookingCurrentPage(String email) {
+        String sqlQuery = "select * from book_details join venue_table on venue_table.id=book_details.venue_id where book_details.completed='no' and book_details.user_email=?";
         try (Connection conn = dbConn.connection_base()) {
             PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
             pstmt.setString(1, email);
+            ArrayList<VenueDetailsFetchModel> venuelist = new ArrayList<>();
+
+            var rs = pstmt.executeQuery();
+            while (rs.next()) {
+                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), email, rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"),rs.getString("payment"),rs.getString("completed"));
+                venuelist.add(result);
+            }
+            return venuelist;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    
+    public ArrayList<VenueDetailsFetchModel> getVenues_in_mybookingPastPage(String email) {
+        String sqlQuery = "select * from book_details join venue_table on venue_table.id=book_details.venue_id where book_details.completed='yes' and book_details.user_email=?";
+        try (Connection conn = dbConn.connection_base()) {
+            PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
+            pstmt.setString(1, email);
+            ArrayList<VenueDetailsFetchModel> venuelist = new ArrayList<>();
+
+            var rs = pstmt.executeQuery();
+            while (rs.next()) {
+                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), email, rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"),rs.getString("payment"),rs.getString("completed"));
+                venuelist.add(result);
+            }
+            return venuelist;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    
+     public VenueDetailsFetchModel getVenue_in_mybookingPage(int id,String email) {
+        String sqlQuery = "select * from book_details join venue_table on venue_table.id=book_details.venue_id where book_details.venue_id=?";
+        try (Connection conn = dbConn.connection_base()) {
+            PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
+            pstmt.setInt(1, id);
             var rs = pstmt.executeQuery();
             if (rs.next()) {
-                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), email, rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"));
+                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), email, rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"),rs.getString("payment"),rs.getString("completed"));
                 return result;
             }
         } catch (Exception e) {
@@ -127,6 +163,9 @@ public class BookVenueDAO {
         }
         return null;
     }
+    
+   
+    
 
     public boolean cancelBooking(VenueDetailsFetchModel model) {
         String sqlQuery = "DELETE FROM book_details WHERE venue_id=? and user_email=?";
