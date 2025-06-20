@@ -35,7 +35,6 @@ public class PastBookingView extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jComboBox1 = new javax.swing.JComboBox<>();
-        viewBookDtls = new javax.swing.JButton();
         backDashboard = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,8 +56,6 @@ public class PastBookingView extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sort Price:", "Lowest to Highest", "Highest to Lowest" }));
 
-        viewBookDtls.setText("View Book Details");
-
         backDashboard.setText("Back to Dashboard");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -69,8 +66,6 @@ public class PastBookingView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(viewBookDtls)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(backDashboard))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
@@ -87,9 +82,7 @@ public class PastBookingView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewBookDtls)
-                    .addComponent(backDashboard))
+                .addComponent(backDashboard)
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
@@ -115,7 +108,6 @@ public class PastBookingView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JButton viewBookDtls;
     // End of variables declaration//GEN-END:variables
 
     public void jComboAction(ActionListener listener)
@@ -124,10 +116,7 @@ public class PastBookingView extends javax.swing.JFrame {
     }
     
     
-    public void ViewBook(ActionListener listener)
-    {
-        this.viewBookDtls.addActionListener(listener);
-    }
+   
     
     public void BackDashboard(ActionListener listener)
     {

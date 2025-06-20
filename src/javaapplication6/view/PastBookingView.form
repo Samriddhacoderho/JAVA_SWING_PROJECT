@@ -47,8 +47,6 @@
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="viewBookDtls" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="backDashboard" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -71,10 +69,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="484" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="viewBookDtls" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="backDashboard" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="backDashboard" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="8" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -118,11 +113,6 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
-        </Component>
-        <Component class="javax.swing.JButton" name="viewBookDtls">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="View Book Details"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="backDashboard">
           <Properties>

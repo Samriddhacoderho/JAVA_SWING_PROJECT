@@ -48,7 +48,7 @@ public class RegisterVenueDAO {
             pstmt.setString(1, email);
             var rs = pstmt.executeQuery();
             if (rs.next()) {
-                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), email, rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"), rs.getString("payment"), rs.getString("completed"));
+                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), rs.getString("user_email"), rs.getString("name"), rs.getString("location"), email, rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"), rs.getString("payment"), rs.getString("completed"));
                 return result;
             }
         } catch (Exception e) {
@@ -99,15 +99,14 @@ public class RegisterVenueDAO {
         return false;
     }
 
-    public VenueDetailsFetchModel adminVenueViewFetch(String email) {
+    public VenueModel adminVenueViewFetch(String email) {
         String sqlQuery = "SELECT * FROM venue_table WHERE email = ?";
         try (Connection conn = dbConn.connection_base()) {
             PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
             pstmt.setString(1, email);
             var rs = pstmt.executeQuery();
             if (rs.next()) {
-                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), email, rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"), rs.getString("payment"), rs.getString("completed"));
-
+                VenueModel result=new VenueModel(rs.getInt("id"), rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getDouble("price_per_plate"),rs.getString("status"));
                 return result;
             }
         } catch (Exception e) {
