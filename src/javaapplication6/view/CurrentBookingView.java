@@ -35,8 +35,8 @@ public class CurrentBookingView extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jComboBox1 = new javax.swing.JComboBox<>();
-        BackToDashboard = new javax.swing.JButton();
-        Cancel = new javax.swing.JButton();
+        viewBookDtls = new javax.swing.JButton();
+        backDashboard = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,22 +44,22 @@ public class CurrentBookingView extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "SN", "Venue Name", "Venue Location", "Venue Email", "Guest Number", "Price"
+                "Venue ID", "Venue Name", "Venue Location", "Price", "Venue Email", "Venue Contact", "Payment Status"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sort Price:", "Lowest to Highest", "Highest to Lowest" }));
 
-        BackToDashboard.setText("Back to Dashboard");
+        viewBookDtls.setText("View Book Details");
 
-        Cancel.setText("Cancel");
+        backDashboard.setText("Back to Dashboard");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -69,9 +69,9 @@ public class CurrentBookingView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BackToDashboard)
+                        .addComponent(viewBookDtls)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Cancel))
+                        .addComponent(backDashboard))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -88,8 +88,8 @@ public class CurrentBookingView extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BackToDashboard)
-                    .addComponent(Cancel))
+                    .addComponent(viewBookDtls)
+                    .addComponent(backDashboard))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
@@ -110,12 +110,12 @@ public class CurrentBookingView extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BackToDashboard;
-    private javax.swing.JButton Cancel;
+    private javax.swing.JButton backDashboard;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton viewBookDtls;
     // End of variables declaration//GEN-END:variables
 
     public void jComboAction(ActionListener listener)
@@ -124,14 +124,14 @@ public class CurrentBookingView extends javax.swing.JFrame {
     }
     
     
-    public void BackToDashboardAction(ActionListener listener)
+    public void ViewBook(ActionListener listener)
     {
-        this.BackToDashboard.addActionListener(listener);
+        this.viewBookDtls.addActionListener(listener);
     }
     
-    public void CancelAction(ActionListener listener)
+    public void BackDashboard(ActionListener listener)
     {
-        this.Cancel.addActionListener(listener);
+        this.backDashboard.addActionListener(listener);
     }
     
     /**
