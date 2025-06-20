@@ -39,14 +39,13 @@ public class AdminDashboardView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         viewBookingButton1 = new javax.swing.JButton();
-        registervenue = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         updatedetails1 = new javax.swing.JButton();
         change = new javax.swing.JButton();
-        logout = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        registervenue = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -61,13 +60,6 @@ public class AdminDashboardView extends javax.swing.JFrame {
         viewBookingButton1.setBorderPainted(false);
         viewBookingButton1.setOpaque(true);
         jPanel1.add(viewBookingButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, 190, 40));
-
-        registervenue.setBackground(new java.awt.Color(51, 255, 0));
-        registervenue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        registervenue.setText("Register Venue");
-        registervenue.setBorderPainted(false);
-        registervenue.setOpaque(true);
-        jPanel1.add(registervenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, 190, 36));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Settings");
@@ -90,53 +82,65 @@ public class AdminDashboardView extends javax.swing.JFrame {
         change.setOpaque(true);
         jPanel1.add(change, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 190, 40));
 
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+
+        jPanel2.setBackground(new java.awt.Color(102, 255, 204));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 90, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 90, Short.MAX_VALUE)
+        );
+
+        registervenue.setBackground(new java.awt.Color(51, 255, 0));
+        registervenue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        registervenue.setForeground(new java.awt.Color(255, 255, 255));
+        registervenue.setText("Register Venue");
+        registervenue.setBorderPainted(false);
+        registervenue.setOpaque(true);
+
         logout.setBackground(new java.awt.Color(255, 0, 0));
         logout.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         logout.setForeground(new java.awt.Color(255, 255, 255));
         logout.setText("Log Out");
         logout.setBorderPainted(false);
         logout.setOpaque(true);
-        jPanel1.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 360, 190, 40));
-
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
-
-        jLabel1.setText("Image");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel1)
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(52, 52, 52)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(registervenue, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(34, 34, 34)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(330, Short.MAX_VALUE))
+                .addGap(72, 72, 72)
+                .addComponent(registervenue, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 172, Short.MAX_VALUE)
+                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 450));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -156,7 +160,6 @@ public class AdminDashboardView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton change;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
