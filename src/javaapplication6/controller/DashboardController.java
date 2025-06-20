@@ -35,7 +35,7 @@ public class DashboardController {
         dashboardView.ViewFAQListener(new ViewFAQListener());
 
         dashboardView.BackButton(new BackButtonListener());
-        dashboardView.ViewBookingListener(new ViewBookingListener());
+        dashboardView.ViewPastBookingListener(new ViewBookingListener());
         this.loginModel=loginModel;
     }
     
