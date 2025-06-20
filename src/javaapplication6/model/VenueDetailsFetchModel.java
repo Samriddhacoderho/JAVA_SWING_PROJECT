@@ -19,6 +19,8 @@ public class VenueDetailsFetchModel {
     private String status;
     private double price_per_plate;
     private Long total_price;
+    private String payed;
+    private String completed;
     
     public VenueDetailsFetchModel(
         int venue_id,
@@ -30,7 +32,9 @@ public class VenueDetailsFetchModel {
         int estimated_guests,
         String status,
         double price_per_plate,
-        Long total_price
+        Long total_price,
+        String payment,
+        String completed
     ) {
         this.venue_id = venue_id;
         this.user_email = user_email;
@@ -42,6 +46,8 @@ public class VenueDetailsFetchModel {
         this.status = status;
         this.price_per_plate = price_per_plate;
         this.total_price = total_price;
+        this.payed=payment;
+        this.completed=completed;
     }
 
     /**
@@ -185,8 +191,38 @@ public class VenueDetailsFetchModel {
     }
 
     /**
+     * @return the payed
+     */
+    public String getPayed() {
+        return payed;
+    }
+
+    /**
+     * @param payed the payed to set
+     */
+    public void setPayed(String payed) {
+        this.payed = payed;
+    }
+
+    /**
+     * @return the completed
+     */
+    public String getCompleted() {
+        return completed;
+    }
+
+    /**
+     * @param completed the completed to set
+     */
+    public void setCompleted(String completed) {
+        this.completed = completed;
+    }
+
+    /**
      * @return the venueImage
      */
+    
+    
    
     
 }

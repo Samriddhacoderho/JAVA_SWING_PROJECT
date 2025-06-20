@@ -49,7 +49,7 @@ public class VenueListController {
 
         int sn = 1;
         for (VenueModel venueModel : venuelist) {
-            model.addRow(new Object[]{sn++, venueModel.getName(), venueModel.getLocation(), venueModel.getPrice_per_plate(), venueModel.getStatus()});
+            model.addRow(new Object[]{venueModel.getId(), venueModel.getName(), venueModel.getLocation(), venueModel.getPrice_per_plate(), venueModel.getStatus()});
         }
     }
 
@@ -84,15 +84,15 @@ public class VenueListController {
                 if (result.getStatus().equalsIgnoreCase("Booked")) {
                     JOptionPane.showMessageDialog(venuelistView, "This venue has already been booked. Please choose a different venue!");
                 } else {
-                    VenueDetailsFetchModel res1 = bookVenueDAO.getVenue_in_mybookingPage(loginModel.getEmail());
-                    if (res1 != null && res1.getVenue_name().equalsIgnoreCase(result.getName())) {
-                        JOptionPane.showMessageDialog(venuelistView, "You have already requested booking for this venue. Please choose a different venue!");
-                    } else {
+//                    VenueDetailsFetchModel res1 = bookVenueDAO.getVenue_in_mybookingPage(loginModel.getEmail());
+//                    if (res1 != null && res1.getVenue_name().equalsIgnoreCase(result.getName())) {
+//                        JOptionPane.showMessageDialog(venuelistView, "You have already requested booking for this venue. Please choose a different venue!");
+//                    } else {
                         BookingPageView page = new BookingPageView();
                         BookingPageController pageController = new BookingPageController(page, loginModel, result);
                         pageController.open();
                         close();
-                    }
+//                }
                 }
             }
         }
