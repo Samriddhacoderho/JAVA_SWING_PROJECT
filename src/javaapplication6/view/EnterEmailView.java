@@ -36,6 +36,8 @@ public class EnterEmailView extends javax.swing.JFrame {
         emailTxt = new javax.swing.JTextField();
         otpBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(735, 569));
@@ -71,6 +73,14 @@ public class EnterEmailView extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Recover your account by entering your email to recieve OTP");
         jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 390, -1));
+
+        jPanel3.setLayout(null);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/bookmyvenue.png"))); // NOI18N
+        jPanel3.add(jLabel7);
+        jLabel7.setBounds(0, 0, 110, 60);
+
+        jPanel6.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 110, 60));
 
         getContentPane().add(jPanel6);
         jPanel6.setBounds(-40, -40, 770, 640);
@@ -122,6 +132,8 @@ public class EnterEmailView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel loginLbl;
     private javax.swing.JButton otpBtn;
