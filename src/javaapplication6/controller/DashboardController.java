@@ -14,14 +14,10 @@ import javaapplication6.view.FAQView;
 import javaapplication6.view.LoginView;
 import javaapplication6.view.ReportView;
 import javax.swing.JOptionPane;
-import javaapplication6.controller.AHomeController;
 import javaapplication6.dao.BookVenueDAO;
 import javaapplication6.model.VenueDetailsFetchModel;
-import javaapplication6.model.VenueModel;
 import javaapplication6.view.CurrentBookingView;
-import javaapplication6.view.MyBookings;
 import javaapplication6.view.PastBookingView;
-import javax.swing.plaf.basic.BasicButtonListener;
 
 /**
  *
@@ -150,7 +146,7 @@ public class DashboardController {
         @Override
         public void actionPerformed(ActionEvent e) {
             ArrayList<VenueDetailsFetchModel> result = dao.getVenues_in_mybookingPastPage(loginModel.getEmail());
-            if (result==null) {
+            if (result==null || result.isEmpty()) {
                 JOptionPane.showMessageDialog(dashboardView, "You do not have any past bookings!");
             } else {
                 PastBookingView view = new PastBookingView();
@@ -168,7 +164,7 @@ public class DashboardController {
         @Override
         public void actionPerformed(ActionEvent e) {
             ArrayList<VenueDetailsFetchModel> result = dao.getVenues_in_mybookingCurrentPage(loginModel.getEmail());
-            if (result==null) {
+            if (result==null || result.isEmpty()) {
                 JOptionPane.showMessageDialog(dashboardView, "You do not have any current bookings at the moment!");
             } else {
                 CurrentBookingView view = new CurrentBookingView();

@@ -28,8 +28,6 @@ public class PastBookingController {
     public PastBookingController(PastBookingView pastBookingView, LoginModel loginModel) {
         this.pastBookingView = pastBookingView;
         this.loginModel = loginModel;
-        this.pastBookingView.ViewBook(new BTNAction());
-
     }
 
     public void open() {
@@ -50,25 +48,6 @@ public class PastBookingController {
         }
     }
 
-    class BTNAction implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (pastBookingView.getjTable1().getSelectedRow() == -1) {
-                JOptionPane.showMessageDialog(pastBookingView, "Please select a row first to proceed to booking page");
-            } else {
-                // Convert view row to model row if table is sortable
-                int selectedRow = pastBookingView.getjTable1().getSelectedRow();
-                int modelRow = pastBookingView.getjTable1().convertRowIndexToModel(selectedRow);
-                int venueID = (int) pastBookingView.getjTable1().getModel().getValueAt(modelRow, 0);
-                VenueDetailsFetchModel result = dao.getVenue_in_mybookingPage(venueID, loginModel.getEmail());
-                MyBookings bookings = new MyBookings();
-                MyBookingController ctrl = new MyBookingController(bookings, loginModel,result);
-                ctrl.open();
-                close();
-            }
-        }
-
-    }
+    
 
 }
