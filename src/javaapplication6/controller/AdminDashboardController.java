@@ -34,6 +34,9 @@ public class AdminDashboardController {
         this.loginModel = loginModel;
         this.view.UpdeteDetailsUserListener(new UpdateVenueDetails());
         this.view.LogOutUserListener(new LogoutListener());
+        this.view.setUserName(loginModel.getName());
+        this.view.setUserEmail(loginModel.getEmail());
+        this.view.setUserImage(loginModel.getImage());
     }
 
     public void open() {

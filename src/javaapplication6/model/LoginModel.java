@@ -11,11 +11,20 @@ package javaapplication6.model;
 public class LoginModel {
     private String email;
     private String password;
+    private String name;
+    private byte[] image;
     
     public LoginModel(String email,String password)
     {
         this.email=email;
         this.password=password;
+    }
+    
+    public LoginModel(String email, String password, String name, byte[] image) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.image = image;
     }
 
     /**
@@ -45,6 +54,34 @@ public class LoginModel {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return the image
+     */
+    public byte[] getImage() {
+        return image;
+    }
+
+    /**
+     * @param image the image to set
+     */
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
     
 }
