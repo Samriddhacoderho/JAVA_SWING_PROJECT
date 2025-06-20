@@ -60,6 +60,8 @@ public class DBConn {
                     + "user_email VARCHAR(100), "
                     + "estimated_guests VARCHAR(200), "
                     + "total_price FLOAT, "
+                    + "payment enum('payed','unpayed'), "
+                    + "completed enum('yes','no'), "
                     + "FOREIGN KEY (venue_id) REFERENCES venue_table(id)"
                     + ")"
             );
