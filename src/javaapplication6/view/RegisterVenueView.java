@@ -44,8 +44,10 @@ public class RegisterVenueView extends javax.swing.JFrame {
         numberTxt = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         priceTxt = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,8 +61,8 @@ public class RegisterVenueView extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Name:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 60, 20));
-        jPanel2.add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 320, 30));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 60, 20));
+        jPanel2.add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 320, 30));
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -68,38 +70,46 @@ public class RegisterVenueView extends javax.swing.JFrame {
         jButton3.setText("Register");
         jButton3.setBorderPainted(false);
         jButton3.setOpaque(true);
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 320, 40));
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 320, 40));
 
         jLabel7.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Location :");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 60, 20));
-        jPanel2.add(locationTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 320, 30));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 60, 20));
+        jPanel2.add(locationTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 320, 30));
 
         jLabel10.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Contact Number:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 100, 20));
-        jPanel2.add(numberTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 320, 30));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 100, 20));
+        jPanel2.add(numberTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 320, 30));
 
         jLabel11.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Price Per Plate :");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 100, 20));
-        jPanel2.add(priceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 320, 30));
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 560, 340));
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setText("bookmyvenue");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 130, 40));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 100, 20));
+        jPanel2.add(priceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 320, 30));
 
         jLabel6.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Register a new Venue!");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 160, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 160, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 630, 440));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setText("bookmyvenue");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 130, 40));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 560, 360));
+
+        jPanel3.setLayout(null);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/bookmyvenue.png"))); // NOI18N
+        jPanel3.add(jLabel8);
+        jLabel8.setBounds(0, 0, 110, 60);
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 60));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 440));
 
         pack();
         setLocationRelativeTo(null);
@@ -155,8 +165,10 @@ public class RegisterVenueView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField locationTxt;
     private javax.swing.JTextField nameTxt;
     private javax.swing.JTextField numberTxt;

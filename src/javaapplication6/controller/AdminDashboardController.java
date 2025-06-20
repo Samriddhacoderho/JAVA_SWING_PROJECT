@@ -30,7 +30,7 @@ public class AdminDashboardController {
     public AdminDashboardController(AdminDashboardView view, LoginModel loginModel) {
         this.view = view;
         this.view.RegisteVenueUserListener(new VenueRegister());
-        this.view.RegisterUserListener(new BookView());
+        this.view.ViewPreviousBookingListener(new BookView());
         this.loginModel = loginModel;
         this.view.UpdeteDetailsUserListener(new UpdateVenueDetails());
         this.view.LogOutUserListener(new LogoutListener());
