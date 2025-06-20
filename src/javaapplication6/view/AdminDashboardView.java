@@ -8,12 +8,14 @@ package javaapplication6.view;
  */
 
 
+import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javaapplication6.controller.FAQController;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -44,6 +46,9 @@ public class AdminDashboardView extends javax.swing.JFrame {
         updatedetails1 = new javax.swing.JButton();
         change = new javax.swing.JButton();
         viewBookingButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -118,6 +123,9 @@ public class AdminDashboardView extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 450));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 200, 40));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 190, 70));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 110, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,6 +145,9 @@ public class AdminDashboardView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton change;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton logout;
@@ -164,6 +175,22 @@ public class AdminDashboardView extends javax.swing.JFrame {
     public void LogOutUserListener(ActionListener listener)
     {
         this.logout.addActionListener(listener);
+    }
+    
+    public void setUserName(String name) {
+        jLabel1.setText(name);
+    }
+
+    public void setUserEmail(String email) {
+        jLabel2.setText(email);
+    }
+
+    public void setUserImage(byte[] imageData) {
+        if (imageData != null) {
+            ImageIcon imageIcon = new ImageIcon(imageData);
+            Image img = imageIcon.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+            jLabel3.setIcon(new ImageIcon(img));
+        }
     }
     
 }
