@@ -38,14 +38,12 @@ public class AdminDashboardView extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        viewBookingButton1 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        updatedetails1 = new javax.swing.JButton();
-        change = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         registervenue = new javax.swing.JButton();
         logout = new javax.swing.JButton();
+        updatedetails1 = new javax.swing.JButton();
+        change = new javax.swing.JButton();
+        viewBookingButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -53,49 +51,7 @@ public class AdminDashboardView extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        viewBookingButton1.setBackground(new java.awt.Color(0, 0, 0));
-        viewBookingButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        viewBookingButton1.setForeground(new java.awt.Color(255, 255, 255));
-        viewBookingButton1.setText("View Booking Request");
-        viewBookingButton1.setBorderPainted(false);
-        viewBookingButton1.setOpaque(true);
-        jPanel1.add(viewBookingButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 210, 190, 40));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setText("Settings");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 30, 66, -1));
-
-        updatedetails1.setBackground(new java.awt.Color(0, 0, 0));
-        updatedetails1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        updatedetails1.setForeground(new java.awt.Color(255, 255, 255));
-        updatedetails1.setText("Update Venue Details");
-        updatedetails1.setBorderPainted(false);
-        updatedetails1.setFocusPainted(false);
-        updatedetails1.setOpaque(true);
-        jPanel1.add(updatedetails1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 190, 40));
-
-        change.setBackground(new java.awt.Color(0, 0, 0));
-        change.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        change.setForeground(new java.awt.Color(255, 255, 255));
-        change.setText("Change Password");
-        change.setBorderPainted(false);
-        change.setOpaque(true);
-        jPanel1.add(change, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 190, 40));
-
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
-
-        jPanel2.setBackground(new java.awt.Color(102, 255, 204));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 90, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 90, Short.MAX_VALUE)
-        );
 
         registervenue.setBackground(new java.awt.Color(51, 255, 0));
         registervenue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -111,31 +67,52 @@ public class AdminDashboardView extends javax.swing.JFrame {
         logout.setBorderPainted(false);
         logout.setOpaque(true);
 
+        updatedetails1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        updatedetails1.setText("Update Venue Details");
+        updatedetails1.setBorderPainted(false);
+        updatedetails1.setFocusPainted(false);
+        updatedetails1.setOpaque(true);
+
+        change.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        change.setText("Change Password");
+        change.setBorderPainted(false);
+        change.setOpaque(true);
+
+        viewBookingButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        viewBookingButton1.setText("View Booking Request");
+        viewBookingButton1.setBorderPainted(false);
+        viewBookingButton1.setOpaque(true);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(registervenue, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(registervenue, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(change, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updatedetails1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewBookingButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
+                .addGap(196, 196, 196)
                 .addComponent(registervenue, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 172, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(updatedetails1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(change, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(viewBookingButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -160,9 +137,7 @@ public class AdminDashboardView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton change;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton logout;
     private javax.swing.JButton registervenue;
