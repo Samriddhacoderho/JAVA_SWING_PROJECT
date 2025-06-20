@@ -34,9 +34,17 @@ public class AdminDashboardController {
         this.loginModel = loginModel;
         this.view.UpdeteDetailsUserListener(new UpdateVenueDetails());
         this.view.LogOutUserListener(new LogoutListener());
-        this.view.setUserName(loginModel.getName());
-        this.view.setUserEmail(loginModel.getEmail());
-        this.view.setUserImage(loginModel.getImage());
+        
+        RegisterVenueDAO dao = new RegisterVenueDAO();
+        this.venueModel = dao.fetchVenueBasicInfo(loginModel.getEmail());
+
+        if (venueModel != null) {
+            view.setVenueName(venueModel.getName());
+            view.setVenueEmail(venueModel.getEmail());
+            view.setVenueImage(venueModel.getImage());
+        } else {
+            JOptionPane.showMessageDialog(view, "No venue found for your account.");
+        }
     }
 
     public void open() {

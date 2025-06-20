@@ -154,4 +154,19 @@ public class BookVenueDAO {
         }
         return false;
     }
+    
+    public byte[] fetchVenueImage(String email) {
+        String sqlQuery = "SELECT image FROM venue_table WHERE email = ?";
+        try (Connection conn = dbConn.connection_base()) {
+            PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
+            pstmt.setString(1, email);
+            var rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return rs.getBytes("image");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

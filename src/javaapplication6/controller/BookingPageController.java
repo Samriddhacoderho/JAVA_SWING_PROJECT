@@ -33,6 +33,12 @@ public class BookingPageController {
         this.page.getjTextField2().setText(venueModel.getEmail());
         this.page.getjTextField1().setText(venueModel.getContact_number());
         this.page.ProceedAction(new ProceedAction());
+        this.page.setVenueImage(venueModel.getImage());
+        
+        BookVenueDAO dao = new BookVenueDAO();
+        byte[] imageData = dao.fetchVenueImage(venueModel.getEmail());
+        this.page.setVenueImage(imageData);
+        this.page.ProceedAction(new ProceedAction());
     }
     
     public void open()
