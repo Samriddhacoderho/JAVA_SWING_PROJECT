@@ -24,6 +24,7 @@ public class VenueManagerDAO {
     private final DBConn dbConn;
     private SMTPSMailSender smtpsMailSender = new SMTPSMailSender();
     private final RegisterVenueDAO dao = new RegisterVenueDAO();
+    //test
 
     public VenueManagerDAO() {
         dbConn = new DBConn();
