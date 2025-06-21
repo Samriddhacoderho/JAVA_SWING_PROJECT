@@ -6,7 +6,10 @@ package javaapplication6.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javaapplication6.dao.RegisterVenueDAO;
 import javaapplication6.model.LoginModel;
+import javaapplication6.model.VenueDetailsFetchModel;
+import javaapplication6.model.VenueModel;
 import javaapplication6.view.AdminDashboardView;
 import javaapplication6.view.AdminLoginView;
 import javaapplication6.view.BookingDetailsView;
@@ -22,14 +25,26 @@ public class AdminDashboardController {
 
     private final AdminDashboardView view;
     private final LoginModel loginModel;
+    private VenueModel venueModel;
 
     public AdminDashboardController(AdminDashboardView view, LoginModel loginModel) {
         this.view = view;
         this.view.RegisteVenueUserListener(new VenueRegister());
-        this.view.RegisterUserListener(new BookView());
+        this.view.ViewPreviousBookingListener(new BookView());
         this.loginModel = loginModel;
         this.view.UpdeteDetailsUserListener(new UpdateVenueDetails());
         this.view.LogOutUserListener(new LogoutListener());
+        
+        RegisterVenueDAO dao = new RegisterVenueDAO();
+        this.venueModel = dao.fetchVenueBasicInfo(loginModel.getEmail());
+
+        if (venueModel != null) {
+            view.setVenueName(venueModel.getName());
+            view.setVenueEmail(venueModel.getEmail());
+            view.setVenueImage(venueModel.getImage());
+        } else {
+            JOptionPane.showMessageDialog(view, "No venue found for your account.");
+        }
     }
 
     public void open() {
@@ -69,10 +84,27 @@ public class AdminDashboardController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            UpdateVenueDetailsView updateView = new UpdateVenueDetailsView();
-            UpdateVenueDetailsController updateController = new UpdateVenueDetailsController(updateView,loginModel);
-            updateController.open();
-            close();
+            String email = loginModel.getEmail();
+            RegisterVenueDAO dao = new RegisterVenueDAO();
+            VenueModel fetchedModel = dao.adminVenueViewFetch(email);
+
+            if (fetchedModel != null) {
+                VenueModel venueModel = new VenueModel();
+                venueModel.setId(fetchedModel.getId());
+                venueModel.setName(fetchedModel.getName());
+                venueModel.setLocation(fetchedModel.getLocation());
+                venueModel.setEmail(fetchedModel.getEmail());
+                venueModel.setContact_number(fetchedModel.getContact_number());
+                venueModel.setPrice_per_plate((float) fetchedModel.getPrice_per_plate());
+                venueModel.setStatus(fetchedModel.getStatus());
+                
+                UpdateVenueDetailsView updateView = new UpdateVenueDetailsView();
+                UpdateVenueDetailsController updateController = new UpdateVenueDetailsController(updateView, loginModel, venueModel);
+                updateController.open();
+                close();
+            } else {
+                JOptionPane.showMessageDialog(view, "No registered venue found for your account.");
+            }
         }
     }
 

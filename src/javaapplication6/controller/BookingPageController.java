@@ -24,7 +24,7 @@ public class BookingPageController {
     private VenueModel venueModel;
     private BookVenueDAO bookVenueDAO=new BookVenueDAO();
     
-    public BookingPageController(BookingPageView page,LoginModel loginModel,VenueModel venueModel)
+   public BookingPageController(BookingPageView page,LoginModel loginModel,VenueModel venueModel)
     {
         this.page=page;
         this.loginModel=loginModel;
@@ -32,6 +32,12 @@ public class BookingPageController {
         this.page.getjLabel2().setText(venueModel.getName());
         this.page.getjTextField2().setText(venueModel.getEmail());
         this.page.getjTextField1().setText(venueModel.getContact_number());
+        this.page.ProceedAction(new ProceedAction());
+        this.page.setVenueImage(venueModel.getImage());
+        
+        BookVenueDAO dao = new BookVenueDAO();
+        byte[] imageData = dao.fetchVenueImage(venueModel.getEmail());
+        this.page.setVenueImage(imageData);
         this.page.ProceedAction(new ProceedAction());
     }
     

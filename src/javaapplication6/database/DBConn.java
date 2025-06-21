@@ -47,10 +47,11 @@ public class DBConn {
                     + "email VARCHAR(200), "
                     + "contact_number VARCHAR(200), "
                     + "price_per_plate FLOAT, "
-                    + "status VARCHAR(200) DEFAULT 'Unbooked')"
-                    );
-                    
+                    + "status VARCHAR(200) DEFAULT 'Unbooked', "
+                    + "image BLOB DEFAULT NULL"
+                    + ")");
 
+                    
             // Create book_details table
             stmt.executeUpdate(
                     "CREATE TABLE IF NOT EXISTS book_details ("
@@ -59,6 +60,8 @@ public class DBConn {
                     + "user_email VARCHAR(100), "
                     + "estimated_guests VARCHAR(200), "
                     + "total_price FLOAT, "
+                    + "payment enum('payed','unpayed') default 'unpayed', "
+                    + "completed enum('yes','no') default 'no', "
                     + "FOREIGN KEY (venue_id) REFERENCES venue_table(id)"
                     + ")"
             );

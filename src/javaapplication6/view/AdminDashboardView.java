@@ -8,12 +8,14 @@ package javaapplication6.view;
  */
 
 
+import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.beans.PropertyVetoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javaapplication6.controller.FAQController;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -38,14 +40,17 @@ public class AdminDashboardView extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        logout = new javax.swing.JButton();
-        viewBookingButton1 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         registervenue = new javax.swing.JButton();
-        change = new javax.swing.JButton();
-        updatedetails = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
         updatedetails1 = new javax.swing.JButton();
+        change = new javax.swing.JButton();
+        viewBookingButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -53,12 +58,14 @@ public class AdminDashboardView extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setText("Settings");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 6, 66, -1));
+        registervenue.setBackground(new java.awt.Color(51, 255, 0));
+        registervenue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        registervenue.setForeground(new java.awt.Color(255, 255, 255));
+        registervenue.setText("Register Venue");
+        registervenue.setBorderPainted(false);
+        registervenue.setOpaque(true);
 
         logout.setBackground(new java.awt.Color(255, 0, 0));
         logout.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -66,66 +73,94 @@ public class AdminDashboardView extends javax.swing.JFrame {
         logout.setText("Log Out");
         logout.setBorderPainted(false);
         logout.setOpaque(true);
-        jPanel2.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 341, 172, 31));
 
-        viewBookingButton1.setBackground(new java.awt.Color(0, 0, 0));
-        viewBookingButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        viewBookingButton1.setForeground(new java.awt.Color(255, 255, 255));
-        viewBookingButton1.setText("View Booking Request");
-        viewBookingButton1.setBorderPainted(false);
-        viewBookingButton1.setOpaque(true);
-        jPanel2.add(viewBookingButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 190, 36));
-
-        registervenue.setBackground(new java.awt.Color(51, 255, 0));
-        registervenue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        registervenue.setText("Register Venue");
-        registervenue.setBorderPainted(false);
-        registervenue.setOpaque(true);
-        jPanel2.add(registervenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 190, 36));
-
-        change.setBackground(new java.awt.Color(0, 0, 0));
-        change.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        change.setForeground(new java.awt.Color(255, 255, 255));
-        change.setText("Change Password");
-        change.setBorderPainted(false);
-        change.setOpaque(true);
-        jPanel2.add(change, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 172, 33));
-
-        updatedetails.setBackground(new java.awt.Color(0, 0, 0));
-        updatedetails.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        updatedetails.setForeground(new java.awt.Color(255, 255, 255));
-        updatedetails.setText("Add Venue");
-        updatedetails.setBorderPainted(false);
-        updatedetails.setFocusPainted(false);
-        updatedetails.setOpaque(true);
-        jPanel2.add(updatedetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 172, 35));
-
-        updatedetails1.setBackground(new java.awt.Color(0, 0, 0));
         updatedetails1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        updatedetails1.setForeground(new java.awt.Color(255, 255, 255));
         updatedetails1.setText("Update Venue Details");
         updatedetails1.setBorderPainted(false);
         updatedetails1.setFocusPainted(false);
         updatedetails1.setOpaque(true);
-        jPanel2.add(updatedetails1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, 172, 35));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        change.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        change.setText("Change Password");
+        change.setBorderPainted(false);
+        change.setOpaque(true);
+
+        viewBookingButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        viewBookingButton1.setText("View Booking Request");
+        viewBookingButton1.setBorderPainted(false);
+        viewBookingButton1.setOpaque(true);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/image (1).png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(registervenue, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(change, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updatedetails1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(viewBookingButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel5)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(registervenue, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(updatedetails1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(change, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(viewBookingButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 450));
+
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 200, -1));
+
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 200, -1));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 130, 110));
+
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Welcome!!!");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 200, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 716, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -135,17 +170,20 @@ public class AdminDashboardView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton change;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JButton logout;
     private javax.swing.JButton registervenue;
-    private javax.swing.JButton updatedetails;
     private javax.swing.JButton updatedetails1;
     private javax.swing.JButton viewBookingButton1;
     // End of variables declaration//GEN-END:variables
 
-    public void RegisterUserListener(ActionListener listener)
+    public void ViewPreviousBookingListener(ActionListener listener)
     {
         this.viewBookingButton1.addActionListener(listener);
     }
@@ -164,6 +202,24 @@ public class AdminDashboardView extends javax.swing.JFrame {
     public void LogOutUserListener(ActionListener listener)
     {
         this.logout.addActionListener(listener);
+    }
+    
+    public void setVenueName(String name) {
+        jLabel1.setText(name);
+    }
+
+    public void setVenueEmail(String email) {
+        jLabel2.setText(email);
+    }
+
+    public void setVenueImage(byte[] imageData) {
+        if (imageData != null) {
+            ImageIcon imageIcon = new ImageIcon(imageData);
+            Image img = imageIcon.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
+            jLabel3.setIcon(new ImageIcon(img));
+        } else {
+            jLabel3.setIcon(null);
+        }
     }
     
 }
