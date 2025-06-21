@@ -43,7 +43,7 @@ public class AdminViewBookingController {
         this.detailView.getAdminEmail().setText(result.getUser_email()); // This is venue owner's email later replace with user email
         this.detailView.getGuestNumber().setText(Integer.toString(result.getEstimated_guests()));
         this.detailView.getPrice().setText("Rs." + Long.toString(result.getTotal_price()));
-        this.status = result.getStatus();
+        this.status = result.getStatus_detail();
     }
 
     public void close() {
@@ -54,8 +54,11 @@ public class AdminViewBookingController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (status.equalsIgnoreCase("Booked")) {
+            if (status.equalsIgnoreCase("approved")) {
                 JOptionPane.showMessageDialog(detailView, "You have already approved this booking!");
+            } else if (result.getStatus().equalsIgnoreCase("Booked")) {
+                JOptionPane.showMessageDialog(detailView, "You cannot approve another booking whilst one has been approved!");
+
             } else {
                 int confirm = JOptionPane.showConfirmDialog(
                         detailView,
@@ -74,7 +77,7 @@ public class AdminViewBookingController {
                         BookVenueModel modelBook = new BookVenueModel(user_email, estimated_guests, estimated_price);
                         VenueModel modelVenue = new VenueModel(venue_name, venue_location);
 
-                        boolean success = dao.approveRequest(loginModel, modelBook, modelVenue);
+                        boolean success = dao.approveRequest(loginModel, modelBook, modelVenue, result);
 
                         if (success) {
                             JOptionPane.showMessageDialog(
@@ -109,48 +112,52 @@ public class AdminViewBookingController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            int confirm = JOptionPane.showConfirmDialog(
-                    detailView,
-                    "Are you sure you want to reject this booking request?",
-                    "Confirm Rejection",
-                    JOptionPane.YES_NO_OPTION
-            );
+            if (result.getPayed().equalsIgnoreCase("payed")) {
+                JOptionPane.showMessageDialog(detailView, "Once the payment is done, you cannot reject the booking!");
+            } else {
+                int confirm = JOptionPane.showConfirmDialog(
+                        detailView,
+                        "Are you sure you want to reject this booking request?",
+                        "Confirm Rejection",
+                        JOptionPane.YES_NO_OPTION
+                );
 
-            if (confirm == JOptionPane.YES_OPTION) {
-                try {
-                    String venue_name = detailView.getVenueName().getText();
-                    String venue_location = detailView.getVenueLocation().getText();
-                    String user_email = detailView.getAdminEmail().getText();
-                    String estimated_guests = detailView.getGuestNumber().getText();
-                    double estimated_price = Long.parseLong(detailView.getPrice().getText().substring(3));
-                    BookVenueModel modelBook = new BookVenueModel(user_email, estimated_guests, estimated_price);
-                    VenueModel modelVenue = new VenueModel(venue_name, venue_location);
+                if (confirm == JOptionPane.YES_OPTION) {
+                    try {
+                        String venue_name = detailView.getVenueName().getText();
+                        String venue_location = detailView.getVenueLocation().getText();
+                        String user_email = detailView.getAdminEmail().getText();
+                        String estimated_guests = detailView.getGuestNumber().getText();
+                        double estimated_price = Long.parseLong(detailView.getPrice().getText().substring(3));
+                        BookVenueModel modelBook = new BookVenueModel(user_email, estimated_guests, estimated_price);
+                        VenueModel modelVenue = new VenueModel(venue_name, venue_location);
 
-                    boolean success = dao.rejectRequest(loginModel, modelBook, modelVenue, result);
+                        boolean success = dao.rejectRequest(loginModel, modelBook, modelVenue, result);
 
-                    if (success) {
+                        if (success) {
+                            JOptionPane.showMessageDialog(
+                                    detailView,
+                                    "Booking request has been rejected successfully!",
+                                    "Booking Approved",
+                                    JOptionPane.INFORMATION_MESSAGE
+                            );
+                            navigateToAdminDashboard();
+                        } else {
+                            JOptionPane.showMessageDialog(
+                                    detailView,
+                                    "Failed to reject booking. Please try again.",
+                                    "Error",
+                                    JOptionPane.ERROR_MESSAGE
+                            );
+                        }
+                    } catch (Exception ex) {
                         JOptionPane.showMessageDialog(
                                 detailView,
-                                "Booking request has been rejected successfully!",
-                                "Booking Approved",
-                                JOptionPane.INFORMATION_MESSAGE
-                        );
-                        navigateToAdminDashboard();
-                    } else {
-                        JOptionPane.showMessageDialog(
-                                detailView,
-                                "Failed to reject booking. Please try again.",
+                                "Error rejecting booking: " + ex.getMessage(),
                                 "Error",
                                 JOptionPane.ERROR_MESSAGE
                         );
                     }
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(
-                            detailView,
-                            "Error rejecting booking: " + ex.getMessage(),
-                            "Error",
-                            JOptionPane.ERROR_MESSAGE
-                    );
                 }
             }
         }
@@ -215,8 +222,8 @@ public class AdminViewBookingController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (bookingDAO.getVenue_in_myAdminbookingPage(result.getUser_email(), loginModel.getEmail()).getStatus().equalsIgnoreCase("Booked")) {
-                JOptionPane.showMessageDialog(detailView, "This venue is already booked!");
+            if (bookingDAO.getVenue_in_myAdminbookingPage(result.getUser_email(), loginModel.getEmail()).getStatus_detail().equalsIgnoreCase("no")) {
+                JOptionPane.showMessageDialog(detailView, "You cannot perform this action before approving the venue!");
 
             } else if (bookingDAO.getVenue_in_myAdminbookingPage(result.getUser_email(), loginModel.getEmail()).getPayed().equalsIgnoreCase("payed")) {
                 JOptionPane.showMessageDialog(detailView, "The status of this venue is already payed!");
