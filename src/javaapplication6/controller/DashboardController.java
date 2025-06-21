@@ -36,7 +36,6 @@ public class DashboardController {
         dashboardView.LogoutListener(new LogoutListener());
         dashboardView.ReportListener(new ReportProblemListener());
         dashboardView.ViewFAQListener(new ViewFAQListener());
-
         dashboardView.BackButton(new BackButtonListener());
         dashboardView.ViewPastBookingListener(new ViewPast());
         dashboardView.ViewCurrentBookingListener(new ViewCurrent());
