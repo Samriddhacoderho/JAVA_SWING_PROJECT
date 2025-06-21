@@ -4,11 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javaapplication6.dao.UserDAO;
 import javax.swing.JOptionPane;
 import javaapplication6.model.LoginModel;
 import javaapplication6.view.AhomeView;
-import javaapplication6.view.DashboardView;
 import javaapplication6.view.EnterEmailView;
 import javaapplication6.view.EntryView;
 import javaapplication6.view.LoginView;
@@ -25,10 +23,12 @@ public class LoginController {
         loginView.ShowActionListener(new ShowPassword());
         loginView.SignupActionListener(new SignupListener());
         loginView.ForgetActionListener(new ForgetActionListener());
+        loginView.EntryViewListener(new EntryViewListener());
     }
 
     public void open() {
         loginView.setVisible(true);
+        loginView.setResizable(false);
     }
 
     public void close() {
@@ -115,6 +115,34 @@ public class LoginController {
              UserRegisterView registrationView=new UserRegisterView();
             RegistrationController registrationController=new RegistrationController(registrationView);
             registrationController.open();
+            close();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+        
+    }
+    class EntryViewListener implements MouseListener
+    {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            EntryView view=new EntryView();
+            EntryController controller=new EntryController(view);
+            controller.open();
             close();
         }
 

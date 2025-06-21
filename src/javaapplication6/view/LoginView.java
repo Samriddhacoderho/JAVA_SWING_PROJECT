@@ -44,74 +44,85 @@ public class LoginView extends javax.swing.JFrame {
         forgetLbl = new javax.swing.JLabel();
         loginBtn = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        entryViewlabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1080, 750));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(732, 569));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 246, 30));
+
+        passPsf.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanel1.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 330, 280, 50));
 
         showBtn.setBackground(new java.awt.Color(51, 255, 0));
         showBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         showBtn.setText("Show");
+        showBtn.setBorderPainted(false);
+        showBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         showBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 showBtnMouseClicked(evt);
             }
         });
-        jPanel1.add(showBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 90, 30));
+        jPanel1.add(showBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 330, 90, 50));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Password");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, 30));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, -1, 30));
 
-        signupLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        signupLbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         signupLbl.setForeground(new java.awt.Color(102, 204, 0));
         signupLbl.setText("Sign Up");
-        jPanel1.add(signupLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, -1, 20));
+        signupLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(signupLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, 60, 20));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setText("Email");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setText("bookmyvenue");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 130, 20));
-        jPanel1.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 246, 30));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("User Login Page");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, -1, -1));
 
-        forgetLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        emailTxt.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanel1.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 280, 50));
+
+        forgetLbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         forgetLbl.setForeground(new java.awt.Color(255, 0, 0));
         forgetLbl.setText("Forgot Password ?");
+        forgetLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         forgetLbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 forgetLblMouseClicked(evt);
             }
         });
-        jPanel1.add(forgetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, -1, -1));
+        jPanel1.add(forgetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, -1, -1));
 
         loginBtn.setBackground(new java.awt.Color(0, 0, 0));
-        loginBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        loginBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("Login");
         loginBtn.setToolTipText("");
         loginBtn.setBorderPainted(false);
+        loginBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         loginBtn.setOpaque(true);
-        jPanel1.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 250, 30));
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 280, 50));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setText("Don't have an account?");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 148, 20));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel1.setText("Nepal's leading Venue Booking Platform!!");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 280, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, 170, 20));
 
         jPanel3.setLayout(null);
 
@@ -121,7 +132,12 @@ public class LoginView extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 110, 60));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 890, 560));
+        entryViewlabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        entryViewlabel.setText("Back to Entry View");
+        entryViewlabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(entryViewlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 50, 110, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 760));
 
         pack();
         setLocationRelativeTo(null);
@@ -134,6 +150,10 @@ public class LoginView extends javax.swing.JFrame {
     private void forgetLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forgetLblMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_forgetLblMouseClicked
+
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,8 +199,8 @@ public class LoginView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField emailTxt;
+    private javax.swing.JLabel entryViewlabel;
     private javax.swing.JLabel forgetLbl;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -207,6 +227,10 @@ public class LoginView extends javax.swing.JFrame {
     public void ForgetActionListener(MouseListener listener)
     {
         this.forgetLbl.addMouseListener(listener);
+    }
+    public void EntryViewListener(MouseListener listener)
+    {
+        this.entryViewlabel.addMouseListener(listener);
     }
     
     public void SignupActionListener(MouseListener listener)
