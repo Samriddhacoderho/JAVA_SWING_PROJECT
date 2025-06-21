@@ -6,13 +6,16 @@ package javaapplication6.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javaapplication6.dao.RegisterVenueDAO;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueDetailsFetchModel;
 import javaapplication6.model.VenueModel;
 import javaapplication6.view.AdminDashboardView;
 import javaapplication6.view.AdminLoginView;
+import javaapplication6.view.AdminViewBooks;
 import javaapplication6.view.BookingDetailsView;
+import javaapplication6.view.PastBookingView;
 import javaapplication6.view.RegisterVenueView;
 import javaapplication6.view.UpdateVenueDetailsView;
 import javax.swing.JOptionPane;
@@ -26,6 +29,7 @@ public class AdminDashboardController {
     private final AdminDashboardView view;
     private final LoginModel loginModel;
     private VenueModel venueModel;
+    RegisterVenueDAO dao = new RegisterVenueDAO();
 
     public AdminDashboardController(AdminDashboardView view, LoginModel loginModel) {
         this.view = view;
@@ -35,7 +39,6 @@ public class AdminDashboardController {
         this.view.UpdeteDetailsUserListener(new UpdateVenueDetails());
         this.view.LogOutUserListener(new LogoutListener());
         this.view.setUserName(loginModel.getName());
-        this.view.setUserEmail(loginModel.getEmail());
         this.view.setUserImage(loginModel.getImage());
     }
 
@@ -51,10 +54,15 @@ public class AdminDashboardController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            RegisterVenueView registerVenueView = new RegisterVenueView();
-            RegisterVenueController registerVenueController = new RegisterVenueController(registerVenueView, loginModel);
-            registerVenueController.open();
-            close();
+            VenueModel fetchedModel = dao.adminVenueViewFetch(loginModel.getEmail());
+            if (fetchedModel != null) {
+                JOptionPane.showMessageDialog(view, "You already have a registered venue. You cannot register another venue!");
+            } else {
+                RegisterVenueView registerVenueView = new RegisterVenueView();
+                RegisterVenueController registerVenueController = new RegisterVenueController(registerVenueView, loginModel);
+                registerVenueController.open();
+                close();
+            }
         }
 
     }
@@ -62,14 +70,19 @@ public class AdminDashboardController {
     class BookView implements ActionListener {
 
         @Override
-        public void actionPerformed(ActionEvent e) {
-            BookingDetailsView view = new BookingDetailsView();
-            AdminViewBookingController ctrl = new AdminViewBookingController(view, loginModel);
-            ctrl.open();
-            close();
+       public void actionPerformed(ActionEvent e) {
+            ArrayList<VenueDetailsFetchModel> result = dao.adminVenuesView(loginModel.getEmail());
+            if (result==null || result.isEmpty()) {
+                JOptionPane.showMessageDialog(view, "There are no bookings yet done!");
+            } else {
+                AdminViewBooks view = new AdminViewBooks();
+                AdminViewBooksController ctrl = new AdminViewBooksController(view, loginModel);
+                ctrl.setTableContent(result);
+                ctrl.open();
+                close();
+            }
 
-        }
-
+    }
     }
 
     class UpdateVenueDetails implements ActionListener {
@@ -77,7 +90,6 @@ public class AdminDashboardController {
         @Override
         public void actionPerformed(ActionEvent e) {
             String email = loginModel.getEmail();
-            RegisterVenueDAO dao = new RegisterVenueDAO();
             VenueModel fetchedModel = dao.adminVenueViewFetch(email);
 
             if (fetchedModel != null) {
@@ -89,7 +101,7 @@ public class AdminDashboardController {
                 venueModel.setContact_number(fetchedModel.getContact_number());
                 venueModel.setPrice_per_plate((float) fetchedModel.getPrice_per_plate());
                 venueModel.setStatus(fetchedModel.getStatus());
-                
+
                 UpdateVenueDetailsView updateView = new UpdateVenueDetailsView();
                 UpdateVenueDetailsController updateController = new UpdateVenueDetailsController(updateView, loginModel, venueModel);
                 updateController.open();

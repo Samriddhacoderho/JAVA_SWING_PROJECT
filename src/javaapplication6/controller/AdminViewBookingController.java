@@ -21,33 +21,29 @@ public class AdminViewBookingController {
     private final RegisterVenueDAO bookingDAO = new RegisterVenueDAO();
     private final VenueManagerDAO dao = new VenueManagerDAO();
     private String status;
+    private VenueDetailsFetchModel result;
 
-    public AdminViewBookingController(BookingDetailsView detailView, LoginModel loginModel) {
+    public AdminViewBookingController(BookingDetailsView detailView, LoginModel loginModel, VenueDetailsFetchModel result) {
         this.detailView = detailView;
         this.loginModel = loginModel;
+        this.result = result;
         this.detailView.backListener(new BackProfileListener());
         this.detailView.ApproveBookingListener(new ApproveListener());
         this.detailView.RejectBookingListener(new RejectListener());
+        this.detailView.MarkComplete(new MarkComplete());
+        this.detailView.PaymentDone(new PaymentDone());
 
     }
 
     public void open() {
-        VenueDetailsFetchModel result = bookingDAO.adminVenueView(loginModel.getEmail()); // This should join all three tables
-        if (result == null) {
-            JOptionPane.showMessageDialog(detailView, "Maybe this booking doesn't exist or has been removed!");
-            AdminDashboardView dashView = new AdminDashboardView();
-            AdminDashboardController dashController = new AdminDashboardController(dashView, loginModel);
-            dashController.open();
-            close();
-        } else {
-            this.detailView.setVisible(true);
-            this.detailView.getVenueName().setText(result.getVenue_name());
-            this.detailView.getVenueLocation().setText(result.getVenue_location());
-            this.detailView.getAdminEmail().setText(result.getUser_email()); // This is venue owner's email later replace with user email
-            this.detailView.getGuestNumber().setText(Integer.toString(result.getEstimated_guests()));
-            this.detailView.getPrice().setText("Rs." + Long.toString(result.getTotal_price()));
-            this.status = result.getStatus();
-        }
+
+        this.detailView.setVisible(true);
+        this.detailView.getVenueName().setText(result.getVenue_name());
+        this.detailView.getVenueLocation().setText(result.getVenue_location());
+        this.detailView.getAdminEmail().setText(result.getUser_email()); // This is venue owner's email later replace with user email
+        this.detailView.getGuestNumber().setText(Integer.toString(result.getEstimated_guests()));
+        this.detailView.getPrice().setText("Rs." + Long.toString(result.getTotal_price()));
+        this.status = result.getStatus();
     }
 
     public void close() {
@@ -130,7 +126,7 @@ public class AdminViewBookingController {
                     BookVenueModel modelBook = new BookVenueModel(user_email, estimated_guests, estimated_price);
                     VenueModel modelVenue = new VenueModel(venue_name, venue_location);
 
-                    boolean success = dao.rejectRequest(loginModel, modelBook,modelVenue);
+                    boolean success = dao.rejectRequest(loginModel, modelBook, modelVenue, result);
 
                     if (success) {
                         JOptionPane.showMessageDialog(
@@ -189,5 +185,57 @@ public class AdminViewBookingController {
         AdminDashboardController dashController = new AdminDashboardController(dashView, loginModel);
         dashController.open();
         close();
+    }
+
+    class MarkComplete implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (bookingDAO.getVenue_in_myAdminbookingPage(result.getUser_email(), loginModel.getEmail()).getPayed().equalsIgnoreCase("unpayed")) {
+                JOptionPane.showMessageDialog(detailView, "You cannot mark this booking as completed until the payment is done!");
+            } else {
+                if (JOptionPane.showConfirmDialog(detailView, "Are you sure you want to mark this booking as completed?You cannot revert this action!") == 0) {
+                    String user_email = detailView.getAdminEmail().getText();
+                    String estimated_guests = detailView.getGuestNumber().getText();
+                    double estimated_price = Long.parseLong(detailView.getPrice().getText().substring(3));
+                    BookVenueModel modelBook = new BookVenueModel(user_email, estimated_guests, estimated_price);
+                    boolean success = bookingDAO.markComplete(loginModel, modelBook);
+                    if (!success) {
+                        JOptionPane.showMessageDialog(detailView, "There was an error performing this action. Please try again later");
+                    } else {
+                        JOptionPane.showMessageDialog(detailView, "This booking is successfully marked as completed! You can no longer view it in view bookings page");
+                    }
+                }
+            }
+        }
+
+    }
+
+    class PaymentDone implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (bookingDAO.getVenue_in_myAdminbookingPage(result.getUser_email(), loginModel.getEmail()).getStatus().equalsIgnoreCase("Booked")) {
+                JOptionPane.showMessageDialog(detailView, "This venue is already booked!");
+
+            } else if (bookingDAO.getVenue_in_myAdminbookingPage(result.getUser_email(), loginModel.getEmail()).getPayed().equalsIgnoreCase("payed")) {
+                JOptionPane.showMessageDialog(detailView, "The status of this venue is already payed!");
+
+            } else {
+                if (JOptionPane.showConfirmDialog(detailView, "Are you sure you want to change the payment status to payed?You cannot revert this action!") == 0) {
+                    String user_email = detailView.getAdminEmail().getText();
+                    String estimated_guests = detailView.getGuestNumber().getText();
+                    double estimated_price = Long.parseLong(detailView.getPrice().getText().substring(3));
+                    BookVenueModel modelBook = new BookVenueModel(user_email, estimated_guests, estimated_price);
+                    boolean success = bookingDAO.payStatus(loginModel, modelBook);
+                    if (!success) {
+                        JOptionPane.showMessageDialog(detailView, "There was an error performing this action. Please try again later");
+                    } else {
+                        JOptionPane.showMessageDialog(detailView, "This booking is successfully marked as payed! You can no longer reject the booking now!");
+                    }
+                }
+
+            }
+        }
     }
 }
