@@ -56,6 +56,8 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(732, 569));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        passPsf.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jPanel1.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 330, 280, 50));
 
         showBtn.setBackground(new java.awt.Color(51, 255, 0));
@@ -88,6 +90,8 @@ public class LoginView extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("User Login Page");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, -1, -1));
+
+        emailTxt.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jPanel1.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 280, 50));
 
         forgetLbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
