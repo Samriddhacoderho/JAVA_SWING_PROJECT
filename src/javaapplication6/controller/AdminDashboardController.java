@@ -42,8 +42,7 @@ public class AdminDashboardController {
             view.setVenueName(venueModel.getName());
             view.setVenueEmail(venueModel.getEmail());
             view.setVenueImage(venueModel.getImage());
-        } else {
-            JOptionPane.showMessageDialog(view, "No venue found for your account.");
+        
         }
     }
 
@@ -105,6 +104,12 @@ public class AdminDashboardController {
             } else {
                 JOptionPane.showMessageDialog(view, "No registered venue found for your account.");
             }
+        }
+    }
+    class ChangePassword implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e){
+            
         }
     }
 
