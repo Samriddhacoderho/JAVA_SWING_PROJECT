@@ -13,6 +13,7 @@ import javaapplication6.model.RegisterModel;
 import javaapplication6.model.VenueModel;
 import javaapplication6.controller.Mail.SMTPSMailSender;
 import javaapplication6.model.BookVenueModel;
+import javaapplication6.model.VenueDetailsFetchModel;
 
 /**
  *
@@ -22,6 +23,7 @@ public class VenueManagerDAO {
 
     private final DBConn dbConn;
     private SMTPSMailSender smtpsMailSender = new SMTPSMailSender();
+    private final RegisterVenueDAO dao = new RegisterVenueDAO();
 
     public VenueManagerDAO() {
         dbConn = new DBConn();
@@ -67,14 +69,19 @@ public class VenueManagerDAO {
         return true;
     }
 
-    public boolean approveRequest(LoginModel model, BookVenueModel modelBook,VenueModel modelVenue) {
+    public boolean approveRequest(LoginModel model, BookVenueModel modelBook, VenueModel modelVenue, VenueDetailsFetchModel result) {
 
         try (Connection conn = dbConn.connection_base()) {
             String sqlQueryUpdate = "UPDATE venue_table SET status='Booked' where email=?";
+            String sqlQueryUP = "UPDATE book_details SET status_detail='approved' where user_email=? and venue_id=?";
             PreparedStatement pstmt = conn.prepareStatement(sqlQueryUpdate);
+            PreparedStatement pstmtDel = conn.prepareStatement(sqlQueryUP);
             pstmt.setString(1, model.getEmail());
+            pstmtDel.setString(1, modelBook.getEmail());
+            pstmtDel.setInt(2, result.getVenue_id());
             int rowsInserted = pstmt.executeUpdate();
-            if (rowsInserted > 0) {
+            int rowsInsertedDel = pstmtDel.executeUpdate();
+            if (rowsInserted > 0 && rowsInsertedDel > 0) {
                 String body = "Hello, your booking was successfullly made.\nVenue Name:" + modelVenue.getName() + "\nVenue Location:" + modelVenue.getLocation();
                 boolean mailSent = smtpsMailSender.sendMail(modelBook.getEmail(), "Booking Confirmation", body);
                 if (mailSent) {
@@ -90,20 +97,27 @@ public class VenueManagerDAO {
         return false;
     }
 
-    public boolean rejectRequest(LoginModel model, BookVenueModel modelBook,VenueModel modelVenue) {
+    public boolean rejectRequest(LoginModel model, BookVenueModel modelBook, VenueModel modelVenue, VenueDetailsFetchModel result) {
 
         try (Connection conn = dbConn.connection_base()) {
-            String sqlQueryUpdate = "UPDATE venue_table SET status='Unbooked' where email=?";
-            String sqlQueryDelete="DELETE FROM book_details WHERE user_email=?";
-            System.out.println("hi");
+            String sqlQueryUpdate;
+            if (dao.adminVenuesView(model.getEmail()) == null || dao.adminVenuesView(model.getEmail()).isEmpty()) {
+                sqlQueryUpdate = "UPDATE venue_table SET status='Unbooked' where email=?";
+            } else {
+                sqlQueryUpdate = "UPDATE venue_table SET status='Pending' where email=?";
+
+            }
+
+            String sqlQueryDelete = "DELETE FROM book_details WHERE user_email=? and venue_id=?";
             PreparedStatement pstmt = conn.prepareStatement(sqlQueryUpdate);
-            PreparedStatement pstmtDel=conn.prepareStatement(sqlQueryDelete);
+            PreparedStatement pstmtDel = conn.prepareStatement(sqlQueryDelete);
             pstmt.setString(1, model.getEmail());
             pstmtDel.setString(1, modelBook.getEmail());
+            pstmtDel.setInt(2, result.getVenue_id());
             int rowsInserted = pstmt.executeUpdate();
-            int rowsInsertedDel=pstmtDel.executeUpdate();
-            
-            if (rowsInserted > 0 && rowsInsertedDel>0) {
+            int rowsInsertedDel = pstmtDel.executeUpdate();
+
+            if (rowsInserted > 0 && rowsInsertedDel > 0) {
                 String body = "Hello, your booking request was rejected by the venue manager.\nVenue Name:" + modelVenue.getName() + "\nVenue Location:" + modelVenue.getLocation();
                 boolean mailSent = smtpsMailSender.sendMail(modelBook.getEmail(), "Booking Rejection", body);
                 if (mailSent) {
