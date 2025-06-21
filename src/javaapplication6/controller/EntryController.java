@@ -26,7 +26,7 @@ public class EntryController {
     public void open()
     {
         this.homeView.setVisible(true);
-        this.homeView.setPreferredSize(new Dimension(1080,750));
+        this.homeView.setResizable(false);
     }
     
     public void close()
