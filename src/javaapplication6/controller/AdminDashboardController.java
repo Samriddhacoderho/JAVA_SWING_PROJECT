@@ -38,8 +38,10 @@ public class AdminDashboardController {
         this.loginModel = loginModel;
         this.view.UpdeteDetailsUserListener(new UpdateVenueDetails());
         this.view.LogOutUserListener(new LogoutListener());
+
         this.view.setUserName(loginModel.getName());
         this.view.setUserImage(loginModel.getImage());
+
     }
 
     public void open() {
@@ -109,6 +111,12 @@ public class AdminDashboardController {
             } else {
                 JOptionPane.showMessageDialog(view, "No registered venue found for your account.");
             }
+        }
+    }
+    class ChangePassword implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e){
+            
         }
     }
 

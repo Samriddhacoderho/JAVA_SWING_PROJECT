@@ -4,6 +4,7 @@
  */
 package javaapplication6.controller;
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javaapplication6.view.AdminLoginView;
@@ -25,6 +26,7 @@ public class EntryController {
     public void open()
     {
         this.homeView.setVisible(true);
+        this.homeView.setResizable(false);
     }
     
     public void close()
