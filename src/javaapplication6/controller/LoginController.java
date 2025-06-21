@@ -4,11 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javaapplication6.dao.UserDAO;
 import javax.swing.JOptionPane;
 import javaapplication6.model.LoginModel;
 import javaapplication6.view.AhomeView;
-import javaapplication6.view.DashboardView;
 import javaapplication6.view.EnterEmailView;
 import javaapplication6.view.EntryView;
 import javaapplication6.view.LoginView;
@@ -30,6 +28,7 @@ public class LoginController {
 
     public void open() {
         loginView.setVisible(true);
+        loginView.setResizable(false);
     }
 
     public void close() {
