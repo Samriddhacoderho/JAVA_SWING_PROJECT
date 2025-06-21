@@ -11,6 +11,7 @@ import javaapplication6.dao.BookVenueDAO;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueDetailsFetchModel;
 import javaapplication6.view.CurrentBookingView;
+import javaapplication6.view.DashboardView;
 import javaapplication6.view.MyBookings;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -29,6 +30,7 @@ public class CurrentBookingController {
         this.currentBookingView = currentBookingView;
         this.loginModel = loginModel;
         this.currentBookingView.ViewBook(new BTNAction());
+        this.currentBookingView.BackDashboard(new BackDashboard());
 
     }
 
@@ -46,7 +48,7 @@ public class CurrentBookingController {
         model.setRowCount(0);
 
         for (VenueDetailsFetchModel venueList : venueLists) {
-            model.addRow(new Object[]{venueList.getVenue_id(), venueList.getVenue_name(), venueList.getVenue_location(), venueList.getPrice_per_plate(), venueList.getVenue_email(), venueList.getVenue_contactnum(), venueList.getPayed()});
+            model.addRow(new Object[]{venueList.getVenue_id(), venueList.getVenue_name(), venueList.getVenue_location(), venueList.getTotal_price(), venueList.getVenue_email(), venueList.getVenue_contactnum(), venueList.getPayed()});
         }
     }
 
@@ -69,6 +71,19 @@ public class CurrentBookingController {
             }
         }
 
+    }
+    
+    class BackDashboard implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            DashboardView view=new DashboardView();
+            DashboardController ctrl=new DashboardController(view, loginModel);
+            ctrl.open();
+            close();
+        }
+        
     }
 
 }

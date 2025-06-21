@@ -52,7 +52,7 @@ public class RegisterVenueDAO {
             ArrayList<VenueDetailsFetchModel> venuelist = new ArrayList<>();
             var rs = pstmt.executeQuery();
             while (rs.next()) {
-                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), rs.getString("user_email"), rs.getString("name"), rs.getString("location"), email, rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"), rs.getString("payment"), rs.getString("completed"));
+                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), rs.getString("user_email"), rs.getString("name"), rs.getString("location"), email, rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"), rs.getString("payment"), rs.getString("completed"), rs.getString("status_detail"));
                 venuelist.add(result);
             }
             return venuelist;
@@ -69,7 +69,7 @@ public class RegisterVenueDAO {
             pstmt.setString(2, email);
             var rs = pstmt.executeQuery();
             if (rs.next()) {
-                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), rs.getString("user_email"), rs.getString("name"), rs.getString("location"), email, rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"), rs.getString("payment"), rs.getString("completed"));
+                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), rs.getString("user_email"), rs.getString("name"), rs.getString("location"), email, rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"), rs.getString("payment"), rs.getString("completed"), rs.getString("status_detail"));
                 return result;
             }
         } catch (Exception e) {
@@ -138,23 +138,29 @@ public class RegisterVenueDAO {
     }
 
     public boolean markComplete(LoginModel loginModel, BookVenueModel modelBook) {
-        String sqlQuery="UPDATE book_details JOIN venue_table ON book_details.venue_id=venue_table.id SET book_details.completed='yes' WHERE venue_table.email=? and book_details.user_email=?";
-        String sqlQueryUP="UPDATE venue_table SET status='Unbooked' WHERE email=?";
+        String sqlQuery = "UPDATE book_details JOIN venue_table ON book_details.venue_id=venue_table.id SET book_details.completed='yes' WHERE venue_table.email=? and book_details.user_email=?";
+        String sqlQueryUP;
+        if (adminVenuesView(loginModel.getEmail()) == null || adminVenuesView(loginModel.getEmail()).isEmpty()) {
+            sqlQueryUP = "UPDATE venue_table SET status='Unbooked' WHERE email=?";
+        } else {
+            sqlQueryUP = "UPDATE venue_table SET status='Pending' WHERE email=?";
+        }
         try (Connection conn = dbConn.connection_base()) {
             PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
-            PreparedStatement pstmtUP=conn.prepareStatement(sqlQueryUP);
+            PreparedStatement pstmtUP = conn.prepareStatement(sqlQueryUP);
             pstmt.setString(1, loginModel.getEmail());
             pstmt.setString(2, modelBook.getEmail());
             pstmtUP.setString(1, loginModel.getEmail());
             int result = pstmt.executeUpdate();
-            return result > 0;
+            int resultUP = pstmtUP.executeUpdate();
+            return result > 0 && resultUP > 0;
         } catch (Exception e) {
             return false;
         }
     }
 
     public boolean payStatus(LoginModel loginModel, BookVenueModel modelBook) {
-        String sqlQuery="UPDATE book_details JOIN venue_table ON book_details.venue_id=venue_table.id SET book_details.payment='payed' WHERE venue_table.email=? and book_details.user_email=?";
+        String sqlQuery = "UPDATE book_details JOIN venue_table ON book_details.venue_id=venue_table.id SET book_details.payment='payed' WHERE venue_table.email=? and book_details.user_email=?";
         try (Connection conn = dbConn.connection_base()) {
             PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
             pstmt.setString(1, loginModel.getEmail());
