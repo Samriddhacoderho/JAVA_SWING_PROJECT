@@ -127,7 +127,7 @@ public class UserRegisterView extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("Register a new User");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, -1, -1));
 
         alreadyLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         alreadyLbl.setText("Back to Login View");

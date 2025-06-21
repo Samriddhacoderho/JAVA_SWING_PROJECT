@@ -42,16 +42,16 @@ public class AdminRegisterView extends javax.swing.JFrame {
         passPsf = new javax.swing.JPasswordField();
         confirmPsf = new javax.swing.JPasswordField();
         jButton3 = new javax.swing.JButton();
-        alreadyLbl = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        alreadyLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -60,12 +60,12 @@ public class AdminRegisterView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Confirm Password:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, 20));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, 20));
 
         jLabel4.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Password:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 100, 20));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 80, 30));
 
         passShowbtn.setBackground(new java.awt.Color(0, 204, 51));
         passShowbtn.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
@@ -73,7 +73,7 @@ public class AdminRegisterView extends javax.swing.JFrame {
         passShowbtn.setText("Show");
         passShowbtn.setBorderPainted(false);
         passShowbtn.setOpaque(true);
-        jPanel2.add(passShowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, -1, 40));
+        jPanel2.add(passShowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, -1, 50));
 
         confirmPassshowbtn.setBackground(new java.awt.Color(0, 204, 0));
         confirmPassshowbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -81,45 +81,42 @@ public class AdminRegisterView extends javax.swing.JFrame {
         confirmPassshowbtn.setText("Show");
         confirmPassshowbtn.setBorderPainted(false);
         confirmPassshowbtn.setOpaque(true);
-        jPanel2.add(confirmPassshowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, -1, 40));
+        jPanel2.add(confirmPassshowbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, -1, 50));
 
         jLabel3.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Email:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 60, 20));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 60, 30));
 
         jLabel2.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Name:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 60, 20));
-        jPanel2.add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 320, 40));
-        jPanel2.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 320, 40));
-        jPanel2.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 320, 40));
-        jPanel2.add(confirmPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 320, 40));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 60, 30));
+        jPanel2.add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 280, 50));
+
+        emailTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 280, 50));
+
+        passPsf.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 280, 50));
+
+        confirmPsf.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(confirmPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 280, 50));
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Register");
         jButton3.setBorderPainted(false);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.setOpaque(true);
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 320, 40));
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 280, 50));
 
-        alreadyLbl.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        alreadyLbl.setForeground(new java.awt.Color(0, 204, 51));
-        alreadyLbl.setText("Already Have An Account?");
-        jPanel2.add(alreadyLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, -1, -1));
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 560, 340));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 560, 340));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setText("bookmyvenue");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 130, 40));
-
-        jLabel6.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel6.setText("Register a new account!");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 160, -1));
+        jLabel5.setText("Register a new Venue Account");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 270, 40));
 
         jPanel3.setLayout(null);
 
@@ -129,7 +126,11 @@ public class AdminRegisterView extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 60));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 440));
+        alreadyLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        alreadyLbl.setText("Back to Login View");
+        jPanel1.add(alreadyLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 40, 120, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 760));
 
         pack();
         setLocationRelativeTo(null);
@@ -196,7 +197,6 @@ public class AdminRegisterView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
