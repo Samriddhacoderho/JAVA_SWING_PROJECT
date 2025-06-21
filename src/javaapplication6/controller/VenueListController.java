@@ -49,7 +49,7 @@ public class VenueListController {
 
         int sn = 1;
         for (VenueModel venueModel : venuelist) {
-            model.addRow(new Object[]{venueModel.getId(), venueModel.getName(), venueModel.getLocation(), venueModel.getPrice_per_plate(), venueModel.getStatus()});
+            model.addRow(new Object[]{sn++, venueModel.getName(), venueModel.getLocation(), venueModel.getPrice_per_plate(), venueModel.getStatus()});
         }
     }
 

@@ -13,6 +13,7 @@ import javaapplication6.model.RegisterModel;
 import javaapplication6.model.VenueModel;
 import javaapplication6.controller.Mail.SMTPSMailSender;
 import javaapplication6.model.BookVenueModel;
+import javaapplication6.model.VenueDetailsFetchModel;
 
 /**
  *
@@ -90,16 +91,16 @@ public class VenueManagerDAO {
         return false;
     }
 
-    public boolean rejectRequest(LoginModel model, BookVenueModel modelBook,VenueModel modelVenue) {
+    public boolean rejectRequest(LoginModel model, BookVenueModel modelBook,VenueModel modelVenue,VenueDetailsFetchModel result) {
 
         try (Connection conn = dbConn.connection_base()) {
             String sqlQueryUpdate = "UPDATE venue_table SET status='Unbooked' where email=?";
-            String sqlQueryDelete="DELETE FROM book_details WHERE user_email=?";
-            System.out.println("hi");
+            String sqlQueryDelete="DELETE FROM book_details WHERE user_email=? and venue_id=?";
             PreparedStatement pstmt = conn.prepareStatement(sqlQueryUpdate);
             PreparedStatement pstmtDel=conn.prepareStatement(sqlQueryDelete);
             pstmt.setString(1, model.getEmail());
             pstmtDel.setString(1, modelBook.getEmail());
+            pstmtDel.setInt(2, result.getVenue_id());
             int rowsInserted = pstmt.executeUpdate();
             int rowsInsertedDel=pstmtDel.executeUpdate();
             
