@@ -43,18 +43,23 @@ public class BookingDetailsView extends javax.swing.JFrame {
         price = new javax.swing.JLabel();
         adminEmail = new javax.swing.JLabel();
         approvebooking = new javax.swing.JButton();
+        approvebooking1 = new javax.swing.JButton();
+        rejectbooking1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setPreferredSize(new java.awt.Dimension(716, 450));
+        getContentPane().setLayout(null);
 
         backprofile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         backprofile.setText("Back to Profile");
-        getContentPane().add(backprofile, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 22, 94, -1));
+        getContentPane().add(backprofile);
+        backprofile.setBounds(31, 22, 94, 15);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("My Bookings");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 90, -1));
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(310, 50, 90, 15);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -98,29 +103,55 @@ public class BookingDetailsView extends javax.swing.JFrame {
             }
         });
 
+        approvebooking1.setBackground(new java.awt.Color(51, 204, 0));
+        approvebooking1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        approvebooking1.setText("Change Payment Status to Payed");
+        approvebooking1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                approvebooking1ActionPerformed(evt);
+            }
+        });
+
+        rejectbooking1.setBackground(new java.awt.Color(255, 51, 51));
+        rejectbooking1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        rejectbooking1.setText("Mark as Complete");
+        rejectbooking1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rejectbooking1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(adminEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(adminEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(156, 156, 156)
+                                .addComponent(approvebooking1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12))
+                            .addComponent(approvebooking))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(venueName)
-                            .addComponent(venueLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(guestNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(price, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(approvebooking)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rejectbooking)))
-                        .addGap(20, 20, 20))))
+                            .addComponent(rejectbooking)
+                            .addComponent(rejectbooking1))
+                        .addGap(32, 32, 32))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(venueLocation, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(guestNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(venueName)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(price, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,18 +162,23 @@ public class BookingDetailsView extends javax.swing.JFrame {
                     .addComponent(price))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(venueLocation)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(16, 16, 16)
                 .addComponent(guestNumber)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(adminEmail)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(adminEmail)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(approvebooking1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rejectbooking1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rejectbooking, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(approvebooking, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGap(18, 18, 18))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(10, 100, 761, 171);
 
         pack();
         setLocationRelativeTo(null);
@@ -156,16 +192,26 @@ public class BookingDetailsView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_approvebookingActionPerformed
 
+    private void approvebooking1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approvebooking1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_approvebooking1ActionPerformed
+
+    private void rejectbooking1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectbooking1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rejectbooking1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adminEmail;
     private javax.swing.JButton approvebooking;
+    private javax.swing.JButton approvebooking1;
     private javax.swing.JLabel backprofile;
     private javax.swing.JLabel guestNumber;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel price;
     private javax.swing.JButton rejectbooking;
+    private javax.swing.JButton rejectbooking1;
     private javax.swing.JLabel venueLocation;
     private javax.swing.JLabel venueName;
     // End of variables declaration//GEN-END:variables
@@ -272,6 +318,16 @@ public class BookingDetailsView extends javax.swing.JFrame {
     public void ApproveBookingListener(ActionListener listener){
         
     this.approvebooking.addActionListener(listener);
+    }
+    
+    public void MarkComplete(ActionListener listener)
+    {
+        this.rejectbooking1.addActionListener(listener);
+    }
+    
+    public void PaymentDone(ActionListener listener)
+    {
+        this.approvebooking1.addActionListener(listener);
     }
     
 
