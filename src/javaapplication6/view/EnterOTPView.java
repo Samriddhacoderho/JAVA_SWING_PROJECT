@@ -50,7 +50,7 @@ public class EnterOTPView extends javax.swing.JFrame {
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         loginLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        loginLbl.setText("Back to Login ");
+        loginLbl.setText("Back to Login View");
         jPanel6.add(loginLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 40, 100, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
