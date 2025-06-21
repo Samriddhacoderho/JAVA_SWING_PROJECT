@@ -92,14 +92,19 @@ public class AdminRegisterView extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Name:");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 60, 30));
+
+        nameTxt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jPanel2.add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 280, 50));
 
+        emailTxt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         emailTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 280, 50));
 
+        passPsf.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         passPsf.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 280, 50));
 
+        confirmPsf.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         confirmPsf.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(confirmPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 280, 50));
 
@@ -112,7 +117,7 @@ public class AdminRegisterView extends javax.swing.JFrame {
         jButton3.setOpaque(true);
         jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 280, 50));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 560, 340));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 560, 340));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("Register a new Venue Account");
