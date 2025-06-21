@@ -56,7 +56,7 @@ public class AdminLoginView extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(732, 569));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        passPsf.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        passPsf.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jPanel1.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 330, 280, 50));
 
         showBtn.setBackground(new java.awt.Color(51, 255, 0));
