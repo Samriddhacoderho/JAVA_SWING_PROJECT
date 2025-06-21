@@ -56,59 +56,69 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(732, 569));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 330, 246, 30));
+        jPanel1.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 330, 280, 50));
 
         showBtn.setBackground(new java.awt.Color(51, 255, 0));
         showBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         showBtn.setText("Show");
+        showBtn.setBorderPainted(false);
+        showBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         showBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 showBtnMouseClicked(evt);
             }
         });
-        jPanel1.add(showBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 330, 90, 30));
+        jPanel1.add(showBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 330, 90, 50));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Password");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, -1, 30));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, -1, 30));
 
-        signupLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        signupLbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         signupLbl.setForeground(new java.awt.Color(102, 204, 0));
         signupLbl.setText("Sign Up");
-        jPanel1.add(signupLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 460, 60, 20));
+        signupLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(signupLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, 60, 20));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setText("Email");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("User Login Page");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, -1, -1));
-        jPanel1.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 246, 30));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, -1, -1));
+        jPanel1.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 280, 50));
 
-        forgetLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        forgetLbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         forgetLbl.setForeground(new java.awt.Color(255, 0, 0));
         forgetLbl.setText("Forgot Password ?");
+        forgetLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         forgetLbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 forgetLblMouseClicked(evt);
             }
         });
-        jPanel1.add(forgetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 420, -1, -1));
+        jPanel1.add(forgetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, -1, -1));
 
         loginBtn.setBackground(new java.awt.Color(0, 0, 0));
-        loginBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        loginBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("Login");
         loginBtn.setToolTipText("");
         loginBtn.setBorderPainted(false);
+        loginBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         loginBtn.setOpaque(true);
-        jPanel1.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 380, 250, 30));
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 280, 50));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setText("Don't have an account?");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, 148, 20));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, 170, 20));
 
         jPanel3.setLayout(null);
 
@@ -120,6 +130,7 @@ public class LoginView extends javax.swing.JFrame {
 
         entryViewlabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         entryViewlabel.setText("Back to Entry View");
+        entryViewlabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(entryViewlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 50, 110, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 760));
@@ -135,6 +146,10 @@ public class LoginView extends javax.swing.JFrame {
     private void forgetLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forgetLblMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_forgetLblMouseClicked
+
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginBtnActionPerformed
 
     /**
      * @param args the command line arguments
