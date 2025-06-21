@@ -35,6 +35,8 @@ public class EnterOTPView extends javax.swing.JFrame {
         otpTxt = new javax.swing.JTextField();
         verifyBtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(735, 569));
@@ -67,6 +69,14 @@ public class EnterOTPView extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Enter OTP");
         jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 70, 20));
+
+        jPanel3.setLayout(null);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/bookmyvenue.png"))); // NOI18N
+        jPanel3.add(jLabel7);
+        jLabel7.setBounds(0, 0, 110, 60);
+
+        jPanel6.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 60));
 
         getContentPane().add(jPanel6);
         jPanel6.setBounds(0, 0, 740, 569);
@@ -116,6 +126,8 @@ public class EnterOTPView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel loginLbl;
     private javax.swing.JTextField otpTxt;

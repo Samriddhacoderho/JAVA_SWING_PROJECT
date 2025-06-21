@@ -77,6 +77,7 @@ public class LocationView extends javax.swing.JFrame {
         profile = new javax.swing.JButton();
         dropdown = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -91,6 +92,7 @@ public class LocationView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel5.setBackground(new java.awt.Color(204, 255, 204));
@@ -242,10 +244,10 @@ public class LocationView extends javax.swing.JFrame {
 
         searchvenue.setForeground(new java.awt.Color(204, 204, 204));
         searchvenue.setText("Search Venue");
-        jPanel1.add(searchvenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 390, 20));
+        jPanel1.add(searchvenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 390, 20));
 
         jLabel1.setText("Search Venue");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Venus in Kathmandu");
@@ -261,20 +263,13 @@ public class LocationView extends javax.swing.JFrame {
         dropdown.setToolTipText("");
         jPanel1.add(dropdown, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 90, -1));
 
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setLayout(null);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/bookmyvenue.png"))); // NOI18N
+        jPanel3.add(jLabel23);
+        jLabel23.setBounds(0, 0, 110, 60);
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 40));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -352,6 +347,7 @@ public class LocationView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
