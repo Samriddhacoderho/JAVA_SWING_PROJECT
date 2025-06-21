@@ -21,6 +21,7 @@ public class VenueDetailsFetchModel {
     private Long total_price;
     private String payed;
     private String completed;
+    private String status_detail;
     
     public VenueDetailsFetchModel(
         int venue_id,
@@ -34,7 +35,8 @@ public class VenueDetailsFetchModel {
         double price_per_plate,
         Long total_price,
         String payment,
-        String completed
+        String completed,
+        String status_detail
     ) {
         this.venue_id = venue_id;
         this.user_email = user_email;
@@ -48,6 +50,7 @@ public class VenueDetailsFetchModel {
         this.total_price = total_price;
         this.payed=payment;
         this.completed=completed;
+        this.status_detail=status_detail;
     }
 
     /**
@@ -219,8 +222,24 @@ public class VenueDetailsFetchModel {
     }
 
     /**
+     * @return the status_detail
+     */
+    public String getStatus_detail() {
+        return status_detail;
+    }
+
+    /**
+     * @param status_detail the status_detail to set
+     */
+    public void setStatus_detail(String status_detail) {
+        this.status_detail = status_detail;
+    }
+
+    /**
      * @return the venueImage
      */
+    
+    
     
     
    
