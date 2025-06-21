@@ -11,6 +11,7 @@ import javaapplication6.dao.VenueManagerDAO;
 import javaapplication6.view.AdminDashboardView;
 import javaapplication6.view.AdminLoginView;
 import javaapplication6.view.AdminRegisterView;
+import javaapplication6.view.EntryView;
 public class AdminLoginController {
 
     private final AdminLoginView loginView;
@@ -22,10 +23,12 @@ public class AdminLoginController {
         loginView.ShowActionListener(new ShowPassword());
         loginView.SignupActionListener(new SignupListener());
         loginView.ForgetActionListener(new ForgetActionListener());
+        loginView.EntryViewListener(new EntryViewListener());
     }
 
     public void open() {
         loginView.setVisible(true);
+        loginView.setResizable(false);
     }
 
     public void close() {
@@ -108,6 +111,34 @@ public class AdminLoginController {
              AdminRegisterView registrationView=new AdminRegisterView();
             AdminRegController registrationController=new AdminRegController(registrationView);
             registrationController.open();
+            close();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+        
+    }
+    class EntryViewListener implements MouseListener
+    {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            EntryView view=new EntryView();
+            EntryController controller = new EntryController(view);
+            controller.open();
             close();
         }
 
