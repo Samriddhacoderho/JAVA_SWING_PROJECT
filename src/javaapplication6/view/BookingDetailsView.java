@@ -53,13 +53,13 @@ public class BookingDetailsView extends javax.swing.JFrame {
         backprofile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         backprofile.setText("Back to Profile");
         getContentPane().add(backprofile);
-        backprofile.setBounds(31, 22, 94, 15);
+        backprofile.setBounds(31, 22, 94, 16);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("My Bookings");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(310, 50, 90, 15);
+        jLabel2.setBounds(310, 50, 90, 16);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -178,7 +178,7 @@ public class BookingDetailsView extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(10, 100, 761, 171);
+        jPanel1.setBounds(10, 100, 748, 174);
 
         pack();
         setLocationRelativeTo(null);
