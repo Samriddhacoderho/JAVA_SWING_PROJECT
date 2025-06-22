@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javaapplication6.dao.RegisterVenueDAO;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueDetailsFetchModel;
+import javaapplication6.view.AdminDashboardView;
 import javaapplication6.view.AdminViewBooks;
 import javaapplication6.view.BookingDetailsView;
 import javax.swing.JOptionPane;
@@ -29,6 +30,7 @@ public class AdminViewBooksController {
         this.view = view;
         this.loginModel = loginModel;
         this.view.ViewBook(new BTNAction());
+        this.view.BackDashboard(new Back());
 
     }
 
@@ -69,6 +71,19 @@ public class AdminViewBooksController {
             }
         }
 
+    }
+    
+    class Back implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            AdminDashboardView view=new AdminDashboardView();
+            AdminDashboardController ctrl=new AdminDashboardController(view, loginModel);
+            ctrl.open();
+            close();
+        }
+        
     }
 
 }

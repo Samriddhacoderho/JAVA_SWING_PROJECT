@@ -11,6 +11,7 @@ import javaapplication6.dao.BookVenueDAO;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueDetailsFetchModel;
 import javaapplication6.model.VenueModel;
+import javaapplication6.view.AhomeView;
 import javaapplication6.view.BookingPageView;
 import javaapplication6.view.VenueListView;
 import javax.swing.JOptionPane;
@@ -33,6 +34,7 @@ public class VenueListController {
         this.loginModel = loginModel;
         this.venuelistView.jComboAction(new sortActionListner());
         this.venuelistView.BTNAction(new BTNAction());
+        this.venuelistView.BackToDashboardAction(new Back());
     }
 
     public void open() {
@@ -98,4 +100,17 @@ public class VenueListController {
         }
 
     }
+    
+    class Back implements ActionListener
+    {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            AhomeView view=new AhomeView();
+            AHomeController ctrl=new AHomeController(view, loginModel);
+            ctrl.open();
+            close();
+        }
+        }
+        
 }
