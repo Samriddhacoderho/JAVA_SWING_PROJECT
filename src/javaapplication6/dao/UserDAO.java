@@ -10,7 +10,9 @@ import javaapplication6.model.RegisterModel;
 import javaapplication6.HashUtil.HashUtil;
 import javaapplication6.model.EditNameModel;
 import javaapplication6.model.EnterEmailModel;
+import javaapplication6.model.InquiryModel;
 import javaapplication6.model.LoginModel;
+import javaapplication6.model.ReportProblemModel;
 import javaapplication6.model.ResetModel;
 import javaapplication6.model.VenueModel;
 
@@ -181,5 +183,24 @@ public class UserDAO {
         }catch(Exception e){
            return false;
         }
+    }
+    public boolean sendInquiry(InquiryModel model){
+         
+        String query = "insert into inquiry_table(name,email,message,adminEmail) values(?,?,?,?)";
+        try (Connection conn = dbConn.connection_base();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1,model.getName() );
+            stmt.setString(2, model.getEmail() );
+            stmt.setString(3, model.getMessage());
+            stmt.setString(4,model.getadminEmail());
+            return stmt.executeUpdate() > 0;
+            
+        } catch (Exception e) {
+            System.out.println("Error in report problem: " + e.getMessage());
+            
+        }
+        return false;
+        
+        
     }
 }

@@ -8,10 +8,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javaapplication6.dao.RegisterVenueDAO;
+import javaapplication6.dao.VenueManagerDAO;
+import javaapplication6.model.InquiryModel;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueDetailsFetchModel;
 import javaapplication6.model.VenueModel;
 import javaapplication6.view.AdminDashboardView;
+import javaapplication6.view.AdminInquiryView;
 import javaapplication6.view.AdminLoginView;
 import javaapplication6.view.AdminViewBooks;
 import javaapplication6.view.BookingDetailsView;
@@ -31,6 +34,7 @@ public class AdminDashboardController {
     private final LoginModel loginModel;
     private VenueModel venueModel;
     RegisterVenueDAO dao = new RegisterVenueDAO();
+    VenueManagerDAO vdao = new VenueManagerDAO();
 
     public AdminDashboardController(AdminDashboardView view, LoginModel loginModel) {
         this.view = view;
@@ -43,6 +47,7 @@ public class AdminDashboardController {
         this.view.setUserName(loginModel.getName());
         this.view.setUserImage(loginModel.getImage());
         this.view.ChangepassUserListener(new ChangePassListener());
+        this.view.ViewInquiry(new ViewInquiry());
 
     }
 
@@ -69,6 +74,27 @@ public class AdminDashboardController {
             }
         }
 
+    }
+    class ViewInquiry implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String adminEmail = venueModel.getEmail();
+            ArrayList<InquiryModel> result = vdao.getInquiries(adminEmail,venueModel);
+            if (result ==null ||result.isEmpty()){
+                JOptionPane.showMessageDialog(view, "You do not have any inquiries.");
+            }
+            else{
+            AdminInquiryView inquiryView = new AdminInquiryView();
+            AdminInquiryController controller = new AdminInquiryController(inquiryView,loginModel);
+            controller.setTableContent(result);
+            controller.open();
+            close();
+                
+            }
+            
+        }
+        
     }
 
     class BookView implements ActionListener {
