@@ -55,6 +55,7 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        alreadyLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -71,7 +72,7 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 60, 20));
         jPanel2.add(nametxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 320, 40));
 
-        update.setBackground(new java.awt.Color(0, 0, 0));
+        update.setBackground(new java.awt.Color(185, 250, 46));
         update.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         update.setForeground(new java.awt.Color(255, 255, 255));
         update.setText("Update");
@@ -103,7 +104,7 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 100, 20));
         jPanel2.add(priceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 320, 40));
 
-        UploadImage.setBackground(new java.awt.Color(255, 0, 51));
+        UploadImage.setBackground(new java.awt.Color(255, 51, 51));
         UploadImage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         UploadImage.setForeground(new java.awt.Color(255, 255, 255));
         UploadImage.setText("Upload Image");
@@ -114,11 +115,11 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 560, 400));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(185, 250, 46));
         jLabel5.setText("bookmyvenue");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 140, 40));
 
         jLabel6.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Update Your Venue!");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 160, -1));
 
@@ -129,6 +130,12 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         jLabel9.setBounds(0, 0, 110, 60);
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 60));
+
+        alreadyLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        alreadyLbl.setForeground(new java.awt.Color(185, 250, 46));
+        alreadyLbl.setText("Back to Admin Dashboard");
+        alreadyLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(alreadyLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 30, 180, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 750));
 
@@ -188,6 +195,7 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton UploadImage;
+    private javax.swing.JLabel alreadyLbl;
     private javax.swing.JTextField emailTxt;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

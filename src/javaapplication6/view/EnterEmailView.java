@@ -49,6 +49,7 @@ public class EnterEmailView extends javax.swing.JFrame {
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         loginLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        loginLbl.setForeground(new java.awt.Color(185, 250, 46));
         loginLbl.setText("Back to Login ");
         loginLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel6.add(loginLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 60, 100, -1));
@@ -58,6 +59,7 @@ public class EnterEmailView extends javax.swing.JFrame {
         jPanel6.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 40, 20));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(185, 250, 46));
         jLabel1.setText("Forgot Password?");
         jPanel6.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 180, 50));
 
@@ -65,7 +67,7 @@ public class EnterEmailView extends javax.swing.JFrame {
         emailTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel6.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, 260, 50));
 
-        otpBtn.setBackground(new java.awt.Color(0, 0, 0));
+        otpBtn.setBackground(new java.awt.Color(185, 250, 46));
         otpBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         otpBtn.setForeground(new java.awt.Color(255, 255, 255));
         otpBtn.setText("Get OTP");
@@ -75,7 +77,6 @@ public class EnterEmailView extends javax.swing.JFrame {
         jPanel6.add(otpBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 260, 50));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Recover your account by entering your email to recieve OTP");
         jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 390, -1));
 

@@ -49,7 +49,7 @@ public class ChangePassView extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setBackground(new java.awt.Color(185, 250, 46));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Change password");
@@ -77,7 +77,7 @@ public class ChangePassView extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("Enter new password:");
 
-        newPassBTN.setBackground(new java.awt.Color(0, 204, 51));
+        newPassBTN.setBackground(new java.awt.Color(185, 250, 46));
         newPassBTN.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         newPassBTN.setForeground(new java.awt.Color(255, 255, 255));
         newPassBTN.setText("Show");
@@ -85,7 +85,7 @@ public class ChangePassView extends javax.swing.JFrame {
         newPassBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         newPassBTN.setOpaque(true);
 
-        confirmPassBTN.setBackground(new java.awt.Color(0, 204, 51));
+        confirmPassBTN.setBackground(new java.awt.Color(185, 250, 46));
         confirmPassBTN.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         confirmPassBTN.setForeground(new java.awt.Color(255, 255, 255));
         confirmPassBTN.setText("Show");
@@ -93,7 +93,7 @@ public class ChangePassView extends javax.swing.JFrame {
         confirmPassBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         confirmPassBTN.setOpaque(true);
 
-        currentShowBTN.setBackground(new java.awt.Color(0, 204, 51));
+        currentShowBTN.setBackground(new java.awt.Color(185, 250, 46));
         currentShowBTN.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         currentShowBTN.setForeground(new java.awt.Color(255, 255, 255));
         currentShowBTN.setText("Show");
@@ -101,7 +101,7 @@ public class ChangePassView extends javax.swing.JFrame {
         currentShowBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         currentShowBTN.setOpaque(true);
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setBackground(new java.awt.Color(185, 250, 46));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Back");

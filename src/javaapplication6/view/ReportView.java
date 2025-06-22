@@ -56,6 +56,7 @@ public class ReportView extends javax.swing.JFrame {
         jScrollPane1.setBounds(330, 290, 400, 160);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(185, 250, 46));
         jLabel1.setText("Report a problem");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(450, 120, 210, 30);
@@ -72,7 +73,7 @@ public class ReportView extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(330, 260, 80, 30);
 
-        reportBtn.setBackground(new java.awt.Color(0, 0, 0));
+        reportBtn.setBackground(new java.awt.Color(185, 250, 46));
         reportBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         reportBtn.setForeground(new java.awt.Color(255, 255, 255));
         reportBtn.setText("Submit Report");
@@ -81,12 +82,14 @@ public class ReportView extends javax.swing.JFrame {
         jPanel1.add(reportBtn);
         reportBtn.setBounds(570, 480, 170, 40);
 
+        cancelBtn.setBackground(new java.awt.Color(255, 51, 51));
+        cancelBtn.setForeground(new java.awt.Color(255, 255, 255));
         cancelBtn.setText("Cancel");
-        cancelBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        cancelBtn.setBorder(null);
         jPanel1.add(cancelBtn);
         cancelBtn.setBounds(330, 480, 170, 40);
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setBackground(new java.awt.Color(185, 250, 46));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back");

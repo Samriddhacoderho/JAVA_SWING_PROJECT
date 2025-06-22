@@ -57,8 +57,12 @@ public class VenueListView extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sort Price:", "Lowest to Highest", "Highest to Lowest" }));
 
+        Details.setBackground(new java.awt.Color(185, 250, 46));
+        Details.setForeground(new java.awt.Color(255, 255, 255));
         Details.setText("Details");
 
+        BackToDashboard.setBackground(new java.awt.Color(0, 0, 0));
+        BackToDashboard.setForeground(new java.awt.Color(185, 250, 46));
         BackToDashboard.setText("Back to Dashboard");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

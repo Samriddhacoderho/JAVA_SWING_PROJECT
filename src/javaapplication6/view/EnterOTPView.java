@@ -50,10 +50,12 @@ public class EnterOTPView extends javax.swing.JFrame {
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         loginLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        loginLbl.setForeground(new java.awt.Color(185, 250, 46));
         loginLbl.setText("Back to Login View");
         jPanel6.add(loginLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 40, 130, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(185, 250, 46));
         jLabel3.setText("Enter the OTP sent to your email address.");
         jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 410, 40));
 
@@ -61,7 +63,7 @@ public class EnterOTPView extends javax.swing.JFrame {
         otpTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel6.add(otpTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 290, 50));
 
-        verifyBtn.setBackground(new java.awt.Color(0, 0, 0));
+        verifyBtn.setBackground(new java.awt.Color(185, 250, 46));
         verifyBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         verifyBtn.setForeground(new java.awt.Color(255, 255, 255));
         verifyBtn.setText("Verify");

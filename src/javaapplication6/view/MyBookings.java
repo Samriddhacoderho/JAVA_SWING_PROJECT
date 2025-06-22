@@ -49,11 +49,12 @@ public class MyBookings extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
         venueName.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        venueName.setForeground(new java.awt.Color(255, 255, 255));
+        venueName.setForeground(new java.awt.Color(185, 250, 46));
         venueName.setText("Demo venue name");
 
         cancelBooking.setBackground(new java.awt.Color(255, 51, 51));
         cancelBooking.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        cancelBooking.setForeground(new java.awt.Color(255, 255, 255));
         cancelBooking.setText("Cancel Booking");
         cancelBooking.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,24 +63,24 @@ public class MyBookings extends javax.swing.JFrame {
         });
 
         venueLocation.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        venueLocation.setForeground(new java.awt.Color(255, 255, 255));
+        venueLocation.setForeground(new java.awt.Color(185, 250, 46));
         venueLocation.setText("Demo venue location");
 
         guestNumber.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        guestNumber.setForeground(new java.awt.Color(255, 255, 255));
+        guestNumber.setForeground(new java.awt.Color(185, 250, 46));
         guestNumber.setText("Estimated guest number");
 
         price.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        price.setForeground(new java.awt.Color(255, 255, 255));
+        price.setForeground(new java.awt.Color(185, 250, 46));
         price.setText("Demo price");
 
         adminEmail.setBackground(new java.awt.Color(255, 255, 255));
         adminEmail.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        adminEmail.setForeground(new java.awt.Color(255, 255, 255));
+        adminEmail.setForeground(new java.awt.Color(185, 250, 46));
         adminEmail.setText("demo contact email");
 
         adminPhone.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        adminPhone.setForeground(new java.awt.Color(255, 255, 255));
+        adminPhone.setForeground(new java.awt.Color(185, 250, 46));
         adminPhone.setText("demo contact phone number");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -128,11 +129,12 @@ public class MyBookings extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(185, 250, 46));
         jLabel2.setText("My Bookings");
 
         backprofile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        backprofile.setForeground(new java.awt.Color(185, 250, 46));
         backprofile.setText("Back to Profile");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -140,14 +142,13 @@ public class MyBookings extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(backprofile, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(479, 479, 479)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(494, Short.MAX_VALUE))
+                .addGap(438, 438, 438)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(466, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(backprofile, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(30, 30, 30)
@@ -157,11 +158,11 @@ public class MyBookings extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(25, 25, 25)
                 .addComponent(backprofile)
-                .addGap(83, 83, 83)
+                .addGap(74, 74, 74)
                 .addComponent(jLabel2)
-                .addContainerGap(621, Short.MAX_VALUE))
+                .addContainerGap(606, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(206, 206, 206)

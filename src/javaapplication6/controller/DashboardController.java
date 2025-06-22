@@ -39,7 +39,8 @@ public class DashboardController {
         dashboardView.BackButton(new BackButtonListener());
         dashboardView.ViewPastBookingListener(new ViewPast());
         dashboardView.ViewCurrentBookingListener(new ViewCurrent());
-        this.loginModel = loginModel;
+        this.loginModel = loginModel; 
+        dashboardView.setVenueEmail(loginModel.getEmail());      
     }
 
     public void open() {

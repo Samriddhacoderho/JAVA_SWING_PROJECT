@@ -26,7 +26,7 @@ public class LoginModel {
         this.name = name;
         this.image = image;
     }
-
+      
     /**
      * @return the email
      */

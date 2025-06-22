@@ -60,8 +60,9 @@ public class LoginView extends javax.swing.JFrame {
         passPsf.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jPanel1.add(passPsf, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 330, 280, 50));
 
-        showBtn.setBackground(new java.awt.Color(51, 255, 0));
+        showBtn.setBackground(new java.awt.Color(185, 250, 46));
         showBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        showBtn.setForeground(new java.awt.Color(255, 255, 255));
         showBtn.setText("Show");
         showBtn.setBorderPainted(false);
         showBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -77,7 +78,7 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, -1, 30));
 
         signupLbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        signupLbl.setForeground(new java.awt.Color(102, 204, 0));
+        signupLbl.setForeground(new java.awt.Color(185, 250, 46));
         signupLbl.setText("Sign Up");
         signupLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(signupLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, 60, 20));
@@ -87,6 +88,7 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(185, 250, 46));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("User Login Page");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, -1, -1));
@@ -105,7 +107,7 @@ public class LoginView extends javax.swing.JFrame {
         });
         jPanel1.add(forgetLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, -1, -1));
 
-        loginBtn.setBackground(new java.awt.Color(0, 0, 0));
+        loginBtn.setBackground(new java.awt.Color(185, 250, 46));
         loginBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("Login");
@@ -133,6 +135,7 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 110, 60));
 
         entryViewlabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        entryViewlabel.setForeground(new java.awt.Color(185, 250, 46));
         entryViewlabel.setText("Back to Entry View");
         entryViewlabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(entryViewlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 50, 130, -1));

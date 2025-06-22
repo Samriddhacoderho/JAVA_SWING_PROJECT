@@ -40,6 +40,7 @@ public class InquiryView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,6 +49,7 @@ public class InquiryView extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(185, 250, 46));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Contact us");
         jPanel2.add(jLabel1);
@@ -69,10 +71,12 @@ public class InquiryView extends javax.swing.JFrame {
         jPanel2.add(jScrollPane1);
         jScrollPane1.setBounds(310, 300, 480, 180);
 
-        SendBtn.setBackground(new java.awt.Color(0, 204, 51));
+        SendBtn.setBackground(new java.awt.Color(185, 250, 46));
         SendBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         SendBtn.setForeground(new java.awt.Color(255, 255, 255));
         SendBtn.setText("SEND");
+        SendBtn.setBorderPainted(false);
+        SendBtn.setOpaque(true);
         jPanel2.add(SendBtn);
         SendBtn.setBounds(310, 500, 480, 40);
 
@@ -89,6 +93,7 @@ public class InquiryView extends javax.swing.JFrame {
         NameTxt.setBounds(310, 230, 210, 40);
 
         back.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        back.setForeground(new java.awt.Color(185, 250, 46));
         back.setText("Back to Booking page");
         back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(back);
@@ -105,6 +110,10 @@ public class InquiryView extends javax.swing.JFrame {
         jLabel5.setText("Message:");
         jPanel2.add(jLabel5);
         jLabel5.setBounds(250, 310, 60, 17);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/bookmyvenue.png"))); // NOI18N
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(0, 0, 110, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -167,6 +176,7 @@ public class InquiryView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

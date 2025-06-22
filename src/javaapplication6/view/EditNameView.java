@@ -53,7 +53,7 @@ public class EditNameView extends javax.swing.JFrame {
         jPanel1.add(jTextField1);
         jTextField1.setBounds(390, 250, 290, 50);
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setBackground(new java.awt.Color(185, 250, 46));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Update");
@@ -62,7 +62,7 @@ public class EditNameView extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(390, 310, 290, 50);
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setBackground(new java.awt.Color(185, 250, 46));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Back");
@@ -72,7 +72,6 @@ public class EditNameView extends javax.swing.JFrame {
         jButton2.setBounds(930, 30, 90, 30);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Please enter your new name and hit submit!");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(400, 140, 290, 30);
@@ -87,6 +86,7 @@ public class EditNameView extends javax.swing.JFrame {
         jPanel3.setBounds(10, 10, 110, 60);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(185, 250, 46));
         jLabel3.setText("Forgot Password?");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(470, 110, 163, 22);

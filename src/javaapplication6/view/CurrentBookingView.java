@@ -54,8 +54,12 @@ public class CurrentBookingView extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        viewBookDtls.setBackground(new java.awt.Color(185, 250, 46));
+        viewBookDtls.setForeground(new java.awt.Color(255, 255, 255));
         viewBookDtls.setText("View Book Details");
 
+        backDashboard.setBackground(new java.awt.Color(0, 0, 0));
+        backDashboard.setForeground(new java.awt.Color(185, 250, 46));
         backDashboard.setText("Back to Dashboard");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
