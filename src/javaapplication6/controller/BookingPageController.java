@@ -40,8 +40,6 @@ public class BookingPageController {
         BookVenueDAO dao = new BookVenueDAO();
         byte[] imageData = dao.fetchVenueImage(venueModel.getEmail());
         this.page.setVenueImage(imageData);
-        this.page.ProceedAction(new ProceedAction());
-        this.page.InquiryAction(new InquiryListener());
     }
    
     

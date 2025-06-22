@@ -112,6 +112,7 @@ public class AdminViewBookingController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            System.out.println(result.getPayed());
             if (result.getPayed().equalsIgnoreCase("payed")) {
                 JOptionPane.showMessageDialog(detailView, "Once the payment is done, you cannot reject the booking!");
             } else {
@@ -211,6 +212,10 @@ public class AdminViewBookingController {
                         JOptionPane.showMessageDialog(detailView, "There was an error performing this action. Please try again later");
                     } else {
                         JOptionPane.showMessageDialog(detailView, "This booking is successfully marked as completed! You can no longer view it in view bookings page");
+                        AdminDashboardView view=new AdminDashboardView();
+                        AdminDashboardController ctrl=new AdminDashboardController(view, loginModel);
+                        ctrl.open();
+                        close();
                     }
                 }
             }

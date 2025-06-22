@@ -46,10 +46,12 @@ public class AdminDashboardView extends javax.swing.JFrame {
         updatedetails1 = new javax.swing.JButton();
         change = new javax.swing.JButton();
         viewBookingButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         inquiry = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -89,7 +91,7 @@ public class AdminDashboardView extends javax.swing.JFrame {
         viewBookingButton1.setBorderPainted(false);
         viewBookingButton1.setOpaque(true);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/image (1).png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/image (1).png"))); // NOI18N
 
         inquiry.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         inquiry.setText("View Inquiries");
@@ -115,7 +117,7 @@ public class AdminDashboardView extends javax.swing.JFrame {
                                     .addComponent(registervenue, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jLabel2)))
+                                .addComponent(jLabel5)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
@@ -126,7 +128,7 @@ public class AdminDashboardView extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addComponent(jLabel2)
+                .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registervenue, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -143,8 +145,22 @@ public class AdminDashboardView extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 750));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 200, 40));
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 110, 50));
+
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, 190, 40));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 190, 160));
+
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Welcome!!!");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 190, 40));
+
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, 190, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,6 +184,8 @@ public class AdminDashboardView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JButton logout;
@@ -201,18 +219,21 @@ public class AdminDashboardView extends javax.swing.JFrame {
         this.logout.addActionListener(listener);
     }
     
-    public void setUserName(String name) {
+    public void setVenueName(String name) {
         jLabel1.setText(name);
     }
 
-   
+    public void setVenueEmail(String email) {
+        jLabel2.setText(email);
+    }
 
-    public void setUserImage(byte[] imageData) {
+    public void setVenueImage(byte[] imageData) {
         if (imageData != null) {
             ImageIcon imageIcon = new ImageIcon(imageData);
             Image img = imageIcon.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH);
             jLabel3.setIcon(new ImageIcon(img));
+        } else {
+            jLabel3.setIcon(null);
         }
     }
-    
 }

@@ -92,19 +92,19 @@ public class InquiryView extends javax.swing.JFrame {
         back.setText("Back to Booking page");
         back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(back);
-        back.setBounds(890, 30, 140, 16);
+        back.setBounds(890, 30, 140, 15);
 
         jLabel2.setText("Your Name");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(310, 210, 90, 16);
+        jLabel2.setBounds(310, 210, 90, 17);
 
         jLabel4.setText("Your Email");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(560, 210, 70, 16);
+        jLabel4.setBounds(560, 210, 70, 17);
 
         jLabel5.setText("Message:");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(250, 310, 60, 16);
+        jLabel5.setBounds(250, 310, 60, 17);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -118,6 +118,7 @@ public class InquiryView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

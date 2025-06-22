@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javaapplication6.dao.UserDAO;
 import javaapplication6.dao.VenueManagerDAO;
 import javaapplication6.model.LoginModel;
+import javaapplication6.view.AdminDashboardView;
 import javaapplication6.view.DashboardView;
 
 /**
@@ -127,8 +128,8 @@ public class AdminChangePasswordController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            DashboardView dashboardView=new DashboardView();
-            DashboardController dashboardController=new DashboardController(dashboardView, loginModel);
+            AdminDashboardView dashboardView=new AdminDashboardView();
+            AdminDashboardController dashboardController=new AdminDashboardController(dashboardView, loginModel);
             dashboardController.open();
             close();
             
