@@ -12,6 +12,7 @@ import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueModel;
 import javaapplication6.view.BookingPageView;
 import javaapplication6.view.DashboardView;
+import javaapplication6.view.InquiryView;
 import javax.swing.JOptionPane;
 
 /**
@@ -34,12 +35,15 @@ public class BookingPageController {
         this.page.getjTextField1().setText(venueModel.getContact_number());
         this.page.ProceedAction(new ProceedAction());
         this.page.setVenueImage(venueModel.getImage());
+        this.page.InquiryAction(new InquiryListener());
         
         BookVenueDAO dao = new BookVenueDAO();
         byte[] imageData = dao.fetchVenueImage(venueModel.getEmail());
         this.page.setVenueImage(imageData);
         this.page.ProceedAction(new ProceedAction());
+        this.page.InquiryAction(new InquiryListener());
     }
+   
     
     public void open()
     {
@@ -48,6 +52,17 @@ public class BookingPageController {
     public void close()
     {
         this.page.dispose();
+    }
+    class InquiryListener implements ActionListener{
+       
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            InquiryView inquiry = new InquiryView();
+            InquiryController controller = new InquiryController(inquiry,loginModel,venueModel);
+            controller.open();
+            close();
+        }
+        
     }
     
     class ProceedAction implements ActionListener

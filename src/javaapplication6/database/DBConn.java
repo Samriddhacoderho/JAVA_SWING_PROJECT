@@ -71,6 +71,14 @@ public class DBConn {
                     + "name VARCHAR(100), "
                     + "email VARCHAR(100) UNIQUE, "
                     + "password VARCHAR(100))");
+            stmt.executeUpdate("CREATE TABLE IF NOT EXISTS inquiry_table ("
+             + "id INT AUTO_INCREMENT PRIMARY KEY, "
+             + "name VARCHAR(100), "
+             + "email VARCHAR(100) UNIQUE, "
+             + "message VARCHAR(100), "
+             + "adminEmail VARCHAR(100))");
+             
+            
 
             
 

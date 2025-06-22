@@ -6,6 +6,7 @@
 package javaapplication6.view;
 
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 
 /**
  *
@@ -35,6 +36,10 @@ public class InquiryView extends javax.swing.JFrame {
         SendBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         NameTxt = new javax.swing.JTextField();
+        back = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,11 +51,10 @@ public class InquiryView extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Contact us");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(470, 120, 165, 30);
+        jLabel1.setBounds(450, 80, 165, 30);
 
         EmailTxt.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         EmailTxt.setForeground(new java.awt.Color(204, 204, 204));
-        EmailTxt.setText("Enter your email");
         jPanel2.add(EmailTxt);
         EmailTxt.setBounds(550, 230, 240, 40);
 
@@ -58,7 +62,7 @@ public class InquiryView extends javax.swing.JFrame {
         MessageTxt.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         MessageTxt.setForeground(new java.awt.Color(204, 204, 204));
         MessageTxt.setRows(5);
-        MessageTxt.setText("Enter your message");
+        MessageTxt.setText("\n");
         MessageTxt.setToolTipText("");
         jScrollPane1.setViewportView(MessageTxt);
 
@@ -70,20 +74,37 @@ public class InquiryView extends javax.swing.JFrame {
         SendBtn.setForeground(new java.awt.Color(255, 255, 255));
         SendBtn.setText("SEND");
         jPanel2.add(SendBtn);
-        SendBtn.setBounds(310, 510, 480, 30);
+        SendBtn.setBounds(310, 500, 480, 40);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Got any questions or suggestions? Fill out this form to reach out.");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(310, 170, 480, 24);
+        jLabel3.setBounds(300, 120, 480, 24);
 
         NameTxt.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         NameTxt.setForeground(new java.awt.Color(204, 204, 204));
-        NameTxt.setText("Enter your name");
         jPanel2.add(NameTxt);
         NameTxt.setBounds(310, 230, 210, 40);
+
+        back.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        back.setText("Back to Booking page");
+        back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(back);
+        back.setBounds(890, 30, 140, 16);
+
+        jLabel2.setText("Your Name");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(310, 210, 90, 16);
+
+        jLabel4.setText("Your Email");
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(560, 210, 70, 16);
+
+        jLabel5.setText("Message:");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(250, 310, 60, 16);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,8 +160,12 @@ public class InquiryView extends javax.swing.JFrame {
     private javax.swing.JTextArea MessageTxt;
     private javax.swing.JTextField NameTxt;
     private javax.swing.JButton SendBtn;
+    private javax.swing.JLabel back;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
@@ -190,5 +215,8 @@ public class InquiryView extends javax.swing.JFrame {
     public void SendListener(ActionListener listener)
     {
         this.SendBtn.addActionListener(listener);
+    }
+    public void BackListener(MouseListener listener){
+        this.back.addMouseListener(listener);
     }
 }

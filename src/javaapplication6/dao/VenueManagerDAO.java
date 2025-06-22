@@ -4,8 +4,10 @@
  */
 package javaapplication6.dao;
 
+import java.awt.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
 import javaapplication6.HashUtil.HashUtil;
 import javaapplication6.database.DBConn;
 import javaapplication6.model.LoginModel;
@@ -13,6 +15,7 @@ import javaapplication6.model.RegisterModel;
 import javaapplication6.model.VenueModel;
 import javaapplication6.controller.Mail.SMTPSMailSender;
 import javaapplication6.model.BookVenueModel;
+import javaapplication6.model.InquiryModel;
 import javaapplication6.model.VenueDetailsFetchModel;
 
 /**
@@ -69,6 +72,23 @@ public class VenueManagerDAO {
 
         return true;
     }
+ public ArrayList<InquiryModel> getInquiries(LoginModel loginModel) {
+        String sqlQuery = "SELECT * FROM inquiry_table where adminEmail=?";
+        try (Connection conn = dbConn.connection_base()) {
+            ArrayList<InquiryModel> inquiryList = new ArrayList<>();
+            PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
+            pstmt.setString(1, loginModel.getEmail());
+            var rs = pstmt.executeQuery();
+            while (rs.next()) {
+                InquiryModel result = new InquiryModel(rs.getString("name"), rs.getString("email"), rs.getString("message"),rs.getString("adminEmail"));
+                inquiryList.add(result);
+            }
+            return inquiryList;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
 
     public boolean approveRequest(LoginModel model, BookVenueModel modelBook, VenueModel modelVenue, VenueDetailsFetchModel result) {
 
