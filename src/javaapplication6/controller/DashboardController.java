@@ -40,7 +40,11 @@ public class DashboardController {
         dashboardView.ViewPastBookingListener(new ViewPast());
         dashboardView.ViewCurrentBookingListener(new ViewCurrent());
         this.loginModel = loginModel; 
-        dashboardView.setVenueEmail(loginModel.getEmail());      
+        dashboardView.setVenueEmail(loginModel.getEmail()); 
+        dashboardView.ViewPastCentre(new ViewPast());
+        dashboardView.ViewCurrentCentre(new ViewCurrent());
+        dashboardView.EditCentre(new EditNameListener());
+        dashboardView.ChangePassCentre(new ChangePassListener());
     }
 
     public void open() {
@@ -79,7 +83,7 @@ public class DashboardController {
         @Override
         public void actionPerformed(ActionEvent e) {
             FAQView faqView = new FAQView();
-            FAQController faqController = new FAQController(faqView);
+            FAQController faqController = new FAQController(faqView,loginModel);
             faqController.open();
             close();
         }

@@ -2,11 +2,14 @@ package javaapplication6.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.File;
 import javaapplication6.dao.RegisterVenueDAO;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueModel;
 import javaapplication6.view.AdminDashboardView;
+import javaapplication6.view.DashboardView;
 import javaapplication6.view.UpdateVenueDetailsView;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -29,7 +32,8 @@ public class UpdateVenueDetailsController {
         this.view.getLocationTxt().setText(venueModel.getLocation());
         this.view.getEmailTxt().setText(venueModel.getEmail());
         this.view.getNumberTxt().setText(venueModel.getContact_number());
-        this.view.getPriceTxt().setText(String.valueOf(venueModel.getPrice_per_plate()));                
+        this.view.getPriceTxt().setText(String.valueOf(venueModel.getPrice_per_plate())); 
+        this.view.BackListener(new Back());
     }
 
     public void open()
@@ -117,7 +121,35 @@ public class UpdateVenueDetailsController {
         }
     }
 
-    
+    class Back implements MouseListener
+    {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            AdminDashboardView view=new AdminDashboardView();
+            AdminDashboardController ctrl=new AdminDashboardController(view, model);
+            ctrl.open();
+            close();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+        
+    }
+
     
     
     

@@ -289,5 +289,10 @@ public class FAQView extends javax.swing.JFrame {
     public void setFAQText(String text) {
         jTextArea1.setText(text);
     }
+    
+    public void BackListener(MouseListener listener)
+    {
+        this.backButton.addMouseListener(listener);
+    }
                 
 }

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javaapplication6.dao.BookVenueDAO;
 import javaapplication6.model.LoginModel;
 import javaapplication6.model.VenueDetailsFetchModel;
+import javaapplication6.view.DashboardView;
 import javaapplication6.view.MyBookings;
 import javaapplication6.view.PastBookingView;
 import javax.swing.JOptionPane;
@@ -28,6 +29,7 @@ public class PastBookingController {
     public PastBookingController(PastBookingView pastBookingView, LoginModel loginModel) {
         this.pastBookingView = pastBookingView;
         this.loginModel = loginModel;
+        this.pastBookingView.BackDashboard(new Back());
     }
 
     public void open() {
@@ -48,6 +50,16 @@ public class PastBookingController {
         }
     }
 
-    
+    class Back implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            DashboardView view=new DashboardView();
+            DashboardController ctrl=new DashboardController(view, loginModel);
+            ctrl.open();
+            close();
+        }
+
+    }
 
 }

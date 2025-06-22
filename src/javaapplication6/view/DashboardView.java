@@ -101,11 +101,6 @@ public class DashboardView extends javax.swing.JFrame {
         reportBtn.setBorderPainted(false);
         reportBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         reportBtn.setOpaque(true);
-        reportBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                reportBtnActionPerformed(evt);
-            }
-        });
 
         jButton1.setBackground(new java.awt.Color(185, 250, 46));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -203,7 +198,7 @@ public class DashboardView extends javax.swing.JFrame {
         registervenue3.setBackground(new java.awt.Color(185, 250, 46));
         registervenue3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         registervenue3.setForeground(new java.awt.Color(255, 255, 255));
-        registervenue3.setText("Register Venue");
+        registervenue3.setText("View Past Bookings");
         registervenue3.setBorderPainted(false);
         registervenue3.setOpaque(true);
 
@@ -244,7 +239,7 @@ public class DashboardView extends javax.swing.JFrame {
         registervenue4.setBackground(new java.awt.Color(185, 250, 46));
         registervenue4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         registervenue4.setForeground(new java.awt.Color(255, 255, 255));
-        registervenue4.setText("Register Venue");
+        registervenue4.setText("View Current Bookings");
         registervenue4.setBorderPainted(false);
         registervenue4.setOpaque(true);
 
@@ -285,7 +280,7 @@ public class DashboardView extends javax.swing.JFrame {
         registervenue5.setBackground(new java.awt.Color(185, 250, 46));
         registervenue5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         registervenue5.setForeground(new java.awt.Color(255, 255, 255));
-        registervenue5.setText("Register Venue");
+        registervenue5.setText("Edit Name");
         registervenue5.setBorderPainted(false);
         registervenue5.setOpaque(true);
 
@@ -326,7 +321,7 @@ public class DashboardView extends javax.swing.JFrame {
         registervenue6.setBackground(new java.awt.Color(185, 250, 46));
         registervenue6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         registervenue6.setForeground(new java.awt.Color(255, 255, 255));
-        registervenue6.setText("Register Venue");
+        registervenue6.setText("Change Password");
         registervenue6.setBorderPainted(false);
         registervenue6.setOpaque(true);
 
@@ -423,10 +418,6 @@ public class DashboardView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void reportBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_reportBtnActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backButton;
@@ -495,6 +486,27 @@ public class DashboardView extends javax.swing.JFrame {
         
         this.backButton.addMouseListener(listener);
     }
+    
+    public void ViewPastCentre(ActionListener listener)
+    {
+        this.registervenue3.addActionListener(listener);
+    }
+    
+    public void ViewCurrentCentre(ActionListener listener)
+    {
+        this.registervenue4.addActionListener(listener);
+    }
+    
+    public void EditCentre(ActionListener listener)
+    {
+        this.registervenue5.addActionListener(listener);
+    }
+    
+    public void ChangePassCentre(ActionListener listener)
+    {
+        this.registervenue6.addActionListener(listener);
+    }
+    
     public void setVenueEmail(String email) {
         jLabel3.setText(email);
     }

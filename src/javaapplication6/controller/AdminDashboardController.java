@@ -46,6 +46,11 @@ public class AdminDashboardController {
         this.view.ChangepassUserListener(new ChangePassListener());
         this.view.ViewInquiry(new ViewInquiry());
         
+        this.view.RegisterButtonAtCentre(new VenueRegister());
+        this.view.UpdateButtonAtCentre(new UpdateVenueDetails());
+        this.view.ViewBookButtonAtCentre(new BookView());
+        this.view.ViewInquiryAtCentre(new ViewInquiry());
+        
         RegisterVenueDAO dao = new RegisterVenueDAO();
         this.venueModel = dao.fetchVenueBasicInfo(loginModel.getEmail());
 

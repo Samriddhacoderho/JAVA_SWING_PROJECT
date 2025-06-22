@@ -313,5 +313,9 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         this.selectedFile = selectedFile;
     }
     
-
+    
+    public void BackListener(MouseListener listener)
+    {
+        this.alreadyLbl.addMouseListener(listener);
+    }
 }

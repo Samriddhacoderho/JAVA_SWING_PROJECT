@@ -454,6 +454,26 @@ public class AdminDashboardView extends javax.swing.JFrame {
         this.logout.addActionListener(listener);
     }
     
+    public void RegisterButtonAtCentre(ActionListener listener)
+    {
+        this.registervenue3.addActionListener(listener);
+    }
+    
+    public void UpdateButtonAtCentre(ActionListener listener)
+    {
+        this.updatevenue1.addActionListener(listener);
+    }
+    
+    public void ViewBookButtonAtCentre(ActionListener listener)
+    {
+        this.viewbooking1.addActionListener(listener);
+    }
+    
+    public void ViewInquiryAtCentre(ActionListener listner)
+    {
+        this.viewinquiries1.addActionListener(listner);
+    }
+    
     public void setVenueName(String name) {
         jLabel1.setText(name);
     }

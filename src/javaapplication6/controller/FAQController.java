@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package javaapplication6.controller;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javaapplication6.model.LoginModel;
+import javaapplication6.view.DashboardView;
 import javaapplication6.view.FAQView;
 
 /**
@@ -11,10 +15,13 @@ import javaapplication6.view.FAQView;
  */
 public class FAQController {
     private final FAQView faqView;
+    private final LoginModel loginModel;
 
-    public FAQController(FAQView faqView) {
+    public FAQController(FAQView faqView,LoginModel loginModel) {
         this.faqView = faqView;
         loadFAQContent();
+        this.loginModel=loginModel;
+        this.faqView.BackListener(new Back());
     }
     
     public void open()
@@ -42,6 +49,35 @@ public class FAQController {
         """;
 
         faqView.setFAQText(faqText);
+    }
+    
+    class Back implements MouseListener
+    {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            DashboardView view=new DashboardView();
+            DashboardController ctrl=new DashboardController(view, loginModel);
+            ctrl.open();
+            close();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+        }
+        
     }
 
     
