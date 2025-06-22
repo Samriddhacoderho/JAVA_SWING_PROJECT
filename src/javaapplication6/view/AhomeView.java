@@ -51,6 +51,8 @@ public class AhomeView extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         bktbtn = new javax.swing.JButton();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         pkrLBL = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
@@ -123,8 +125,8 @@ public class AhomeView extends javax.swing.JFrame {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("/Users/ishan-college/Desktop/bookmyvenue image/image (3).png")); // NOI18N
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/patan.png"))); // NOI18N
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 110));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 260, 110));
 
@@ -144,8 +146,8 @@ public class AhomeView extends javax.swing.JFrame {
 
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/ishan-college/Desktop/bookmyvenue image/image (1).png")); // NOI18N
-        jPanel8.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/chitwan.png"))); // NOI18N
+        jPanel8.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 110));
 
         jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 260, 110));
 
@@ -168,8 +170,6 @@ public class AhomeView extends javax.swing.JFrame {
         jPanel4.add(bkpLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 80, -1));
 
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setIcon(new javax.swing.ImageIcon("/Users/ishan-college/Desktop/bookmyvenue image/image (4).png")); // NOI18N
         jPanel10.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, 110));
@@ -177,6 +177,13 @@ public class AhomeView extends javax.swing.JFrame {
         bktbtn.setText("Browse");
         bktbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel4.add(bktbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, -1, 20));
+
+        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/bhaktapur.png"))); // NOI18N
+        jPanel16.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 110));
+
+        jPanel4.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 260, 110));
 
         jPanel9.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 290, 190));
 
@@ -190,8 +197,8 @@ public class AhomeView extends javax.swing.JFrame {
 
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("/Users/ishan-college/Desktop/bookmyvenue image/image (5).png")); // NOI18N
-        jPanel12.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/pokhara.png"))); // NOI18N
+        jPanel12.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 110));
 
         jPanel11.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 260, 110));
 
@@ -211,8 +218,8 @@ public class AhomeView extends javax.swing.JFrame {
 
         jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel15.setIcon(new javax.swing.ImageIcon("/Users/ishan-college/Desktop/bookmyvenue image/image (2).png")); // NOI18N
-        jPanel14.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/lumbini.png"))); // NOI18N
+        jPanel14.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 110));
 
         jPanel13.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 250, 110));
 
@@ -232,8 +239,8 @@ public class AhomeView extends javax.swing.JFrame {
 
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel13.setIcon(new javax.swing.ImageIcon("/Users/ishan-college/Desktop/bookmyvenue image/image.png")); // NOI18N
-        jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/kathmandu.png"))); // NOI18N
+        jPanel6.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 110));
 
         jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 260, 110));
 
@@ -265,6 +272,7 @@ public class AhomeView extends javax.swing.JFrame {
     private javax.swing.JButton chibtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
@@ -279,6 +287,7 @@ public class AhomeView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
