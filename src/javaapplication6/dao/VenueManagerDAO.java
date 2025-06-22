@@ -72,12 +72,12 @@ public class VenueManagerDAO {
 
         return true;
     }
- public ArrayList<InquiryModel> getInquiries(String adminEmail,VenueModel venueModel) {
+ public ArrayList<InquiryModel> getInquiries(LoginModel loginModel) {
         String sqlQuery = "SELECT * FROM inquiry_table where adminEmail=?";
         try (Connection conn = dbConn.connection_base()) {
             ArrayList<InquiryModel> inquiryList = new ArrayList<>();
             PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
-            pstmt.setString(1, venueModel.getEmail());
+            pstmt.setString(1, loginModel.getEmail());
             var rs = pstmt.executeQuery();
             while (rs.next()) {
                 InquiryModel result = new InquiryModel(rs.getString("name"), rs.getString("email"), rs.getString("message"),rs.getString("adminEmail"));

@@ -79,8 +79,8 @@ public class AdminDashboardController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            String adminEmail = venueModel.getEmail();
-            ArrayList<InquiryModel> result = vdao.getInquiries(adminEmail,venueModel);
+            
+            ArrayList<InquiryModel> result = vdao.getInquiries(loginModel);
             if (result ==null ||result.isEmpty()){
                 JOptionPane.showMessageDialog(view, "You do not have any inquiries.");
             }
