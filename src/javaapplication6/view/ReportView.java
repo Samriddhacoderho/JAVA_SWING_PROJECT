@@ -59,7 +59,7 @@ public class ReportView extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Report a problem:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(80, 20, 120, 15);
+        jLabel1.setBounds(80, 20, 120, 16);
 
         reportList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         reportList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Account Inquiry", "Report a bug", "Change account information", "Report a potential violation" }));
