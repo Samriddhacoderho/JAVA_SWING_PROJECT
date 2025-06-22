@@ -59,7 +59,7 @@ public class EnterOTPController {
                 }
                 else
                 {
-                    String password=JOptionPane.showInputDialog(email,"Enter your new password:");
+                    String password=JOptionPane.showInputDialog(email,"Cut this and enter your new password");
                            if(password.trim().isEmpty())
                            {
                                JOptionPane.showMessageDialog(enterOTPView, "Password cannot be empty!");
@@ -77,6 +77,10 @@ public class EnterOTPController {
                                else
                                {
                                    JOptionPane.showMessageDialog(enterOTPView, "Your password has been reset successfully");
+                                   LoginView view=new LoginView();
+                                   LoginController ctrl=new LoginController(view);
+                                   ctrl.open();
+                                   close();
                                }
                                }
                            

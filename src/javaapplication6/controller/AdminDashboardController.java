@@ -15,6 +15,7 @@ import javaapplication6.view.AdminDashboardView;
 import javaapplication6.view.AdminLoginView;
 import javaapplication6.view.AdminViewBooks;
 import javaapplication6.view.BookingDetailsView;
+import javaapplication6.view.ChangePassView;
 import javaapplication6.view.PastBookingView;
 import javaapplication6.view.RegisterVenueView;
 import javaapplication6.view.UpdateVenueDetailsView;
@@ -41,6 +42,7 @@ public class AdminDashboardController {
 
         this.view.setUserName(loginModel.getName());
         this.view.setUserImage(loginModel.getImage());
+        this.view.ChangepassUserListener(new ChangePassListener());
 
     }
 
@@ -134,5 +136,15 @@ public class AdminDashboardController {
         }
 
     }
+    
+    class ChangePassListener implements ActionListener {
 
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            ChangePassView changePassView = new ChangePassView();
+            AdminChangePasswordController changePasswordController = new AdminChangePasswordController(changePassView, loginModel);
+            changePasswordController.open();
+            close();
+        }
+    }
 }

@@ -154,4 +154,38 @@ public class VenueManagerDAO {
 
         return false;
     }
+    public boolean checkCurrentPassword(LoginModel loginModel, String currentPass) {
+    try (Connection conn = dbConn.connection_base()) {
+        String sql = "SELECT password FROM admin WHERE email = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, loginModel.getEmail());
+        var rs = stmt.executeQuery();
+
+        if (rs.next()) {
+            String storedHashedPassword = rs.getString("password");
+            String inputHashedPassword = HashUtil.hashPassword(currentPass);
+
+            return storedHashedPassword.equals(inputHashedPassword);
+        }
+    } catch (Exception e) {
+        System.out.println("Error in checkCurrentPassword: " + e.getMessage());
+    }
+    return false;
+}
+    public boolean updatePassword(LoginModel loginModel, String newPass) {
+    try (Connection conn = dbConn.connection_base()) {
+        String sql = "UPDATE admin SET password = ? WHERE email = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        
+        String hashedPassword = HashUtil.hashPassword(newPass);
+        stmt.setString(1, hashedPassword);
+        stmt.setString(2,loginModel.getEmail() );
+
+        int updated = stmt.executeUpdate();
+        return updated > 0;
+    } catch (Exception e) {
+        System.out.println("Error in updatePassword: " + e.getMessage());
+    }
+    return false;
+}
 }

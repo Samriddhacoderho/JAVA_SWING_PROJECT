@@ -14,9 +14,9 @@ public class SMTPSMailSender {
 
     private static final String port = "587"; 
     
-    private static final String email = "imnitesh56@gmail.com";
+      private static final String email = "bookvenuemy@gmail.com";
 
-    private static String password = "uwey qfiq pjnz pynb";
+    private static String password = "cghw hjpo pyfq ofth";
 
 
 
