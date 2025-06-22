@@ -61,8 +61,8 @@ public class RegisterVenueView extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Name:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 60, 20));
-        jPanel2.add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 320, 30));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 60, 20));
+        jPanel2.add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 320, 40));
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -70,36 +70,36 @@ public class RegisterVenueView extends javax.swing.JFrame {
         jButton3.setText("Register");
         jButton3.setBorderPainted(false);
         jButton3.setOpaque(true);
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 320, 40));
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 320, 40));
 
         jLabel7.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Location :");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 60, 20));
-        jPanel2.add(locationTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 320, 30));
+        jPanel2.add(locationTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 320, 40));
 
         jLabel10.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Contact Number:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 100, 20));
-        jPanel2.add(numberTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 320, 30));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 100, 20));
+        jPanel2.add(numberTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 320, 40));
 
         jLabel11.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Price Per Plate :");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 100, 20));
-        jPanel2.add(priceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 320, 30));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 100, 20));
+        jPanel2.add(priceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 320, 40));
 
         jLabel6.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Register a new Venue!");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 160, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 160, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("bookmyvenue");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 130, 40));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 140, 40));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 560, 360));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 770, 470));
 
         jPanel3.setLayout(null);
 
@@ -109,7 +109,7 @@ public class RegisterVenueView extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 60));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 440));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 750));
 
         pack();
         setLocationRelativeTo(null);

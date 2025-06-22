@@ -79,7 +79,7 @@ public class AdminLoginView extends javax.swing.JFrame {
         signupLbl.setForeground(new java.awt.Color(102, 204, 0));
         signupLbl.setText("Sign Up");
         signupLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(signupLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 490, -1, 20));
+        jPanel1.add(signupLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 490, 70, 20));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setText("Email");
@@ -128,7 +128,7 @@ public class AdminLoginView extends javax.swing.JFrame {
         entryViewlabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         entryViewlabel.setText("Back to Entry View");
         entryViewlabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(entryViewlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 50, -1, -1));
+        jPanel1.add(entryViewlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(905, 50, 130, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 760));
 

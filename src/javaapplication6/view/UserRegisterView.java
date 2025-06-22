@@ -132,7 +132,7 @@ public class UserRegisterView extends javax.swing.JFrame {
         alreadyLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         alreadyLbl.setText("Back to Login View");
         alreadyLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(alreadyLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 50, 110, 20));
+        jPanel1.add(alreadyLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 50, 130, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 760));
 

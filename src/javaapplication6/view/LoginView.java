@@ -135,7 +135,7 @@ public class LoginView extends javax.swing.JFrame {
         entryViewlabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         entryViewlabel.setText("Back to Entry View");
         entryViewlabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(entryViewlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 50, 110, -1));
+        jPanel1.add(entryViewlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 50, 130, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 760));
 

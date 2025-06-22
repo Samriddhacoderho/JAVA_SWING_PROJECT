@@ -53,25 +53,24 @@ public class ReportView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(issuesTxt);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(80, 120, 370, 130);
+        jScrollPane1.setBounds(330, 290, 400, 160);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel1.setText("Report a problem:");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Report a problem");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(80, 20, 120, 15);
+        jLabel1.setBounds(450, 120, 210, 30);
 
         reportList.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         reportList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Account Inquiry", "Report a bug", "Change account information", "Report a potential violation" }));
         reportList.setSelectedIndex(2);
         reportList.setToolTipText("");
         jPanel1.add(reportList);
-        reportList.setBounds(80, 40, 250, 40);
+        reportList.setBounds(330, 190, 400, 40);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Description");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(80, 90, 80, 30);
+        jLabel2.setBounds(330, 260, 80, 30);
 
         reportBtn.setBackground(new java.awt.Color(0, 0, 0));
         reportBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -80,12 +79,12 @@ public class ReportView extends javax.swing.JFrame {
         reportBtn.setBorderPainted(false);
         reportBtn.setOpaque(true);
         jPanel1.add(reportBtn);
-        reportBtn.setBounds(280, 260, 160, 30);
+        reportBtn.setBounds(570, 480, 170, 40);
 
         cancelBtn.setText("Cancel");
         cancelBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(cancelBtn);
-        cancelBtn.setBounds(90, 260, 160, 30);
+        cancelBtn.setBounds(330, 480, 170, 40);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -94,10 +93,10 @@ public class ReportView extends javax.swing.JFrame {
         jButton1.setBorderPainted(false);
         jButton1.setOpaque(true);
         jPanel1.add(jButton1);
-        jButton1.setBounds(500, 10, 80, 30);
+        jButton1.setBounds(970, 20, 80, 30);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(10, 0, 590, 390);
+        jPanel1.setBounds(0, 0, 1080, 750);
 
         pack();
         setLocationRelativeTo(null);

@@ -51,15 +51,15 @@ public class EnterOTPView extends javax.swing.JFrame {
 
         loginLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         loginLbl.setText("Back to Login View");
-        jPanel6.add(loginLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 40, 100, -1));
+        jPanel6.add(loginLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 40, 130, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Enter the OTP sent to your email address.");
-        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 360, 40));
+        jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 410, 40));
 
         otpTxt.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         otpTxt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel6.add(otpTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 290, 50));
+        jPanel6.add(otpTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 250, 290, 50));
 
         verifyBtn.setBackground(new java.awt.Color(0, 0, 0));
         verifyBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -68,11 +68,11 @@ public class EnterOTPView extends javax.swing.JFrame {
         verifyBtn.setBorderPainted(false);
         verifyBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         verifyBtn.setOpaque(true);
-        jPanel6.add(verifyBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 290, 50));
+        jPanel6.add(verifyBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 290, 50));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Enter OTP");
-        jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 70, 30));
+        jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 70, 30));
 
         jPanel3.setLayout(null);
 

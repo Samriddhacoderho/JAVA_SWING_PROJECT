@@ -29,14 +29,12 @@ public class InquiryView extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         EmailTxt = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         MessageTxt = new javax.swing.JTextArea();
         SendBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         NameTxt = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,21 +46,13 @@ public class InquiryView extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Contact us");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(6, 22, 165, 30);
-
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("bookmyvenue@gmail.com");
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(190, 330, 170, 24);
+        jLabel1.setBounds(470, 120, 165, 30);
 
         EmailTxt.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         EmailTxt.setForeground(new java.awt.Color(204, 204, 204));
         EmailTxt.setText("Enter your email");
         jPanel2.add(EmailTxt);
-        EmailTxt.setBounds(250, 100, 230, 24);
+        EmailTxt.setBounds(550, 230, 240, 40);
 
         MessageTxt.setColumns(20);
         MessageTxt.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
@@ -73,44 +63,37 @@ public class InquiryView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(MessageTxt);
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(40, 140, 440, 130);
+        jScrollPane1.setBounds(310, 300, 480, 180);
 
         SendBtn.setBackground(new java.awt.Color(0, 204, 51));
         SendBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         SendBtn.setForeground(new java.awt.Color(255, 255, 255));
         SendBtn.setText("SEND");
         jPanel2.add(SendBtn);
-        SendBtn.setBounds(40, 283, 440, 30);
+        SendBtn.setBounds(310, 510, 480, 30);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Got any questions or suggestions? Fill out this form to reach out.");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(20, 60, 480, 24);
+        jLabel3.setBounds(310, 170, 480, 24);
 
         NameTxt.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         NameTxt.setForeground(new java.awt.Color(204, 204, 204));
         NameTxt.setText("Enter your name");
         jPanel2.add(NameTxt);
-        NameTxt.setBounds(40, 100, 180, 24);
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel4.setText("You can email us directly at ");
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(40, 330, 170, 24);
+        NameTxt.setBounds(310, 230, 210, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1080, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
         );
 
         pack();
@@ -157,9 +140,7 @@ public class InquiryView extends javax.swing.JFrame {
     private javax.swing.JTextField NameTxt;
     private javax.swing.JButton SendBtn;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

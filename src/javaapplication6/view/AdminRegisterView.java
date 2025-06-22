@@ -121,7 +121,7 @@ public class AdminRegisterView extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setText("Register a new Venue Account");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 270, 40));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 300, 40));
 
         jPanel3.setLayout(null);
 
@@ -133,7 +133,7 @@ public class AdminRegisterView extends javax.swing.JFrame {
 
         alreadyLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         alreadyLbl.setText("Back to Login View");
-        jPanel1.add(alreadyLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 40, 120, -1));
+        jPanel1.add(alreadyLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 40, 130, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 760));
 
