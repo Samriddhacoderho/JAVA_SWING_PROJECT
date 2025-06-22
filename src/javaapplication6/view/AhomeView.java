@@ -82,20 +82,21 @@ public class AhomeView extends javax.swing.JFrame {
         venue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         venue.setForeground(new java.awt.Color(204, 204, 204));
         venue.setToolTipText("Enter venue name");
-        jPanel9.add(venue, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 260, 30));
+        jPanel9.add(venue, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 260, 30));
 
         location.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         location.setForeground(new java.awt.Color(204, 204, 204));
         location.setToolTipText("Enter venue location");
-        jPanel9.add(location, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 180, 30));
+        jPanel9.add(location, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 180, 30));
 
         search.setBackground(new java.awt.Color(0, 0, 0));
         search.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         search.setForeground(new java.awt.Color(255, 255, 255));
         search.setText("Search");
         search.setBorderPainted(false);
+        search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         search.setOpaque(true);
-        jPanel9.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 100, 30));
+        jPanel9.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 120, 100, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Popular locations");
@@ -106,120 +107,129 @@ public class AhomeView extends javax.swing.JFrame {
         profile.setForeground(new java.awt.Color(255, 255, 255));
         profile.setText("Profile");
         profile.setBorderPainted(false);
+        profile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        profile.setFocusPainted(false);
+        profile.setFocusable(false);
         profile.setOpaque(true);
-        jPanel9.add(profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, 30));
+        jPanel9.add(profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 20, -1, 30));
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ptnLBL.setText("Patan");
-        jPanel2.add(ptnLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 60, -1));
+        jPanel2.add(ptnLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, -1));
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setText("Photo");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 37, -1));
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 37, -1));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 260, 130));
 
         ptnbtn.setText("Browse");
-        jPanel2.add(ptnbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
+        ptnbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(ptnbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, -1, 20));
 
-        jPanel9.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 160, 120));
+        jPanel9.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 280, 190));
 
         jPanel7.setBackground(new java.awt.Color(204, 255, 204));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         chiLBL.setText("Chitwan");
-        jPanel7.add(chiLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 80, -1));
+        jPanel7.add(chiLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, -1));
 
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setText("Photo");
-        jPanel8.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 37, -1));
+        jPanel8.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 37, -1));
 
-        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
+        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 280, 120));
 
         chibtn.setText("Browse");
-        jPanel7.add(chibtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
+        chibtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel7.add(chibtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, -1, 20));
 
-        jPanel9.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 160, 120));
+        jPanel9.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 300, 180));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setText("Search venues");
-        jPanel9.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 120, -1));
+        jPanel9.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 120, -1));
 
         jPanel4.setBackground(new java.awt.Color(204, 255, 204));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bkpLBL.setText("Bhaktapur");
-        jPanel4.add(bkpLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 80, -1));
+        jPanel4.add(bkpLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, -1));
 
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setText("Photo");
-        jPanel10.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 37, -1));
+        jPanel10.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 37, -1));
 
-        jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
+        jPanel4.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 270, 130));
 
         bktbtn.setText("Browse");
-        jPanel4.add(bktbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
+        bktbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel4.add(bktbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, -1, 20));
 
-        jPanel9.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 160, 120));
+        jPanel9.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 290, 190));
 
         jPanel11.setBackground(new java.awt.Color(204, 255, 204));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pkrLBL.setText("Pokhara");
-        jPanel11.add(pkrLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 70, -1));
+        jPanel11.add(pkrLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, -1));
 
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel14.setText("Photo");
-        jPanel12.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 37, -1));
+        jPanel12.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 37, -1));
 
-        jPanel11.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
+        jPanel11.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 290, 140));
 
         pkrbtn.setText("Browse");
-        jPanel11.add(pkrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
+        pkrbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel11.add(pkrbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, -1, 20));
 
-        jPanel9.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 160, 120));
+        jPanel9.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 410, 310, 200));
 
         jPanel13.setBackground(new java.awt.Color(204, 255, 204));
         jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lmbLBL.setText("Lumbini");
-        jPanel13.add(lmbLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 70, -1));
+        jPanel13.add(lmbLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 70, -1));
 
         jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setText("Photo");
-        jPanel14.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 37, -1));
+        jPanel14.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 37, -1));
 
-        jPanel13.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
+        jPanel13.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 290, 120));
 
         lmbbtn.setText("Browse");
-        jPanel13.add(lmbbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
+        lmbbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel13.add(lmbbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, -1, 20));
 
-        jPanel9.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 160, 120));
+        jPanel9.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 200, 310, 180));
 
         jPanel5.setBackground(new java.awt.Color(204, 255, 204));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ktmLBL.setText("Kathmandu");
-        jPanel5.add(ktmLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 90, -1));
+        jPanel5.add(ktmLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 90, -1));
 
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setText("Photo");
-        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 37, -1));
+        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 37, -1));
 
-        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 60));
+        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 260, 120));
 
         ktmbtn.setText("Browse");
-        jPanel5.add(ktmbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 20));
+        ktmbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel5.add(ktmbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, -1, 20));
 
-        jPanel9.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 160, 120));
+        jPanel9.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 280, 180));
 
         jPanel15.setLayout(null);
 
@@ -229,7 +239,7 @@ public class AhomeView extends javax.swing.JFrame {
 
         jPanel9.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 60));
 
-        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 530));
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 770));
 
         pack();
         setLocationRelativeTo(null);
