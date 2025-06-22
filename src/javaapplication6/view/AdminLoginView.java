@@ -65,6 +65,7 @@ public class AdminLoginView extends javax.swing.JFrame {
         showBtn.setText("Show");
         showBtn.setBorderPainted(false);
         showBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        showBtn.setOpaque(true);
         showBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 showBtnMouseClicked(evt);
