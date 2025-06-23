@@ -104,7 +104,7 @@ public class BookingPageView extends javax.swing.JFrame {
             }
         });
         jPanel1.add(inqButton);
-        inqButton.setBounds(860, 40, 200, 40);
+        inqButton.setBounds(860, 60, 200, 40);
 
         jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel4.setText("Contact:");
@@ -119,7 +119,7 @@ public class BookingPageView extends javax.swing.JFrame {
         backprofile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         backprofile.setText("Back to Dashboard");
         jPanel1.add(backprofile);
-        backprofile.setBounds(940, 100, 140, 15);
+        backprofile.setBounds(940, 30, 140, 15);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
