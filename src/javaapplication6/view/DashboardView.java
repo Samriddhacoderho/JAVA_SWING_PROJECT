@@ -176,7 +176,7 @@ public class DashboardView extends javax.swing.JFrame {
         jLabel4.setText("Welcome To bookmyvenue!!!");
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(185, 250, 46));
+        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         jPanel7.setBackground(new java.awt.Color(0, 0, 0));

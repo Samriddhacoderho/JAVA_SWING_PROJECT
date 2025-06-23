@@ -121,13 +121,17 @@ public class VenueManagerDAO {
     public boolean rejectRequest(LoginModel model, BookVenueModel modelBook, VenueModel modelVenue, VenueDetailsFetchModel result) {
 
         try (Connection conn = dbConn.connection_base()) {
-            String sqlQueryUpdate;
-            if (dao.adminVenuesView(model.getEmail()) == null || dao.adminVenuesView(model.getEmail()).isEmpty()) {
-                sqlQueryUpdate = "UPDATE venue_table SET status='Unbooked' where email=?";
-            } else {
-                sqlQueryUpdate = "UPDATE venue_table SET status='Pending' where email=?";
-
+            String sqlQueryUpdate="";
+             boolean count = false;
+        for (VenueDetailsFetchModel x : dao.adminVenuesView(model.getEmail())) {
+            if (x.getCompleted().equalsIgnoreCase("no")) {
+                sqlQueryUpdate = "UPDATE venue_table SET status='Pending' WHERE email=?";
+                count = true;
             }
+        }
+        if (!count) {
+            sqlQueryUpdate = "UPDATE venue_table SET status='Unbooked' WHERE email=?";
+        }
 
             String sqlQueryDelete = "DELETE FROM book_details WHERE user_email=? and venue_id=?";
             PreparedStatement pstmt = conn.prepareStatement(sqlQueryUpdate);

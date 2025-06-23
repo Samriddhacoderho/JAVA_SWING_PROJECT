@@ -178,7 +178,7 @@ public class AdminDashboardView extends javax.swing.JFrame {
         jLabel4.setBounds(230, 30, 370, 40);
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(185, 250, 46));
+        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel2.add(jLabel2);
         jLabel2.setBounds(240, 210, 350, 30);
@@ -188,7 +188,6 @@ public class AdminDashboardView extends javax.swing.JFrame {
         jLabel3.setBounds(350, 70, 139, 122);
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(185, 250, 46));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel2.add(jLabel1);
         jLabel1.setBounds(250, 190, 320, 30);

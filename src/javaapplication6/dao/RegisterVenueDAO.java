@@ -139,11 +139,16 @@ public class RegisterVenueDAO {
 
     public boolean markComplete(LoginModel loginModel, BookVenueModel modelBook) {
         String sqlQuery = "UPDATE book_details JOIN venue_table ON book_details.venue_id=venue_table.id SET book_details.completed='yes' WHERE venue_table.email=? and book_details.user_email=?";
-        String sqlQueryUP;
-        if (adminVenuesView(loginModel.getEmail()) == null || adminVenuesView(loginModel.getEmail()).isEmpty()) {
+        String sqlQueryUP = "";
+        boolean count = false;
+        for (VenueDetailsFetchModel x : adminVenuesView(loginModel.getEmail())) {
+            if (x.getCompleted().equalsIgnoreCase("no")) {
+                sqlQueryUP = "UPDATE venue_table SET status='Pending' WHERE email=?";
+                count = true;
+            }
+        }
+        if (!count) {
             sqlQueryUP = "UPDATE venue_table SET status='Unbooked' WHERE email=?";
-        } else {
-            sqlQueryUP = "UPDATE venue_table SET status='Pending' WHERE email=?";
         }
         try (Connection conn = dbConn.connection_base()) {
             PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
@@ -171,7 +176,7 @@ public class RegisterVenueDAO {
             return false;
         }
     }
-    
+
     public VenueModel fetchVenueBasicInfo(String email) {
         String sqlQuery = "SELECT name, email, image FROM venue_table WHERE email = ?";
         try (Connection conn = dbConn.connection_base()) {
