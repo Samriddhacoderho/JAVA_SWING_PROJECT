@@ -39,6 +39,7 @@ public class VenueListView extends javax.swing.JFrame {
         BackToDashboard = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 

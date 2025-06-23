@@ -33,6 +33,7 @@ public class BookingDetailsView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dashboardView1 = new javaapplication6.view.DashboardView();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         venueName = new javax.swing.JLabel();
@@ -243,6 +244,7 @@ public class BookingDetailsView extends javax.swing.JFrame {
     private javax.swing.JButton approvebooking;
     private javax.swing.JButton approvebooking1;
     private javax.swing.JLabel backprofile;
+    private javaapplication6.view.DashboardView dashboardView1;
     private javax.swing.JLabel guestNumber;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

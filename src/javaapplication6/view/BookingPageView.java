@@ -42,6 +42,7 @@ public class BookingPageView extends javax.swing.JFrame {
         inqButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        backprofile = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -115,6 +116,11 @@ public class BookingPageView extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(200, 470, 230, 23);
 
+        backprofile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        backprofile.setText("Back to Dashboard");
+        jPanel1.add(backprofile);
+        backprofile.setBounds(940, 100, 140, 15);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -170,6 +176,7 @@ public class BookingPageView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel backprofile;
     private javax.swing.JButton inqButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

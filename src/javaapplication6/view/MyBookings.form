@@ -44,22 +44,23 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="438" max="-2" attributes="0"/>
-                  <Component id="jLabel2" min="-2" pref="176" max="-2" attributes="0"/>
-                  <EmptySpace pref="466" max="32767" attributes="0"/>
-              </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="backprofile" min="-2" pref="94" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="31" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="438" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" pref="176" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
+                          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
+                  <EmptySpace pref="142" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -70,14 +71,9 @@
                   <Component id="backprofile" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="606" max="32767" attributes="0"/>
-              </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="206" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="252" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -98,20 +94,27 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="adminEmail" max="32767" attributes="0"/>
-                          <Component id="guestNumber" alignment="1" max="32767" attributes="0"/>
-                          <Component id="venueLocation" alignment="0" max="32767" attributes="0"/>
-                          <Component id="venueName" alignment="1" max="32767" attributes="0"/>
-                          <Component id="adminPhone" alignment="1" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="693" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="price" pref="111" max="32767" attributes="0"/>
-                              <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
+                              <Component id="adminPhone" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="cancelBooking" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="adminEmail" max="32767" attributes="0"/>
+                                  <Component id="guestNumber" alignment="1" pref="179" max="32767" attributes="0"/>
+                                  <Component id="venueLocation" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="venueName" alignment="1" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="453" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="price" max="32767" attributes="0"/>
+                                      <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="cancelBooking" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -131,11 +134,10 @@
                       <Component id="guestNumber" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="adminEmail" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="cancelBooking" min="-2" pref="31" max="-2" attributes="0"/>
-                          <Component id="adminPhone" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="adminPhone" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="51" max="32767" attributes="0"/>
+                      <Component id="cancelBooking" min="-2" pref="31" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
