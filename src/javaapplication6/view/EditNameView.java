@@ -39,6 +39,7 @@ public class EditNameView extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -55,7 +56,6 @@ public class EditNameView extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(185, 250, 46));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Update");
         jButton1.setBorderPainted(false);
         jButton1.setOpaque(true);
@@ -64,7 +64,6 @@ public class EditNameView extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(185, 250, 46));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Back");
         jButton2.setBorderPainted(false);
         jButton2.setOpaque(true);
@@ -86,7 +85,6 @@ public class EditNameView extends javax.swing.JFrame {
         jPanel3.setBounds(10, 10, 110, 60);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(185, 250, 46));
         jLabel3.setText("Forgot Password?");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(470, 110, 163, 22);

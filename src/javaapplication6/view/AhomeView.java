@@ -73,6 +73,7 @@ public class AhomeView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
@@ -93,7 +94,6 @@ public class AhomeView extends javax.swing.JFrame {
 
         search.setBackground(new java.awt.Color(185, 250, 46));
         search.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        search.setForeground(new java.awt.Color(255, 255, 255));
         search.setText("Search");
         search.setBorderPainted(false);
         search.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -106,7 +106,6 @@ public class AhomeView extends javax.swing.JFrame {
 
         profile.setBackground(new java.awt.Color(185, 250, 46));
         profile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        profile.setForeground(new java.awt.Color(255, 255, 255));
         profile.setText("Profile");
         profile.setBorderPainted(false);
         profile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -119,7 +118,6 @@ public class AhomeView extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ptnLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        ptnLBL.setForeground(new java.awt.Color(255, 255, 255));
         ptnLBL.setText("Patan");
         jPanel2.add(ptnLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 60, -1));
 
@@ -140,7 +138,6 @@ public class AhomeView extends javax.swing.JFrame {
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         chiLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        chiLBL.setForeground(new java.awt.Color(255, 255, 255));
         chiLBL.setText("Chitwan");
         jPanel7.add(chiLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 80, -1));
 
@@ -165,7 +162,6 @@ public class AhomeView extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bkpLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        bkpLBL.setForeground(new java.awt.Color(255, 255, 255));
         bkpLBL.setText("Bhaktapur");
         jPanel4.add(bkpLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 80, -1));
 
@@ -191,7 +187,6 @@ public class AhomeView extends javax.swing.JFrame {
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pkrLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        pkrLBL.setForeground(new java.awt.Color(255, 255, 255));
         pkrLBL.setText("Pokhara");
         jPanel11.add(pkrLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 70, -1));
 
@@ -212,7 +207,6 @@ public class AhomeView extends javax.swing.JFrame {
         jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lmbLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        lmbLBL.setForeground(new java.awt.Color(255, 255, 255));
         lmbLBL.setText("Lumbini");
         jPanel13.add(lmbLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 70, -1));
 
@@ -233,7 +227,6 @@ public class AhomeView extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ktmLBL.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
-        ktmLBL.setForeground(new java.awt.Color(255, 255, 255));
         ktmLBL.setText("Kathmandu");
         jPanel5.add(ktmLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 90, -1));
 

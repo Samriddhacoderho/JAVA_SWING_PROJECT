@@ -45,12 +45,12 @@ public class BookingPageView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(185, 250, 46));
         jLabel1.setText("Booking Page");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(500, 80, 125, 22);
@@ -77,7 +77,6 @@ public class BookingPageView extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(185, 250, 46));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Proceed");
         jButton1.setBorderPainted(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -95,7 +94,6 @@ public class BookingPageView extends javax.swing.JFrame {
 
         inqButton.setBackground(new java.awt.Color(185, 250, 46));
         inqButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        inqButton.setForeground(new java.awt.Color(255, 255, 255));
         inqButton.setText("Inquire Admin");
         inqButton.setBorderPainted(false);
         inqButton.setOpaque(true);

@@ -35,11 +35,11 @@ public class AdminInquiryView extends javax.swing.JFrame {
         back = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(185, 250, 46));
         jLabel1.setText("Inquiries for your view by Users ");
 
         jTable1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -54,7 +54,6 @@ public class AdminInquiryView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         back.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        back.setForeground(new java.awt.Color(185, 250, 46));
         back.setText("Back to Dashboard");
         back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 

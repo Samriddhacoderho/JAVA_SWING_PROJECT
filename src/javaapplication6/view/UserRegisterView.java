@@ -68,7 +68,6 @@ public class UserRegisterView extends javax.swing.JFrame {
 
         passShowbtn.setBackground(new java.awt.Color(185, 250, 46));
         passShowbtn.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
-        passShowbtn.setForeground(new java.awt.Color(255, 255, 255));
         passShowbtn.setText("Show");
         passShowbtn.setBorderPainted(false);
         passShowbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -77,7 +76,6 @@ public class UserRegisterView extends javax.swing.JFrame {
 
         confirmPassshowbtn.setBackground(new java.awt.Color(185, 250, 46));
         confirmPassshowbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        confirmPassshowbtn.setForeground(new java.awt.Color(255, 255, 255));
         confirmPassshowbtn.setText("Show");
         confirmPassshowbtn.setBorderPainted(false);
         confirmPassshowbtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -108,7 +106,6 @@ public class UserRegisterView extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(185, 250, 46));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Register");
         jButton3.setBorderPainted(false);
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -126,12 +123,10 @@ public class UserRegisterView extends javax.swing.JFrame {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 60));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(185, 250, 46));
         jLabel5.setText("Register a new User");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, -1, -1));
 
         alreadyLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        alreadyLbl.setForeground(new java.awt.Color(185, 250, 46));
         alreadyLbl.setText("Back to Login View");
         alreadyLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(alreadyLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 30, 130, 20));

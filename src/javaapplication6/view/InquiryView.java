@@ -43,13 +43,13 @@ public class InquiryView extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(null);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(185, 250, 46));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Contact us");
         jPanel2.add(jLabel1);
@@ -73,7 +73,6 @@ public class InquiryView extends javax.swing.JFrame {
 
         SendBtn.setBackground(new java.awt.Color(185, 250, 46));
         SendBtn.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        SendBtn.setForeground(new java.awt.Color(255, 255, 255));
         SendBtn.setText("SEND");
         SendBtn.setBorderPainted(false);
         SendBtn.setOpaque(true);
@@ -93,7 +92,6 @@ public class InquiryView extends javax.swing.JFrame {
         NameTxt.setBounds(310, 230, 210, 40);
 
         back.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        back.setForeground(new java.awt.Color(185, 250, 46));
         back.setText("Back to Booking page");
         back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(back);

@@ -38,6 +38,7 @@ public class CurrentBookingView extends javax.swing.JFrame {
         backDashboard = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -55,7 +56,6 @@ public class CurrentBookingView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         viewBookDtls.setBackground(new java.awt.Color(185, 250, 46));
-        viewBookDtls.setForeground(new java.awt.Color(255, 255, 255));
         viewBookDtls.setText("View Book Details");
         viewBookDtls.setBorderPainted(false);
         viewBookDtls.setOpaque(true);

@@ -80,7 +80,6 @@ public class AdminDashboardView extends javax.swing.JFrame {
 
         registervenue.setBackground(new java.awt.Color(185, 250, 46));
         registervenue.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        registervenue.setForeground(new java.awt.Color(255, 255, 255));
         registervenue.setText("Register Venue");
         registervenue.setBorderPainted(false);
         registervenue.setOpaque(true);
@@ -94,7 +93,6 @@ public class AdminDashboardView extends javax.swing.JFrame {
 
         updatedetails1.setBackground(new java.awt.Color(185, 250, 46));
         updatedetails1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        updatedetails1.setForeground(new java.awt.Color(255, 255, 255));
         updatedetails1.setText("Update Venue Details");
         updatedetails1.setBorderPainted(false);
         updatedetails1.setFocusPainted(false);
@@ -102,14 +100,12 @@ public class AdminDashboardView extends javax.swing.JFrame {
 
         change.setBackground(new java.awt.Color(185, 250, 46));
         change.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        change.setForeground(new java.awt.Color(255, 255, 255));
         change.setText("Change Password");
         change.setBorderPainted(false);
         change.setOpaque(true);
 
         viewBookingButton1.setBackground(new java.awt.Color(185, 250, 46));
         viewBookingButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        viewBookingButton1.setForeground(new java.awt.Color(255, 255, 255));
         viewBookingButton1.setText("View Booking Request");
         viewBookingButton1.setBorderPainted(false);
         viewBookingButton1.setOpaque(true);
@@ -118,7 +114,6 @@ public class AdminDashboardView extends javax.swing.JFrame {
 
         inquiry.setBackground(new java.awt.Color(185, 250, 46));
         inquiry.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        inquiry.setForeground(new java.awt.Color(255, 255, 255));
         inquiry.setText("View Inquiries");
         inquiry.setBorderPainted(false);
         inquiry.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -177,7 +172,6 @@ public class AdminDashboardView extends javax.swing.JFrame {
         jPanel2.setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(185, 250, 46));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Welcome To bookmyvenue!!!");
         jPanel2.add(jLabel4);
@@ -211,7 +205,6 @@ public class AdminDashboardView extends javax.swing.JFrame {
 
         updatevenue1.setBackground(new java.awt.Color(185, 250, 46));
         updatevenue1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        updatevenue1.setForeground(new java.awt.Color(255, 255, 255));
         updatevenue1.setText("Update Venue");
         updatevenue1.setBorderPainted(false);
         updatevenue1.setOpaque(true);
@@ -258,7 +251,6 @@ public class AdminDashboardView extends javax.swing.JFrame {
 
         viewinquiries1.setBackground(new java.awt.Color(185, 250, 46));
         viewinquiries1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        viewinquiries1.setForeground(new java.awt.Color(255, 255, 255));
         viewinquiries1.setText("View Inquiries");
         viewinquiries1.setBorderPainted(false);
         viewinquiries1.setOpaque(true);
@@ -302,7 +294,6 @@ public class AdminDashboardView extends javax.swing.JFrame {
 
         registervenue3.setBackground(new java.awt.Color(185, 250, 46));
         registervenue3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        registervenue3.setForeground(new java.awt.Color(255, 255, 255));
         registervenue3.setText("Register Venue");
         registervenue3.setBorderPainted(false);
         registervenue3.setOpaque(true);
@@ -346,7 +337,6 @@ public class AdminDashboardView extends javax.swing.JFrame {
 
         viewbooking1.setBackground(new java.awt.Color(185, 250, 46));
         viewbooking1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        viewbooking1.setForeground(new java.awt.Color(255, 255, 255));
         viewbooking1.setText("View Booking");
         viewbooking1.setBorderPainted(false);
         viewbooking1.setOpaque(true);

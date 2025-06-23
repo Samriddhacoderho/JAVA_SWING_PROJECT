@@ -42,16 +42,17 @@ public class FAQView extends javax.swing.JFrame {
         backButton = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(185, 250, 46));
         jLabel5.setText("FAQs");
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/bookmyvenue.png"))); // NOI18N
@@ -60,7 +61,6 @@ public class FAQView extends javax.swing.JFrame {
         jLabel2.setText("Some frequently asked question for our app");
 
         backButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        backButton.setForeground(new java.awt.Color(185, 250, 46));
         backButton.setText("Back to Dashboard");
         backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 

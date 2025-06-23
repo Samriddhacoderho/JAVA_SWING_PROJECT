@@ -49,6 +49,7 @@ public class BookingDetailsView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1080, 750));
+        setResizable(false);
         setSize(new java.awt.Dimension(1080, 750));
         getContentPane().setLayout(null);
 
@@ -92,7 +93,6 @@ public class BookingDetailsView extends javax.swing.JFrame {
 
         approvebooking.setBackground(new java.awt.Color(185, 250, 46));
         approvebooking.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        approvebooking.setForeground(new java.awt.Color(255, 255, 255));
         approvebooking.setText("Approve Booking");
         approvebooking.setBorderPainted(false);
         approvebooking.setOpaque(true);
@@ -104,7 +104,6 @@ public class BookingDetailsView extends javax.swing.JFrame {
 
         approvebooking1.setBackground(new java.awt.Color(185, 250, 46));
         approvebooking1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        approvebooking1.setForeground(new java.awt.Color(255, 255, 255));
         approvebooking1.setText("Change Payment Status to Payed");
         approvebooking1.setBorderPainted(false);
         approvebooking1.setOpaque(true);
@@ -181,11 +180,9 @@ public class BookingDetailsView extends javax.swing.JFrame {
         );
 
         backprofile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        backprofile.setForeground(new java.awt.Color(185, 250, 46));
         backprofile.setText("Back to Profile");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(185, 250, 46));
         jLabel2.setText("My Bookings");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

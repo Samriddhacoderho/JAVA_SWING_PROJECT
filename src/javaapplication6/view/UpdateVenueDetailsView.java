@@ -58,6 +58,7 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         alreadyLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -74,7 +75,6 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
 
         update.setBackground(new java.awt.Color(185, 250, 46));
         update.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        update.setForeground(new java.awt.Color(255, 255, 255));
         update.setText("Update");
         update.setBorderPainted(false);
         update.setOpaque(true);
@@ -115,7 +115,6 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 560, 400));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(185, 250, 46));
         jLabel5.setText("bookmyvenue");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 140, 40));
 
@@ -132,7 +131,6 @@ public class UpdateVenueDetailsView extends javax.swing.JFrame {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 60));
 
         alreadyLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        alreadyLbl.setForeground(new java.awt.Color(185, 250, 46));
         alreadyLbl.setText("Back to Admin Dashboard");
         alreadyLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(alreadyLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 30, 180, 20));

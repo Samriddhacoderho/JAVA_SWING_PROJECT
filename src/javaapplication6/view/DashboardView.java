@@ -65,6 +65,7 @@ public class DashboardView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -72,7 +73,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         viewPastBookingButton.setBackground(new java.awt.Color(185, 250, 46));
         viewPastBookingButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        viewPastBookingButton.setForeground(new java.awt.Color(255, 255, 255));
         viewPastBookingButton.setText("Past Bookings");
         viewPastBookingButton.setBorderPainted(false);
         viewPastBookingButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -80,7 +80,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         viewCurrentBookingButton.setBackground(new java.awt.Color(185, 250, 46));
         viewCurrentBookingButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        viewCurrentBookingButton.setForeground(new java.awt.Color(255, 255, 255));
         viewCurrentBookingButton.setText("Current Booking");
         viewCurrentBookingButton.setBorderPainted(false);
         viewCurrentBookingButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -104,7 +103,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(185, 250, 46));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Edit Name");
         jButton1.setBorderPainted(false);
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -113,7 +111,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(185, 250, 46));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Change Password");
         jButton2.setBorderPainted(false);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -121,7 +118,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         viewFAQBTN.setBackground(new java.awt.Color(185, 250, 46));
         viewFAQBTN.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        viewFAQBTN.setForeground(new java.awt.Color(255, 255, 255));
         viewFAQBTN.setText("View FAQs");
         viewFAQBTN.setBorderPainted(false);
         viewFAQBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -172,12 +168,10 @@ public class DashboardView extends javax.swing.JFrame {
         );
 
         backButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        backButton.setForeground(new java.awt.Color(185, 250, 46));
         backButton.setText("Back to Home");
         backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(185, 250, 46));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Welcome To bookmyvenue!!!");
 
@@ -197,7 +191,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         registervenue3.setBackground(new java.awt.Color(185, 250, 46));
         registervenue3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        registervenue3.setForeground(new java.awt.Color(255, 255, 255));
         registervenue3.setText("View Past Bookings");
         registervenue3.setBorderPainted(false);
         registervenue3.setOpaque(true);
@@ -238,7 +231,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         registervenue4.setBackground(new java.awt.Color(185, 250, 46));
         registervenue4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        registervenue4.setForeground(new java.awt.Color(255, 255, 255));
         registervenue4.setText("View Current Bookings");
         registervenue4.setBorderPainted(false);
         registervenue4.setOpaque(true);
@@ -279,7 +271,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         registervenue5.setBackground(new java.awt.Color(185, 250, 46));
         registervenue5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        registervenue5.setForeground(new java.awt.Color(255, 255, 255));
         registervenue5.setText("Edit Name");
         registervenue5.setBorderPainted(false);
         registervenue5.setOpaque(true);
@@ -320,7 +311,6 @@ public class DashboardView extends javax.swing.JFrame {
 
         registervenue6.setBackground(new java.awt.Color(185, 250, 46));
         registervenue6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        registervenue6.setForeground(new java.awt.Color(255, 255, 255));
         registervenue6.setText("Change Password");
         registervenue6.setBorderPainted(false);
         registervenue6.setOpaque(true);
@@ -392,7 +382,7 @@ public class DashboardView extends javax.swing.JFrame {
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(124, 124, 124)
+                        .addGap(52, 52, 52)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(66, 66, 66)

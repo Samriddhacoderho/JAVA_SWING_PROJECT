@@ -41,6 +41,7 @@ public class ReportView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1080, 750));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -56,7 +57,6 @@ public class ReportView extends javax.swing.JFrame {
         jScrollPane1.setBounds(330, 290, 400, 160);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(185, 250, 46));
         jLabel1.setText("Report a problem");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(450, 120, 210, 30);
@@ -75,7 +75,6 @@ public class ReportView extends javax.swing.JFrame {
 
         reportBtn.setBackground(new java.awt.Color(185, 250, 46));
         reportBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        reportBtn.setForeground(new java.awt.Color(255, 255, 255));
         reportBtn.setText("Submit Report");
         reportBtn.setBorderPainted(false);
         reportBtn.setOpaque(true);
@@ -91,7 +90,6 @@ public class ReportView extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(185, 250, 46));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back");
         jButton1.setBorderPainted(false);
         jButton1.setOpaque(true);

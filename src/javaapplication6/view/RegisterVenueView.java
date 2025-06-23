@@ -50,6 +50,7 @@ public class RegisterVenueView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -66,7 +67,6 @@ public class RegisterVenueView extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(185, 250, 46));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Register");
         jButton3.setBorderPainted(false);
         jButton3.setOpaque(true);
@@ -75,19 +75,19 @@ public class RegisterVenueView extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Location :");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 60, 20));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 60, 20));
         jPanel2.add(locationTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 320, 40));
 
         jLabel10.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Contact Number:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 100, 20));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 100, 20));
         jPanel2.add(numberTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 320, 40));
 
         jLabel11.setFont(new java.awt.Font("Kefa", 1, 12)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Price Per Plate :");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 100, 20));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 100, 20));
         jPanel2.add(priceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 320, 40));
 
         jLabel6.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
@@ -95,7 +95,6 @@ public class RegisterVenueView extends javax.swing.JFrame {
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 160, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(185, 250, 46));
         jLabel5.setText("bookmyvenue");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 140, 40));
 

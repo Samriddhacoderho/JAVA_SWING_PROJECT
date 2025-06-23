@@ -51,6 +51,7 @@ public class LoginView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1080, 750));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -62,7 +63,6 @@ public class LoginView extends javax.swing.JFrame {
 
         showBtn.setBackground(new java.awt.Color(185, 250, 46));
         showBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        showBtn.setForeground(new java.awt.Color(255, 255, 255));
         showBtn.setText("Show");
         showBtn.setBorderPainted(false);
         showBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -89,7 +89,6 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(185, 250, 46));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("User Login Page");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, -1, -1));
@@ -110,7 +109,6 @@ public class LoginView extends javax.swing.JFrame {
 
         loginBtn.setBackground(new java.awt.Color(185, 250, 46));
         loginBtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("Login");
         loginBtn.setToolTipText("");
         loginBtn.setBorderPainted(false);
@@ -136,7 +134,6 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 110, 60));
 
         entryViewlabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        entryViewlabel.setForeground(new java.awt.Color(185, 250, 46));
         entryViewlabel.setText("Back to Entry View");
         entryViewlabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(entryViewlabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 50, 130, -1));

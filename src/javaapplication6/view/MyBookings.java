@@ -42,6 +42,7 @@ public class MyBookings extends javax.swing.JFrame {
         backprofile = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -126,11 +127,9 @@ public class MyBookings extends javax.swing.JFrame {
         );
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(185, 250, 46));
         jLabel2.setText("My Bookings");
 
         backprofile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        backprofile.setForeground(new java.awt.Color(185, 250, 46));
         backprofile.setText("Back to Profile");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
