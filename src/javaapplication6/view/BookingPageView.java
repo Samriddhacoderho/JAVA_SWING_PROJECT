@@ -35,13 +35,13 @@ public class BookingPageView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jTextField3 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         inqButton = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -58,29 +58,22 @@ public class BookingPageView extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel2.setText("<<YA SETTER BATA AAKO VENUE NAME>>");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(470, 170, 190, 23);
+        jLabel2.setBounds(460, 170, 290, 23);
 
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel3.setText("Email:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(350, 360, 36, 17);
+        jLabel3.setBounds(290, 350, 150, 17);
 
         jTextField1.setEditable(false);
         jTextField1.setText("YA SETTER BATA AAKO VENUE CONTACT NUM");
         jPanel1.add(jTextField1);
         jTextField1.setBounds(420, 400, 293, 44);
 
-        jLabel4.setText("Contact:");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(340, 410, 49, 17);
-
         jTextField2.setEditable(false);
         jTextField2.setText("YA SETTER BATA AAKO VENUE EMAIL");
         jPanel1.add(jTextField2);
         jTextField2.setBounds(420, 340, 293, 42);
-
-        jLabel5.setText("Estimated Number of Guests:");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(210, 470, 174, 17);
 
         jButton1.setBackground(new java.awt.Color(185, 250, 46));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -113,6 +106,16 @@ public class BookingPageView extends javax.swing.JFrame {
         });
         jPanel1.add(inqButton);
         inqButton.setBounds(860, 40, 200, 40);
+
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel4.setText("Contact:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(280, 410, 130, 23);
+
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel5.setText("Estimated Guests:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(200, 470, 230, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

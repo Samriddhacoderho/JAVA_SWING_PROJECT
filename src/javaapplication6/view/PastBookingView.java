@@ -56,6 +56,8 @@ public class PastBookingView extends javax.swing.JFrame {
         backDashboard.setBackground(new java.awt.Color(0, 0, 0));
         backDashboard.setForeground(new java.awt.Color(185, 250, 46));
         backDashboard.setText("Back to Dashboard");
+        backDashboard.setBorderPainted(false);
+        backDashboard.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

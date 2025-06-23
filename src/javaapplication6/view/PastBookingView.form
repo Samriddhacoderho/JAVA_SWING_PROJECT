@@ -99,6 +99,8 @@
               <Color blue="2e" green="fa" red="b9" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Back to Dashboard"/>
+            <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
       </SubComponents>

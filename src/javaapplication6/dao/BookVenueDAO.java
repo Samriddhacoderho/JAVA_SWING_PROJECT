@@ -93,7 +93,7 @@ public class BookVenueDAO {
             pstmt.setString(3, modelBook.getEstimated_guests());
             pstmt.setDouble(4, modelBook.getEstimated_price());
             if (pstmt.executeUpdate() > 0) {
-                String body = "Hello, your booking was successfullly made.\nVenue Name:" + modelVenue.getName() + "\nVenue Location:" + modelVenue.getLocation();
+                String body = "Hello, your booking was successfullly requested.\nVenue Name:" + modelVenue.getName() + "\nVenue Location:" + modelVenue.getLocation();
                 boolean mailSent = smtpsMailSender.sendMail(modelBook.getEmail(), "Booking Confirmation", body);
                 if (mailSent) {
                     String sqlQueryUpdate = "UPDATE venue_table SET status='Pending' where id=?";

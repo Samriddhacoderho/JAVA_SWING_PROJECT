@@ -57,10 +57,14 @@ public class AdminViewBooks extends javax.swing.JFrame {
         viewBookDtls.setBackground(new java.awt.Color(185, 250, 46));
         viewBookDtls.setForeground(new java.awt.Color(255, 255, 255));
         viewBookDtls.setText("View Book Details");
+        viewBookDtls.setBorderPainted(false);
+        viewBookDtls.setOpaque(true);
 
         backDashboard.setBackground(new java.awt.Color(0, 0, 0));
         backDashboard.setForeground(new java.awt.Color(185, 250, 46));
         backDashboard.setText("Back to Dashboard");
+        backDashboard.setBorderPainted(false);
+        backDashboard.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

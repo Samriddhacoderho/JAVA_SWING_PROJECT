@@ -60,10 +60,14 @@ public class VenueListView extends javax.swing.JFrame {
         Details.setBackground(new java.awt.Color(185, 250, 46));
         Details.setForeground(new java.awt.Color(255, 255, 255));
         Details.setText("Details");
+        Details.setBorderPainted(false);
+        Details.setOpaque(true);
 
         BackToDashboard.setBackground(new java.awt.Color(0, 0, 0));
         BackToDashboard.setForeground(new java.awt.Color(185, 250, 46));
         BackToDashboard.setText("Back to Dashboard");
+        BackToDashboard.setBorderPainted(false);
+        BackToDashboard.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

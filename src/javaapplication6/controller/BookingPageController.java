@@ -97,7 +97,7 @@ public class BookingPageController {
                     }
                     else
                     {
-                        JOptionPane.showMessageDialog(page, "Your booking was successfully made");
+                        JOptionPane.showMessageDialog(page, "Your booking was successfully requested");
                         DashboardView dashboardView=new DashboardView();
                         DashboardController dashboardController=new DashboardController(dashboardView, loginModel);
                         dashboardController.open();
