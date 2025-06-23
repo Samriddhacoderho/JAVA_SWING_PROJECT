@@ -6,6 +6,8 @@ package javaapplication6.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javaapplication6.dao.BookVenueDAO;
 import javaapplication6.model.BookVenueModel;
 import javaapplication6.model.LoginModel;
@@ -36,6 +38,7 @@ public class BookingPageController {
         this.page.ProceedAction(new ProceedAction());
         this.page.setVenueImage(venueModel.getImage());
         this.page.InquiryAction(new InquiryListener());
+        this.page.Back(new Back());
         
         BookVenueDAO dao = new BookVenueDAO();
         byte[] imageData = dao.fetchVenueImage(venueModel.getEmail());
@@ -105,6 +108,35 @@ public class BookingPageController {
                     }
                 }
             }
+        }
+        
+    }
+    
+    class Back implements MouseListener
+    {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            DashboardView view=new DashboardView();
+            DashboardController ctrl=new DashboardController(view, loginModel);
+            ctrl.open();
+            close();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
         }
         
     }

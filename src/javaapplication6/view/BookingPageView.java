@@ -6,6 +6,7 @@ package javaapplication6.view;
 
 import java.awt.Image;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 
 /**
@@ -98,11 +99,6 @@ public class BookingPageView extends javax.swing.JFrame {
         inqButton.setText("Inquire Admin");
         inqButton.setBorderPainted(false);
         inqButton.setOpaque(true);
-        inqButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inqButtonActionPerformed(evt);
-            }
-        });
         jPanel1.add(inqButton);
         inqButton.setBounds(860, 60, 200, 40);
 
@@ -135,10 +131,6 @@ public class BookingPageView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void inqButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inqButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inqButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,6 +190,11 @@ public class BookingPageView extends javax.swing.JFrame {
     public void InquiryAction(ActionListener listener)
     {
         this.inqButton.addActionListener(listener);
+    }
+    
+    public void Back(MouseListener listener)
+    {
+        this.backprofile.addMouseListener(listener);
     }
 
     /**
