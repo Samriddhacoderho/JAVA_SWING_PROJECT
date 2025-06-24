@@ -187,5 +187,9 @@ public class ReportView extends javax.swing.JFrame {
         this.reportList = reportList;
     }
     
+    public void Back(ActionListener listener)
+    {
+        this.jButton1.addActionListener(listener);
+    }
 }
 

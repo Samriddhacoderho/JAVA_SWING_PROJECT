@@ -18,55 +18,59 @@ import javax.swing.JOptionPane;
  * @author suhritsatyal
  */
 public class ReportController {
-    
-    private final ReportView reportView;
-        private final LoginModel loginModel;
 
-    public ReportController(ReportView reportView,LoginModel loginModel)
-    {
-        this.reportView=reportView;
+    private final ReportView reportView;
+    private final LoginModel loginModel;
+
+    public ReportController(ReportView reportView, LoginModel loginModel) {
+        this.reportView = reportView;
         reportView.ReportListener(new ReportListener());
-        this.loginModel=loginModel;
+        this.loginModel = loginModel;
+        this.reportView.Back(new Back());
     }
-    
-    public void open()
-    {
+
+    public void open() {
         this.reportView.setVisible(true);
         this.reportView.toFront();
-this.reportView.requestFocus();
+        this.reportView.requestFocus();
     }
-    
-    public void close()
-    {
+
+    public void close() {
         this.reportView.dispose();
     }
-    
-    class ReportListener implements ActionListener
-    {
+
+    class ReportListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            String email=loginModel.getEmail();
-            String subject=(String) reportView.getReportList().getSelectedItem();
-            String description=reportView.getIssuesTxt().getText();
-            ReportProblemModel reportprobModel=new ReportProblemModel(email, subject, description);
-            ReportProblemDAO reportProblemDAO=new ReportProblemDAO();
-            boolean result=reportProblemDAO.addReport(reportprobModel);
-            if(!result)
-            {
+            String email = loginModel.getEmail();
+            String subject = (String) reportView.getReportList().getSelectedItem();
+            String description = reportView.getIssuesTxt().getText();
+            ReportProblemModel reportprobModel = new ReportProblemModel(email, subject, description);
+            ReportProblemDAO reportProblemDAO = new ReportProblemDAO();
+            boolean result = reportProblemDAO.addReport(reportprobModel);
+            if (!result) {
                 JOptionPane.showMessageDialog(reportView, "There might be an error submitting your review. Please try again later!");
-            }
-            else
-            {
+            } else {
                 JOptionPane.showMessageDialog(reportView, "Thank you for reporting the issue. We surely will get back to you with this soon!");
-                DashboardView dashboardView=new DashboardView();
-                DashboardController dashboardController=new DashboardController(dashboardView, loginModel);
+                DashboardView dashboardView = new DashboardView();
+                DashboardController dashboardController = new DashboardController(dashboardView, loginModel);
                 dashboardController.open();
                 close();
             }
         }
-        
+
+    }
+
+    class Back implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            DashboardView view=new DashboardView();
+            DashboardController ctrl=new DashboardController(view, loginModel);
+            ctrl.open();
+            close();
+        }
+
     }
 }
-
-
