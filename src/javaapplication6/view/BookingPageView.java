@@ -44,6 +44,7 @@ public class BookingPageView extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         backprofile = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -57,10 +58,10 @@ public class BookingPageView extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(500, 80, 125, 22);
 
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel2.setText("<<YA SETTER BATA AAKO VENUE NAME>>");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(460, 170, 290, 23);
+        jLabel2.setBounds(480, 170, 290, 23);
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
         jLabel3.setText("Email:");
@@ -116,6 +117,22 @@ public class BookingPageView extends javax.swing.JFrame {
         backprofile.setText("Back to Dashboard");
         jPanel1.add(backprofile);
         backprofile.setBounds(940, 30, 140, 15);
+
+        jPanel2.setBackground(new java.awt.Color(255, 102, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 920, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 550, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel2);
+        jPanel2.setBounds(80, 120, 920, 550);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -178,6 +195,7 @@ public class BookingPageView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

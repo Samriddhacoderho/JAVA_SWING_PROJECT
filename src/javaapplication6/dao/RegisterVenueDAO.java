@@ -139,26 +139,26 @@ public class RegisterVenueDAO {
 
     public boolean markComplete(LoginModel loginModel, BookVenueModel modelBook) {
         String sqlQuery = "UPDATE book_details JOIN venue_table ON book_details.venue_id=venue_table.id SET book_details.completed='yes' WHERE venue_table.email=? and book_details.user_email=?";
-        String sqlQueryUP = "";
-        boolean count = false;
-        for (VenueDetailsFetchModel x : adminVenuesView(loginModel.getEmail())) {
-            if (x.getCompleted().equalsIgnoreCase("no")) {
-                sqlQueryUP = "UPDATE venue_table SET status='Pending' WHERE email=?";
-                count = true;
-            }
-        }
-        if (!count) {
-            sqlQueryUP = "UPDATE venue_table SET status='Unbooked' WHERE email=?";
-        }
         try (Connection conn = dbConn.connection_base()) {
             PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
-            PreparedStatement pstmtUP = conn.prepareStatement(sqlQueryUP);
             pstmt.setString(1, loginModel.getEmail());
             pstmt.setString(2, modelBook.getEmail());
-            pstmtUP.setString(1, loginModel.getEmail());
-            int result = pstmt.executeUpdate();
-            int resultUP = pstmtUP.executeUpdate();
-            return result > 0 && resultUP > 0;
+            if (pstmt.executeUpdate() > 0) {
+                String sqlQueryUP = "UPDATE venue_table SET status=? WHERE email=?";
+                String status = new RegisterVenueDAO().trackStatus(loginModel.getEmail());
+                PreparedStatement pstmtUP = conn.prepareStatement(sqlQueryUP);
+                pstmtUP.setString(1, status);
+                pstmtUP.setString(2, loginModel.getEmail());
+                if (pstmtUP.executeUpdate() > 0) {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }else{
+                return false;
+            }
         } catch (Exception e) {
             return false;
         }
@@ -194,5 +194,29 @@ public class RegisterVenueDAO {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public String trackStatus(String email) {
+        try (Connection conn = dbConn.connection_base()) {
+            String sqlQuery = "select * from book_details join venue_table on venue_table.id=book_details.venue_id where book_details.status_detail='approved' and book_details.completed='no' and venue_table.email=?";
+            PreparedStatement pstmtnew = conn.prepareStatement(sqlQuery);
+            pstmtnew.setString(1, email);
+            var rsnew = pstmtnew.executeQuery();
+            if (rsnew.next()) {
+                return "Booked";
+            } else {
+                 sqlQuery = "select * from book_details join venue_table on venue_table.id=book_details.venue_id where book_details.completed='no' and venue_table.email=?";
+                PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
+                pstmt.setString(1, email);
+                var rs = pstmt.executeQuery();
+                if (rs.next()) {
+                    return "Pending";
+                }else{
+                    return "Unbooked";
+                }
+            }
+        } catch (Exception e) {
+            return "Error";
+        }
     }
 }

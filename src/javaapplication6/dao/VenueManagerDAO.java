@@ -72,7 +72,8 @@ public class VenueManagerDAO {
 
         return true;
     }
- public ArrayList<InquiryModel> getInquiries(LoginModel loginModel) {
+
+    public ArrayList<InquiryModel> getInquiries(LoginModel loginModel) {
         String sqlQuery = "SELECT * FROM inquiry_table where adminEmail=?";
         try (Connection conn = dbConn.connection_base()) {
             ArrayList<InquiryModel> inquiryList = new ArrayList<>();
@@ -80,7 +81,7 @@ public class VenueManagerDAO {
             pstmt.setString(1, loginModel.getEmail());
             var rs = pstmt.executeQuery();
             while (rs.next()) {
-                InquiryModel result = new InquiryModel(rs.getString("name"), rs.getString("email"), rs.getString("message"),rs.getString("adminEmail"));
+                InquiryModel result = new InquiryModel(rs.getString("name"), rs.getString("email"), rs.getString("message"), rs.getString("adminEmail"));
                 inquiryList.add(result);
             }
             return inquiryList;
@@ -88,7 +89,6 @@ public class VenueManagerDAO {
             return null;
         }
     }
-
 
     public boolean approveRequest(LoginModel model, BookVenueModel modelBook, VenueModel modelVenue, VenueDetailsFetchModel result) {
 
@@ -121,33 +121,26 @@ public class VenueManagerDAO {
     public boolean rejectRequest(LoginModel model, BookVenueModel modelBook, VenueModel modelVenue, VenueDetailsFetchModel result) {
 
         try (Connection conn = dbConn.connection_base()) {
-            String sqlQueryUpdate="";
-             boolean count = false;
-        for (VenueDetailsFetchModel x : dao.adminVenuesView(model.getEmail())) {
-            if (x.getCompleted().equalsIgnoreCase("no")) {
-                sqlQueryUpdate = "UPDATE venue_table SET status='Pending' WHERE email=?";
-                count = true;
-            }
-        }
-        if (!count) {
-            sqlQueryUpdate = "UPDATE venue_table SET status='Unbooked' WHERE email=?";
-        }
 
             String sqlQueryDelete = "DELETE FROM book_details WHERE user_email=? and venue_id=?";
-            PreparedStatement pstmt = conn.prepareStatement(sqlQueryUpdate);
+
             PreparedStatement pstmtDel = conn.prepareStatement(sqlQueryDelete);
-            pstmt.setString(1, model.getEmail());
             pstmtDel.setString(1, modelBook.getEmail());
             pstmtDel.setInt(2, result.getVenue_id());
-            int rowsInserted = pstmt.executeUpdate();
             int rowsInsertedDel = pstmtDel.executeUpdate();
 
-            if (rowsInserted > 0 && rowsInsertedDel > 0) {
+            if (rowsInsertedDel > 0) {
                 String body = "Hello, your booking request was rejected by the venue manager.\nVenue Name:" + modelVenue.getName() + "\nVenue Location:" + modelVenue.getLocation();
                 boolean mailSent = smtpsMailSender.sendMail(modelBook.getEmail(), "Booking Rejection", body);
                 if (mailSent) {
-
+                    String sqlQueryUpdate = "UPDATE venue_table SET status=? WHERE id=?";
+                    String status = new BookVenueDAO().trackStatus(result.getVenue_id());
+                    PreparedStatement pstmt = conn.prepareStatement(sqlQueryUpdate);
+                    pstmt.setString(1, status);
+                    pstmt.setInt(2, result.getVenue_id());
+                    if(pstmt.executeUpdate()>0){
                     return true;
+                    }
                 } else {
                     return false;
                 }
@@ -178,38 +171,40 @@ public class VenueManagerDAO {
 
         return false;
     }
+
     public boolean checkCurrentPassword(LoginModel loginModel, String currentPass) {
-    try (Connection conn = dbConn.connection_base()) {
-        String sql = "SELECT password FROM admin WHERE email = ?";
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setString(1, loginModel.getEmail());
-        var rs = stmt.executeQuery();
+        try (Connection conn = dbConn.connection_base()) {
+            String sql = "SELECT password FROM admin WHERE email = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, loginModel.getEmail());
+            var rs = stmt.executeQuery();
 
-        if (rs.next()) {
-            String storedHashedPassword = rs.getString("password");
-            String inputHashedPassword = HashUtil.hashPassword(currentPass);
+            if (rs.next()) {
+                String storedHashedPassword = rs.getString("password");
+                String inputHashedPassword = HashUtil.hashPassword(currentPass);
 
-            return storedHashedPassword.equals(inputHashedPassword);
+                return storedHashedPassword.equals(inputHashedPassword);
+            }
+        } catch (Exception e) {
+            System.out.println("Error in checkCurrentPassword: " + e.getMessage());
         }
-    } catch (Exception e) {
-        System.out.println("Error in checkCurrentPassword: " + e.getMessage());
+        return false;
     }
-    return false;
-}
-    public boolean updatePassword(LoginModel loginModel, String newPass) {
-    try (Connection conn = dbConn.connection_base()) {
-        String sql = "UPDATE admin SET password = ? WHERE email = ?";
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        
-        String hashedPassword = HashUtil.hashPassword(newPass);
-        stmt.setString(1, hashedPassword);
-        stmt.setString(2,loginModel.getEmail() );
 
-        int updated = stmt.executeUpdate();
-        return updated > 0;
-    } catch (Exception e) {
-        System.out.println("Error in updatePassword: " + e.getMessage());
+    public boolean updatePassword(LoginModel loginModel, String newPass) {
+        try (Connection conn = dbConn.connection_base()) {
+            String sql = "UPDATE admin SET password = ? WHERE email = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+
+            String hashedPassword = HashUtil.hashPassword(newPass);
+            stmt.setString(1, hashedPassword);
+            stmt.setString(2, loginModel.getEmail());
+
+            int updated = stmt.executeUpdate();
+            return updated > 0;
+        } catch (Exception e) {
+            System.out.println("Error in updatePassword: " + e.getMessage());
+        }
+        return false;
     }
-    return false;
-}
 }

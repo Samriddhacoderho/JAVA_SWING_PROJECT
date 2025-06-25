@@ -74,8 +74,8 @@ public class AdminChangePasswordController {
         boolean updated = userDao.updatePassword(loginModel, newPass);
         if(updated){
             JOptionPane.showMessageDialog(changePassView, "Password successfully changed");
-            DashboardView dashboardView=new DashboardView();
-            DashboardController dashboardController=new DashboardController(dashboardView, loginModel);
+            AdminDashboardView dashboardView=new AdminDashboardView();
+            AdminDashboardController dashboardController=new AdminDashboardController(dashboardView, loginModel);
             dashboardController.open();
             close();
         }else{

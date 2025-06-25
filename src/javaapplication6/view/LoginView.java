@@ -78,7 +78,7 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, -1, 30));
 
         signupLbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        signupLbl.setForeground(new java.awt.Color(185, 250, 46));
+        signupLbl.setForeground(new java.awt.Color(51, 51, 255));
         signupLbl.setText("Sign Up");
         signupLbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(signupLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, 60, 20));

@@ -41,6 +41,7 @@ public class InquiryView extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -56,13 +57,11 @@ public class InquiryView extends javax.swing.JFrame {
         jLabel1.setBounds(450, 80, 165, 30);
 
         EmailTxt.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        EmailTxt.setForeground(new java.awt.Color(204, 204, 204));
         jPanel2.add(EmailTxt);
         EmailTxt.setBounds(550, 230, 240, 40);
 
         MessageTxt.setColumns(20);
         MessageTxt.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        MessageTxt.setForeground(new java.awt.Color(204, 204, 204));
         MessageTxt.setRows(5);
         MessageTxt.setText("\n");
         MessageTxt.setToolTipText("");
@@ -87,7 +86,6 @@ public class InquiryView extends javax.swing.JFrame {
         jLabel3.setBounds(300, 120, 480, 24);
 
         NameTxt.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        NameTxt.setForeground(new java.awt.Color(204, 204, 204));
         jPanel2.add(NameTxt);
         NameTxt.setBounds(310, 230, 210, 40);
 
@@ -97,14 +95,17 @@ public class InquiryView extends javax.swing.JFrame {
         jPanel2.add(back);
         back.setBounds(890, 30, 140, 15);
 
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel2.setText("Your Name");
         jPanel2.add(jLabel2);
         jLabel2.setBounds(310, 210, 90, 17);
 
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel4.setText("Your Email");
         jPanel2.add(jLabel4);
         jLabel4.setBounds(560, 210, 70, 17);
 
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabel5.setText("Message:");
         jPanel2.add(jLabel5);
         jLabel5.setBounds(250, 310, 60, 17);
@@ -112,6 +113,22 @@ public class InquiryView extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6.Image/bookmyvenue.png"))); // NOI18N
         jPanel2.add(jLabel7);
         jLabel7.setBounds(0, 0, 110, 60);
+
+        jPanel1.setBackground(new java.awt.Color(255, 102, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 880, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 440, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanel1);
+        jPanel1.setBounds(100, 160, 880, 440);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -175,6 +192,7 @@ public class InquiryView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

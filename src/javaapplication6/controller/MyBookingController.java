@@ -38,6 +38,7 @@ public class MyBookingController {
         this.bookingView.backListener(new BackProfile());
         this.loginModel = loginModel;
         this.result=result;
+        System.out.println(result.getEstimated_guests());
 
     }
 

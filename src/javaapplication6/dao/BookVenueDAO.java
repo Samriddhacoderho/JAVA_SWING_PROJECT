@@ -121,7 +121,7 @@ public class BookVenueDAO {
 
             var rs = pstmt.executeQuery();
             while (rs.next()) {
-                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), rs.getString("user_email"), rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"), rs.getString("payment"), rs.getString("completed"),rs.getString("status_detail"));
+                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), rs.getString("user_email"), rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"), rs.getString("payment"), rs.getString("completed"), rs.getString("status_detail"));
                 venuelist.add(result);
             }
             return venuelist;
@@ -129,7 +129,7 @@ public class BookVenueDAO {
             return null;
         }
     }
-    
+
     public ArrayList<VenueDetailsFetchModel> getVenues_in_mybookingPastPage(String email) {
         String sqlQuery = "select * from book_details join venue_table on venue_table.id=book_details.venue_id where book_details.completed='yes' and book_details.user_email=?";
         try (Connection conn = dbConn.connection_base()) {
@@ -139,7 +139,7 @@ public class BookVenueDAO {
 
             var rs = pstmt.executeQuery();
             while (rs.next()) {
-                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), rs.getString("user_email"), rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"), rs.getString("payment"), rs.getString("completed"),rs.getString("status_detail"));
+                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), rs.getString("user_email"), rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"), rs.getString("payment"), rs.getString("completed"), rs.getString("status_detail"));
                 venuelist.add(result);
             }
             return venuelist;
@@ -147,15 +147,16 @@ public class BookVenueDAO {
             return null;
         }
     }
-    
-     public VenueDetailsFetchModel getVenue_in_mybookingPage(int id,String email) {
-        String sqlQuery = "select * from book_details join venue_table on venue_table.id=book_details.venue_id where book_details.venue_id=?";
+
+    public VenueDetailsFetchModel getVenue_in_mybookingPage(int id, String email) {
+        String sqlQuery = "select * from book_details join venue_table on venue_table.id=book_details.venue_id where book_details.venue_id=? and book_details.user_email=?";
         try (Connection conn = dbConn.connection_base()) {
             PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
             pstmt.setInt(1, id);
+            pstmt.setString(2, email);
             var rs = pstmt.executeQuery();
             if (rs.next()) {
-                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), rs.getString("user_email"), rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"), rs.getString("payment"), rs.getString("completed"),rs.getString("status_detail"));
+                VenueDetailsFetchModel result = new VenueDetailsFetchModel(rs.getInt("venue_id"), rs.getString("user_email"), rs.getString("name"), rs.getString("location"), rs.getString("email"), rs.getString("contact_number"), rs.getInt("estimated_guests"), rs.getString("status"), rs.getDouble("price_per_plate"), rs.getLong("total_price"), rs.getString("payment"), rs.getString("completed"), rs.getString("status_detail"));
                 return result;
             }
         } catch (Exception e) {
@@ -163,9 +164,6 @@ public class BookVenueDAO {
         }
         return null;
     }
-    
-   
-    
 
     public boolean cancelBooking(VenueDetailsFetchModel model) {
         String sqlQuery = "DELETE FROM book_details WHERE venue_id=? and user_email=?";
@@ -179,9 +177,11 @@ public class BookVenueDAO {
                 if (!mailSent) {
                     return false;
                 } else {
-                    String sqlQueryUpdate = "UPDATE venue_table SET status='Unbooked' where id=?";
+                    String status = new BookVenueDAO().trackStatus(model.getVenue_id());
+                    String sqlQueryUpdate = "UPDATE venue_table SET status=? where id=?";
                     PreparedStatement pstmtUpdate = conn.prepareStatement(sqlQueryUpdate);
-                    pstmtUpdate.setInt(1, model.getVenue_id());
+                    pstmtUpdate.setString(1, status);
+                    pstmtUpdate.setInt(2, model.getVenue_id());
                     if (pstmtUpdate.executeUpdate() > 0) {
                         return true;
                     }
@@ -193,7 +193,7 @@ public class BookVenueDAO {
         }
         return false;
     }
-    
+
     public byte[] fetchVenueImage(String email) {
         String sqlQuery = "SELECT image FROM venue_table WHERE email = ?";
         try (Connection conn = dbConn.connection_base()) {
@@ -207,5 +207,29 @@ public class BookVenueDAO {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public String trackStatus(int id) {
+        try (Connection conn = dbConn.connection_base()) {
+            String sqlQuery = "select * from book_details join venue_table on venue_table.id=book_details.venue_id where book_details.status_detail='approved' and book_details.completed='no' and book_details.venue_id=?";
+            PreparedStatement pstmtnew = conn.prepareStatement(sqlQuery);
+            pstmtnew.setInt(1, id);
+            var rsnew = pstmtnew.executeQuery();
+            if (rsnew.next()) {
+                return "Booked";
+            } else {
+                 sqlQuery = "select * from book_details join venue_table on venue_table.id=book_details.venue_id where book_details.completed='no' and book_details.venue_id=?";
+                PreparedStatement pstmt = conn.prepareStatement(sqlQuery);
+                pstmt.setInt(1, id);
+                var rs = pstmt.executeQuery();
+                if (rs.next()) {
+                    return "Pending";
+                }else{
+                    return "Unbooked";
+                }
+            }
+        } catch (Exception e) {
+            return "Error";
+        }
     }
 }
