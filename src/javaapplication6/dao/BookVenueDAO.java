@@ -229,7 +229,7 @@ public class BookVenueDAO {
                 }
             }
         } catch (Exception e) {
-            return "Error";
+            return "Error updating status";
         }
     }
 }
